@@ -1,5 +1,11 @@
-Christina Loiacono, Deborah Campos, Milton Clark, Oliver Chuzan <br>
-ERD
+# Capstone Team
+
+* [Christina Loiacono](https://www.linkedin.com/in/christina-loiacono/)
+* [Deborah Campos](https://www.linkedin.com/in/debdev3/)
+* [Milton Clark](https://www.linkedin.com/in/milton-clark-93674b114/)
+* [Oliver Chuzan](https://www.linkedin.com/in/oliverchuzan/)
+
+### ERD
 <img src="./images/erd.png" alt="event-relational-database"/>
 
 # Frontend
