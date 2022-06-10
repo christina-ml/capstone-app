@@ -5,8 +5,17 @@
 * [Milton Clark](https://www.linkedin.com/in/milton-clark-93674b114/)
 * [Oliver Chuzan](https://www.linkedin.com/in/oliverchuzan/)
 
-### ERD
+# Overview
+
+## Entity Relationship Diagram (ERD)
 <img src="./images/erd.png" alt="event-relational-database"/>
+
+# Getting Started
+
+After forking and cloning this project, run these commands:
+```
+npm i
+```
 
 # Frontend
 
