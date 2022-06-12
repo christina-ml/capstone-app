@@ -5,6 +5,11 @@
 * [Milton Clark](https://www.linkedin.com/in/milton-clark-93674b114/)
 * [Oliver Chuzan](https://www.linkedin.com/in/oliverchuzan/)
 
+# Deployed Links
+Backend: [https://cryptotalk-cl.herokuapp.com/](https://cryptotalk-cl.herokuapp.com/)
+
+Frontend: [https://cryptotalk-cl.netlify.app/](https://cryptotalk-cl.netlify.app/)
+
 # Overview
 
 ## Entity Relationship Diagram (ERD)
