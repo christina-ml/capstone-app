@@ -12,9 +12,18 @@
 
 # Getting Started
 
-After forking and cloning this project, run these commands:
+After forking and cloning this project, run these commands on the backend:
 ```
 npm i
+```
+You will need a `.env` file for the backend (with these fields completed)
+```
+PORT=
+PG_HOST=
+PG_PORT=
+PG_DATABASE=
+PG_USER=
+PG_PASSWORD=
 ```
 
 # Frontend
