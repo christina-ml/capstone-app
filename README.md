@@ -31,13 +31,51 @@ PG_USER=
 PG_PASSWORD=
 ```
 
+## Basic commands to run the backend
+
+First, `cd` into the backend directory using the terminal.
+
+To run the backend, you'll find these scripts in the `package.json` file.
+Run them **in this order** to initialize the database, seed the database, and then start the backend.
+
+```
+npm run db:init
+npm run db:seed
+npm start
+```
+
+Go to your browser, and go to 
+`http://localhost:[name of backend port]`
+
+example: `http://localhost:3333/`
+
 # Frontend
 
-[Material UI](https://mui.com/) 
+After forking and cloning this project, run these commands on the frontend:
+```
+npm i
+```
+
+In case there are issues with [Material UI](https://mui.com/), run this command: 
 ```
 npm install @mui/material @emotion/react @emotion/styled
 
 ```
+
+## Basic command to run the frontend
+
+First, `cd` into the frontend directory using the terminal.
+
+To run the frontend, you'll find this script in the `package.json` file.
+
+```
+npm start
+```
+
+This should open up automatically in the browser, but if it doesn't, go to 
+`http://localhost:[name of frontend port]`
+
+example: `http://localhost:3000/`
 
 # Backend Routes
 
