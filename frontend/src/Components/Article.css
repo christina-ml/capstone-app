@@ -1,30 +1,25 @@
-.article{
-    /* display: grid;
-    grid-template-columns: repeat(3, 1fr); */
+/* .article{
     justify-content: top;
-}
+} */
 
-h1{
-    /* background-color: blue; */
+/* h1{
     text-align: center;
-}
-h3{
+} */
+
+/* h3{
     text-align: left;
     color: rgb(249, 230, 230);
-}
+} */
 
-.link-container h3:hover{
+/* .link-container h3:hover{
     background-color: #4366F5;
     padding: 20px;
-}
+} */
 
-#article a{
+/* #article a{
     text-decoration: none;
-}
-ul{
+} */
+
+/* ul{
     list-style-type: none;
-}
-/* #inlineFrame{ */
-    /* border: 2px solid rgb(80, 255, 249); */
-    /* margin-bottom: 10px; */
-/* } */
+} */

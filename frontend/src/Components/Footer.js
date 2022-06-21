@@ -12,8 +12,7 @@ function Footer (){
         // </div>
         <Box px={{ xs: 3, sm: 4}} py={{xs: 3, sm: 4 }} 
         // sx={{position:"fixed", bottom: 0}}
-        sx={{display:"flex", flexDirection: "column", minHeight: "50%", marginTop: "auto", padding: "60px"}}
-        bgcolor="#4366F5" color="white">
+        sx={{display:"flex", flexDirection: "column", minHeight: "50%", marginTop: "auto", padding: "60px"}}>
             <Container maxWidth="lg">
                 <Grid container spacing={5}>
                     <Grid item xs={12} sm={4}>

@@ -4,7 +4,6 @@ import { useState } from "react";
 // Components
 import Home from "./Components/Home";
 import NavBar from "./Components/NavBar";
-import Header from "./Components/Header";
 import Cryptocurrency from "./Components/Cryptocurrency";
 import Footer from "./Components/Footer";
 import PageNotFound from "./Components/PageNotFound";
@@ -33,8 +32,6 @@ import Video from "./Components/Video";
 // Chatbot 
 import AlanBot from "./Components/ChatBot/AlanBot";
 
-
-
 function App() {
   const [newsData, setNewsData] = useState([])
   const [educationArticles, setEducationArticles] = useState([])
@@ -52,7 +49,7 @@ function App() {
   
   return (
     <Router>
-      <Header />
+      {/* <Header /> */}
       <NavBar/>
       <Routes>
         {/* <Route path="/sandbox" element={<MuiSandbox />} /> */}
