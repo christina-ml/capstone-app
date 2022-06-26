@@ -1,11 +1,33 @@
+// setting variables in CSS
+$mobile : 440px;
+
 // DESKTOP styling
 .navbar {
 
-    padding: 10px 30px;
+    padding: 10px 10px;
 
     &__logo {
         float: left;
         color: blue;
+        display: flex;
+
+        &__cryptotalkLogo img {
+            height: 50px;
+        }
+
+        &__appName {
+            float: left;
+            padding-top: 5px;
+            font-size: 27px;
+            margin-left: 5px;
+            &__tag {
+                font-style: italic;
+                font-size: 10px;
+                text-align: right;
+                right: 0;
+                bottom: 8px;
+            }
+        }
     }
 
     &__menuItems {
@@ -32,7 +54,7 @@
 // MOBILE styling
 // 440px breaks on most phones - most common devices
 // most likely - device is one of the more common android device or iPhone
-@media only screen and (max-width: 440px){
+@media only screen and (max-width: $mobile){
     .navbar {
 
         padding: 0px;

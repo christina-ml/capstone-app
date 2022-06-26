@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import "./NavBar.scss";
+import logo from "../../assets/cryptotalk-logo.png"
 
 // instead of hard-coding menu items, store as JSON
 import menuItemData from "./data/menuData.json";
@@ -13,7 +14,19 @@ const NavBar = () => {
   return (
     <div className="navbar">
       <div className="navbar__logo">
-          Logo
+          {/* Logo */}
+
+          <div className="navbar__logo__cryptotalkLogo">
+            <img src={logo} alt="cryptotalk logo" />
+          </div>
+            
+          <div className="navbar__logo__appName">
+            CryptoTalk
+            <div className="navbar__logo__appName__tag">
+              Talk Crypto To Me 
+            </div>
+          </div>
+
       </div>
       <div className={active ? "navbar__menuItems navbar__menuItems-active" : "navbar__menuItems"} >
         <ul>
