@@ -1,4 +1,4 @@
-import SymbolOverview from "./Widgets/SymbolOverview";
+// import SymbolOverview from "./Widgets/SymbolOverview";
 import "./Home.css";
 
 function Home() {
@@ -10,10 +10,10 @@ function Home() {
       </header>
       <div id="chart-coins-container">
         <div id="chart-widget">
-          <SymbolOverview />
-          <div className="tradingview-widget-container">
+          {/* <SymbolOverview /> */}
+          {/* <div className="tradingview-widget-container">
             <div id="tradingview_0c358"> </div>
-          </div>
+          </div> */}
           <h1 className="say-hi">Say hello to Alan, your guide &#8594;</h1>
         </div>
       </div>
