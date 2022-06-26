@@ -1,11 +1,11 @@
 import "./Cryptocurrency.css"
-import CryptoMarket from "./Widgets/CryptoMarket";
+// import CryptoMarket from "./Widgets/CryptoMarket";
 
 const Cryptocurrency = () => {
     return(
       <div id="cryptocurrency">
-        <h1>Cryptocurrency</h1>
-        <CryptoMarket />
+        Cryptocurrency.js
+        {/* <CryptoMarket /> */}
       </div>
     )
 }
