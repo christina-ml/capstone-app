@@ -3,12 +3,14 @@ $mobile : 440px;
 
 // DESKTOP styling
 .navbar {
+    background-color: #4366f5;
+    height: 50px;
 
     padding: 10px 10px;
 
     &__logo {
         float: left;
-        color: blue;
+        color: white;
         display: flex;
 
         &__cryptotalkLogo img {
