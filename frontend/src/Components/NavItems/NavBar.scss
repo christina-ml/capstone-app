@@ -1,0 +1,79 @@
+// DESKTOP styling
+.navbar {
+
+    padding: 10px 30px;
+
+    &__logo {
+        float: left;
+        color: blue;
+    }
+
+    &__menuItems {
+        float: right;
+        ul {
+            list-style-type: none;
+        }
+            
+        li {
+            display: inline;
+            margin-left: 25px;
+            a {
+                text-decoration: none;
+                color: black;
+            }
+        }
+    }
+
+    &__collapsedMenuIcon {
+        display: none;
+    }
+}
+
+// MOBILE styling
+// 440px breaks on most phones - most common devices
+// most likely - device is one of the more common android device or iPhone
+@media only screen and (max-width: 440px){
+    .navbar {
+
+        padding: 0px;
+
+        &__logo {
+            margin-left: 20px;
+        }
+
+        &__menuItems {
+            display: none;
+
+            &-active {
+                display: block;
+                position: absolute;
+                top: 60px;
+                background-color: lightblue;
+                width: 100%;
+                border-bottom: 1px solid black;
+                text-align: center;
+
+                ul {
+         
+                    li {
+                        display: block;
+                        margin: 10px 0;
+                    }
+                }
+            }
+        }
+
+        &__collapsedMenuIcon {
+            display: block;
+            margin-right: 20px;
+            float: right;
+            font-size: 40px;
+        }
+    }
+}
+
+
+
+
+// logo on right
+// menu items on the left
