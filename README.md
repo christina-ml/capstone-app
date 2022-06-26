@@ -56,10 +56,18 @@ After forking and cloning this project, run these commands on the frontend:
 npm i
 ```
 
+In a previous version of this app, Material UI was used. It has been removed.
+
 In case there are issues with [Material UI](https://mui.com/), run this command: 
 ```
 npm install @mui/material @emotion/react @emotion/styled
 
+```
+
+This app will now be using CSS and SASS.
+[Node-Sass]():
+```
+npm install node-sass
 ```
 
 ## Basic command to run the frontend
