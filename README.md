@@ -70,6 +70,14 @@ This app will now be using CSS and SASS.
 npm install node-sass
 ```
 
+## react-icons
+[react-icons](https://react-icons.github.io/react-icons)
+
+```
+npm install react-icons --save
+```
+Example: Mobile layout - collapsible menu icon
+
 ## Basic command to run the frontend
 
 First, `cd` into the frontend directory using the terminal.
