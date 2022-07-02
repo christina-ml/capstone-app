@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 import "./NavBar.scss";
 import logo from "../../assets/cryptotalk-logo.png"
 
+// react-icons
+import { HiMenu } from 'react-icons/hi';
+
 // instead of hard-coding menu items, store as JSON
 import menuItemData from "./data/menuData.json";
 
@@ -13,21 +16,19 @@ const NavBar = () => {
 
   return (
     <div className="navbar">
-      <div className="navbar__logo">
-          {/* Logo */}
-
-          <div className="navbar__logo__cryptotalkLogo">
-            <img src={logo} alt="cryptotalk logo" />
-          </div>
-            
-          <div className="navbar__logo__appName">
-            CryptoTalk
-            <div className="navbar__logo__appName__tag">
-              Talk Crypto To Me 
+      <a href="/">
+        <div className="navbar__logo">
+            <div className="navbar__logo__cryptotalkLogo">
+              <img src={logo} alt="cryptotalk logo" />
             </div>
-          </div>
-
-      </div>
+            <div className="navbar__logo__appName">
+              CryptoTalk
+              <div className="navbar__logo__appName__tag">
+                Talk Crypto To Me 
+              </div>
+            </div>
+        </div>
+      </a>
       <div className={active ? "navbar__menuItems navbar__menuItems-active" : "navbar__menuItems"} >
         <ul>
           {menuItemData.map((menuItem, key)=>{
@@ -45,7 +46,7 @@ const NavBar = () => {
             setActive(!active)
           }}
       >
-        =
+        <HiMenu />
       </div>
     </div>
   )
