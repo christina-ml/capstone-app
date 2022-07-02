@@ -1,0 +1,30 @@
+@import './designUtils/colors';
+
+.pageNotFound {
+    text-align: center;
+    padding: 10px;
+    margin: 50px;
+    border: 3px solid $page-not-found-gray;
+    border-top-left-radius: 75px;
+    border-top-right-radius: 75px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: $logo-blue;
+
+    &__robot {
+        font-size: 60px;
+        color: $logo-blue;
+    }
+
+    &__backButton{
+        a {
+            color: $logo-blue;
+        }
+        a:visited {
+            color: $logo-blue;
+        }
+        a:hover {
+            color: $hover-blue;
+        }
+    }
+}

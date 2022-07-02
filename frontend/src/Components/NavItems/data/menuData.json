@@ -1,18 +1,18 @@
 [
-    {
-      "text": "Shop",
-      "href": "/shop"
-    },
-    {
-      "text": "About",
-      "href": "/about"
-    },
-    {
-      "text": "Contact",
-      "href": "/contact"
-    },
-    {
-      "text": "User Profile",
-      "href": "/user"
-    }
-  ]
+  {
+    "text": "About",
+    "href": "/about"
+  },
+  {
+    "text": "Resources",
+    "href": "/resources"
+  },
+  {
+    "text": "Favorites",
+    "href": "/favorites"
+  },
+  {
+    "text": "User Profile",
+    "href": "/users"
+  }
+]

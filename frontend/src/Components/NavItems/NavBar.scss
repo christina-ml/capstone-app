@@ -1,6 +1,6 @@
 // import colors from designUtils
-@import '../designUtils/colors';
-@import '../designUtils/media';
+@import '../../designUtils/colors';
+@import '../../designUtils/media';
 
 // DESKTOP styling
 .navbar {
@@ -61,16 +61,11 @@
     &__collapsedMenuIcon {
         display: none;
     }
-
-    &__userProfile {
-        float: right;
-    }
 }
 
 // MOBILE styling
 @media only screen and (max-width: $mobile){
     .navbar {
-
         padding: 0;
 
         &__logo {
