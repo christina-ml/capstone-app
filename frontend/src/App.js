@@ -4,11 +4,12 @@ import { Routes, Route } from "react-router-dom";
 import './App.scss';
 
 // Components
-import Home from "./Components/Home";
-import NavBar from "./Components/NavItems/NavBar";
-// import Cryptocurrency from "./Components/Cryptocurrency";
-// import Footer from "./Components/Footer";
 import PageNotFound from "./Components/PageNotFound";
+import NavBar from "./Components/navBar/NavBar";
+import Home from "./Components/home/Home";
+// import Footer from "./Components/Footer";
+
+// import Cryptocurrency from "./Components/Cryptocurrency";
 
 // Users Components - Admin
 // import UsersAdmin from "./Components/Admin/UsersAdmin";

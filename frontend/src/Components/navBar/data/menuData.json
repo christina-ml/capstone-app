@@ -1,0 +1,18 @@
+[
+  {
+    "text": "About",
+    "href": "/about"
+  },
+  {
+    "text": "Resources",
+    "href": "/resources"
+  },
+  {
+    "text": "Favorites",
+    "href": "/favorites"
+  },
+  {
+    "text": "User Profile",
+    "href": "/users"
+  }
+]
