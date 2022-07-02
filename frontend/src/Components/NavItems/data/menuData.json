@@ -10,5 +10,9 @@
     {
       "text": "Contact",
       "href": "/contact"
+    },
+    {
+      "text": "User Profile",
+      "href": "/user"
     }
   ]
