@@ -1,0 +1,11 @@
+@import '../../designUtils/colors';
+@import '../../designUtils/fonts';
+
+.home {
+    text-align: center;
+    font-family: $logo-font-family;
+
+    &__logo{
+        color: $logo-blue;
+    }
+}

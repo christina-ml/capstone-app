@@ -10,7 +10,7 @@ function SearchBar({searchTerm, setSearchTerm}) {
     return (
         <input 
             className="searchBar" 
-            placeholder="Search by coin"
+            placeholder="Search by name"
             value={searchTerm} 
             onChange={updateSearchTerm}
         />

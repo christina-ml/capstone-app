@@ -1,6 +1,7 @@
 // import colors from designUtils
 @import '../../designUtils/colors';
 @import '../../designUtils/media';
+@import '../../designUtils/fonts';
 
 // DESKTOP styling
 .navbar {
@@ -13,7 +14,7 @@
         float: left;
         color: $text-white;
         display: flex;
-        font-family: 'Poppins', sans-serif;
+        font-family: $logo-font-family;
 
         &__cryptotalkLogo img {
             height: 50px;

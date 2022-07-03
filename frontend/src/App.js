@@ -5,8 +5,8 @@ import './App.scss';
 
 // Components
 import PageNotFound from "./Components/PageNotFound";
-import NavBar from "./Components/navBar/NavBar";
-import Home from "./Components/home/Home";
+import NavBar from "./Components/navBarPage/NavBar";
+import Home from "./Components/homePage/Home";
 // import Footer from "./Components/Footer";
 
 // import Cryptocurrency from "./Components/Cryptocurrency";

@@ -24,7 +24,7 @@ const NavBar = () => {
             <div className="navbar__logo__appName">
               CryptoTalk
               <div className="navbar__logo__appName__tag">
-                Talk Crypto To Me 
+                Talk Crypto To Me
               </div>
             </div>
         </div>

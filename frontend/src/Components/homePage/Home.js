@@ -1,14 +1,14 @@
-// import SymbolOverview from "./Widgets/SymbolOverview";
-
 import SearchBar from "../searchBar/SearchBar";
+import './Home.scss';
 
+// import SymbolOverview from "./Widgets/SymbolOverview";
 
 function Home() {
   return (
     <div className="home">
       <header>
-        <h1 className="home__logo">CryptoTalk</h1>
-        <h4 className="home__tag">Talk Crypto To Me</h4>
+        <h1 className="home__logo">Welcome</h1>
+        <h4 className="home__tag">This is my website</h4>
       </header>
       <SearchBar />
       {/* <div id="chart-coins-container"> */}
