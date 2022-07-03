@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import './MemoryApp.scss';
 
+import SingleCard from './SingleCard';
+
 import cover from '../../assetsMemoryGame/cover.png';
 import helmet from '../../assetsMemoryGame/helmet-1.png';
 import potion from '../../assetsMemoryGame/potion-1.png';
@@ -55,12 +57,7 @@ function MemoryApp() {
       <div className="MemoryApp__cardGrid">
         {cards.map((card)=> {
           return (
-          <div className="card" key={card.id}>
-            <div>
-              <img className="cardFront" src={card.src} alt="card front" />
-              <img className="cardBack" src={cover} alt="card back" />
-            </div>
-          </div>
+            <SingleCard card={card} key={card.id} cover={cover} />
           )
         })}
       </div>

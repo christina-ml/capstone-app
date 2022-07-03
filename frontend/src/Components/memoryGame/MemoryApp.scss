@@ -1,6 +1,6 @@
 
 .MemoryApp {
-  background-color: lavender;
+  background-color: rgba(146, 146, 200, 0.713);
   max-width: 860px;
   margin: 40px auto;
 
@@ -10,6 +10,18 @@
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
   }
+  
+  &__singleCard {
+    position: relative;
+
+    img {
+      width: 100%;
+      display: block;
+      border: 2px solid #fff;
+      border-radius: 6px;
+    }
+  }
+  
   
 }
 
