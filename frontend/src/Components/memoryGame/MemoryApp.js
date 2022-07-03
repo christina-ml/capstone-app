@@ -27,6 +27,12 @@ function MemoryApp() {
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
 
+  // keep track of each card choice, so 2 cards can be compared (is/isn't a match)
+  // users first click = choiceOne
+  // users second click = choiceTwo
+  const [choiceOne, setChoiceOne] = useState(null);
+  const [choiceTwo, setChoiceTwo] = useState(null);
+
   // new game - will always shuffle cards, and set turns to 0.
   const shuffleCards = () => {
     // shuffle cards - duplicate them twice, 2 of each image, and add to new array
@@ -41,8 +47,16 @@ function MemoryApp() {
     setCards(randomlyShuffledCards);
     setTurns(0);
   }
+  // console.log(cards, turns);
 
-  console.log(cards, turns);
+  // handle a choice
+  const handleChoice = (card) => {
+    // console.log(card)
+
+    // if choiceOne is null => update choiceOne :
+    // if choiceOne has a value => update choiceTwo
+    choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
+  }
 
   /* 
     in the return:
@@ -57,7 +71,11 @@ function MemoryApp() {
       <div className="MemoryApp__cardGrid">
         {cards.map((card)=> {
           return (
-            <SingleCard card={card} key={card.id} cover={cover} />
+            <SingleCard card={card} 
+                        key={card.id} 
+                        cover={cover} 
+                        handleChoice={handleChoice}
+            />
           )
         })}
       </div>
