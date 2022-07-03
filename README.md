@@ -13,7 +13,7 @@ Frontend: [https://cryptotalk-cl.netlify.app/](https://cryptotalk-cl.netlify.app
 # Overview
 
 ## Entity Relationship Diagram (ERD)
-<img src="./images/erd.png" alt="event-relational-database"/>
+<img src="./frontend/src/assets/erd.png" alt="event-relational-database"/>
 
 # Getting Started
 
