@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './MemoryApp.css';
+import './MemoryApp.scss';
 
 import cover from '../../assetsMemoryGame/cover.png';
 import helmet from '../../assetsMemoryGame/helmet-1.png';
@@ -41,15 +41,18 @@ function MemoryApp() {
   }
 
   console.log(cards, turns);
-// {/* Making a grid for the cards */}
-// {/* map through the cards in state */}
-// {/* front image of card, & back image of card*/}
 
+  /* 
+    in the return:
+    Making a grid for the cards
+    map through the cards in state
+    front image of card, & back image of card
+  */
   return (
     <div className="MemoryApp">
       <h1>Magic Match</h1>
       <button onClick={shuffleCards} >New Game</button>
-      <div className="cardGrid">
+      <div className="MemoryApp__cardGrid">
         {cards.map((card)=> {
           return (
           <div className="card" key={card.id}>

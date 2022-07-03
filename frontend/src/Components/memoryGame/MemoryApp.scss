@@ -3,6 +3,14 @@
   background-color: lavender;
   max-width: 860px;
   margin: 40px auto;
+
+  &__cardGrid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+  }
+  
 }
 
 button {
