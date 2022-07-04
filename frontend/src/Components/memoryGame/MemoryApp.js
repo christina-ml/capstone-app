@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './MemoryApp.scss';
 
 import SingleCard from './SingleCard';
 
+// card images
 import cover from '../../assetsMemoryGame/cover.png';
 import helmet from '../../assetsMemoryGame/helmet-1.png';
 import potion from '../../assetsMemoryGame/potion-1.png';
@@ -56,6 +57,30 @@ function MemoryApp() {
     // if choiceOne is null => update choiceOne :
     // if choiceOne has a value => update choiceTwo
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
+  }
+
+  // compare 2 selected cards
+  useEffect(() => {
+    if (choiceOne && choiceTwo){
+      // if src are the same, then we have a match
+      if (choiceOne.src === choiceTwo.src){
+        console.log('those cards match');
+        // set choiceOne & choiceTwo back to null
+        resetTurn();
+      } else {
+        // if src of both choices don't match
+        console.log('those cards do not match');
+        // set choiceOne & choiceTwo back to null
+        resetTurn();
+      }
+    }
+  }, [choiceOne, choiceTwo]);
+
+  // reset choices & increase turn
+  const resetTurn = () => {
+    setChoiceOne(null);
+    setChoiceTwo(null);
+    setTurns(prevTurns => prevTurns + 1);
   }
 
   /* 
