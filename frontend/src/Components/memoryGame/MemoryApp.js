@@ -29,10 +29,12 @@ function MemoryApp() {
   const [turns, setTurns] = useState(0);
 
   // keep track of each card choice, so 2 cards can be compared (is/isn't a match)
-  // users first click = choiceOne
-  // users second click = choiceTwo
+  // users first click = choiceOne  // users second click = choiceTwo
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
+
+  // until two cards are flipped, all other cards are disabled (prevents more than 2 cards flipping at one time)
+  const [disabled, setDisabled] = useState(false);
 
   // new game - will always shuffle cards, and set turns to 0.
   const shuffleCards = () => {
@@ -62,6 +64,10 @@ function MemoryApp() {
   // compare two selected cards
   useEffect(() => {
     if (choiceOne && choiceTwo){
+
+      // setting disabled to true, only after user has made two choices
+      setDisabled(true);
+
       // if src are the same, then we have a match
       if (choiceOne.src === choiceTwo.src){
         // console.log('those cards match');
@@ -97,6 +103,7 @@ console.log("the cards state:", cards)
     setChoiceOne(null);
     setChoiceTwo(null);
     setTurns(prevTurns => prevTurns + 1);
+    setDisabled(false);
   }
 
   /* 
@@ -125,6 +132,7 @@ console.log("the cards state:", cards)
                                   card === choiceTwo || 
                                   card.matched
                                 }
+                        disabled={disabled}
             />
           )
         })}

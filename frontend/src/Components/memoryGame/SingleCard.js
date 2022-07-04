@@ -1,11 +1,13 @@
 import React from 'react';
 // import './MemoryApp.scss';
 
-export const SingleCard = ({ card, cover, handleChoice, flipped }) => {
+export const SingleCard = ({ card, cover, handleChoice, flipped, disabled }) => {
 
     // want to update state of choiceOne/choiceTwo - `handleChoice` func is passed down as prop
     const handleClick = () => {
-        handleChoice(card)
+        if (!disabled){
+            handleChoice(card);
+        }
     }
 
 

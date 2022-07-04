@@ -26,13 +26,26 @@
 
     &__cardFront {
       transform: rotateY(90deg);
+      transition: all ease-in 0.2s;
       position: absolute;
     }
 
     &__flipped &__cardFront{
         transform: rotateY(0deg);
+        transition-delay: 0.2s;
       }
   
+
+    // back of card - cover
+    &__cardBack {
+      transition: all ease-in 0.2s;
+      transition-delay: 0.2s;
+    }
+
+    &__flipped &__cardBack {
+        transform: rotateY(90deg);
+        transition-delay: 0s;
+      }
 }
 
   
