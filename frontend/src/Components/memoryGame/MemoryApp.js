@@ -82,7 +82,10 @@ function MemoryApp() {
         // if src of both choices don't match
         // console.log('those cards do not match');
         // set choiceOne & choiceTwo back to null
-        resetTurn();
+        // setTimeout - see card for 1 sec before it flips over
+           setTimeout(() => {
+            resetTurn();
+          }, 1000);
       }
     }
   }, [choiceOne, choiceTwo]);
