@@ -20,7 +20,21 @@
       border: 2px solid #fff;
       border-radius: 6px;
     }
-  }
+
+    // front of card - the picture
+    // 90deg hides it
+
+    &__cardFront {
+      transform: rotateY(90deg);
+      position: absolute;
+    }
+
+    &__flipped &__cardFront{
+        transform: rotateY(0deg);
+      }
+  
+}
+
   
   
 }

@@ -101,6 +101,11 @@ console.log("the cards state:", cards)
     Making a grid for the cards
     map through the cards in state
     front image of card, & back image of card
+    Flipped:
+    3 scenarios when card is flipped (true/false):
+    // when choiceOne is picked
+    // when choiceTwo is picked
+    // if a card is matched - want the card to stay flipped
   */
   return (
     <div className="MemoryApp">
@@ -113,6 +118,10 @@ console.log("the cards state:", cards)
                         key={card.id} 
                         cover={cover} 
                         handleChoice={handleChoice}
+                        flipped={ card === choiceOne || 
+                                  card === choiceTwo || 
+                                  card.matched
+                                }
             />
           )
         })}
