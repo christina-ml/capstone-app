@@ -4,21 +4,21 @@ import './MemoryApp.scss';
 import SingleCard from './SingleCard';
 
 // card images
-import cover from '../../assetsMemoryGame/cover.png';
-import helmet from '../../assetsMemoryGame/helmet-1.png';
-import potion from '../../assetsMemoryGame/potion-1.png';
-import ring from '../../assetsMemoryGame/ring-1.png';
-import scroll from '../../assetsMemoryGame/scroll-1.png';
-import shield from '../../assetsMemoryGame/shield-1.png';
-import sword from '../../assetsMemoryGame/sword-1.png';
+import cover from '../../assetsMemoryGame/logoCover.png';
+import bitcoin from '../../assetsMemoryGame/bitcoin.png';
+import cardano from '../../assetsMemoryGame/cardano.png';
+import dogecoin from '../../assetsMemoryGame/dogecoin.png';
+import litecoin from '../../assetsMemoryGame/litecoin.png';
+import tether from '../../assetsMemoryGame/tether.png';
+import solana from '../../assetsMemoryGame/solana.png';
 
 const cardImages = [
-  {"src": helmet, matched: false},
-  {"src": potion, matched: false},
-  {"src": ring, matched: false},
-  {"src": scroll, matched: false},
-  {"src": shield, matched: false},
-  {"src": sword, matched: false},
+  {"src": bitcoin, matched: false},
+  {"src": cardano, matched: false},
+  {"src": dogecoin, matched: false},
+  {"src": litecoin, matched: false},
+  {"src": tether, matched: false},
+  {"src": solana, matched: false},
 ]
 
 function MemoryApp() {
@@ -130,7 +130,7 @@ console.log("the cards state:", cards)
   */
   return (
     <div className="MemoryApp">
-      <h1>Magic Match</h1>
+      <h1>Crypto Match</h1>
       <button onClick={shuffleCards} >New Game</button>
       <div className="MemoryApp__cardGrid">
         {cards.map((card)=> {

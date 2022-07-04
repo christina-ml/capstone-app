@@ -1,6 +1,7 @@
+@import '../../designUtils/colors';
 
 .MemoryApp {
-  background-color: rgba(146, 146, 200, 0.713);
+  background-color: $hover-blue;
   max-width: 860px;
   margin: 40px auto;
 
@@ -17,7 +18,7 @@
     img {
       width: 100%;
       display: block;
-      border: 2px solid #fff;
+      border: 2px solid $background-black;
       border-radius: 6px;
     }
 
@@ -63,6 +64,6 @@ button {
   font-size: 1em;
 }
 button:hover {
-  background: #c23866;
+  background: $hover-black;
   color: #fff;
 }
