@@ -13,12 +13,12 @@ import shield from '../../assetsMemoryGame/shield-1.png';
 import sword from '../../assetsMemoryGame/sword-1.png';
 
 const cardImages = [
-  {"src": helmet},
-  {"src": potion},
-  {"src": ring},
-  {"src": scroll},
-  {"src": shield},
-  {"src": sword},
+  {"src": helmet, matched: false},
+  {"src": potion, matched: false},
+  {"src": ring, matched: false},
+  {"src": scroll, matched: false},
+  {"src": shield, matched: false},
+  {"src": sword, matched: false},
 ]
 
 function MemoryApp() {
@@ -59,22 +59,35 @@ function MemoryApp() {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
   }
 
-  // compare 2 selected cards
+  // compare two selected cards
   useEffect(() => {
     if (choiceOne && choiceTwo){
       // if src are the same, then we have a match
       if (choiceOne.src === choiceTwo.src){
-        console.log('those cards match');
+        // console.log('those cards match');
+        // updating the card's state, using the previous cards state
+        // returning a new array of cards using .map - where choiceOne & choiceTwo are matched (and updated) as "true"
+        setCards(prevCards => {
+          return prevCards.map((card) => {
+            if (card.src === choiceOne.src){
+              return { ...card, matched: true };
+            } else {
+              return card;
+            }
+          })
+        });
         // set choiceOne & choiceTwo back to null
         resetTurn();
       } else {
         // if src of both choices don't match
-        console.log('those cards do not match');
+        // console.log('those cards do not match');
         // set choiceOne & choiceTwo back to null
         resetTurn();
       }
     }
   }, [choiceOne, choiceTwo]);
+
+console.log("the cards state:", cards)
 
   // reset choices & increase turn
   const resetTurn = () => {
