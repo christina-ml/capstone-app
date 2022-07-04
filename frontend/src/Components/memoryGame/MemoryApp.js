@@ -47,6 +47,10 @@ function MemoryApp() {
     // for each card object, give it a random ID.
     let randomlyShuffledCards = sortedCardPairs.map((card) => ({ ...card, id: Math.random() }))
 
+    // reset choiceOne & choiceTwo when game starts, just in case there is one already selected
+    setChoiceOne(null);
+    setChoiceTwo(null);
+
     setCards(randomlyShuffledCards);
     setTurns(0);
   }
@@ -106,6 +110,13 @@ console.log("the cards state:", cards)
     setDisabled(false);
   }
 
+  // start new game automagically
+  // shuffle starts the game
+  useEffect(() => {
+    shuffleCards();
+  }, []);
+
+
   /* 
     in the return:
     Making a grid for the cards
@@ -136,6 +147,9 @@ console.log("the cards state:", cards)
             />
           )
         })}
+      </div>
+      <div>
+        Turns: {turns}
       </div>
     </div>
   );
