@@ -1,8 +1,9 @@
 @import './designUtils/colors';
+@import './designUtils/media';
 
-// .App {
-//     background-color: $text-white;
-// }
+.App {
+    margin-top: 75px;
+}
 
 .pageNotFound {
     text-align: center;
@@ -30,5 +31,12 @@
         a:hover {
             color: $hover-blue;
         }
+    }
+}
+
+// MOBILE styling
+@media only screen and (max-width: $mobile){
+    .App {
+        margin-top: 55px;
     }
 }

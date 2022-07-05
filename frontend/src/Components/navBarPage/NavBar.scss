@@ -5,6 +5,13 @@
 
 // DESKTOP styling
 .navbar {
+    z-index: 10000;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    transition: top 0.3s;
+
+
     background-color: $logo-blue;
     height: 50px;
 
@@ -41,24 +48,28 @@
         float: right;
         ul {
             list-style-type: none;
-        }
-            
-        li {
-            display: inline;
-            margin-left: 25px;
-            a {
-                text-decoration: none;
-                color: $text-white;
-                padding: 10px;
-            }
 
-            a:hover {
-                background-color: $hover-blue;
-                border-radius: 10px;
-            }              
+            li {
+                display: inline;
+                margin-left: 25px;
+                a {
+                    text-decoration: none;
+                    color: $text-white;
+                    padding: 10px;
+                }
+    
+                a:hover {
+                    background-color: $hover-blue;
+                    border-radius: 10px;
+                }              
+            }
         }
+
+        // ----light/dark button
         &__nightDay {
-            // font-size: 30px;
+            float: right;
+            color: white;
+            margin-right: 20px;
         }
     }
 
@@ -71,6 +82,7 @@
 @media only screen and (max-width: $mobile){
     .navbar {
         padding: 0;
+        
 
         &__logo {
             margin-left: 10px;
@@ -116,6 +128,12 @@
                     }
                 }
             }
+
+            // ----light/dark button
+            &__nightDay {
+                float:none;
+                color: white;
+            }
         }
 
         &__collapsedMenuIcon {
@@ -128,9 +146,6 @@
         }
     }
 }
-
-
-
 
 // logo on right
 // menu items on the left

@@ -5,6 +5,9 @@ import logo from "../../assets/cryptotalk-logo.png"
 
 // react-icons
 import { HiMenu } from 'react-icons/hi';
+import { MdDarkMode } from 'react-icons/md';
+import { MdOutlineDarkMode } from 'react-icons/md';
+
 
 // instead of hard-coding menu items, store as JSON
 import menuItemData from "./data/menuData.json";
@@ -14,19 +17,14 @@ const NavBar = () => {
   // simple hook setting it to false
   const [active, setActive] = useState(false);
 
-  // for toggle button
+  // for toggle button click event
   const [toggleButton, setToggleButton] = useState(null);
   const [toggleText, setToggleText] = useState(null);
 
-  const handleToggle = () => {
+  const handleToggleClick = () => {
     setToggleText(!toggleText)
     return setToggleButton(!toggleButton);
   }
-
-  // <button onClick={() => handleToggle()}>click</button>
-  // {toggleButton ? <span style={{backgroundColor: "red"}}>hi</span> :  <span style={{backgroundColor: "green"}}>low</span>}
-
-  const isBackgroundRed = true;
 
   return (
     <div className="navbar">
@@ -44,25 +42,17 @@ const NavBar = () => {
         </div>
       </a>
 
-     
-        {/* <button onClick={() => handleToggle()}>Theme</button>
-        <style>{toggleButton ? 'body { background-color: white; }' : 'body { background-color: black; }'}</style> */}
-     
-          
-
-
       <div className={active ? "navbar__menuItems navbar__menuItems-active" : "navbar__menuItems"} >
         <ul>
           {menuItemData.map((menuItem, key)=>{
             if (menuItem.type){
               return (
-                <li>
-                  <a className="navbar__menuItems__nightDay" href={menuItem.href} onClick={() => handleToggle()}>{toggleText ? `${menuItem.text1}` : `${menuItem.text2}`}</a>
-                  <style>{toggleButton ? `${menuItem.style2}`: `${menuItem.style1}`}</style>
+                <li className="navbar__menuItems__nightDay">
+                      <a href={menuItem.href} onClick={() => handleToggleClick()}>{toggleText ? <MdDarkMode /> : <MdOutlineDarkMode />}</a>
+                      <style>{toggleButton ? `${menuItem.style2}`: `${menuItem.style1}`}</style>
                 </li>
               )
             }
-
 
             return (
                 <li key={key}>
