@@ -1,5 +1,4 @@
 import React from 'react';
-// import './MemoryApp.scss';
 
 export const SingleCard = ({ card, cover, handleChoice, flipped, disabled }) => {
 
@@ -9,7 +8,6 @@ export const SingleCard = ({ card, cover, handleChoice, flipped, disabled }) => 
             handleChoice(card);
         }
     }
-
 
   // Flipped className ternary: when true - `flipped` class, when false - no class 
   return (

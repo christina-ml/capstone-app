@@ -1,4 +1,5 @@
 @import '../../designUtils/colors';
+@import '../../designUtils/media';
 
 .MemoryApp {
   background-color: $hover-blue;
@@ -6,8 +7,10 @@
   margin: 40px auto;
 
   &__cardGrid {
-    margin-top: 40px;
+    margin: 40px auto;
     display: grid;
+    width: 90%;
+    align-items: center;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
   }
@@ -47,10 +50,7 @@
         transform: rotateY(90deg);
         transition-delay: 0s;
       }
-}
-
-  
-  
+  } 
 }
 
 button {
@@ -63,7 +63,37 @@ button {
   cursor: pointer;
   font-size: 1em;
 }
+
 button:hover {
   background: $hover-black;
   color: #fff;
+}
+
+// MOBILE styling
+@media only screen and (max-width: $mobile){
+  .MemoryApp {
+    // background-color: $hover-blue;
+    // max-width: 860px;
+    // margin: 40px auto;
+  
+    &__cardGrid {
+      margin: 40px auto;
+      display: grid;
+      width: 90%;
+      align-items: center;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 15px;
+    }
+
+    &__singleCard {
+      // position: relative;
+  
+      img {
+        width: 90%;
+        // display: block;
+        // border: 2px solid $background-black;
+        // border-radius: 6px;
+      }
+    }
+  }
 }

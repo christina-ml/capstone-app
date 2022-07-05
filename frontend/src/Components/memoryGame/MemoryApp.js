@@ -13,12 +13,12 @@ import tether from '../../assetsMemoryGame/tether.png';
 import solana from '../../assetsMemoryGame/solana.png';
 
 const cardImages = [
-  {"src": bitcoin, matched: false},
-  {"src": cardano, matched: false},
-  {"src": dogecoin, matched: false},
-  {"src": litecoin, matched: false},
-  {"src": tether, matched: false},
-  {"src": solana, matched: false},
+  {"src": bitcoin, matched: false, "cointype": "bitcoin"},
+  {"src": cardano, matched: false, "cointype": "cardano"},
+  {"src": dogecoin, matched: false, "cointype": "dogecoin"},
+  {"src": litecoin, matched: false, "cointype": "litecoin"},
+  {"src": tether, matched: false, "cointype": "tether"},
+  {"src": solana, matched: false, "cointype": "solana"},
 ]
 
 function MemoryApp() {
@@ -35,6 +35,9 @@ function MemoryApp() {
 
   // until two cards are flipped, all other cards are disabled (prevents more than 2 cards flipping at one time)
   const [disabled, setDisabled] = useState(false);
+
+  // keep track of coin type
+  const [coinType, setCoinType] = useState([]);
 
   // new game - will always shuffle cards, and set turns to 0.
   const shuffleCards = () => {
@@ -86,6 +89,10 @@ function MemoryApp() {
             }
           })
         });
+
+        // if they match, find out the coinType
+
+
         // set choiceOne & choiceTwo back to null
         resetTurn();
       } else {
@@ -101,6 +108,7 @@ function MemoryApp() {
   }, [choiceOne, choiceTwo]);
 
 console.log("the cards state:", cards)
+console.log("the cards type:", cards.coinType)
 
   // reset choices & increase turn
   const resetTurn = () => {
