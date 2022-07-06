@@ -70,11 +70,11 @@ function App() {
           {/* <Route path="/users/:id/edit" element={<UserEdit />} /> */}
           {/* <Route path="/users/:id/favorites" element={<UserFavorites />} /> */}
           {/* <Route path="/users/:id/favorites/:id" element={<UserFavorite />} /> */}
-          <Route path="/*" element={<PageNotFound />} />
 
           {/* <Route path="/admin" element={<UsersAdmin />} /> */}
           {/* <Route exact path="/admin/:id" element={<UserDetailsAdmin />} /> */}
           {/* <Route path="/admin/:id/edit" element={<UserEditAdmin />} /> */}
+          <Route path="/*" element={<PageNotFound />} />
         </Routes>
       </main>
       {/* <Footer /> */}
