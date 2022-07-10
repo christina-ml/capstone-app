@@ -45,7 +45,7 @@ const NavBar = () => {
       <div className={active ? "navbar__menuItems navbar__menuItems-active" : "navbar__menuItems"} >
         <ul>
           {menuItemData.map((menuItem, key)=>{
-            if (menuItem.type){
+            if (menuItem.type === "toggle"){
               return (
                 <li className="navbar__menuItems__nightDay">
                       <a href={menuItem.href} onClick={() => handleToggleClick()}>{toggleText ? <MdDarkMode /> : <MdOutlineDarkMode />}</a>
