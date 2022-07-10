@@ -10,8 +10,6 @@
     top: 0px;
     width: 100%;
     transition: top 0.3s;
-
-
     background-color: $logo-blue;
     height: 50px;
 
@@ -77,6 +75,37 @@
         display: none;
     }
 }
+
+// MEDIUM SCREEN styling
+@media only screen and (min-width: $mobile) and (max-width: $mediumScreen){
+    .navbar {
+        &__menuItems {
+            float: none;
+            
+            ul {
+                text-align: left;
+                padding: 0px;
+                margin: 10px;
+                background-color: $logo-blue;
+
+                li {
+                    float: left;
+                    
+                    a {
+                        font-size: 16px;
+                        padding: 3px 2px;
+                    }           
+                }
+            }
+             
+            // ----light/dark button
+            &__nightDay {
+                float: none;
+            }
+        }     
+    }
+}
+
 
 // MOBILE styling
 @media only screen and (max-width: $mobile){
@@ -146,6 +175,3 @@
         }
     }
 }
-
-// logo on right
-// menu items on the left
