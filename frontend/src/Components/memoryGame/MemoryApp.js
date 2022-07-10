@@ -22,7 +22,6 @@ const cardImages = [
 ]
 
 function MemoryApp() {
-
   // store the cards in state for a game
   // turns will increase by 1 every turn
   const [cards, setCards] = useState([]);
@@ -35,9 +34,6 @@ function MemoryApp() {
 
   // until two cards are flipped, all other cards are disabled (prevents more than 2 cards flipping at one time)
   const [disabled, setDisabled] = useState(false);
-
-  // keep track of coin type
-  const [coinType, setCoinType] = useState([]);
 
   // new game - will always shuffle cards, and set turns to 0.
   const shuffleCards = () => {
@@ -61,15 +57,20 @@ function MemoryApp() {
 
   // handle a choice
   const handleChoice = (card) => {
-    // console.log(card)
-
-    // if choiceOne is null => update choiceOne :
-    // if choiceOne has a value => update choiceTwo
+    // if choiceOne is null => update choiceOne :  // if choiceOne has a value => update choiceTwo
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
   }
 
   // compare two selected cards
   useEffect(() => {
+    // reset choices & increase turn
+    const resetTurn = () => {
+      setChoiceOne(null);
+      setChoiceTwo(null);
+      setTurns(turns + 1);
+      setDisabled(false);
+    }
+
     if (choiceOne && choiceTwo){
 
       // setting disabled to true, only after user has made two choices
@@ -80,18 +81,14 @@ function MemoryApp() {
         // console.log('those cards match');
         // updating the card's state, using the previous cards state
         // returning a new array of cards using .map - where choiceOne & choiceTwo are matched (and updated) as "true"
-        setCards(prevCards => {
-          return prevCards.map((card) => {
-            if (card.src === choiceOne.src){
-              return { ...card, matched: true };
-            } else {
-              return card;
-            }
-          })
-        });
-
-        // if they match, find out the coinType
-
+        let checkIfCardsMatch = cards.map((card) => {
+          if (card.src === choiceOne.src){
+            return { ...card, matched: true };
+          } else {
+            return card;
+          }
+        })
+        setCards(checkIfCardsMatch);
 
         // set choiceOne & choiceTwo back to null
         resetTurn();
@@ -105,25 +102,15 @@ function MemoryApp() {
           }, 1000);
       }
     }
-  }, [choiceOne, choiceTwo]);
+  }, [choiceOne, choiceTwo, cards, turns]);
 
-console.log("the cards state:", cards)
-console.log("the cards type:", cards.coinType)
-
-  // reset choices & increase turn
-  const resetTurn = () => {
-    setChoiceOne(null);
-    setChoiceTwo(null);
-    setTurns(prevTurns => prevTurns + 1);
-    setDisabled(false);
-  }
+  console.log("the cards state:", cards)
 
   // start new game automagically
   // shuffle starts the game
   useEffect(() => {
     shuffleCards();
   }, []);
-
 
   /* 
     in the return:

@@ -126,3 +126,12 @@ Our backend database using [Postgres](https://www.postgresql.org/) has three tab
 | resources | POST   | /users/{id}/resources      | Creates a new `resource` associated with the `user` with an id of {id}.          |
 | resources | PUT    | /users/{id}/resources/{id} | Updates one `resource` associated with the `users` with an id of {id}.           |
 | resources | DELETE | /users/{id}/resources/{id} | Deletes one `resource` associated with the `users` with an id of {id}.           |
+
+
+## Miscellaneous
+
+[Random password generator](https://passwordsgenerator.net/)
+
+[Random username generator](https://jimpix.co.uk/words/random-username-generator.asp#results)
+
+[Random email generator](https://generator.email/)

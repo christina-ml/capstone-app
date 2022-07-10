@@ -23,7 +23,7 @@ const NavBar = () => {
 
   const handleToggleClick = () => {
     setToggleText(!toggleText)
-    return setToggleButton(!toggleButton);
+    setToggleButton(!toggleButton);
   }
 
   return (
