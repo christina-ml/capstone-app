@@ -1,6 +1,7 @@
 // import SearchBar from "../searchBar/SearchBar";
 import './Home.scss';
 
+import ColoringBook from '../coloringBook/ColoringBook';
 import MemoryApp from "../memoryGame/MemoryApp";
 
 // import SymbolOverview from "./Widgets/SymbolOverview";
@@ -13,6 +14,7 @@ function Home() {
         <h4 className="home__tag">This is my website</h4>
       </header>
       {/* <SearchBar /> */}
+      <ColoringBook />
       <MemoryApp />
       {/* <div id="chart-coins-container"> */}
         {/* <div id="chart-widget"> */}
