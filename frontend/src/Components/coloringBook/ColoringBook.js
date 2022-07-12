@@ -2,33 +2,30 @@ import React, { useState } from "react";
 
 import DesktopColoring from "./DesktopColoring";
 import MobileColoring from "./MobileColoring";
+import NewColorPalette from "./NewColorPalette";
 
 import './ColoringBook.scss';
 
 const ColoringBook = () => {
-  const [colorPalette, setColorPalette] = useState(Array(5).fill("green"));
-  const [color, setColor] = useState("red");
+  const [fillColors, setFillColors] = useState(Array(16).fill('white'));
+  const [currentColor, setCurrentColor] = useState('white');
 
-  const startColoring = (i) => {
-    let newColors = colorPalette.slice(0);
-    newColors[i] = color;
-    setColorPalette(newColors);
-  };
+  const onFillColor = (i) => {
+    let newFillColors = fillColors.slice(0);
+    newFillColors[i] = currentColor;
+    setFillColors(newFillColors);
+  }
 
   return (
     <div className="ColoringBook">
       <div className="ColoringBook__desktop">
-        <DesktopColoring
-          colorPalette={colorPalette}
-          startColoring={startColoring}
-        />
+        <DesktopColoring fillColors={fillColors} onFill={onFillColor} />
       </div>
       <div className="ColoringBook__mobile">
-        <MobileColoring
-          colorPalette={colorPalette}
-          startColoring={startColoring}
-        />
+        <MobileColoring fillColors={fillColors} onFill={onFillColor} />
       </div>
+      
+      <NewColorPalette currentColor={currentColor} changeColor={setCurrentColor}/>
     </div>
   );
 };
