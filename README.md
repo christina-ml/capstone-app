@@ -135,3 +135,5 @@ Our backend database using [Postgres](https://www.postgresql.org/) has three tab
 [Random username generator](https://jimpix.co.uk/words/random-username-generator.asp#results)
 
 [Random email generator](https://generator.email/)
+
+[Random US Cities](https://www.randomlists.com/random-us-cities)
