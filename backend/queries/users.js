@@ -13,14 +13,17 @@ const getAllUsers = async() => {
 const createUser = async(user) => {
     try{
         const newUser = await db.one(
-            "INSERT INTO users (firstname, lastname, username, password, contact_email, active) VALUES($1, $2, $3, $4, $5, $6) RETURNING *",
+            "INSERT INTO users (firstname, lastname, username, user_password, user_email, user_active, user_interests, user_city, user_state) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",
             [
                 user.firstname,
                 user.lastname,
                 user.username,
-                user.password,
-                user.contact_email,
-                user.active
+                user.user_password,
+                user.user_email,
+                user.user_active,
+                user.user_interests,
+                user.user_city,
+                user.user_state
             ]
         );
         return newUser;
@@ -29,9 +32,9 @@ const createUser = async(user) => {
     };
 };
 
-const getOneUser = async(id) => {
+const getOneUser = async(uid) => {
     try{
-        const oneUser = await db.one("SELECT * FROM users WHERE id=$1", id);
+        const oneUser = await db.one("SELECT * FROM users WHERE uid=$1", uid);
         return oneUser;
     } catch(err){
         return err;
@@ -47,18 +50,21 @@ const getOneUserByUsername = async(username) => {
     };
 };
 
-const updateUser = async(id, user) => {
+const updateUser = async(uid, user) => {
     try{
         const updatedUser = await db.one(
-            "UPDATE users SET firstname=$1, lastname=$2, username=$3, password=$4, contact_email=$5, active=$6 WHERE id=$7 RETURNING *",
+            "UPDATE users SET firstname=$1, lastname=$2, username=$3, user_password=$4, user_email=$5, user_active=$6, user_interests=$7, user_city=$8, user_state=$9 WHERE uid=$10 RETURNING *",
             [
                 user.firstname,
                 user.lastname,
                 user.username,
-                user.password,
-                user.contact_email,
-                user.active,
-                id
+                user.user_password,
+                user.user_email,
+                user.user_active,
+                user.user_interests,
+                user.user_city,
+                user.user_state,
+                uid
             ]
         );
         return updatedUser;
@@ -67,11 +73,11 @@ const updateUser = async(id, user) => {
     };
 };
 
-const deleteUser = async(id) => {
+const deleteUser = async(uid) => {
     try{
         const deletedUser = await db.one(
-            "DELETE FROM users WHERE id=$1 RETURNING *",
-            id
+            "DELETE FROM users WHERE uid=$1 RETURNING *",
+            uid
         );
         return deletedUser;
     } catch(err){
