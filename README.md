@@ -1,3 +1,54 @@
+# One-to-many relationship (backend)
+
+- Users
+- Currencies
+
+Relationships
+
+- A user has many currencies
+- Currencies belong to a user
+
+
+
+# CoinMarketCap API 
+
+[CoinMarketCap API Documentation](https://coinmarketcap.com/api/documentation/v1/#section/Quick-Start-Guide)
+
+## (Sandbox)
+
+testing with sandbox environment (has mock data only):
+```
+sandbox-api.coinmarketcap.com
+```
+To get real data, replace sandbox with:
+```
+https://pro-api.coinmarketcap.com
+```
+
+1. Preferred method: Via a custom header named `X-CMC_PRO_API_KEY`
+2. Convenience method: Via a query string parameter named:
+```
+CMC_PRO_API_KEY
+```
+
+test API Key:
+```
+b54bcf4d-1bca-4e8e-9a24-22ff2c3d462c
+```
+
+Example link to fetch the data:
+```
+https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=b54bcf4d-1bca-4e8e-9a24-22ff2c3d462c
+```
+
+# Data used in this app
+
+// 20220713205413 - July 13, 2022 8:54pm
+Stored in backend file: `cryptoListingsLatest.json` for now
+`https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=` (add API Key to the ending of this URL in browser)
+
+
+
 # Capstone Team
 
 * [Christina Loiacono](https://www.linkedin.com/in/christina-loiacono/)
