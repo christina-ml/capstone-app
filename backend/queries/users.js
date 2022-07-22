@@ -41,14 +41,14 @@ const getOneUser = async(uid) => {
     };
 };
 
-const getOneUserByUsername = async(username) => {
-    try{
-        const oneUserByUsername = await db.one("SELECT * FROM users WHERE username=$1", username);
-        return oneUserByUsername;
-    } catch(err){
-        return err;
-    };
-};
+// const getOneUserByUsername = async(username) => {
+//     try{
+//         const oneUserByUsername = await db.one("SELECT * FROM users WHERE username=$1", username);
+//         return oneUserByUsername;
+//     } catch(err){
+//         return err;
+//     };
+// };
 
 const updateUser = async(uid, user) => {
     try{
@@ -88,7 +88,7 @@ const deleteUser = async(uid) => {
 module.exports = {
     getAllUsers,
     getOneUser,
-    getOneUserByUsername,
+    // getOneUserByUsername,
     createUser,
     updateUser,
     deleteUser

@@ -1,16 +1,21 @@
 # One-to-many relationship (backend)
 
+Models
+
+Each model is represented by a table in the database.
 - Users
 - Currencies
 
 Relationships
 
+The tables have a one-to-many relationship
+
 - A user has many currencies
 - Currencies belong to a user
 
+# CoinMarketCap API (where I got my data from)
 
-
-# CoinMarketCap API 
+I'm not using the API directly for this project, but instead using it as a starting point, so I can have some actual real-world data to work with.
 
 [CoinMarketCap API Documentation](https://coinmarketcap.com/api/documentation/v1/#section/Quick-Start-Guide)
 

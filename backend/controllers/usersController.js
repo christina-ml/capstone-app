@@ -6,14 +6,14 @@ const {
     getOneUser,
     updateUser,
     deleteUser,
-    getOneUserByUsername,
+    // getOneUserByUsername,
 } = require("../queries/users.js");
 
 // Controllers
-const resourcesController = require("./resourcesController.js");
-const favoritesController = require("./favoritesController.js");
-users.use("/:usersId/resources", resourcesController);
-users.use("/:usersId/favorites", favoritesController);
+// const resourcesController = require("./resourcesController.js");
+// const favoritesController = require("./favoritesController.js");
+// users.use("/:usersId/resources", resourcesController);
+// users.use("/:usersId/favorites", favoritesController);
 
 // get all users (not using, but can't get a list for the frontend to be able to .map over them)
 users.get("/", async (req, res)=> {
@@ -34,7 +34,7 @@ users.post("/", async(req, res) => {
     const { body } = req;
     try{
         const createdUser = await createUser(body);
-        if(createdUser.id){
+        if(createdUser.uid){
             res.status(200).json(createdUser);
         } else {
             res.status(422).json("Error: User creation error");
@@ -45,25 +45,25 @@ users.post("/", async(req, res) => {
 });
 
 // Get user by username
-users.get("/login/:username", async(req, res) => {
-    const { username } = req.params;
-    try{
-        const oneUserByUsername = await getOneUserByUsername(username);
-        if(oneUserByUsername.id){
-            res.status(200).json(oneUserByUsername);
-        } else {
-            res.status(404).json("Error: Username not found");
-        }
-    } catch(err){
-        return err;
-    }
-});
+// users.get("/login/:username", async(req, res) => {
+//     const { username } = req.params;
+//     try{
+//         const oneUserByUsername = await getOneUserByUsername(username);
+//         if(oneUserByUsername.uid){
+//             res.status(200).json(oneUserByUsername);
+//         } else {
+//             res.status(404).json("Error: Username not found");
+//         }
+//     } catch(err){
+//         return err;
+//     }
+// });
 
-users.get("/:id", async(req, res) => {
-    const { id } = req.params;
+users.get("/:uid", async(req, res) => {
+    const { uid } = req.params;
     try{
-        const oneUser = await getOneUser(id);
-        if(oneUser.id){
+        const oneUser = await getOneUser(uid);
+        if(oneUser.uid){
             res.status(200).json(oneUser);
         } else {
             res.status(404).json("Error: User ID not found");
@@ -73,22 +73,22 @@ users.get("/:id", async(req, res) => {
     }
 });
 
-users.put("/:id", async(req, res) => {
-    const { id } = req.params;
+users.put("/:uid", async(req, res) => {
+    const { uid } = req.params;
     const { body } = req;
-    const updatedUser = await updateUser(id, body);
-    if(updatedUser.id){
+    const updatedUser = await updateUser(uid, body);
+    if(updatedUser.uid){
         res.status(200).json(updatedUser);
     } else {
         res.status(404).json("Error: Unable to update User");
     }
 });
 
-users.delete("/:id", async(req, res) => {
-    const { id } = req.params;
-    const deletedUser = await deleteUser(id);
+users.delete("/:uid", async(req, res) => {
+    const { uid } = req.params;
+    const deletedUser = await deleteUser(uid);
     try {
-        if(deletedUser.id){
+        if(deletedUser.uid){
             res.status(200).json(deletedUser);
         } else {
             res.status(404).json("Error: User not found");
