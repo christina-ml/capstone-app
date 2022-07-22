@@ -155,33 +155,42 @@ Our backend database using [Postgres](https://www.postgresql.org/) has three tab
 
 ## Users Table
 
-| Resource | Method | Route       | Description                           |
-|----------|--------|-------------|---------------------------------------|
-| users    | POST   | /users      | Create a `user`.                        |
-| users    | GET    | /users/{id} | Return one `users` by their id of {id}. |
-| users    | PUT    | /users/{id} | Update one `users` by their id of {id}. |
-| users    | DELETE | /users/{id} | Delete one `users` by their id of {id}. |
+| Resource | Method | Route        | Description                              |
+|----------|--------|--------------|------------------------------------------|
+| users    | GET    | /users       | Get all `users`.                         |
+| users    | POST   | /users       | Create a `users`.                        |
+| users    | GET    | /users/{uid} | Return one `users` by their id of {uid}. |
+| users    | PUT    | /users/{uid} | Update one `users` by their id of {uid}. |
+| users    | DELETE | /users/{uid} | Delete one `users` by their id of {uid}. |
 
-## Resources Table
+## Currencies Table
+
+| Resource      | Method | Route        | Description                              |
+|---------------|--------|--------------|------------------------------------------|
+| currencies    | GET    | /currencies  | Get all `currencies`.                    |
+
+<!-- ## Resources Table
 
 | Resource  | Method | Route                      | Description                                                                  |
 |-----------|--------|----------------------------|------------------------------------------------------------------------------|
 | resources | GET    | /users/{id}/resources      | Return all `resources` associated with the `users` with and id of {id}.          |
-| resources | GET    | /users/{id}/resources/{id} | Return details of one `resource` associated with the `users` with an id of {id}. |
+| resources | GET    | /users/{id}/resources/{id} | Return details of one `resource` associated with the `users` with an id of {id}. | -->
 
-## Favorites Table
+<!-- ## Favorites Table
 
 | Resource  | Method | Route                      | Description                                                                      |
 |-----------|--------|----------------------------|----------------------------------------------------------------------------------|
 | favorites | GET    | /users/{id}/favorites      | Return all `favorites` associated with the `users` with and id of {id}.          |
 | favorites | GET    | /users/{id}/favorites/{id} | Return details of one `favorite` associated with the `users` with an id of {id}. |
 | favorites | POST   | /users/{id}/favorites      | Creates a new `favorite` associated with the `user` with an id of {id}.          |
-| favorites | DELETE | /users/{id}/favorites/{id} | Deletes one `favorite` associated with the `users` with an id of {id}.           |
+| favorites | DELETE | /users/{id}/favorites/{id} | Deletes one `favorite` associated with the `users` with an id of {id}.           | -->
 
-## Not Currently in Use / Potential Stretch for Admin 
-| resources | POST   | /users/{id}/resources      | Creates a new `resource` associated with the `user` with an id of {id}.          |
-| resources | PUT    | /users/{id}/resources/{id} | Updates one `resource` associated with the `users` with an id of {id}.           |
-| resources | DELETE | /users/{id}/resources/{id} | Deletes one `resource` associated with the `users` with an id of {id}.           |
+<!-- ## Not Currently in Use / Potential Stretch for Admin 
+| Resource | Method | Route        | Description                            |
+|----------|--------|--------------|----------------------------------------|
+| resources | POST   | /users/{id}/resources      | Creates a new `resource` associated with the `user` with an id of {id}. |
+| resources | PUT    | /users/{id}/resources/{id} | Updates one `resource` associated with the `users` with an id of {id}. |
+| resources | DELETE | /users/{id}/resources/{id} | Deletes one `resource` associated with the `users` with an id of {id}. | -->
 
 
 ## Miscellaneous
