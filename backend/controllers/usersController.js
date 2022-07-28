@@ -10,10 +10,8 @@ const {
 } = require("../queries/users.js");
 
 // Controllers
-// const resourcesController = require("./resourcesController.js");
-// const favoritesController = require("./favoritesController.js");
-// users.use("/:usersId/resources", resourcesController);
-// users.use("/:usersId/favorites", favoritesController);
+const currenciesController = require("./currenciesController.js");
+users.use("/:userId/currencies", currenciesController);
 
 // get all users (not using, but can't get a list for the frontend to be able to .map over them)
 users.get("/", async (req, res)=> {

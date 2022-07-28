@@ -17,7 +17,7 @@ INSERT INTO users(firstname, lastname, username, user_password, user_email, user
 ('Kerry', 'Mckenzie', 'shawlpoke','cSt8jQsM','kerry@nerdcoin.org', true, 'cardano, uniswap', 'Laredo', 'Texas'),
 ('Darrin', 'Reynolds', 'analyticallizard','vY2ZEt96','dreynolds@cryptoboard.edu', true, 'bitcoin, tether', 'Baltimore', 'Maryland');
 
-INSERT INTO currencies(coinmarketcap_id, name, symbol, slug, num_market_pairs, date_added, tags, max_supply, circulating_supply, total_supply, cmc_rank, currency_user) VALUES
+INSERT INTO currencies(coinmarketcap_id, name, symbol, slug, num_market_pairs, date_added, tags, max_supply, circulating_supply, total_supply, cmc_rank, currency_uid) VALUES
 (1, 'Bitcoin', 'BTC', 'bitcoin', 9620, '2013-04-28T00:00:00.000Z', 'mineable, pow, sha-256, store-of-value, state-channel, coinbase-ventures-portfolio', 21000000, 19092993, 19092993, 1, 1),
 (1027, 'Ethereum', 'ETH', 'ethereum', 5821, '015-08-07T00:00:00.000Z', 'mineable, pow, smart-contracts, ethereum-ecosystem, coinbase-ventures-portfolio, three-arrows-capital-portfolio', null, 121535971.99, 121535971.99, 2, 1),
 (825, 'Tether', 'USDT', 'tether', 36074, '2015-02-25T00:00:00.000Z', 'payments, stablecoin, asset-backed-stablecoin, avalanche-ecosystem, solana-ecosystem, arbitrum-ecosytem', null, 65930930060.39, 68156976394.56, 3, 2),

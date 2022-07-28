@@ -33,6 +33,5 @@ CREATE TABLE currencies(
   circulating_supply BIGINT,
   total_supply BIGINT,
   cmc_rank SMALLINT,
-  currency_user INT NOT NULL,
-  FOREIGN KEY (currency_user) REFERENCES users(uid)
+  currency_uid INTEGER REFERENCES users(uid) ON DELETE CASCADE
 );

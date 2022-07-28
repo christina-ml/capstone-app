@@ -1,5 +1,5 @@
 const express = require("express");
-const currencies = express.Router();
+const currencies = express.Router({ mergeParams: true });
 const {
     getAllCurrencies,
     // createUser,
@@ -9,20 +9,17 @@ const {
     // getOneUserByUsername,
 } = require("../queries/currencies.js");
 
-// Controllers
-// const resourcesController = require("./resourcesController.js");
-// const favoritesController = require("./favoritesController.js");
-// users.use("/:usersId/resources", resourcesController);
-// users.use("/:usersId/favorites", favoritesController);
-
 // get all users (not using, but can't get a list for the frontend to be able to .map over them)
+// Example: http://localhost:3333/users/1/currencies, http://localhost:3333/users/2/currencies
 currencies.get("/", async (req, res)=> {
+    const { userId } = req.params;
+
     try {
-        const allCurrencies = await getAllCurrencies();
+        const allCurrencies = await getAllCurrencies(userId);
         if (allCurrencies[0]){
             res.status(200).json(allCurrencies);
         } else {
-            res.status(500).json({ error: "Error: there are no currencies" });
+            res.status(500).json({ error: "Error: there are no currencies for this userID" });
         }
     } catch (err) {
         console.log(err);
