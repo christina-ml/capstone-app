@@ -41,7 +41,7 @@ currencies.get("/:cid", async(req, res) => {
     }
 });
 
-// A user can create new currencies
+// A user can create new currencies (for any user's ID)
 currencies.post("/", async(req, res) => {
     const { body } = req;
     try{

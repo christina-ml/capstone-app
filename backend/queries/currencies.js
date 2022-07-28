@@ -24,6 +24,34 @@ const getOneCurrency = async (cid) => {
     }
 }
 
+// CREATE
+const createCurrency = async (currency) => {
+    const {coinmarketcap_id, name, symbol, slug, num_market_pairs, date_added, tags, max_supply, circulating_supply, total_supply, cmc_rank, currency_uid} = currency;
+    try {
+        const newCurrency = await db.one(
+            "INSERT INTO currencies (coinmarketcap_id, name, symbol, slug, num_market_pairs, date_added, tags, max_supply, circulating_supply, total_supply, cmc_rank, currency_uid) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING *", 
+            [
+                coinmarketcap_id, 
+                name, 
+                symbol, 
+                slug,
+                num_market_pairs,
+                date_added,
+                tags,
+                max_supply,
+                circulating_supply,
+                total_supply,
+                cmc_rank,
+                currency_uid,
+            ]
+        );
+        return newCurrency;
+    } catch (error){
+        return error;
+    }
+}
+
+
 // UPDATE
 const updateCurrency = async (cid, currency) => {
     const {coinmarketcap_id, name, symbol, slug, num_market_pairs, date_added, tags, max_supply, circulating_supply, total_supply, cmc_rank, currency_uid} = currency;
@@ -56,7 +84,7 @@ const updateCurrency = async (cid, currency) => {
 module.exports = {
     getAllCurrencies,
     getOneCurrency,
-    // createCurrency,
+    createCurrency,
     updateCurrency,
     // deleteCurrency
 }
