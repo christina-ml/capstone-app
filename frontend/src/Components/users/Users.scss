@@ -3,6 +3,21 @@
 @import '../../designUtils/media';
 @import '../../designUtils/fonts';
 
-.Users {
-    color: $text-gray;
+.users {
+    color: $text-medium-gray;
+
+    &__search {
+        width: 100%;
+        border: none;
+        border-bottom: 2px solid $light-gray;
+        height: 1.5em;
+        padding: 5px 10px;
+        margin: 10px;
+        font-size: 16px;
+
+        &:focus {
+            outline: none;
+            border-bottom: 2px solid $text-medium-gray;
+        }
+    }
 }

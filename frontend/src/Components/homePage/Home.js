@@ -1,8 +1,5 @@
-// import SearchBar from "../searchBar/SearchBar";
+import SearchBar from "../searchBar/SearchBar";
 import './Home.scss';
-
-import ColoringBook from '../coloringBook/ColoringBook';
-import MemoryApp from "../memoryGame/MemoryApp";
 
 // import SymbolOverview from "./Widgets/SymbolOverview";
 
@@ -11,11 +8,9 @@ function Home() {
     <div className="home">
       <header>
         <h1 className="home__logo">Welcome</h1>
-        <h4 className="home__tag">This is my website</h4>
+        <h4 className="home__tag">Talk Crypto To Me</h4>
       </header>
       {/* <SearchBar /> */}
-      <ColoringBook />
-      <MemoryApp />
       {/* <div id="chart-coins-container"> */}
         {/* <div id="chart-widget"> */}
           {/* <SymbolOverview /> */}
