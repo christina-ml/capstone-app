@@ -3,6 +3,8 @@ CREATE DATABASE crypto_dev;
 
 \c crypto_dev;
 
+DROP TABLE IF EXISTS users;
+
 CREATE TABLE users(
   uid SERIAL PRIMARY KEY,
   firstname TEXT,
@@ -19,7 +21,8 @@ CREATE TABLE users(
 DROP TABLE IF EXISTS currencies;
 
 CREATE TABLE currencies(
-  cid SMALLINT,
+  cid SERIAL PRIMARY KEY,
+  coinmarketcap_id SMALLINT UNIQUE NOT NULL,
   name TEXT NOT NULL,
   symbol TEXT,
   slug TEXT,
@@ -30,5 +33,6 @@ CREATE TABLE currencies(
   circulating_supply BIGINT,
   total_supply BIGINT,
   cmc_rank SMALLINT,
-  currency_userid INTEGER NOT NULL REFERENCES users(uid) ON DELETE CASCADE
+  currency_user INT NOT NULL,
+  FOREIGN KEY (currency_user) REFERENCES users(uid)
 );

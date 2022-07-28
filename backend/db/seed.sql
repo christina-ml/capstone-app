@@ -14,16 +14,14 @@ INSERT INTO users(firstname, lastname, username, user_password, user_email, user
 ('Lucy', 'Lee', 'papayadoves24','M95GCSmHe','lucylee@busycoin.org', true, 'bitcoin, cardano', 'Phoenix', 'Arizona'),
 ('Jesse', 'Becker', 'scoffdelivery11','LnMb8L8j23p','jess@coinsonic.com', true, 'USD coin, ethereum', 'Detroit', 'Michigan'),
 ('Ana', 'Knight', 'kitchenpudding21','f23MhW7xe','aknight@easymine.com', true, 'binance, dogecoin', 'Milwaukee', 'Wisconsin'),
-('Kerry', 'Mckenzie', 'shawlpoke','cSt8jQsM','kerry@nerdcoin.org', true, 'cardano, uniswap', 'Laredo', 'Texas' ),
+('Kerry', 'Mckenzie', 'shawlpoke','cSt8jQsM','kerry@nerdcoin.org', true, 'cardano, uniswap', 'Laredo', 'Texas'),
 ('Darrin', 'Reynolds', 'analyticallizard','vY2ZEt96','dreynolds@cryptoboard.edu', true, 'bitcoin, tether', 'Baltimore', 'Maryland');
 
-
-
-INSERT INTO currencies(cid, name, symbol, slug, num_market_pairs, date_added, tags, max_supply, circulating_supply, total_supply, cmc_rank, currency_userid) VALUES
-(1, 'Bitcoin', 'BTC', 'bitcoin', 9620, '2013-04-28T00:00:00.000Z', 'mineable, pow, sha-256, store-of-value, state-channel, coinbase-ventures-portfolio', 21000000, 19092993, 19092993, 1, 2),
-(1027, 'Ethereum', 'ETH', 'ethereum', 5821, '015-08-07T00:00:00.000Z', 'mineable, pow, smart-contracts, ethereum-ecosystem, coinbase-ventures-portfolio, three-arrows-capital-portfolio', null, 121535971.99, 121535971.99, 2, 2),
-(825, 'Tether', 'USDT', 'tether', 36074, '2015-02-25T00:00:00.000Z', 'payments, stablecoin, asset-backed-stablecoin, avalanche-ecosystem, solana-ecosystem, arbitrum-ecosytem', null, 65930930060.39, 68156976394.56, 3, 1),
-(3408, 'USD Coin', 'USDC', 'usd-coin', 4852, '2018-10-08T00:00:00.000Z', 'medium-of-exchange, stablecoin, asset-backed-stablecoin, fantom-ecosystem, arbitrum-ecosytem, moonriver-ecosystem, bnb-chain, usd-stablecoin', null, 55357481650.51, 55357481650.51, 4, 1),
+INSERT INTO currencies(coinmarketcap_id, name, symbol, slug, num_market_pairs, date_added, tags, max_supply, circulating_supply, total_supply, cmc_rank, currency_user) VALUES
+(1, 'Bitcoin', 'BTC', 'bitcoin', 9620, '2013-04-28T00:00:00.000Z', 'mineable, pow, sha-256, store-of-value, state-channel, coinbase-ventures-portfolio', 21000000, 19092993, 19092993, 1, 1),
+(1027, 'Ethereum', 'ETH', 'ethereum', 5821, '015-08-07T00:00:00.000Z', 'mineable, pow, smart-contracts, ethereum-ecosystem, coinbase-ventures-portfolio, three-arrows-capital-portfolio', null, 121535971.99, 121535971.99, 2, 1),
+(825, 'Tether', 'USDT', 'tether', 36074, '2015-02-25T00:00:00.000Z', 'payments, stablecoin, asset-backed-stablecoin, avalanche-ecosystem, solana-ecosystem, arbitrum-ecosytem', null, 65930930060.39, 68156976394.56, 3, 2),
+(3408, 'USD Coin', 'USDC', 'usd-coin', 4852, '2018-10-08T00:00:00.000Z', 'medium-of-exchange, stablecoin, asset-backed-stablecoin, fantom-ecosystem, arbitrum-ecosytem, moonriver-ecosystem, bnb-chain, usd-stablecoin', null, 55357481650.51, 55357481650.51, 4, 2),
 (1839, 'BNB', 'BNB', 'bnb', 1003, '2017-07-25T00:00:00.000Z', 'marketplace, centralized-exchange, payments, smart-contracts, alameda-research-portfolio, multicoin-capital-portfolio, moonriver-ecosystem, bnb-chain', 165116760, 163276974.63, 163276974.63, 5, 3),
 (4687, 'Binance USD', 'BUSD', 'binance-usd', 4049, '2019-09-20T00:00:00.000Z', 'stablecoin, asset-backed-stablecoin, binance-chain, harmony-ecosystem, moonriver-ecosystem, bnb-chain, usd-stablecoin', null, 17547224379.45, 17547224379.45, 6, 4),
 (52, 'XRP', 'XRP', 'xrp', 756, '2013-08-04T00:00:00.000Z', 'medium-of-exchange, enterprise-solutions, binance-chain, arrington-xrp-capital-portfolio, galaxy-digital-portfolio, a16z-portfolio, pantera-capital-portfolio', 100000000000, 48343101197, 99989535142, 7, 5),
@@ -36,14 +34,15 @@ INSERT INTO currencies(cid, name, symbol, slug, num_market_pairs, date_added, ta
 (5994, 'Shiba Inu', 'SHIB', 'shiba-inu', 375, '2020-08-01T00:00:00.000Z', 'memes, ethereum-ecosystem, doggone-doggerel', null, 549063278876301, 589735030408322, 14, 12),
 (5805, 'Avalanche', 'AVAX', 'avalanche', 284, '2020-07-13T00:00:00.000Z', 'defi, smart-contracts, three-arrows-capital-portfolio, polychain-capital-portfolio, avalanche-ecosystem, cms-holdings-portfolio, dragonfly-capital-portfolio, moonriver-ecosystem, injective-ecosystem, bnb-chain', 720000000, 283538440, 404229626, 15, 13),
 (3890, 'Polygon', 'MATIC', 'polygon', 422, '2019-04-28T00:00:00.000Z', 'platform, enterprise-solutions, scaling, state-channel, coinbase-ventures-portfolio, binance-launchpad, binance-labs-portfolio', 10000000000, 8006803852.62, 10000000000, 16, 14),
-(3957, 'UNUS SED LEO', 'LEO', 'unus-sed-leo', 19, '2019-05-21T00:00:00.000Z', 'marketplace, centralized-exchange, discount-token, payments, kenetic-capital-portfolio, alameda-research-portfolio', null, 953954130, 985239504, 17, 14),
-(3717, 'Wrapped Bitcoin', 'WBTC', 'wrapped-bitcoin', 473, '2019-01-30T00:00:00.000Z', 'medium-of-exchange, defi, wrapped-tokens, fantom-ecosystem, arbitrum-ecosytem, moonriver-ecosystem', null, 238932, 238932, 18, 15);
+(3957, 'UNUS SED LEO', 'LEO', 'unus-sed-leo', 19, '2019-05-21T00:00:00.000Z', 'marketplace, centralized-exchange, discount-token, payments, kenetic-capital-portfolio, alameda-research-portfolio', null, 953954130, 985239504, 17, 15),
+(3717, 'Wrapped Bitcoin', 'WBTC', 'wrapped-bitcoin', 473, '2019-01-30T00:00:00.000Z', 'medium-of-exchange, defi, wrapped-tokens, fantom-ecosystem, arbitrum-ecosytem, moonriver-ecosystem', null, 238932, 238932, 18, 2);
+
+
 
 -- INSERT INTO resources(resource_name, resource_type, resource_category, resource_url) VALUES
 -- (
 --     'Dodgecoin Jumps On Elon Musk Space X Tweet', 'article', 'news', 
---     'https://www.coindesk.com/business/2022/05/27/dogecoin-jumps-on-elon-musk-space-x-tweet/'
--- ),
+--     'https://www.coindesk.com/business/2022/05/27/dogecoin-jumps-on-elon-musk-space-x-tweet/'),
 -- (
 --     'Crypto City Guide To New York', 'article', 'news', 
 --     'https://cointelegraph.com/magazine/2021/10/28/crypto-city-guide-to-new-york'
