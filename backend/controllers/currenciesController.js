@@ -3,10 +3,9 @@ const currencies = express.Router({ mergeParams: true });
 const {
     getAllCurrencies,
     getOneCurrency,
-    // createUser,
-    // updateUser,
-    // deleteUser,
-    // getOneUserByUsername,
+    createCurrency,
+    updateCurrency,
+    deleteCurrency
 } = require("../queries/currencies.js");
 
 // INDEX
@@ -42,22 +41,50 @@ currencies.get("/:cid", async(req, res) => {
     }
 });
 
+// A user can create new currencies
+currencies.post("/", async(req, res) => {
+    const { body } = req;
+    try{
+        const createdCurrency = await createCurrency(body);
+        if(createdCurrency.cid){
+            res.status(200).json(createdCurrency);
+        } else {
+            res.status(422).json("Error: Currency creation error");
+        }
+    } catch(err){
+        console.log(err);
+    }
+});
 
-// users.post("/", async(req, res) => {
-//     const { body } = req;
-//     try{
-//         const createdUser = await createUser(body);
-//         if(createdUser.id){
-//             res.status(200).json(createdUser);
-//         } else {
-//             res.status(422).json("Error: User creation error");
-//         }
-//     } catch(err){
-//         console.log(err);
-//     }
-// });
+// A user can update a currency
+currencies.put("/:cid", async(req, res) => {
+    const { cid } = req.params;
+    const { body } = req;
+    const updatedCurrency = await updateCurrency(cid, body);
+    if(updatedCurrency.cid){
+        res.status(200).json(updatedCurrency);
+    } else {
+        res.status(404).json("Error: Unable to update Currency");
+    }
+});
 
-// // Get user by username
+// A user can delete a currency
+currencies.delete("/:cid", async(req, res) => {
+    const { cid } = req.params;
+    const deletedCurrency = await deleteCurrency(cid);
+    try {
+        if(deletedCurrency.cid){
+            res.status(200).json(deletedCurrency);
+        } else {
+            res.status(404).json("Error: Currency not found");
+        }
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+
+// // Get currency by name
 // users.get("/login/:username", async(req, res) => {
 //     const { username } = req.params;
 //     try{
@@ -69,32 +96,6 @@ currencies.get("/:cid", async(req, res) => {
 //         }
 //     } catch(err){
 //         return err;
-//     }
-// });
-
-
-// users.put("/:id", async(req, res) => {
-//     const { id } = req.params;
-//     const { body } = req;
-//     const updatedUser = await updateUser(id, body);
-//     if(updatedUser.id){
-//         res.status(200).json(updatedUser);
-//     } else {
-//         res.status(404).json("Error: Unable to update User");
-//     }
-// });
-
-// users.delete("/:id", async(req, res) => {
-//     const { id } = req.params;
-//     const deletedUser = await deleteUser(id);
-//     try {
-//         if(deletedUser.id){
-//             res.status(200).json(deletedUser);
-//         } else {
-//             res.status(404).json("Error: User not found");
-//         }
-//     } catch (error) {
-//         console.log(error);
 //     }
 // });
 

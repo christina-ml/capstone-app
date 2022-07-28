@@ -11,7 +11,7 @@ Relationships
 The tables have a one-to-many relationship
 
 - A user has many currencies
-- Currencies belong to a user
+- Each currency has a user
 
 # CoinMarketCap API (where I got my data from)
 
