@@ -16,11 +16,11 @@
     "href": "/resources"
   },
   {
-    "text": "Favorites",
-    "href": "/favorites"
+    "text": "Login",
+    "href": "/login"
   },
   {
-    "text": "Sign In",
+    "text": "Users",
     "href": "/users"
   }
 ]
