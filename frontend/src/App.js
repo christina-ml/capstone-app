@@ -9,6 +9,8 @@ import NavBar from "./Components/navBarPage/NavBar";
 import Home from "./Components/homePage/Home";
 
 import Users from "./Components/users/Users";
+import Login from "./Components/login/Login";
+import About from "./Components/about/About";
 
 
 // import Footer from "./Components/Footer";
@@ -61,6 +63,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/users" element={<Users />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/about" element={<About />} />
           {/* <Route path="/users/:uid" element={<Home />} />
           <Route path="/users/:uid/currencies" element={<Home />} />
           <Route path="/users/:uid/currencies/:cid" element={<Home />} /> */}
