@@ -2,14 +2,14 @@ const express = require("express");
 const currencies = express.Router({ mergeParams: true });
 const {
     getAllCurrencies,
+    getOneCurrency,
     // createUser,
-    // getOneUser,
     // updateUser,
     // deleteUser,
     // getOneUserByUsername,
 } = require("../queries/currencies.js");
 
-// get all users (not using, but can't get a list for the frontend to be able to .map over them)
+// INDEX
 // Example: http://localhost:3333/users/1/currencies, http://localhost:3333/users/2/currencies
 currencies.get("/", async (req, res)=> {
     const { userId } = req.params;
@@ -25,6 +25,22 @@ currencies.get("/", async (req, res)=> {
         console.log(err);
     }
 })
+
+// SHOW
+// Example: http://localhost:3333/users/2/currencies/3, http://localhost:3333/users/2/currencies/4
+currencies.get("/:cid", async(req, res) => {
+    const { cid } = req.params;
+    try{
+        const oneCurrency = await getOneCurrency(cid);
+        if(oneCurrency.cid){
+            res.status(200).json(oneCurrency);
+        } else {
+            res.status(404).json("Error: Currency ID not found");
+        }
+    } catch(err){
+        return err;
+    }
+});
 
 
 // users.post("/", async(req, res) => {
@@ -56,19 +72,6 @@ currencies.get("/", async (req, res)=> {
 //     }
 // });
 
-// users.get("/:id", async(req, res) => {
-//     const { id } = req.params;
-//     try{
-//         const oneUser = await getOneUser(id);
-//         if(oneUser.id){
-//             res.status(200).json(oneUser);
-//         } else {
-//             res.status(404).json("Error: User ID not found");
-//         }
-//     } catch(err){
-//         return err;
-//     }
-// });
 
 // users.put("/:id", async(req, res) => {
 //     const { id } = req.params;

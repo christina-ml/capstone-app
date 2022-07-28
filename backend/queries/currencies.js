@@ -12,17 +12,19 @@ const getAllCurrencies = async (currency_uid) => {
     }
 }
 
-// const getOneCurrency = async(currency_uid) => {
-//     try {
-//         const oneCurrency = await db.one("SELECT * FROM currencies WHERE currency_uid=$1",
-//         currency_uid);
-//         return oneCurrency;
-//     } catch (error){
-//         return error;
-//     }
-// }
+const getOneCurrency = async (cid) => {
+    try {
+        const oneCurrency = await db.one(
+            "SELECT * FROM currencies WHERE cid=$1",
+            cid
+        );
+        return oneCurrency;
+    } catch (error){
+        return error;
+    }
+}
 
 module.exports = {
     getAllCurrencies,
-    // getOneCurrency
+    getOneCurrency
 }
