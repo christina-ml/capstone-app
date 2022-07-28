@@ -41,7 +41,7 @@ currencies.get("/:cid", async(req, res) => {
     }
 });
 
-// A user can create new currencies (for any user's ID)
+// CREATE - A user can create new currencies (for any user's ID)
 currencies.post("/", async(req, res) => {
     const { body } = req;
     try{
@@ -56,7 +56,8 @@ currencies.post("/", async(req, res) => {
     }
 });
 
-// A user can update a currency
+// UPDATE - A user can update a currency
+// Example: localhost:3333/users/2/currencies, localhost:3333/users/4/currencies
 currencies.put("/:cid", async(req, res) => {
     const { cid } = req.params;
     const { body } = req;
@@ -68,7 +69,8 @@ currencies.put("/:cid", async(req, res) => {
     }
 });
 
-// A user can delete a currency
+// DELETE - A user can delete a currency
+// Example: localhost:3333/users/4/currencies/6, localhost:3333/users/4/currencies/23
 currencies.delete("/:cid", async(req, res) => {
     const { cid } = req.params;
     const deletedCurrency = await deleteCurrency(cid);

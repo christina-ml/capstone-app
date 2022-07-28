@@ -78,6 +78,19 @@ const updateCurrency = async (cid, currency) => {
     } catch (error){
         return error;
     }
+}
+
+// DELETE
+const deleteCurrency = async (cid) => {
+    try {
+        const deletedCurrency = await db.one(
+            "DELETE FROM currencies WHERE cid=$1 RETURNING *",
+            cid
+        );
+        return deletedCurrency;
+    } catch (error){
+        return error;
+    }
 
 }
 
@@ -86,5 +99,5 @@ module.exports = {
     getOneCurrency,
     createCurrency,
     updateCurrency,
-    // deleteCurrency
+    deleteCurrency
 }
