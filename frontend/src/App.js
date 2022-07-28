@@ -7,6 +7,10 @@ import './App.scss';
 import PageNotFound from "./Components/PageNotFound";
 import NavBar from "./Components/navBarPage/NavBar";
 import Home from "./Components/homePage/Home";
+
+import Users from "./Components/users/Users";
+
+
 // import Footer from "./Components/Footer";
 
 // import Cryptocurrency from "./Components/Cryptocurrency";
@@ -56,6 +60,11 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/users" element={<Users />} />
+          {/* <Route path="/users/:uid" element={<Home />} />
+          <Route path="/users/:uid/currencies" element={<Home />} />
+          <Route path="/users/:uid/currencies/:cid" element={<Home />} /> */}
+
           {/* <Route path="/news" element={<News getNewsData={getNewsData} />} /> */}
           {/* <Route path="/news/:id" element={<NewsPage newsData={newsData}/>} /> */}
           {/* <Route path="/cryptocurrency" element={<Cryptocurrency />} /> */}
