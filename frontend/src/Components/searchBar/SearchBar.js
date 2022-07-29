@@ -1,24 +1,19 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import './SearchBar.scss';
 
 function SearchBar({searchTerm, setSearchTerm}) {
-    useEffect(() => {
-        const keyDownHandler = event => {
 
-        }
-        document.addEventListener('keydown', keyDownHandler);
-        return () => {
-            document.removeEventListener('keydown', keyDownHandler);
-        }
-    }, []);
+    const updateSearchTerm = (e) => {
+        setSearchTerm(e.target.value);
+    }
 
     return (
         <input 
             className="searchBar" 
             placeholder="Search by name"
             value={searchTerm} 
-            onChange={(e) => setSearchTerm(e.target.value)}
+            onChange={updateSearchTerm}
         />
     );
 }
