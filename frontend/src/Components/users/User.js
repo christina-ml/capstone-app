@@ -1,20 +1,37 @@
 import React from 'react';
 
+import "./User.scss";
+
 const User = ({user}) => {
+
+  const { uid, firstname, lastname, username, user_password, user_email, user_active, user_interests, user_city, user_state } = user;
+
   return (
-    <div>
-        <h2>Username: {user.username}</h2>
-        <div>
-            ID: {user.uid}
-            Username: {user.username}
-            Password: {user.user_password}
-            Active? {user.user_active}
-            First Name: {user.firstname}
-            Last Name: {user.lastname}
-            Interests: {user.user_interests}
-            City: {user.user_city}
-            State: {user.user_state}
-            Email: {user.user_email}
+    <div className="user">
+        <div className="userCard__info">
+          <div className="userCard__name">
+            <h1>{firstname} {lastname}</h1>
+          </div>
+          <div className="userCard__infoLine">
+            First Name: {firstname}
+          </div>
+          <div className="userCard__infoLine">
+            Last Name: {lastname}
+          </div>
+          <div className="userCard__infoLine">
+            ID: {uid}
+            Username: {username}
+          </div>
+          <div className="userCard__infoLine">
+            Password: {user_password}
+            Active? {user_active ? <span>Yes</span> : <span>No</span>}
+          </div>
+          <div className="userCard__infoLine">
+            Interests: {user_interests}
+            City: {user_city}
+            State: {user_state}
+            Email: {user_email}
+          </div>
         </div>
 
     </div>

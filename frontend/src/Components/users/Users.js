@@ -13,41 +13,59 @@ const Users = () => {
     // hooks
     const [users, setUsers] = useState([]);
     const [searchTerm, setSearchTerm] = useState(''); // for searchBar
-
-
-    let filteredUsers = users;
-    if (searchTerm){
-        filteredUsers = users.filter((user) => {
-            const fullName = `${user.firstname} ${user.lastname}`;
-            const fullNameToLowerCase = fullName.toLowerCase();
-            const searchTermToLowerCase = searchTerm.toLowerCase();
-            // if the search term is included in the full name (lowercased)
-            return fullNameToLowerCase.includes(searchTermToLowerCase);
-        })
-    }
   
+    // -- USING FETCH --
+    // useEffect(() => {
+    //     // const url = "http://localhost:3333/users"
+    //     const url = `${API}/users`
+    //     // reach out to the backend
+    //     fetch(url)
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         console.log("data:", data)
+    //         setUsers(data);
+    //     })
+    //     // get our users
+    //     // update our users hook with the new data
+    // }, []); // empty array means run on mount
 
+    // -- USING AXIOS --
     useEffect(() => {
         axios.get(API + "/users")
             .then((res) => {
-                // console.log(res.data)
+                console.log("res.data:", res.data)
                 setUsers(res.data);
             }).catch((err) => {
                 console.log(err);
             })
     }, []);
 
+    // when search term is updated, this component will re-render
+    // what to do on a re-render?
+    // check if full name includes the search term (if there is a searchTerm)
+    let filteredUsers = users;
+    if (searchTerm){
+        console.log("serachTerm:", searchTerm)
+        filteredUsers = users.filter(user => {
+            const fullName = `${user.firstname} ${user.lastname}`;
+            const fullNameToLowerCase = fullName.toLowerCase();
+            const searchTermToLowerCase = searchTerm.toLowerCase();
+            return fullNameToLowerCase.includes(searchTermToLowerCase);
+        })
+    }
+
   return (
     <div className="users">
         <h1>Users Page</h1>
         <div>
-
-            <input className="users__search" placeholder="Search by name" />
-
-            {/* <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} /> */}
-            {users.map((user) => {
-                return <User key={user.uid} user={user} />
+            <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+            {filteredUsers.map(user => {
+                return (
+                    <User user={user} />
+                )
             })}
+
+            {filteredUsers.length === 0 && <div className="users__noResults">No Results </div>}
         </div>
 
     </div>
