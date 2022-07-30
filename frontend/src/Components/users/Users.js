@@ -56,7 +56,7 @@ const Users = () => {
 
   return (
     <div className="users">
-        <h1>Users Page</h1>
+        <h1 className="users__heading">Users</h1>
         <div>
             <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
             {filteredUsers.map(user => {

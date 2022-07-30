@@ -1,7 +1,5 @@
 import React from 'react';
 
-import "./User.scss";
-
 const User = ({user}) => {
 
   const { uid, firstname, lastname, username, user_password, user_email, user_active, user_interests, user_city, user_state } = user;
