@@ -64,7 +64,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/users" element={<Users />} />
-          <Route path="/users/:uid" element={<UserDetails />} />
+          <Route exact path="/users/:uid" element={<UserDetails />} />
           <Route path="/login" element={<Login />} />
           <Route path="/about" element={<About />} />
           {/* <Route path="/users/:uid" element={<Home />} />

@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
+import Currencies from '../currencies/Currencies';
+
 const API = process.env.REACT_APP_API_URL;
 
 const UserDetails = () => {
@@ -57,6 +59,7 @@ const UserDetails = () => {
             <div>
                 Email: {user_email}
             </div>
+            <Currencies />
     </div>
     )
 }
