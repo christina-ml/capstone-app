@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const User = ({user}) => {
 
@@ -11,27 +12,17 @@ const User = ({user}) => {
             <h1>{firstname} {lastname}</h1>
           </div>
           <div className="userCard__infoLine">
-            First Name: {firstname}
-          </div>
-          <div className="userCard__infoLine">
-            Last Name: {lastname}
+            <Link to={`/users/${uid}`} >
+              See User Details
+            </Link>
           </div>
           <div className="userCard__infoLine">
             ID: {uid}
+          </div>
+          <div className="userCard__infoLine">
             Username: {username}
           </div>
-          <div className="userCard__infoLine">
-            Password: {user_password}
-            Active? {user_active ? <span>Yes</span> : <span>No</span>}
-          </div>
-          <div className="userCard__infoLine">
-            Interests: {user_interests}
-            City: {user_city}
-            State: {user_state}
-            Email: {user_email}
-          </div>
         </div>
-
     </div>
   )
 }

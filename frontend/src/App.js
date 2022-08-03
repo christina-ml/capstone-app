@@ -9,6 +9,7 @@ import NavBar from "./Components/navBarPage/NavBar";
 import Home from "./Components/homePage/Home";
 
 import Users from "./Components/users/Users";
+import UserDetails from "./Components/users/UserDetails";
 import Login from "./Components/login/Login";
 import About from "./Components/about/About";
 
@@ -63,6 +64,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/users" element={<Users />} />
+          <Route path="/users/:uid" element={<UserDetails />} />
           <Route path="/login" element={<Login />} />
           <Route path="/about" element={<About />} />
           {/* <Route path="/users/:uid" element={<Home />} />
