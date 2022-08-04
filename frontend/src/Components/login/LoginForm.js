@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 const LoginForm = ({ login, error }) => {
 
     const [details, setDetails] = useState({ 
-        name: "", 
+        firstname: "", 
+        lastname: "", 
         email: "", 
         password: "" 
     });
@@ -24,15 +25,29 @@ const LoginForm = ({ login, error }) => {
         <form onSubmit={handleSubmit} >
             <div className="loginForm__inner">
                 <h2>Login</h2>
-                    {error}
+                    {/* if there is an error, pass in the error */}
+                    {(error !== '') ? 
+                        (<div className="loginForm__error">{error}</div>) : 
+                        ""
+                    }
 
                 <div className="loginForm__group">
-                    <label htmlFor="name">Name: </label>
+                    <label htmlFor="firstname">First Name: </label>
                     <input 
                         type="text"
-                        id="name"
-                        name="name"
-                        value={details.name}
+                        id="firstname"
+                        name="firstname"
+                        value={details.firstname}
+                        onChange={handleTextChange}
+                    />
+                </div>
+                <div className="loginForm__group">
+                    <label htmlFor="lastname">Last Name: </label>
+                    <input 
+                        type="text"
+                        id="lastname"
+                        name="lastname"
+                        value={details.lastname}
                         onChange={handleTextChange}
                     />
                 </div>
@@ -61,13 +76,7 @@ const LoginForm = ({ login, error }) => {
                     value="Log In"
                 />
 
-
-
-
             </div>
-
-
-
         </form>
     </div>
   )
