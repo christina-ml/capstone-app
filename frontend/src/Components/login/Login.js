@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-
-// https://www.youtube.com/watch?v=91qEdc6dSUs
+import LoginForm from './LoginForm';
 
 const Login = () => {
 
@@ -12,12 +11,28 @@ const Login = () => {
     const [user, setUser] = useState({ name: "", email: "" })
     const [error, setError] = useState("");
 
-    const Logout = () => {
+    const login = (details) => {
+      console.log(details);
+    }
+
+    const logout = () => {
         console.log("Logout");
     }
 
   return (
-    <div>Login</div>
+    <div className="login">
+      Login
+      {(user.email !== '') ? (
+        <div>
+          <h2>Welcome, <span>{user.name}</span></h2>
+          <button>Logout</button>
+        </div>
+      ) : (
+        <LoginForm login={login} error={error} />
+      )
+    
+    }
+    </div>
   )
 }
 
