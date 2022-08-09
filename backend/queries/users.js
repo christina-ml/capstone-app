@@ -13,14 +13,14 @@ const getAllUsers = async() => {
 const createUser = async(user) => {
     try{
         const newUser = await db.one(
-            "INSERT INTO users (firstname, lastname, username, user_password, user_email, user_active, user_interests, user_city, user_state) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",
+            "INSERT INTO users (firstname, lastname, username, user_password, user_email, user_admin, user_interests, user_city, user_state) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",
             [
                 user.firstname,
                 user.lastname,
                 user.username,
                 user.user_password,
                 user.user_email,
-                user.user_active,
+                user.user_admin,
                 user.user_interests,
                 user.user_city,
                 user.user_state
@@ -53,14 +53,14 @@ const getOneUser = async(uid) => {
 const updateUser = async(uid, user) => {
     try{
         const updatedUser = await db.one(
-            "UPDATE users SET firstname=$1, lastname=$2, username=$3, user_password=$4, user_email=$5, user_active=$6, user_interests=$7, user_city=$8, user_state=$9 WHERE uid=$10 RETURNING *",
+            "UPDATE users SET firstname=$1, lastname=$2, username=$3, user_password=$4, user_email=$5, user_admin=$6, user_interests=$7, user_city=$8, user_state=$9 WHERE uid=$10 RETURNING *",
             [
                 user.firstname,
                 user.lastname,
                 user.username,
                 user.user_password,
                 user.user_email,
-                user.user_active,
+                user.user_admin,
                 user.user_interests,
                 user.user_city,
                 user.user_state,

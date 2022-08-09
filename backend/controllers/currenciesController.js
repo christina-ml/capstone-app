@@ -1,7 +1,7 @@
 const express = require("express");
 const currencies = express.Router({ mergeParams: true });
 const {
-    getAllCurrencies,
+    getAllCurrenciesById,
     getOneCurrency,
     createCurrency,
     updateCurrency,
@@ -9,12 +9,13 @@ const {
 } = require("../queries/currencies.js");
 
 // INDEX
+// GET - A user can see all currencies that belong to their profile
 // Example: http://localhost:3333/users/1/currencies, http://localhost:3333/users/2/currencies
 currencies.get("/", async (req, res)=> {
     const { userId } = req.params;
 
     try {
-        const allCurrencies = await getAllCurrencies(userId);
+        const allCurrencies = await getAllCurrenciesById(userId);
         if (allCurrencies[0]){
             res.status(200).json(allCurrencies);
         } else {
@@ -26,6 +27,7 @@ currencies.get("/", async (req, res)=> {
 })
 
 // SHOW
+// GET - A user can see one specific currencies that belong to their profile
 // Example: http://localhost:3333/users/2/currencies/3, http://localhost:3333/users/2/currencies/4
 currencies.get("/:cid", async(req, res) => {
     const { cid } = req.params;
@@ -41,7 +43,7 @@ currencies.get("/:cid", async(req, res) => {
     }
 });
 
-// CREATE - A user can create new currencies (for any user's ID)
+// CREATE - A user can create new currencies that belongs to them (for any user's ID)
 currencies.post("/", async(req, res) => {
     const { body } = req;
     try{
@@ -56,7 +58,7 @@ currencies.post("/", async(req, res) => {
     }
 });
 
-// UPDATE - A user can update a currency
+// UPDATE - A user can update a currency that belongs to them
 // Example: localhost:3333/users/2/currencies, localhost:3333/users/4/currencies
 currencies.put("/:cid", async(req, res) => {
     const { cid } = req.params;
@@ -69,7 +71,7 @@ currencies.put("/:cid", async(req, res) => {
     }
 });
 
-// DELETE - A user can delete a currency
+// DELETE - A user can delete a currency that belongs to them
 // Example: localhost:3333/users/4/currencies/6, localhost:3333/users/4/currencies/23
 currencies.delete("/:cid", async(req, res) => {
     const { cid } = req.params;

@@ -7,11 +7,13 @@ const app = express();
 
 // Controllers
 const usersController = require("./controllers/usersController.js");
+const allCoinsController = require("./controllers/allCoinsController.js");
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 app.use("/users", usersController);
+app.use("/coins", allCoinsController);
 
 // Routes
 app.get("/", (_req, res) => {

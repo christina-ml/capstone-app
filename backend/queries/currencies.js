@@ -1,6 +1,19 @@
 const db = require("../db/dbConfig.js");
 
-const getAllCurrencies = async (currency_uid) => {
+// allCoinsController.js below:
+// Get list of all coins in the currencies table
+const getAllCurrencies = async() => {
+    try {
+        const everyCurrency = await db.any("SELECT * FROM currencies");
+        return everyCurrency;
+    } catch (error) {
+        return error;
+    }
+}
+
+// currenciesController.js below:
+// Get all coins by user ID
+const getAllCurrenciesById = async (currency_uid) => {
     try {
         const allCurrencies = await db.any(
             "SELECT * FROM currencies WHERE currency_uid=$1", 
@@ -12,6 +25,7 @@ const getAllCurrencies = async (currency_uid) => {
     }
 }
 
+// Get one coin by cid
 const getOneCurrency = async (cid) => {
     try {
         const oneCurrency = await db.one(
@@ -25,6 +39,7 @@ const getOneCurrency = async (cid) => {
 }
 
 // CREATE
+// Create a new coin
 const createCurrency = async (currency) => {
     const {coinmarketcap_id, name, symbol, slug, num_market_pairs, date_added, tags, max_supply, circulating_supply, total_supply, cmc_rank, currency_uid} = currency;
     try {
@@ -53,6 +68,7 @@ const createCurrency = async (currency) => {
 
 
 // UPDATE
+// Update a coin by cid
 const updateCurrency = async (cid, currency) => {
     const {coinmarketcap_id, name, symbol, slug, num_market_pairs, date_added, tags, max_supply, circulating_supply, total_supply, cmc_rank, currency_uid} = currency;
     try {
@@ -81,6 +97,7 @@ const updateCurrency = async (cid, currency) => {
 }
 
 // DELETE
+// delete a coin by cid
 const deleteCurrency = async (cid) => {
     try {
         const deletedCurrency = await db.one(
@@ -96,6 +113,7 @@ const deleteCurrency = async (cid) => {
 
 module.exports = {
     getAllCurrencies,
+    getAllCurrenciesById,
     getOneCurrency,
     createCurrency,
     updateCurrency,
