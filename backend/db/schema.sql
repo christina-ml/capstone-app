@@ -12,7 +12,7 @@ CREATE TABLE users(
   username TEXT UNIQUE NOT NULL,
   user_password TEXT,
   user_email TEXT,
-  user_active BOOLEAN,
+  user_admin BOOLEAN,
   user_interests TEXT,
   user_city TEXT,
   user_state TEXT

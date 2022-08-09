@@ -1,21 +1,21 @@
 \c crypto_dev;
 
-INSERT INTO users(firstname, lastname, username, user_password, user_email, user_active, user_interests, user_city, user_state) VALUES
+INSERT INTO users(firstname, lastname, username, user_password, user_email, user_admin, user_interests, user_city, user_state) VALUES
 ('Christina', 'Loiacono', 'rowboatoutraged30','PWm3dmVg','christina@coinboard.com', true, 'bitcoin, solana', 'New York City', 'New York'),
-('Oliver', 'Chuzan', 'yawningkangaroo197','w74Mb7tQ','oliver@cryptoville.com', true, 'bitcoin, tether', 'Toledo', 'Ohio'),
-('Deborah', 'Campos', 'peacenative441','gn5RhAyk','deb@coinreport.com', true, 'litecoin, binance USD', 'Austin', 'Texas'),
+('Oliver', 'Chuzan', 'yawningkangaroo197','w74Mb7tQ','oliver@cryptoville.com', false, 'bitcoin, tether', 'Toledo', 'Ohio'),
+('Deborah', 'Campos', 'peacenative441','gn5RhAyk','deb@coinreport.com', false, 'litecoin, binance USD', 'Austin', 'Texas'),
 ('Milton', 'Clark', 'desertloafers650','pRu7DF6Lxk','milton@mineville.com', true, 'USD coin, dogecoin', 'Greensboro', 'North Carolina'),
-('Ruben', 'Profit', 'insecurepastry40','h7MVjYDQTq','rprofit@cryptodash.com', true, 'dogecoin, ethereum', 'San Jose', 'California'),
-('Olivia', 'Figueroa', 'figuresneak10','x44jarGnXdH','olives@coinpixel.com', true, 'ethereum, solana', 'Tampa', 'Florida'),
-('Casey', 'Hopkins', 'yikesoctopus31','P6YGheJTK','hopkinsc@cryptostyle.org', true, 'binance, bitcoin', 'Santa Ana', 'California'),
-('Wilbur', 'Mendoza', 'admissionmeerkat75','7fg3H3cx4WpW','wilbur@cryptocooks.org', true, 'ethereum, uniswap', 'Jersey City', 'New Jersey'),
-('Karla', 'Peterson', 'fieldsblessing381','4CzwYXk9p','karlapet@skipadoo.org', true, 'USD coin, binance USD', 'Las Vegas', 'Nevada'),
-('Calvin', 'Leonard', 'violenthamburger175','3Cjv3DYJX2SB','calleon@cryptodesk.com', true, 'solana, tether', 'Fort Wayne', 'Indiana'),
-('Lucy', 'Lee', 'papayadoves24','M95GCSmHe','lucylee@busycoin.org', true, 'bitcoin, cardano', 'Phoenix', 'Arizona'),
-('Jesse', 'Becker', 'scoffdelivery11','LnMb8L8j23p','jess@coinsonic.com', true, 'USD coin, ethereum', 'Detroit', 'Michigan'),
-('Ana', 'Knight', 'kitchenpudding21','f23MhW7xe','aknight@easymine.com', true, 'binance, dogecoin', 'Milwaukee', 'Wisconsin'),
-('Kerry', 'Mckenzie', 'shawlpoke','cSt8jQsM','kerry@nerdcoin.org', true, 'cardano, uniswap', 'Laredo', 'Texas'),
-('Darrin', 'Reynolds', 'analyticallizard','vY2ZEt96','dreynolds@cryptoboard.edu', true, 'bitcoin, tether', 'Baltimore', 'Maryland');
+('Ruben', 'Profit', 'insecurepastry40','h7MVjYDQTq','rprofit@cryptodash.com', false, 'dogecoin, ethereum', 'San Jose', 'California'),
+('Olivia', 'Figueroa', 'figuresneak10','x44jarGnXdH','olives@coinpixel.com', false, 'ethereum, solana', 'Tampa', 'Florida'),
+('Casey', 'Hopkins', 'yikesoctopus31','P6YGheJTK','hopkinsc@cryptostyle.org', false, 'binance, bitcoin', 'Santa Ana', 'California'),
+('Wilbur', 'Mendoza', 'admissionmeerkat75','7fg3H3cx4WpW','wilbur@cryptocooks.org', false, 'ethereum, uniswap', 'Jersey City', 'New Jersey'),
+('Karla', 'Peterson', 'fieldsblessing381','4CzwYXk9p','karlapet@skipadoo.org', false, 'USD coin, binance USD', 'Las Vegas', 'Nevada'),
+('Calvin', 'Leonard', 'violenthamburger175','3Cjv3DYJX2SB','calleon@cryptodesk.com', false, 'solana, tether', 'Fort Wayne', 'Indiana'),
+('Lucy', 'Lee', 'papayadoves24','M95GCSmHe','lucylee@busycoin.org', false, 'bitcoin, cardano', 'Phoenix', 'Arizona'),
+('Jesse', 'Becker', 'scoffdelivery11','LnMb8L8j23p','jess@coinsonic.com', false, 'USD coin, ethereum', 'Detroit', 'Michigan'),
+('Ana', 'Knight', 'kitchenpudding21','f23MhW7xe','aknight@easymine.com', false, 'binance, dogecoin', 'Milwaukee', 'Wisconsin'),
+('Kerry', 'Mckenzie', 'shawlpoke','cSt8jQsM','kerry@nerdcoin.org', false, 'cardano, uniswap', 'Laredo', 'Texas'),
+('Darrin', 'Reynolds', 'analyticallizard','vY2ZEt96','dreynolds@cryptoboard.edu', false, 'bitcoin, tether', 'Baltimore', 'Maryland');
 
 INSERT INTO currencies(coinmarketcap_id, name, symbol, slug, num_market_pairs, date_added, tags, max_supply, circulating_supply, total_supply, cmc_rank, currency_uid) VALUES
 (1, 'Bitcoin', 'BTC', 'bitcoin', 9620, '2013-04-28T00:00:00.000Z', 'mineable, pow, sha-256, store-of-value, state-channel, coinbase-ventures-portfolio', 21000000, 19092993, 19092993, 1, 1),
