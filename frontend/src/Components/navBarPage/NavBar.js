@@ -5,14 +5,12 @@ import logo from "../../assets/cryptotalk-logo.png"
 
 // react-icons
 import { HiMenu } from 'react-icons/hi';
-import { MdDarkMode } from 'react-icons/md';
-import { MdOutlineDarkMode } from 'react-icons/md';
-
+import { MdDarkMode, MdOutlineDarkMode } from 'react-icons/md';
 
 // instead of hard-coding menu items, store as JSON
 import menuItemData from "./data/menuData.json";
 
-const NavBar = () => {
+const NavBar = ({darkModeButton}) => {
 
   // simple hook setting it to false
   const [active, setActive] = useState(false);
@@ -45,15 +43,6 @@ const NavBar = () => {
       <div className={active ? "navbar__menuItems navbar__menuItems-active" : "navbar__menuItems"} >
         <ul>
           {menuItemData.map((menuItem, key)=>{
-            if (menuItem.type === "toggle"){
-              return (
-                <li className="navbar__menuItems__nightDay">
-                      <a href={menuItem.href} onClick={() => handleToggleClick()}>{toggleText ? <MdDarkMode /> : <MdOutlineDarkMode />}</a>
-                      <style>{toggleButton ? `${menuItem.style2}`: `${menuItem.style1}`}</style>
-                </li>
-              )
-            }
-
             return (
                 <li key={key}>
                   <a href={menuItem.href}>{menuItem.text}</a>
@@ -61,6 +50,9 @@ const NavBar = () => {
               )
             })
           }
+          <li>
+            {darkModeButton}
+          </li>
         </ul>
       </div>
       <div className="navbar__collapsedMenuIcon"

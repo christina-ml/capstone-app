@@ -3,6 +3,18 @@
 
 .App {
     margin-top: 75px;
+
+    color: var(--text-primary);
+    background-color: var(--background);
+    height: 100vh;
+    transition: all .5s;
+
+    button {
+        color: var(--text-primary);
+        background-color: var(--background);
+        border: 2px var(--text-primary) solid;
+        transition: all .5s;
+    }
 }
 
 .pageNotFound {

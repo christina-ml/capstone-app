@@ -1,13 +1,5 @@
 [
   {
-    "type": "toggle",
-    "text1": "🌕",
-    "text2": "🌞",
-    "href": null,
-    "style1": "body { background-color: white }",
-    "style2": "body { background-color: black; }"
-  },
-  {
     "text": "About",
     "href": "/about"
   },

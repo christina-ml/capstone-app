@@ -1,3 +1,12 @@
+## dark mode using local storage
+<!-- https://css-tricks.com/easy-dark-mode-and-multiple-color-themes-in-react/ -->
+
+```
+npm i use-local-storage
+```
+Local storage allows the theme to be stored, so a user can keep seeing the "light" or "dark" mode that was chosen, after page reload.
+
+
 # One-to-many relationship (backend)
 
 Models

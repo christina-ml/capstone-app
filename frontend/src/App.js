@@ -3,6 +3,12 @@ import { Routes, Route } from "react-router-dom";
 // SCSS
 import './App.scss';
 
+// Local Storage
+import useLocalStorage from 'use-local-storage';
+
+// react-icons
+import { MdDarkMode, MdOutlineDarkMode } from 'react-icons/md';
+
 // Components
 import PageNotFound from "./Components/PageNotFound";
 import NavBar from "./Components/navBarPage/NavBar";
@@ -43,6 +49,14 @@ import About from "./Components/about/About";
 // import AlanBot from "./Components/ChatBot/AlanBot";
 
 function App() {
+  const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
+
+  const switchTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+  }
+
   // const [newsData, setNewsData] = useState([])
   // const [educationArticles, setEducationArticles] = useState([])
   // const [videosData, setVideosData] = useState([])
@@ -57,9 +71,16 @@ function App() {
   //   setVideosData(videos)
   // }
   
+  // dark mode button - passing in as a prop to NavBar.js
+  let darkModeButton = (
+    <button onClick={switchTheme}>
+      Switch to {theme === 'light' ? <MdDarkMode /> : <MdOutlineDarkMode />} Theme
+    </button>
+  )
+
   return (
-    <div className="App">
-      <NavBar />
+    <div className="App" data-theme={theme} >
+      <NavBar darkModeButton={darkModeButton} />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
