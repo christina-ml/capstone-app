@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./LoginForm.scss";
 
 const LoginForm = ({ login, error }) => {
 

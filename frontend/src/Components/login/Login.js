@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import LoginForm from './LoginForm';
-
 import { Link } from 'react-router-dom';
+
+import "./Login.scss";
 
 const Login = () => {
 
