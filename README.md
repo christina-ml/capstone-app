@@ -164,10 +164,21 @@ Our backend database using [Postgres](https://www.postgresql.org/) has three tab
 | users    | DELETE | /users/{uid} | Delete one `users` by their id of {uid}. |
 
 ## Currencies Table
+### All Coins Controller (currencies table)
 
 | Resource      | Method | Route        | Description                              |
 |---------------|--------|--------------|------------------------------------------|
-| currencies    | GET    | /currencies  | Get all `currencies`.                    |
+| currencies    | GET    | /coins  | Get all `currencies`.                 |
+
+### Currencies Controller (currencies table)
+
+| Resource      | Method | Route        | Description                              |
+|---------------|--------|--------------|------------------------------------------|
+| currencies    | GET    | /currencies  | Get all `currencies` by id of {userId} that belong to a user.    
+| currencies    | GET    | /currencies/{cid}  | Get one `currencies` by id of {cid} of a specific user. 
+| currencies    | POST   | /currencies  | Create a `currencies`
+| currencies    | PUT   | /currencies/{cid}  | Update one `currencies` by id of {cid}
+| currencies    | DELETE | /currencies/{cid}  | Delete one `currencies` by id of {cid}
 
 <!-- ## Resources Table
 
