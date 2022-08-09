@@ -2,18 +2,23 @@
 @import './designUtils/media';
 
 .App {
-    margin-top: 75px;
+    margin-top: 70px;
 
+    // Darkmode
     color: var(--text-primary);
     background-color: var(--background);
     height: 100vh;
     transition: all .5s;
 
+    // Darkmode
     button {
         color: var(--text-primary);
         background-color: var(--background);
         border: 2px var(--text-primary) solid;
         transition: all .5s;
+        padding: 3px 5px 2px 5px;
+        background-color: $page-not-found-gray;
+        margin-right: 20px;
     }
 }
 
@@ -49,6 +54,6 @@
 // MOBILE styling
 @media only screen and (max-width: $mobile){
     .App {
-        margin-top: 55px;
+        margin-top: 50px;
     }
 }

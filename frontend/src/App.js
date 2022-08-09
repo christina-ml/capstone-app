@@ -74,7 +74,7 @@ function App() {
   // dark mode button - passing in as a prop to NavBar.js
   let darkModeButton = (
     <button onClick={switchTheme}>
-      Switch to {theme === 'light' ? <MdDarkMode /> : <MdOutlineDarkMode />} Theme
+      {theme === 'light' ? <MdDarkMode /> : <MdOutlineDarkMode />}
     </button>
   )
 
