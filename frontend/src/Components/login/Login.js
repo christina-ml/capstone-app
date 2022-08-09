@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import LoginForm from './LoginForm';
 
+import { Link } from 'react-router-dom';
+
 const Login = () => {
 
     const adminUser = {
@@ -13,10 +15,10 @@ const Login = () => {
 
     const login = (details) => {
       console.log(details);
-      // user logging in
+      // user logging in - if `email` and `password` match the `adminUser`
       if (details.email === adminUser.email && 
           details.password === adminUser.password){
-            console.log("Logged in");
+            // console.log("Logged in");
             setUser({
               firstname: details.firstname,
               lastname: details.lastname,
@@ -26,7 +28,7 @@ const Login = () => {
           // error - user not logged in
           // console.log("Not logged in - details do not match")
           setError(`Not logged in:
-           ${details.email === adminUser.email ? "" : 
+          ${details.email === adminUser.email ? "" : 
             `Email does not match`}
            ${details.password === adminUser.password ? "" :
              `password does not match`}
@@ -45,14 +47,25 @@ const Login = () => {
 
   return (
     <div className="login">
-      Login Page
       {(user.email !== '') ? (
-        <div>
+        <div className="login__welcome">
           <h2>Welcome, <span>{user.firstname} {user.lastname}</span></h2>
+
+          <div>
+            You are logged in now. The login form worked!
+          </div>
+
           <button onClick={logout}>Logout</button>
         </div>
       ) : (
-        <LoginForm login={login} error={error} />
+        <div className="login__startpage">
+          <div className="login__startpage__first">
+            <LoginForm login={login} error={error} />
+          </div>
+          <div className="login__startpage__create">
+            <Link to="/create" >New User</Link>
+          </div>
+        </div>
       )
     
     }
