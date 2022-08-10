@@ -1,0 +1,92 @@
+// import colors from designUtils
+@import '../../designUtils/colors';
+@import '../../designUtils/media';
+@import '../../designUtils/fonts';
+
+.login { 
+    display: inline-flex;
+    padding: 10px;
+
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // // background-color: grey;
+
+    &__welcome {
+    //     width: $mobile;
+    //     background-color: #FFF;
+    //     padding: 15px 30px;
+    //     text-align: center;
+
+    //     h2 {
+    //         color: #888;
+    //         font-size: 28px;
+    //         font-weight: 200;
+    //         margin-bottom: 35px;
+    //         display: inline-block;
+
+    //         span {
+
+    //             color: $logo-blue;
+    //             font-weight: 600;
+    //         }
+    //     }
+        button {
+            padding: 5px 10px;
+            background-color: $logo-blue;
+            color: white;
+
+    //         display: block;
+    //         border-radius: 8px;
+    //         background-image: linear-gradient(to bottom right, $logo-blue 50%, $logo-blue 50%, $light-gray);
+    //         background-size: 200%;
+    //         background-position: 0%;
+    //         transition: 0.4s;
+    //         color: black;
+    //         font-weight: 600;
+    //         cursor: pointer;
+    //         margin: 20px auto 0px;
+
+    //         &:hover {
+    //             background-position: 100% 0%;
+    //         }
+        }
+    }
+
+    &__startpage {
+    //     display: grid;
+        &__create {
+            background-color: $light-gray;
+            padding: 10px;
+            margin: 10px 0px;
+            width: $mobile;
+            text-align: center;
+
+    //         margin-top: 30px;
+    //         display: inline-block;
+    //         padding: 10px 15px;
+    //         border-radius: 8px;
+    //         background-image: linear-gradient(to bottom right, $logo-blue 50%, $logo-blue 50%, $light-gray);
+    //         background-size: 200%;
+    //         background-position: 0%;
+    //         transition: 0.4s;
+    //         color: #FE4880;
+    //         cursor: pointer;
+    //         text-align: center;
+    //         width: 25%;
+    //         margin: 15px auto;
+            
+            a {
+                text-decoration: none;
+                color: white;
+                background-color: $logo-blue;
+                padding: 5px 10px;
+                border-radius: 5px;
+            }
+
+    //         &:hover {
+    //             background-position: 100% 0%;
+    //         }
+        }
+    }
+}
