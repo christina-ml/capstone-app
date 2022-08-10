@@ -49,7 +49,10 @@
         color: $hover-blue;
         line-height: 20px;
     }
-    
+}
+
+.userDetails {
+    padding: 20px;
 }
 
 // MOBILE styling
@@ -63,6 +66,7 @@
             margin-left: 0px;
         }
     }
+    
     .user {
         max-width: $mobile;
         text-align: left;

@@ -19,12 +19,13 @@ const ColoringBook = () => {
   return (
     <div className="ColoringBook">
       <div className="ColoringBook__desktop">
+      <h1>Crypto Coloring</h1>
         <DesktopColoring fillColors={fillColors} onFill={onFillColor} />
       </div>
       <div className="ColoringBook__mobile">
+        <h1>Crypto Coloring</h1>
         <MobileColoring fillColors={fillColors} onFill={onFillColor} />
       </div>
-      
       <NewColorPalette currentColor={currentColor} changeColor={setCurrentColor}/>
     </div>
   );

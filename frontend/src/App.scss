@@ -7,7 +7,7 @@
     // Darkmode
     color: var(--text-primary);
     background-color: var(--background);
-    height: 100vh;
+    min-height: 100vh; // => background fills entire page
     transition: all .5s;
 
     // Darkmode

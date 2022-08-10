@@ -16,6 +16,7 @@ const About = () => {
         </div>
         <div>
             <h4 className="About__header">Crypto Coloring, Crypto Match</h4>
+            <hr />
             <ColoringBook />
             <MemoryApp />
         </div>

@@ -3,23 +3,23 @@
 
 .MemoryApp {
   background-color: $hover-blue;
-  max-width: 860px;
-  margin: 40px auto;
+  max-width: 800px;
+  margin: 0 auto;
 
   &__cardGrid {
-    margin: 40px auto;
+    margin: 15px auto;
     display: grid;
-    width: 90%;
+    width: 80%;
     align-items: center;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
+    grid-gap: 20px 5px;
   }
   
   &__singleCard {
     position: relative;
 
     img {
-      width: 100%;
+      width: 80%;
       display: block;
       border: 2px solid $background-black;
       border-radius: 6px;
@@ -27,7 +27,6 @@
 
     // front of card - the picture
     // 90deg hides it
-
     &__cardFront {
       transform: rotateY(90deg);
       transition: all ease-in 0.2s;
@@ -39,7 +38,6 @@
         transition-delay: 0.2s;
       }
   
-
     // back of card - cover
     &__cardBack {
       transition: all ease-in 0.2s;
@@ -71,11 +69,7 @@ button:hover {
 
 // MOBILE styling
 @media only screen and (max-width: $mobile){
-  .MemoryApp {
-    // background-color: $hover-blue;
-    // max-width: 860px;
-    // margin: 40px auto;
-  
+  .MemoryApp {  
     &__cardGrid {
       margin: 40px auto;
       display: grid;
@@ -86,13 +80,8 @@ button:hover {
     }
 
     &__singleCard {
-      // position: relative;
-  
       img {
         width: 90%;
-        // display: block;
-        // border: 2px solid $background-black;
-        // border-radius: 6px;
       }
     }
   }
