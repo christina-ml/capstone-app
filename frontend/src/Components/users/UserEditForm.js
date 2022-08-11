@@ -1,18 +1,19 @@
 import axios from 'axios';
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
 const API = process.env.REACT_APP_API_URL;
 
-function UserNewForm() {
+function UserEditForm() {
   let navigate = useNavigate();
+  let { uid } = useParams();
 
-  const addUser = (newUser) => {
+  const updateUser = (updatedUser) => {
     axios
-      .post(`${API}/users`, newUser)
+      .put(`${API}/users/${uid}`, updatedUser)
       .then(
         () => {
-          navigate('/users');
+          navigate(`/users/${uid}`);
         },
         (error) => console.error(error)
       )
@@ -31,7 +32,6 @@ function UserNewForm() {
     user_state: ''
   });
 
-
   const handleTextChange = (event) => {
     setUser({ ...user, [event.target.id]: event.target.value });
   }
@@ -42,12 +42,19 @@ function UserNewForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    addUser(user);
-    navigate(`/users`);
+    updateUser(user, uid);
   }
 
+  useEffect(() => {
+    axios.get(`${API}/users/${uid}`)
+      .then(
+        (response) => setUser(response.data),
+        (error) => navigate(`/not-found`)
+      );
+  }, [uid, navigate]);
+
   return (
-    <div className="UserNewForm">
+    <div className="UserEditForm">
       <form onSubmit={handleSubmit}>
         <label htmlFor='firstname'>First Name:</label>
         <input 
@@ -132,8 +139,12 @@ function UserNewForm() {
         <br />
         <input type="submit" />
       </form>
+
+      <Link to={`/users/${uid}`}>
+        <button>Cancel Edit</button>
+      </Link>
     </div>
   )
 }
 
-export default UserNewForm;
+export default UserEditForm;

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 import Currencies from '../currencies/Currencies';
 
@@ -20,12 +20,15 @@ const UserDetails = () => {
             })
     })
 
-    const { firstname, lastname, username, user_password, user_email, user_active, user_interests, user_city, user_state } = user;
+    const { firstname, lastname, username, user_password, user_email, user_admin, user_interests, user_city, user_state } = user;
 
 
     return (
     <div className="userDetails">
         UserDetails - Everything about a user
+        <Link to={`/users/${user.uid}/edit`}>
+            <button>Edit</button>
+        </Link>
         <div>
             <h1>{firstname} {lastname}</h1>
             </div>
@@ -45,7 +48,7 @@ const UserDetails = () => {
                 Password: {user_password}
             </div>
             <div>
-                Active? {user_active ? <span>Yes</span> : <span>No</span>}
+                Admin? {user_admin ? <span>Yes</span> : <span>No</span>}
             </div>
             <div>
                 Interests: {user_interests}
