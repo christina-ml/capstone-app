@@ -16,6 +16,7 @@ import Home from "./Components/homePage/Home";
 
 import Users from "./Components/users/Users";
 import UserDetails from "./Components/users/UserDetails";
+import UserNewForm from "./Components/users/UserNewForm";
 import Login from "./Components/login/Login";
 import About from "./Components/about/About";
 
@@ -85,7 +86,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/users" element={<Users />} />
-          <Route path="/users/new" element={<UserNewForm />} />
+          <Route path="/create" element={<UserNewForm />} />
           <Route exact path="/users/:uid" element={<UserDetails />} />
           <Route path="/login" element={<Login />} />
           <Route path="/about" element={<About />} />
