@@ -23,15 +23,32 @@
 }
 
 .pageNotFound {
-    text-align: center;
-    padding: 10px;
-    margin: 50px;
-    border: 3px solid $page-not-found-gray;
-    border-top-left-radius: 75px;
-    border-top-right-radius: 75px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    color: $logo-blue;
+    &__circle {
+        margin: 0 auto;
+        border-radius: 50%;
+        height: 15px;
+        width: 15px;
+        border: 3px solid $page-not-found-gray;
+    }
+
+    &__antenna {
+        margin: 0 auto;
+        height: 50px;
+        width: 0.1px;
+        border: 2px solid $page-not-found-gray;
+    }
+
+    &__container {
+        text-align: center;
+        padding: 10px;
+        margin: 0px 50px 30px 50px;
+        border: 3px solid $page-not-found-gray;
+        border-top-left-radius: 75px;
+        border-top-right-radius: 75px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        color: $logo-blue;
+    }
 
     &__robot {
         font-size: 60px;
@@ -48,6 +65,13 @@
         a:hover {
             color: $hover-blue;
         }
+    }
+
+    &__footUnderline {
+        margin: 0 auto;
+        width: 50%;
+        height: 0px;
+        border: 2px solid $page-not-found-gray;
     }
 }
 
