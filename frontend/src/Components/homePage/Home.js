@@ -17,34 +17,34 @@ function Home() {
         <div class="leftSideOfPage">
           <div class="largeSneaker">
             <img
-              src="https://sneakernews.com/wp-content/uploads/2022/08/vantas.jpg"
+              src="https://media.istockphoto.com/photos/coins-of-various-cryptocurrencies-picture-id1034363382?k=20&m=1034363382&s=612x612&w=0&h=sCpRmOSicsJJS73_iNQh16nqeBgFKqU3jjfC4u42D_k="
               alt="yeezy sneaker"
             />
           </div>
-          <div class="headerText">Return Of VANTA</div>
-          <div class="subHeaderText">Where To Buy The Yeezy Boost 700 v2</div>
+          <div class="headerText">Return Of CRYPTO</div>
+          <div class="subHeaderText">Where To Buy Bitcoin, Ethereum, Litecoin</div>
         </div>
 
         <div class="rightSideOfPage">
           <div class="sneakerContainer">
             <div class="sneaker">
               <img
-                src="https://sneakernews.com/wp-content/uploads/2022/08/jjjjound-kayano-store-llist.jpg"
+                src="https://www.investopedia.com/thmb/O2nnC_xWk9hEWk4e6ptCfpe0EGA=/302x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/cryptocurrency-f6026a2012a14aaa9ef8a1c277fde0f7.jpg"
                 alt="asics sneaker"
               />
             </div>
-            <div class="title">Store List: JJJJound ASICS GEL-Kayano 14</div>
+            <div class="title">Store List: Bitcoin, Litecoin, Ethereum and More</div>
           </div>
 
           <div class="sneakerContainer">
             <div class="sneaker">
               <img
-                src="https://sneakernews.com/wp-content/uploads/2022/08/badvunnhyblue.jpg"
+                src="https://www.investopedia.com/thmb/DLjhA5UlNJQA-iGoIVaxOkrC-to=/302x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/cryptocurrency.asp_recirc_V2-ee164707c0174d85b1e4e38b564aff73.png"
                 alt="adidas sneaker"
               />
             </div>
 
-            <div class="title">Bad Bunny adidas Forums</div>
+            <div class="title">Intro to Crypto Forums</div>
           </div>
         </div>
       </div>
