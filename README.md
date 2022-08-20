@@ -1,3 +1,6 @@
+<!-- home page - layout inspiration -->
+<!-- https://sneakernews.com/ -->
+
 <!-- Login Form in ReactJS with React Hooks (tutorial) -->
 <!-- https://www.youtube.com/watch?v=91qEdc6dSUs -->
 
