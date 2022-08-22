@@ -1,15 +1,43 @@
-import SearchBar from "../searchBar/SearchBar";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import './Home.scss';
+
+import Coin from "./Coin";
 
 // import SymbolOverview from "./Widgets/SymbolOverview";
 
+const API = process.env.REACT_APP_API_URL;
+
 function Home() {
+
+  const [allCoins, setAllCoins] = useState([]);
+
+  useEffect(() => {
+    axios.get(API + "/coins")
+        .then((res) => {
+            console.log("res.data:", res.data)
+            setAllCoins(res.data);
+        }).catch((err) => {
+            console.log(err);
+        })
+  }, []);
+
   return (
     <div className="home">
       <header>
         <h1 className="home__logo">Welcome</h1>
         <h4 className="home__tag">Talk Crypto To Me</h4>
       </header>
+
+      <h2>List of All Coins</h2>
+      {allCoins.map(coin => {
+        return (
+          <div>
+            <Coin coin={coin} />
+          </div>
+        )
+      })}
+
 
       {/* SneakerNews */}
       <div className="sneakerNewsContainer">
@@ -49,12 +77,6 @@ function Home() {
         </div>
       </div>
       </div>
-
-
-
-
-
-
 
 
       {/* <div id="chart-coins-container"> */}
