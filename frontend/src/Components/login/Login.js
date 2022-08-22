@@ -5,27 +5,10 @@ import { Link } from 'react-router-dom';
 import "./Login.scss";
 
 const Login = () => {
-
-    // const adminUser = {
-    //     email: "admin@admin.com",
-    //     password: "admin123"
-    // }
-
-    // check if multiple admin users can be used to log in, if they match from this list:
-    const adminUsers = [
-      {
-        email: "admin@admin.com",
-        password: "admin123"
-      },
-      {
-        email: "christina@admin.com",
-        password: "test123"
-      },
-      {
-        email: "admin@gmail.com",
-        password: "admin1"
-      }
-  ]
+  const adminUser = {
+    email: "admin@admin.com",
+    password: "admin123"
+  }
 
     const [user, setUser] = useState({ firstname: "", email: "" })
     const [error, setError] = useState("");
