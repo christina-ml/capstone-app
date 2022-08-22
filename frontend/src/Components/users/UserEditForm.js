@@ -45,6 +45,15 @@ function UserEditForm() {
     updateUser(user, uid);
   }
 
+  const handleDelete = () => {
+    axios.delete(`${API}/users/${uid}`)
+    .then((res) => {
+        navigate("/users")
+    }).catch((err) => {
+        console.log(err);
+    })
+}
+
   useEffect(() => {
     axios.get(`${API}/users/${uid}`)
       .then(
@@ -143,6 +152,7 @@ function UserEditForm() {
       <Link to={`/users/${uid}`}>
         <button>Cancel Edit</button>
       </Link>
+      <button onClick={handleDelete} >Delete User</button>
     </div>
   )
 }
