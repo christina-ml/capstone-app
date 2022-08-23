@@ -8,6 +8,7 @@ import useLocalStorage from 'use-local-storage';
 
 // react-icons
 import { MdDarkMode, MdOutlineDarkMode } from 'react-icons/md';
+import { BsFillSunFill } from 'react-icons/bs';
 
 // Components
 import PageNotFound from "./Components/PageNotFound";
@@ -21,6 +22,10 @@ import UserEditForm from "./Components/users/UserEditForm";
 import Login from "./Components/login/Login";
 import Shop from "./Components/shop/Shop";
 import About from "./Components/about/About";
+import Games from "./Components/games/Games";
+
+import AllCoins from "./Components/allCoins/AllCoins";
+import CoinDetails from "./Components/allCoins/CoinDetails";
 
 
 // import Footer from "./Components/Footer";
@@ -76,8 +81,13 @@ function App() {
   
   // dark mode button - passing in as a prop to NavBar.js
   let darkModeButton = (
+    // <label className="switch">
+    //   <input onClick={switchTheme} type="checkbox" className="switch_input" />
+    //   <span className="switch-slider"></span>
+    // </label>
+
     <button onClick={switchTheme}>
-      {theme === 'light' ? <MdDarkMode /> : <MdOutlineDarkMode />}
+      {theme === 'light' ? <BsFillSunFill /> : <MdDarkMode />}
     </button>
   )
 
@@ -87,6 +97,8 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/coins" element={<AllCoins />} />
+          <Route path="/coins/:cid" element={<CoinDetails />} />
           <Route path="/users" element={<Users />} />
           <Route path="/create" element={<UserNewForm />} />
           <Route path="/users/:uid/edit" element={<UserEditForm />} />
@@ -94,6 +106,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/about" element={<About />} />
+          <Route path="/games" element={<Games />} />
           {/* <Route path="/users/:uid" element={<Home />} />
           <Route path="/users/:uid/currencies" element={<Home />} />
           <Route path="/users/:uid/currencies/:cid" element={<Home />} /> */}
