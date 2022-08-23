@@ -183,7 +183,8 @@ Our backend database using [Postgres](https://www.postgresql.org/) has three tab
 
 | Resource      | Method | Route        | Description                              |
 |---------------|--------|--------------|------------------------------------------|
-| currencies    | GET    | /coins  | Get all `currencies`.                 |
+| currencies    | GET    | /coins  | Get all `currencies` that exist in the database.                 |
+| currencies    | GET    | /coins/{cid}  | Get one `currencies` by id of {cid} for every coin that exists in the database. 
 
 ### Currencies Controller (currencies table)
 

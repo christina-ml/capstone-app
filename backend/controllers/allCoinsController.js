@@ -1,7 +1,8 @@
 const express = require("express");
 const allCoins = express.Router();
 const {
-    getAllCurrencies
+    getAllCurrencies,
+    getOneCurrency
 } = require("../queries/currencies.js");
 
 // get all coins - All coins existing in the database from currencies table
@@ -18,5 +19,26 @@ allCoins.get("/", async (req, res)=> {
         console.log(err);
     }
 })
+
+
+
+// making a new route -> to re-use `getOneCurrency` query, but change route to:
+// /coins/{cid}
+// GET - get each coin by ID (to see details for every coin existing in the database)
+// Example: http://localhost:3333/coins/1, http://localhost:3333/coins/3
+allCoins.get("/:cid", async(req, res) => {
+    const { cid } = req.params;
+    try{
+        const oneCoin = await getOneCurrency(cid);
+        if(oneCoin.cid){
+            res.status(200).json(oneCoin);
+        } else {
+            res.status(404).json("Error: Coin ID not found");
+        }
+    } catch(err){
+        return err;
+    }
+});
+
 
 module.exports = allCoins;
