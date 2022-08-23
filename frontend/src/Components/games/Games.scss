@@ -1,0 +1,59 @@
+@import '../../designUtils/colors';
+@import '../../designUtils/fonts';
+@import '../../designUtils/media';
+
+.games {
+    text-align: center;
+    font-family: $logo-font-family;
+
+    &__header {
+        color: $logo-blue;
+    }
+
+    ul {
+        li{
+            list-style-type: none;
+            text-align: left;
+            background-color: $hover-blue;
+            padding: 5px;
+            margin: 5px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+    }
+
+    &__backToTop{
+        text-align: left;
+        background-color: $light-gray;
+        border-radius: 5px;
+        position: fixed;
+        left: 0.5rem;
+        bottom: 0.5rem;
+        width: 50px;
+
+        &__text{
+            font-size: 12px;
+            text-align: center;
+        }
+
+        &__arrow{
+            text-align: center;
+            font-size: 24px;
+        }
+    }
+}
+
+// MOBILE styling
+@media only screen and (max-width: $mobile){
+    .games {
+        &__backToTop{
+            background-color: $light-gray;
+            width: 30px;
+            height: 30px;
+
+            &__text{
+                display: none;
+            }
+        }
+    }
+}
