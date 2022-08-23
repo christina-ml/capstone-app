@@ -24,8 +24,9 @@ import Shop from "./Components/shop/Shop";
 import About from "./Components/about/About";
 import Games from "./Components/games/Games";
 
-import AllCoins from "./Components/allCoins/AllCoins";
+// import AllCoins from "./Components/allCoins/AllCoins";
 import CoinDetails from "./Components/allCoins/CoinDetails";
+import Coin from "./Components/allCoins/Coin";
 
 
 // import Footer from "./Components/Footer";
@@ -97,7 +98,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/coins" element={<AllCoins />} />
+          <Route path="/coins" element={<Coin />} />
           <Route path="/coins/:cid" element={<CoinDetails />} />
           <Route path="/users" element={<Users />} />
           <Route path="/create" element={<UserNewForm />} />
