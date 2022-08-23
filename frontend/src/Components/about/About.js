@@ -1,7 +1,5 @@
 import React from 'react';
-
-import ColoringBook from '../coloringBook/ColoringBook';
-import MemoryApp from '../memoryGame/MemoryApp';
+import { Link } from 'react-router-dom';
 
 import "./About.scss";
 
@@ -15,10 +13,10 @@ const About = () => {
             Talk Crypto To Me.
         </div>
         <div>
-            <h4 className="About__header">Crypto Coloring, Crypto Match</h4>
+          <Link to="/games">
             <hr />
-            <ColoringBook />
-            <MemoryApp />
+            Crypto-Inspired Games
+          </Link>
         </div>
     </div>
   )
