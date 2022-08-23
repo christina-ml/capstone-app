@@ -33,14 +33,6 @@ const Currency = ({ currency }) => {
         <div>
             currency uid: {currency.currency_uid}
         </div>
-        
-        
-        
-        
-       
-        
-        
-
     </div>
   )
 }

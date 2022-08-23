@@ -45,7 +45,7 @@ const Users = () => {
     // check if full name includes the search term (if there is a searchTerm)
     let filteredUsers = users;
     if (searchTerm){
-        console.log("serachTerm:", searchTerm)
+        console.log("searchTerm:", searchTerm)
         filteredUsers = users.filter(user => {
             const fullName = `${user.firstname} ${user.lastname}`;
             const fullNameToLowerCase = fullName.toLowerCase();

@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import './Home.scss';
 
-import Coin from "./Coin";
+import Coin from "../allCoins/Coin";
 
 // import SymbolOverview from "./Widgets/SymbolOverview";
 
@@ -11,7 +11,8 @@ const API = process.env.REACT_APP_API_URL;
 function Home() {
 
   const [allCoins, setAllCoins] = useState([]);
-
+  
+  // get all coins that exist in the database
   useEffect(() => {
     axios.get(API + "/coins")
         .then((res) => {
@@ -29,15 +30,11 @@ function Home() {
         <h4 className="home__tag">Talk Crypto To Me</h4>
       </header>
 
-      <h2>List of All Coins</h2>
       {allCoins.map(coin => {
         return (
-          <div>
-            <Coin coin={coin} />
-          </div>
+          <Coin coin={coin} />
         )
       })}
-
 
       {/* SneakerNews */}
       <div className="sneakerNewsContainer">
