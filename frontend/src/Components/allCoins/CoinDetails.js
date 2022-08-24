@@ -19,42 +19,38 @@ const CoinDetails = () => {
     })
 
   return (
-    <div className="allCoins__coin">
-      <div>
-        Coin Details:
-        {oneCoin.name}{oneCoin.cid}
-      </div>
+    <div className="coinDetails">
 
-      {/* <h3>coin Name: {coin.name}</h3>
+    <h3>coin Name: {oneCoin.name}</h3>
         <div>
-            cid: {coin.cid}
-            coinmarketcap ID: {coin.coinmarketcap_id}
+            cid: {oneCoin.cid}
+            coinmarketcap ID: {oneCoin.coinmarketcap_id}
         </div>
         <div>
-            name: {coin.name}
-            symbol: {coin.symbol}
-            slug: {coin.slug}
+            name: {oneCoin.name}
+            symbol: {oneCoin.symbol}
+            slug: {oneCoin.slug}
         </div>
         <div>
-            num market pairs: {coin.num_market_pairs}
-            date added: {coin.date_added}
+            num market pairs: {oneCoin.num_market_pairs}
+            date added: {oneCoin.date_added}
         </div>
         <div>
-            Tags: {coin.tags}
+            Tags: {oneCoin.tags}
         </div>
         <div>
-            max supply: {coin.max_supply}
+            max supply: {oneCoin.max_supply}
         </div>
         <div>
-            circulating supply: {coin.circulating_supply}
-            total supply: {coin.total_supply}
+            circulating supply: {oneCoin.circulating_supply}
+            total supply: {oneCoin.total_supply}
         </div>
         <div>
-            cmc rank: {coin.cmc_rank}
+            cmc rank: {oneCoin.cmc_rank}
         </div>
         <div>
-            coin uid: {coin.coin_uid}
-        </div> */}
+            coin uid: {oneCoin.coin_uid}
+        </div>
     </div>
   )
 }

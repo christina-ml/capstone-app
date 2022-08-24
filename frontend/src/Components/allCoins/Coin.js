@@ -6,7 +6,7 @@ const Coin = ({coin}) => {
     <div>
         <div>
             <Link to={`/coins/${coin.cid}`}>
-                See coin details for {coin.name}
+                {coin.name}
             </Link>
         </div>
 
