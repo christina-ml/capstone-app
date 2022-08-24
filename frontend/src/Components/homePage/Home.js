@@ -1,80 +1,66 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import React from 'react';
 import './Home.scss';
 
-import Coin from "../allCoins/Coin";
+import CoinList from "../allCoins/CoinList";
+import { Link } from 'react-router-dom';
 
 // import SymbolOverview from "./Widgets/SymbolOverview";
 
-const API = process.env.REACT_APP_API_URL;
 
 function Home() {
 
-  const [allCoins, setAllCoins] = useState([]);
-  
-  // get all coins that exist in the database
-  useEffect(() => {
-    axios.get(API + "/coins")
-        .then((res) => {
-            console.log("res.data:", res.data)
-            setAllCoins(res.data);
-        }).catch((err) => {
-            console.log(err);
-        })
-  }, []);
-
   return (
     <div className="home">
-      <header>
-        <h1 className="home__logo">Welcome</h1>
-        <h4 className="home__tag">Talk Crypto To Me</h4>
-      </header>
-
-      {allCoins.map(coin => {
-        return (
-          <Coin coin={coin} />
-        )
-      })}
-
       {/* SneakerNews */}
       <div className="sneakerNewsContainer">
       <div class="container">
         <div class="leftSideOfPage">
-          <div class="largeSneaker">
-            <img
-              src="https://media.istockphoto.com/photos/coins-of-various-cryptocurrencies-picture-id1034363382?k=20&m=1034363382&s=612x612&w=0&h=sCpRmOSicsJJS73_iNQh16nqeBgFKqU3jjfC4u42D_k="
-              alt="yeezy sneaker"
-            />
-          </div>
-          <div class="headerText">Return Of CRYPTO</div>
-          <div class="subHeaderText">Where To Buy Bitcoin, Ethereum, Litecoin</div>
+
+          <Link to="/about">
+            <div class="largeSneaker">
+              <img
+                src="https://media.istockphoto.com/photos/coins-of-various-cryptocurrencies-picture-id1034363382?k=20&m=1034363382&s=612x612&w=0&h=sCpRmOSicsJJS73_iNQh16nqeBgFKqU3jjfC4u42D_k="
+                alt="yeezy sneaker"
+              />
+            </div>
+            <div class="headerText">Get Started with Crypto</div>
+            <div class="subHeaderText">Start Learning About Bitcoin, Ethereum, Litecoin and more. NOW!</div>
+          </Link>
+
         </div>
 
         <div class="rightSideOfPage">
-          <div class="sneakerContainer">
-            <div class="sneaker">
-              <img
-                src="https://www.investopedia.com/thmb/O2nnC_xWk9hEWk4e6ptCfpe0EGA=/302x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/cryptocurrency-f6026a2012a14aaa9ef8a1c277fde0f7.jpg"
-                alt="asics sneaker"
-              />
-            </div>
-            <div class="title">Store List: Bitcoin, Litecoin, Ethereum and More</div>
-          </div>
 
-          <div class="sneakerContainer">
-            <div class="sneaker">
-              <img
-                src="https://www.investopedia.com/thmb/DLjhA5UlNJQA-iGoIVaxOkrC-to=/302x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/cryptocurrency.asp_recirc_V2-ee164707c0174d85b1e4e38b564aff73.png"
-                alt="adidas sneaker"
-              />
+          <Link to="/news">
+            <div class="sneakerContainer">
+              <div class="sneaker">
+                <img
+                  src="https://www.investopedia.com/thmb/O2nnC_xWk9hEWk4e6ptCfpe0EGA=/302x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/cryptocurrency-f6026a2012a14aaa9ef8a1c277fde0f7.jpg"
+                  alt="asics sneaker"
+                />
+              </div>
+              <div class="title">News: The Return of CRYPTO</div>
             </div>
+          </Link>
 
-            <div class="title">Intro to Crypto Forums</div>
-          </div>
+          <Link to="/games">
+            <div class="sneakerContainer">
+              <div class="sneaker">
+                <img
+                  src="https://www.investopedia.com/thmb/DLjhA5UlNJQA-iGoIVaxOkrC-to=/302x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/cryptocurrency.asp_recirc_V2-ee164707c0174d85b1e4e38b564aff73.png"
+                  alt="adidas sneaker"
+                />
+              </div>
+
+              <div class="title">Crypto Games - Coloring and Matching</div>
+            </div>
+          </Link>
+
         </div>
       </div>
       </div>
 
+      <CoinList />
 
       {/* <div id="chart-coins-container"> */}
         {/* <div id="chart-widget"> */}

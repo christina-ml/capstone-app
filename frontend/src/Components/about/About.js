@@ -10,9 +10,6 @@ const About = () => {
             <h1 className="About__header">About CryptoTalk</h1>
         </header>
         <div>
-            Talk Crypto To Me.
-        </div>
-        <div>
           <Link to="/games">
             <hr />
             Crypto-Inspired Games

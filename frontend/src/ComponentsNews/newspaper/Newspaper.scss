@@ -1,0 +1,103 @@
+.newspaper {
+  // navbar
+  &__nav {
+    text-transform: uppercase;
+    text-align: center;
+    background-color: #646aff;
+    padding: 25px;
+    color: white;
+
+    &__text {
+      word-spacing: 4em;
+    }
+  }
+
+  // header
+  &__header {
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  // main body of web page 
+  &__main {
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "main main side";
+
+    &__article {
+      grid-area: "main";
+      border: 1px solid black;
+      margin: 10px;  
+
+      h2 {
+        text-transform: uppercase;
+        text-align: center;
+      }
+      
+      &__photo{
+        img {
+          height: 120px;
+          width: 120px;
+          padding: 10px;
+          float: left;
+        }
+      }
+
+      &__content{
+        p {
+          margin: 10px;
+        }
+      }
+    }
+
+
+    // sidebar sections
+    &__sidebar {
+      margin: 10px;
+      border: 1px solid black;
+      display: grid;
+      grid-area: "side";
+
+      &__sections {
+        margin: 10px;
+
+        &__news1 {
+          background-color: #efefef;
+
+          h3 {
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+  }
+
+  // footer
+  &__footer {
+    background-color: #646aff;
+    text-transform: uppercase;
+    color: white;
+    display: grid;
+    grid-template-columns: 150px 150px 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "career career copyright";
+
+      ul {
+        list-style-type: none;
+        grid-area: "career";
+
+        li {
+          font-size: 80%;
+        }
+      }
+
+      &__copyright {
+        grid-area: "copyright";
+        margin: 40px;
+        text-align: right;
+      }
+  }
+}

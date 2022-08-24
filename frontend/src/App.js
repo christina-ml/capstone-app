@@ -28,6 +28,8 @@ import Games from "./Components/games/Games";
 import CoinDetails from "./Components/allCoins/CoinDetails";
 import Coin from "./Components/allCoins/Coin";
 
+import Newspaper from "./ComponentsNews/newspaper/Newspaper";
+
 
 // import Footer from "./Components/Footer";
 
@@ -108,6 +110,7 @@ function App() {
           <Route path="/shop" element={<Shop />} />
           <Route path="/about" element={<About />} />
           <Route path="/games" element={<Games />} />
+          <Route path="/news" element={<Newspaper />} />
           {/* <Route path="/users/:uid" element={<Home />} />
           <Route path="/users/:uid/currencies" element={<Home />} />
           <Route path="/users/:uid/currencies/:cid" element={<Home />} /> */}
