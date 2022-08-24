@@ -229,3 +229,7 @@ Our backend database using [Postgres](https://www.postgresql.org/) has three tab
 [Random email generator](https://generator.email/)
 
 [Random US Cities](https://www.randomlists.com/random-us-cities)
+
+<!-- svg image used for DesktopColoring (svg with background) -->
+<!-- https://www.iconpacks.net/free-icon/laptop-coin-2469.html -->
+<!-- https://www.iconpacks.net/free-icon/mobile-phone-coin-2470.html -->
