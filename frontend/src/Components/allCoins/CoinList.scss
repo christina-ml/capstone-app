@@ -7,3 +7,22 @@
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+.coin {
+    &__card {
+        border: 0.5px solid lightgray;
+        padding: 20px;
+        margin: 5px;
+
+        &:hover {
+            box-shadow: 0px 0px 3px 3px lightgray;
+        }
+
+        &__logo {
+            img {
+                height: 30px;
+                width: 30px;
+            }
+        }
+    }
+}
