@@ -41,14 +41,15 @@ const getOneCurrency = async (cid) => {
 // CREATE
 // Create a new coin
 const createCurrency = async (currency) => {
-    const {coinmarketcap_id, name, symbol, slug, num_market_pairs, date_added, tags, max_supply, circulating_supply, total_supply, cmc_rank, currency_uid} = currency;
+    const {coinmarketcap_id, name, symbol, logo, slug, num_market_pairs, date_added, tags, max_supply, circulating_supply, total_supply, cmc_rank, currency_uid} = currency;
     try {
         const newCurrency = await db.one(
-            "INSERT INTO currencies (coinmarketcap_id, name, symbol, slug, num_market_pairs, date_added, tags, max_supply, circulating_supply, total_supply, cmc_rank, currency_uid) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING *", 
+            "INSERT INTO currencies (coinmarketcap_id, name, symbol, logo, slug, num_market_pairs, date_added, tags, max_supply, circulating_supply, total_supply, cmc_rank, currency_uid) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, 13) RETURNING *", 
             [
                 coinmarketcap_id, 
                 name, 
                 symbol, 
+                logo,
                 slug,
                 num_market_pairs,
                 date_added,
@@ -70,14 +71,15 @@ const createCurrency = async (currency) => {
 // UPDATE
 // Update a coin by cid
 const updateCurrency = async (cid, currency) => {
-    const {coinmarketcap_id, name, symbol, slug, num_market_pairs, date_added, tags, max_supply, circulating_supply, total_supply, cmc_rank, currency_uid} = currency;
+    const {coinmarketcap_id, name, symbol, logo, slug, num_market_pairs, date_added, tags, max_supply, circulating_supply, total_supply, cmc_rank, currency_uid} = currency;
     try {
         const updatedCurrency = await db.one(
-            "UPDATE currencies SET coinmarketcap_id=$1, name=$2, symbol=$3, slug=$4, num_market_pairs=$5, date_added=$6, tags=$7, max_supply=$8, circulating_supply=$9, total_supply=$10, cmc_rank=$11, currency_uid=$12 WHERE cid=$13 RETURNING *",
+            "UPDATE currencies SET coinmarketcap_id=$1, name=$2, symbol=$3, logo=$4, slug=$5, num_market_pairs=$6, date_added=$7, tags=$8, max_supply=$9, circulating_supply=$10, total_supply=$11, cmc_rank=$12, currency_uid=$13 WHERE cid=$14 RETURNING *",
             [
                 coinmarketcap_id, 
                 name, 
                 symbol, 
+                logo,
                 slug,
                 num_market_pairs,
                 date_added,

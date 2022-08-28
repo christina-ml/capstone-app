@@ -25,6 +25,7 @@ CREATE TABLE currencies(
   coinmarketcap_id SMALLINT UNIQUE NOT NULL,
   name TEXT NOT NULL,
   symbol TEXT,
+  logo TEXT,
   slug TEXT,
   num_market_pairs INTEGER,
   date_added DATE,
