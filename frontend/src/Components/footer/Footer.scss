@@ -1,0 +1,71 @@
+@import '../../designUtils/colors';
+@import '../../designUtils/fonts';
+@import '../../designUtils/media';
+
+// footer
+.footer {
+    // z-index: 10000;
+    // bottom: 0px;
+    // left: 0;
+    // width: 100%;
+    position: relative;
+    margin: 0px;
+    // background-color: $logo-blue;
+
+    &__categories {
+        color: white;
+        width: 100%;          
+        position: absolute;
+        background-color: $logo-blue;
+        text-transform: uppercase;
+        display: flex;
+        flex-wrap: wrap;
+        
+        ul {
+            margin: 0 auto;
+            list-style-type: none;
+            grid-area: "career";
+            line-height: 2em;
+            margin-top: 15px;
+            margin-bottom: 30px;
+
+            li {
+                font-size: 80%;
+                line-height: 1.5em;
+            }
+        }
+
+        &__copyright {
+            margin: 0 auto;
+            text-align: center;
+            font-size: 14px;
+            width: 100%;
+            background-color: #777;
+            padding: 5px;
+        }     
+    }
+
+
+    // &__mascot {
+    //     text-align: right;
+    //     // z-index: 2;
+    //     // bottom: 40px;
+    //     // top: 0;
+
+    //     z-index: 5;
+    //     opacity: 0;
+    //     &:hover {
+    //         z-index: 2;
+    //         opacity: 100%;
+    //         bottom: 85px;
+    //         transition: 0.5s;
+    //     }
+      
+
+    //     img {
+    //         height: 150px;
+    //         animation: 3s ease-in 1s infinite;
+    //         // animation: 1.5s ease-in-out 0s 1 normal none running;
+    //     }
+    // }
+  }

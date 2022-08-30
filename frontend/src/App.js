@@ -29,9 +29,7 @@ import CoinDetails from "./Components/allCoins/CoinDetails";
 import Coin from "./Components/allCoins/Coin";
 
 import Newspaper from "./ComponentsNews/newspaper/Newspaper";
-
-
-// import Footer from "./Components/Footer";
+import Footer from "./Components/footer/Footer";
 
 // import Cryptocurrency from "./Components/Cryptocurrency";
 
@@ -136,7 +134,7 @@ function App() {
           <Route path="/*" element={<PageNotFound />} />
         </Routes>
       </main>
-      {/* <Footer /> */}
+      <Footer />
       {/* <AlanBot /> */}
     </div>
   );
