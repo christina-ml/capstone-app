@@ -1,43 +1,39 @@
-@import '../../designUtils/colors';
-@import '../../designUtils/fonts';
-@import '../../designUtils/media';
+@import "../../designUtils/colors";
+@import "../../designUtils/fonts";
+@import "../../designUtils/media";
 
 .home {
-    // text-align: center;
-    font-family: $logo-font-family;
+  font-family: $logo-font-family;
 
-    &__logo{
-        color: $logo-blue;
-    }
+  &__container {
+    // margin: 0 auto;
+    padding-top: 10px;
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 20px;
+    column-gap: 20px;
+    grid-template-areas: 
+      "leftside rightside"
+      "leftside rightside";
 
-    // regular css below:
-    // .sneakerNewsContainer {
-    // }
-    .container {
-        margin: 0 auto;
-        width: 90vw;
-        display: grid;
-        column-gap: 30px;
-        grid-template-columns: 4fr 2fr;
-        grid-template-areas:
-          "left right"
+    &__leftSideOfPage {
+      border: 2px solid green;
+      grid-area: leftside;
+
+      &__largeSneaker {
+        width: 100%;
+        height: 100%;
+
+        img{
+          max-width: 100%;
+          height: 100%;
+          filter: brightness(75%);
+          // position: relative;
+        }
       }
-      .leftSideOfPage {
-        grid-area: left;
-      }
-      
-      .rightSideOfPage {
-        grid-area: right;
-      }
-      
-      .largeSneaker img {
-        margin-top: 5px;
-        height: 505px;
-        filter: brightness(75%);
-        position: relative;
-      }
-      
-      .headerText {
+      &__headerText {
         color: white;
         margin: -120px 0px 0px 80px;
         font-family: sans-serif;
@@ -45,9 +41,9 @@
         font-size: 33px;
         position: absolute;
         transform: scale(1, 1.2);
-        width: 400px;
+        width: 35%;
       }
-      .subHeaderText {
+      &__subHeaderText {
         color: white;
         margin: -70px 0px 0px 80px;
         font-family: sans-serif;
@@ -55,33 +51,45 @@
         font-size: 20px;
         position: absolute;
         transform: scale(1, 1);
-        width: 400px;
+        width: 35%;
       }
-      
-      .sneakerContainer {
-        margin-top: 5px;
+    }
+
+    &__rightSideOfPage {
+      border: 2px solid hotpink;
+      grid-area: rightside;
+      display: grid;
+      grid-template-rows: auto;
+      row-gap: 10px;
+
+      &__sneakerContainer {
+        &__sneaker {
+          background-color: deepskyblue;
+          // width: 390px;
+          // height: 250px;
+          img {
+            width: 100%;
+            height: 100%; 
+            object-fit: contain;
+            // width: 390px;
+            // height: 240px;
+            filter: brightness(80%);
+            position: relative;
+          }
+        }
+        &__title {
+          color: white;
+          margin: -55px 0px 0px 20px;
+          font-family: sans-serif;
+          font-weight: 600;
+          font-size: 14px;
+          text-align: bottom;
+          position: absolute;
+          transform: scale(1, 1.2);
+          width: max-content;
+        }
       }
-      .sneaker {
-        background-color: deepskyblue;
-        width: 390px;
-        height: 250px;
-      }
-      .sneaker img {
-        width: 390px;
-        height: 240px;
-        filter: brightness(80%);
-        position: relative;
-      }
-      
-      .title {
-        color: white;
-        margin: -55px 0px 0px 20px;
-        font-family: sans-serif;
-        font-weight: 600;
-        font-size: 14px;
-        text-align: bottom;
-        position: absolute;
-        transform: scale(1, 1.2);
-        width: 280px;
-      }
+    }
+
+  }
 }
