@@ -1,17 +1,4 @@
 .newspaper {
-  // navbar
-  &__nav {
-    text-transform: uppercase;
-    text-align: center;
-    background-color: #646aff;
-    padding: 25px;
-    color: white;
-
-    &__text {
-      word-spacing: 4em;
-    }
-  }
-
   // header
   &__header {
     text-align: center;
@@ -72,32 +59,5 @@
         }
       }
     }
-  }
-
-  // footer
-  &__footer {
-    background-color: #646aff;
-    text-transform: uppercase;
-    color: white;
-    display: grid;
-    grid-template-columns: 150px 150px 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas:
-      "career career copyright";
-
-      ul {
-        list-style-type: none;
-        grid-area: "career";
-
-        li {
-          font-size: 80%;
-        }
-      }
-
-      &__copyright {
-        grid-area: "copyright";
-        margin: 40px;
-        text-align: right;
-      }
   }
 }

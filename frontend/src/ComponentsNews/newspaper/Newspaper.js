@@ -7,11 +7,11 @@ const Newspaper = () => {
   return (
     <div className="newspaper">
       {/* <!-- begin navbar here --> */}
-      <div className="newspaper__nav">
+      {/* <div className="newspaper__nav">
         <div className="newspaper__nav__text">
           Home Local national Stats Weather sports arts
         </div>
-      </div>
+      </div> */}
 
       {/* <!-- header --> */}
       <div className="newspaper__header">
@@ -100,26 +100,6 @@ const Newspaper = () => {
           </div>
         </div>
       </body>
-
-      {/* <!-- begin footer here --> */}
-      <div className="newspaper__footer">
-        <ul>
-          Legal
-          <li>item 1</li>
-          <li>item 2</li>
-          <li>item 3</li>
-        </ul>
-
-        <ul>
-          Careers
-          <li>Notice</li>
-          <li>About</li>
-          <li>Special</li>
-        </ul>
-        <div className="newspaper__footer__copyright">
-          Copyright 2021 the new york newspaper co. inc.
-        </div>
-      </div>
     </div>
   );
 };
