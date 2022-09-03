@@ -21,12 +21,24 @@ const CoinList = () => {
         })
   }, []);
 
+  // make `allCoins` sorted alphabetically
+  const sortedCoinsAsc = allCoins.sort((a,b) => {
+    return (a.name > b.name) ? 1 : -1;
+  })
 
   return (
     <div className="coinList">
       <h2>All Coins</h2>
+
+      {/* <select onChange={handleChange}>
+        <option>--Select--</option>
+        <option value="asc">Name Asc.</option>
+        <option value="desc">Name Desc.</option>
+        <option value="popular">Popular</option>
+      </select> */}
+
       <div className="coinList__collection">
-        {allCoins.map((coin) => {
+        {sortedCoinsAsc.map((coin) => {
           return (
             <Coin coin={coin} />
           )

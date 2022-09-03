@@ -29,9 +29,12 @@ const CoinDetails = () => {
         <div>
             name: {oneCoin.name}
             symbol: {oneCoin.symbol}
-            slug: {oneCoin.slug}
         </div>
         <div>
+            logo: <img src={oneCoin.logo} alt="coin logo" />
+        </div>
+        <div>
+            slug: {oneCoin.slug}
             num market pairs: {oneCoin.num_market_pairs}
             date added: {oneCoin.date_added}
         </div>
