@@ -47,28 +47,34 @@ const Login = () => {
 
   return (
     <div className="login">
-      {(user.email !== '') ? (
-        <div className="login__welcome">
-          <h2>Welcome, <span>{user.firstname} {user.lastname}</span></h2>
+      <div className="login__container">
+        {(user.email !== '') ? (
+          <div className="login__container__welcome">
+            <h2>Welcome, <span>{user.firstname} {user.lastname}</span></h2>
 
-          <div>
-            You are logged in now. The login form worked!
-          </div>
+            <div>
+              You are logged in now. The login form worked!
+            </div>
 
-          <button onClick={logout}>Logout</button>
-        </div>
-      ) : (
-        <div className="login__startpage">
-          <div className="login__startpage__first">
-            <LoginForm login={login} error={error} />
+            <button onClick={logout}>Logout</button>
           </div>
-          <div className="login__startpage__create">
-            <Link to="/create" >New User</Link>
+        ) : (
+          <div className="login__container__startpage">
+            <div className="login__container__startpage__first">
+              <LoginForm login={login} error={error} />
+            </div>
+            <div className="login__container__startpage__buttonContainer">
+            <Link to="/create" >
+              <div className="login__container__startpage__buttonContainer__create">
+                New user
+              </div>
+            </Link>
+            </div>
           </div>
-        </div>
-      )
-    
-    }
+        )
+      
+      }
+      </div>
     </div>
   )
 }
