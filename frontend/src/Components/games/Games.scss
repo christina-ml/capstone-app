@@ -11,14 +11,27 @@
     }
 
     ul {
+        
+
         li{
             list-style-type: none;
-            text-align: left;
-            background-color: $hover-blue;
+            text-align: center;
+            font-size: 30px;
+            background-color: $logo-blue;
             padding: 5px;
-            margin: 5px;
+            margin: 5px 15px;
             display: inline-block;
             border-radius: 5px;
+            color: white;
+
+            &:hover {
+                box-shadow: 0px 0px 5px 5px $hover-blue;
+            }
+
+            div {
+                width: 250px;
+                padding: 100px 0px;
+            }
         }
     }
 
