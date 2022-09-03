@@ -87,13 +87,15 @@
     &__container {
         text-align: center;
         padding: 10px;
-        margin: 0px 50px 30px 50px;
+        // margin: 0px 50px 30px 50px;
+        margin: 0 auto;
         border: 3px solid $page-not-found-gray;
         border-top-left-radius: 75px;
         border-top-right-radius: 75px;
         border-bottom-left-radius: 15px;
         border-bottom-right-radius: 15px;
         color: $logo-blue;
+        width: 50vw;
     }
 
     &__robot {
@@ -114,8 +116,8 @@
     }
 
     &__footUnderline {
-        margin: 0 auto;
-        width: 50%;
+        margin: 20px auto;
+        width: 30%;
         height: 0px;
         border: 2px solid $page-not-found-gray;
     }
@@ -125,5 +127,15 @@
 @media only screen and (max-width: $mobile){
     .App {
         margin-top: 50px;
+    }
+
+    .pageNotFound {
+        &__container {
+            width: 80vw;
+        }
+
+        &__footUnderline {
+            width: 50%;
+        }
     }
 }
