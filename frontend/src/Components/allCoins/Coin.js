@@ -10,9 +10,15 @@ const Coin = ({coin}) => {
         <div className="coin__card">
           <div className="coin__card__logo">
             <img src={coin.logo} alt="coin logo" />
+            <div className="coin__card__logo__coinName">
+              {coin.name}
+            </div>
           </div>
-          <div>
-            {coin.name}
+          <hr />
+          <div className="coin__card__tagsList">
+            Tags: {coin.tags.split(',').map((tag) => {
+              return <span className="coin__card__tagsList__singleTag">{tag}</span>
+            })}
           </div>
         </div>
       </Link>

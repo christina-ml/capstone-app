@@ -1,0 +1,139 @@
+@import '../../designUtils/colors';
+@import '../../designUtils/fonts';
+@import '../../designUtils/media';
+
+// https://tobiasahlin.com/blog/css-trick-animating-link-underlines/
+// ^ For expanding underline on hover for Add to Cart button.
+
+
+.kayakCards {
+    width: 900px;
+    margin: 0 auto;
+    color: green;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    &__card {
+        box-shadow: 3px 3px 10px 3px #d4d4d4;
+        margin: 5px;
+ 
+        &__details {
+            padding: 15px;
+            color: black;
+            font-weight: 600;
+            font-size: 18px;
+            
+            display: grid;
+            width: 250px;
+            height: 420px;
+
+            &__image {
+                img {
+                    height: auto;
+                    width: auto;
+                }
+            }
+
+            &__itemName {
+                text-align: left;
+            }
+
+            &__price {
+                text-align: left;
+            }
+
+            &__availNearby {
+                font-size: 12px;
+                display: inline-flexbox;
+                // display: grid;
+                // grid-auto-flow: column;
+                font-weight: 400;
+                span {
+                    padding-right: 10px;
+                }
+            }
+        }
+
+        &__banner {
+            background-color: black;
+            color: white;
+            text-transform: uppercase;
+            padding-right: 50px;
+            position: relative;
+              
+            &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-top: 80px solid #fff;
+            border-left: 80px solid transparent;
+            }
+        }
+    }
+
+    .circleButton {
+        display: inline-block;
+        margin: 0 auto;
+        padding: 5px;
+        
+        &__outer {
+            height: 20px;
+            width: 20px;
+            background-color: rgb(255, 255, 255);
+            border: 1px solid grey;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        &__inner {
+            height: 14px;
+            width: 14px;
+            // background-color: rgb(165, 234, 95);
+            border-radius: 50%;
+            position: relative;
+            margin-top: 4px;
+            margin-left: 4px;
+        }
+    }
+
+    &__cart {
+        border-top: 1px solid #000000;
+        text-transform: uppercase;
+        padding: 15px 0px 15px 0px;
+        a {
+            text-decoration: none;
+            color: black;
+            font-weight: 600;
+            padding: 10px 3px 10px 3px;
+            position: relative;
+
+            &:hover {
+                color: #000;
+
+                &::before {
+                    transform: scaleX(1); 
+                }
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 100%;
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background-color: sienna;
+                transform: scaleX(0);
+                transition: transform 0.3s ease;
+            }
+        }
+    }
+}
+
+
+// MOBILE styling
+// @media only screen and (max-width: $mobile){
+
+// }
