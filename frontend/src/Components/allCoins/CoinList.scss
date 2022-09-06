@@ -1,6 +1,10 @@
+@import '../../designUtils/colors';
+@import '../../designUtils/fonts';
+@import '../../designUtils/media';
+
 .coinList {
     margin: 0 auto;
-    width: 800px;
+    width: 80%;
     padding-bottom: 20px;
 
     a {
@@ -60,6 +64,28 @@
                 line-height: 1.5em;
                 border-radius: 5px;
             }
+        }
+    }
+}
+
+// medium screens styling
+@media only screen and (max-width: $mediumScreen){
+    .coinList {  
+        &__collection{
+            // display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+
+// mobile screens styling
+@media only screen and (max-width: $mobile){
+    .coinList {  
+        // width: 80%;
+        &__collection{
+            // display: grid;
+            grid-template-columns: 1fr;
         }
     }
 }

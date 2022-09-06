@@ -24,7 +24,6 @@
         ul {
             margin: 0 auto;
             list-style-type: none;
-            grid-area: "career";
             line-height: 2em;
             margin-top: 15px;
             margin-bottom: 30px;
@@ -69,3 +68,14 @@
     //     }
     // }
   }
+
+//   mobile screens styling
+@media only screen and (max-width: $mobile){
+    .footer {
+        
+        &__categories {
+            display: block;
+            // column-count: 2;
+        }
+    }
+}

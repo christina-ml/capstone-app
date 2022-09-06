@@ -32,7 +32,7 @@ function Home() {
             <div className="home__container__rightSideOfPage__sneakerContainer">
               <div className="home__container__rightSideOfPage__sneakerContainer__sneaker">
                 <img
-                  src="https://www.investopedia.com/thmb/O2nnC_xWk9hEWk4e6ptCfpe0EGA=/302x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/cryptocurrency-f6026a2012a14aaa9ef8a1c277fde0f7.jpg"
+                  src="https://penntoday.upenn.edu/sites/default/files/2022-01/cryptocurrency-main_1.jpg"
                   alt="crypto news"
                 />
               </div>
@@ -46,7 +46,7 @@ function Home() {
             <div className="home__container__rightSideOfPage__sneakerContainer">
               <div className="home__container__rightSideOfPage__sneakerContainer__sneaker">
                 <img
-                  src="https://www.investopedia.com/thmb/DLjhA5UlNJQA-iGoIVaxOkrC-to=/302x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/cryptocurrency.asp_recirc_V2-ee164707c0174d85b1e4e38b564aff73.png"
+                  src="https://images.mktw.net/im-429485?width=700&height=487"
                   alt="crypto games"
                 />
               </div>

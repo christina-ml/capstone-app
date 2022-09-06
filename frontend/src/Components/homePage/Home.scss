@@ -8,7 +8,8 @@
   &__container {
     // margin: 0 auto;
     padding-top: 10px;
-    margin: 100px 200px;
+    // margin: 50px 100px;
+    margin: 2% 5%;
     display: grid;
     grid-template-columns: 4fr 2fr;
     grid-template-rows: 1fr 1fr;
@@ -35,17 +36,17 @@
       }
       &__headerText {
         color: white;
-        margin: -120px 0px 0px 80px;
+        margin: -120px 0px 0px 50px;
         font-family: sans-serif;
         font-weight: 600;
         font-size: 33px;
         position: absolute;
         transform: scale(1, 1.2);
-        width: 35%;
+        width: 45%;
       }
       &__subHeaderText {
         color: white;
-        margin: -70px 0px 0px 80px;
+        margin: -70px 0px 0px 50px;
         font-family: sans-serif;
         font-weight: 500;
         font-size: 20px;
@@ -86,10 +87,76 @@
           text-align: bottom;
           position: absolute;
           transform: scale(1, 1.2);
-          width: max-content;
+          width: 30%;
         }
       }
     }
 
+  }
+}
+
+// medium screens styling
+@media only screen and (max-width: $mediumScreen){
+  .home {  
+      &__container {
+        // display: block;
+        
+        &__leftSideOfPage {    
+          &__headerText {
+            margin: -90px 0px 0px 20px;
+            font-size: 25px;
+            width: 80%;
+          }
+          &__subHeaderText {
+            margin: -50px 0px 0px 20px;
+            font-size: 14px;
+            width: 40%;
+          }
+        }
+
+        &__rightSideOfPage {    
+          &__sneakerContainer {
+            &__title {
+              margin: -40px 0px 0px 10px;
+              font-size: 12px;
+              width: 30%;
+            }
+          }
+        }
+        
+      }
+  }
+}
+
+// mobile screens styling
+@media only screen and (max-width: $mobile){
+  .home {  
+      &__container {
+        display: block;
+
+        &__leftSideOfPage {    
+          &__headerText {
+            margin: -120px 0px 0px 20px;
+            font-size: 25px;
+            width: 80%;
+          }
+          &__subHeaderText {
+            margin: -50px 0px 0px 20px;
+            font-size: 14px;
+            width: 80%;
+          }
+        }
+
+        &__rightSideOfPage {    
+          &__sneakerContainer {
+            &__title {
+              margin: -40px 0px 0px 20px;
+              font-size: 12px;
+              width: 80%;
+            }
+          }
+        }
+        
+      }
   }
 }
