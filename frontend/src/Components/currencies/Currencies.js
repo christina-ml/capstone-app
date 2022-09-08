@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
 import Currency from './Currency';
+import './Currencies.scss';
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -22,7 +23,7 @@ const Currencies = () => {
 
 
     return (
-        <div>
+        <div className="currencies">
             {currencies.map((currency) => {
                 return (
                     <Currency currency={currency} />
