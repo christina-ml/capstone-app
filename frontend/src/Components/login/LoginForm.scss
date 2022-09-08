@@ -16,6 +16,16 @@
         padding: 0px 10px 10px 10px;
         line-height: 2em;
         width: 300px;
+        text-align: center;
+        &__inner {
+            &__fields {
+                display: inline-block;
+                &__group {
+                    text-align: right;
+                }
+            }
+        }
+    }
 
     //     display: block;
     //     position: relative;
@@ -33,7 +43,7 @@
     //         background-image: linear-gradient(to bottom right, $logo-blue, $light-gray);
     //     }
 
-    //     &__inner {
+
     //         position: relative;
     //         display: block;
     //         background-color: #FFF;
@@ -47,7 +57,7 @@
     //             margin-bottom: 30px;
     //         }
 
-    //         &__group {
+           
     //             display: block;
     //             width: 300px;
     //             margin-bottom: 15px;
@@ -62,7 +72,6 @@
     //                 &:focus-within {
     //                     color: #FE4880;
     //                 }
-    //             }
 
     //             input {
     //                 display: block;
@@ -78,8 +87,6 @@
 
     //             }
                 
-    //         }            
-        }
 
     //     &__error {
     //         color: red;

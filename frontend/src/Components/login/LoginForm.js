@@ -30,46 +30,47 @@ const LoginForm = ({ login, error }) => {
                             (<h4 className="loginForm__form__error">{error}</h4>) : 
                             ""
                         }
-
-                    <div className="loginForm__form__inner__group">
-                        <label htmlFor="firstname">First Name: </label>
-                        <input 
-                            type="text"
-                            id="firstname"
-                            name="firstname"
-                            value={details.firstname}
-                            onChange={handleTextChange}
-                        />
-                    </div>
-                    <div className="loginForm__form__inner__group">
-                        <label htmlFor="lastname">Last Name: </label>
-                        <input 
-                            type="text"
-                            id="lastname"
-                            name="lastname"
-                            value={details.lastname}
-                            onChange={handleTextChange}
-                        />
-                    </div>
-                    <div className="loginForm__form__inner__group">
-                        <label htmlFor="email">Email: </label>
-                        <input 
-                            type="text"
-                            id="email"
-                            name="email"
-                            value={details.email}
-                            onChange={handleTextChange}
-                        />
-                    </div>
-                    <div className="loginForm__form__inner__group">
-                        <label htmlFor="password">Password:</label>
-                        <input 
-                            type="password"
-                            id="password"
-                            name="password"
-                            value={details.password}
-                            onChange={handleTextChange}
-                        />
+                    <div className="loginForm__form__inner__fields">
+                        <div className="loginForm__form__inner__fields__group">
+                            <label htmlFor="firstname">First Name: </label>
+                            <input 
+                                type="text"
+                                id="firstname"
+                                name="firstname"
+                                value={details.firstname}
+                                onChange={handleTextChange}
+                            />
+                        </div>
+                        <div className="loginForm__form__inner__fields__group">
+                            <label htmlFor="lastname">Last Name: </label>
+                            <input 
+                                type="text"
+                                id="lastname"
+                                name="lastname"
+                                value={details.lastname}
+                                onChange={handleTextChange}
+                            />
+                        </div>
+                        <div className="loginForm__form__inner__fields__group">
+                            <label htmlFor="email">Email: </label>
+                            <input 
+                                type="text"
+                                id="email"
+                                name="email"
+                                value={details.email}
+                                onChange={handleTextChange}
+                            />
+                        </div>
+                        <div className="loginForm__form__inner__fields__group">
+                            <label htmlFor="password">Password: </label>
+                            <input 
+                                type="password"
+                                id="password"
+                                name="password"
+                                value={details.password}
+                                onChange={handleTextChange}
+                            />
+                        </div>
                     </div>
                     <div className="loginForm__submitButton">
                         <input
