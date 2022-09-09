@@ -18,6 +18,17 @@ CREATE TABLE users(
   user_state TEXT
 );
 
+DROP TABLE IF EXISTS platforms;
+
+CREATE TABLE platforms (
+  pid SERIAL PRIMARY KEY,
+  platform_id SMALLINT,
+  name TEXT,
+  symbol TEXT,
+  slug TEXT,
+  token_address TEXT UNIQUE NOT NULL
+);
+
 DROP TABLE IF EXISTS currencies;
 
 CREATE TABLE currencies(
@@ -31,8 +42,26 @@ CREATE TABLE currencies(
   date_added DATE,
   tags TEXT,
   max_supply BIGINT,
-  circulating_supply BIGINT,
-  total_supply BIGINT,
+  circulating_supply DECIMAL,
+  total_supply DECIMAL,
+  token_address TEXT REFERENCES platforms(token_address) ON DELETE CASCADE,
   cmc_rank SMALLINT,
+  self_reported_circulating_supply DECIMAL,
+  self_reported_market_cap DECIMAL,
+  tvl_ratio DECIMAL,
+  last_updated TIMESTAMP,
+  price DECIMAL,
+  volume_24h DECIMAL,
+  volume_change_24h DECIMAL,
+  percent_change_1h DECIMAL,
+  percent_change_24h DECIMAL,
+  percent_change_7d DECIMAL,
+  percent_change_30d DECIMAL,
+  percent_change_60d DECIMAL,
+  percent_change_90d DECIMAL,
+  market_cap DECIMAL,
+  market_cap_dominance DECIMAL,
+  fully_diluted_market_cap DECIMAL,
+  tvl DECIMAL,
   currency_uid INTEGER REFERENCES users(uid) ON DELETE CASCADE
 );
