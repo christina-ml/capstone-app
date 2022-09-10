@@ -5,4 +5,11 @@
 .About {
     text-align: center;
     font-family: $logo-font-family;
+    margin: 40px;
+
+    article p {
+        column-count: 2;
+        column-gap: 40px;
+        text-align: justify;
+    }
 }

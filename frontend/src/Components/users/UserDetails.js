@@ -25,13 +25,13 @@ const UserDetails = () => {
 
     return (
     <div className="userDetails">
-        UserDetails - Everything about a user
+        <div className="userDetails__editButton">
         <Link to={`/users/${user.uid}/edit`}>
-            <button>Edit</button>
+            <button>Edit User</button>
         </Link>
-        <div>
+        </div>
+        <div className="userDetails__details">
             <h1>{firstname} {lastname}</h1>
-            </div>
             <div>
                 First Name: {firstname}
             </div>
@@ -62,7 +62,8 @@ const UserDetails = () => {
             <div>
                 Email: {user_email}
             </div>
-            <Currencies />
+        </div>
+        <Currencies />
     </div>
     )
 }

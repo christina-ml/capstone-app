@@ -1,3 +1,46 @@
+## september - TO DO
+// Currencies.scss -> for User details page
+
+// to do: get backend working for the 3rd table (and tested in backend, to be able to access the data in the 3rd table)
+
+## (end of To Do section)
+
+Adding to schema:
+
+mine: logo (for the url images of coin logos)
+
+----rest of API data----:
+
+platform TEXT,
+
+self_reported_circulating_supply TEXT,
+self_reported_market_cap TEXT,
+tvl_ratio TEXT,
+last_updated TIMESTAMP,
+price INTEGER,
+volume_24h BIGINT,
+volume_change_24h SMALLINT,
+percent_change_1h SMALLINT,
+percent_change_24h SMALLINT,
+percent_change_7d SMALLINT,
+percent_change_30d SMALLINT,
+percent_change_60d SMALLINT,
+percent_change_90d SMALLINT,
+market_cap BIGINT,
+market_cap_dominance SMALLINT,
+fully_diluted_market_cap BIGINT,
+tvl TEXT,
+
+
+// platform can be 'null' or be an object
+"platform": {
+          "pid": 1027,
+          "name": "Ethereum",
+          "symbol": "ETH",
+          "slug": "ethereum",
+          "token_address": "0xdac17f958d2ee523a2206206994597c13d831ec7"
+        },
+
 <!-- home page - layout inspiration -->
 <!-- https://sneakernews.com/ -->
 
@@ -233,3 +276,8 @@ Our backend database using [Postgres](https://www.postgresql.org/) has three tab
 <!-- svg image used for DesktopColoring (svg with background) -->
 <!-- https://www.iconpacks.net/free-icon/laptop-coin-2469.html -->
 <!-- https://www.iconpacks.net/free-icon/mobile-phone-coin-2470.html -->
+
+
+<!-- Layout Inspiration & Coin Logos -->
+<!-- https://www.fxempire.com/crypto -->
+<!-- Example: https://responsive.fxempire.com/v7/_fxcrypto_/crypto/crypto-logos/ada.png -->

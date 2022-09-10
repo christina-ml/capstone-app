@@ -37,6 +37,16 @@
           margin: 10px;
         }
       }
+
+      &__contentBelow {
+        column-count: 3;
+        column-gap: 40px;
+        column-rule-style: solid;
+        column-rule-width: 1px;
+        column-rule-color: lightblue;
+        text-align: justify;
+        margin: 10px;
+      }
     }
 
 

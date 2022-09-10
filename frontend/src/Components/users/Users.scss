@@ -54,6 +54,17 @@
 
 .userDetails {
     padding: 20px;
+    
+    &__editButton {
+        button {
+            color: white;
+            background: $logo-blue;
+        }
+    }
+
+    &__details {
+        border: 2px solid red;
+    }
 }
 
 // MOBILE styling

@@ -63,6 +63,40 @@ const Newspaper = () => {
                 Vel magni nisi nisi quis.
               </p>
             </section>
+            <h2>something else happened</h2>
+            <section className="newspaper__main__article__contentBelow">
+              <p>
+                Asperiores ullam qui alias id ea voluptatem. Laudantium
+                voluptatem odit ducimus alias maiores id. Soluta repellendus non
+                repellendus autem cupiditate esse aut. Error similique officia
+                assumenda consequuntur blanditiis. Cupiditate fugit aut sit.
+              </p>
+              <p>
+                Ut consequatur expedita quae minima iste fugit nam. Libero
+                magnam nemo dolorem. Libero molestias tenetur ipsa mollitia in.
+                Nostrum ullam aut in rerum sapiente est. Quas officia et aut
+                repudiandae eveniet illum assumenda. Ex minima nihil eveniet
+                deleniti ipsum repellendus exercitationem dolores.
+              </p>
+              <p>
+                Omnis fugit harum quis provident autem qui. Magnam et quia
+                quibusdam quibusdam ullam doloremque. Consequatur asperiores
+                aperiam rerum iste. Dolor necessitatibus tempore rerum iure
+                autem sint. Ipsam placeat esse provident sed quo soluta.
+              </p>
+              <p>
+                Aut fugit perferendis consequatur. Ut odio perspiciatis quaerat
+                aut. Optio praesentium est consequatur earum in exercitationem.
+                Et qui sit minus quo dicta ipsam consectetur dolorum.
+              </p>
+              <p>
+                Est qui ut optio cum deleniti. Ut debitis voluptatem ut
+                voluptatem et et error. Voluptatem explicabo vero non
+                exercitationem fuga vel et. Adipisci atque est incidunt sit. Sit
+                dolorem occaecati quo delectus voluptates repellendus veniam.
+                Vel magni nisi nisi quis.
+              </p>
+            </section>
           </div>
 
           {/* <!--  sidebar  --> */}
