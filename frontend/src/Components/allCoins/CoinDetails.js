@@ -2,8 +2,10 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import axios from "axios";
 import { useParams } from 'react-router-dom';
+import './CoinList.scss';
 
 const API = process.env.REACT_APP_API_URL;
+
 
 const CoinDetails = () => {
     const [oneCoin, setOneCoin] = useState([]);
@@ -18,10 +20,13 @@ const CoinDetails = () => {
             })
     })
 
+    let tagList = oneCoin.tags.split(',').map((tag) => {
+        return <span className="coinDetails__tagsList__singleTag">{tag}</span>
+    })
+
   return (
     <div className="coinDetails">
-
-    <h3>coin Name: {oneCoin.name}</h3>
+        <h3>coin Name: {oneCoin.name}</h3>
         <div>
             cid: {oneCoin.cid}
             coinmarketcap ID: {oneCoin.coinmarketcap_id}
@@ -38,8 +43,8 @@ const CoinDetails = () => {
             num market pairs: {oneCoin.num_market_pairs}
             date added: {oneCoin.date_added}
         </div>
-        <div>
-            Tags: {oneCoin.tags}
+        <div className="coinDetails__tagsList">
+            {tagList}
         </div>
         <div>
             max supply: {oneCoin.max_supply}

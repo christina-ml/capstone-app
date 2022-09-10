@@ -15,10 +15,9 @@ const Coin = ({coin}) => {
             </div>
           </div>
           <hr />
-          <div className="coin__card__tagsList">
-            Tags: {coin.tags.split(',').map((tag) => {
-              return <span className="coin__card__tagsList__singleTag">{tag}</span>
-            })}
+          <div className="coin__card__basicInfo">
+            <div>Price: ${coin.price}</div>
+            <div>24h% {coin.percent_change_24h}%</div>
           </div>
         </div>
       </Link>

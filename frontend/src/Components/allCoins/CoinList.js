@@ -40,7 +40,7 @@ const CoinList = () => {
       <div className="coinList__collection">
         {sortedCoinsAsc.map((coin) => {
           return (
-            <Coin coin={coin} />
+            <Coin coin={coin} key={coin.name + coin.cid}/>
           )
         })}
       </div>

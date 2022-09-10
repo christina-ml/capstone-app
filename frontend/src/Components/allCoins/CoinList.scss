@@ -46,24 +46,31 @@
             
         }
 
-        &__tagsList {
-            font-size: 10px;
-            height: 50px;
-            overflow: scroll;
+        &__basicInfo {
+            font-size: 12px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+    }
+}
 
-            &:hover {
-                background-color: antiquewhite;
-            }
+.coinDetails {
+    &__tagsList {
+        font-size: 10px;
+        height: 50px;
+        overflow: scroll;
 
-            &__singleTag {
-                display: inline-block;
-                background-color: lightgrey;
-                border: 1px solid black;
-                padding: 2px;
-                margin: 2px;
-                line-height: 1.5em;
-                border-radius: 5px;
-            }
+        &:hover {
+            background-color: antiquewhite;
+        }
+
+        &__singleTag {
+            display: inline-block;
+            background-color: lightgrey;
+            border: 1px solid black;
+            padding: 2px;
+            margin: 2px;
+            line-height: 1.5em;
+            border-radius: 5px;
         }
     }
 }
