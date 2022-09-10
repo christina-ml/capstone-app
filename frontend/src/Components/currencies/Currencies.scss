@@ -1,0 +1,47 @@
+// import colors from designUtils
+@import '../../designUtils/colors';
+@import '../../designUtils/media';
+@import '../../designUtils/fonts';
+
+.currencies {
+    // border: 2px solid green;
+}
+
+.currency {
+    margin: 10px 0px;
+    background-color: darkgray;
+
+    &__coinName {
+        // display: flex;
+        // flex-direction: row;
+        display: inline-block;
+       
+        // line-height: 1;
+        &__coinLogo {
+            display: inline-block;
+            vertical-align: middle;
+            img {
+                height: 50px;
+                width: 50px;
+            }
+        }
+
+        &__coinName {
+            display: inline-block;
+            vertical-align: middle;
+            color: black;
+        }
+    }
+
+
+    &__details {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        background-color: rgb(209, 209, 209);
+
+        div {
+            padding: 5px 20px;
+        }
+    }
+
+}
