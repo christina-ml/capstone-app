@@ -8,7 +8,7 @@ const Currency = ({ currency }) => {
             <div className="currency__coinName__coinLogo">
                 <img src={currency.logo} alt={currency.name} />
             </div>
-            <div className="currency__coinName__coinName">
+            <div className="currency__coinName__coinNameHeader">
                 <h2>{currency.name}</h2>
             </div>
         </div>

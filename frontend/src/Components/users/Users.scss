@@ -4,16 +4,16 @@
 @import '../../designUtils/fonts';
 
 .users {
-    color: $text-medium-gray;
+    color: $medium-gray;
     width: 600px;
     margin: 10vh auto;
     height: 80vh;
-    background-color: white;
+    background-color: $white;
     overflow-y: scroll;
     overflow-x: hidden;
     overflow-wrap: break-word;
     border-radius: 8px;
-    box-shadow: 0px 2px 5px $hover-blue;
+    box-shadow: 0px 2px 5px $medium-gray;
 
     &__heading {
         margin-left: 10px;
@@ -28,17 +28,17 @@
 }
 
 // Individual user card
-.user {
+.userCard {
     display: flex;
     padding: 10px;
-    border-bottom: 2px solid $hover-blue;
+    border-bottom: 2px solid $medium-gray;
 
     &__info {
         margin-left: 20px;
     }
 
     &__name {
-        font-size: 32px;
+        font-size: 16px;
         font-weight: 600;
         text-transform: uppercase;
         margin-bottom: 8px;
@@ -47,8 +47,24 @@
     &__infoLine {
         padding-left: 15px;
         font-size: 14px;
-        color: $hover-blue;
+        color: $medium-gray;
         line-height: 20px;
+        
+        &__button {
+            margin: 10px 0px;
+            padding-left: 15px;
+            a {
+                background-color: $light-gray;
+                font-size: 18px;
+                color: $dark-bluegray;
+                padding: 5px;
+                text-decoration: none;
+                border-radius: 5px;
+                &:hover {
+                    box-shadow: 0px 0px 5px $dark-bluegray;
+                }
+            }
+        }
     }
 }
 
@@ -56,14 +72,28 @@
     padding: 20px;
     
     &__editButton {
+        float: right;
+        margin: 15px 0px;
         button {
-            color: white;
-            background: $logo-blue;
+            color: $white;
+            background: $medium-gray;
         }
     }
 
     &__details {
-        border: 2px solid red;
+        background: $light-gray;
+
+        &__name {
+            background-color: $dark-bluegray;
+            padding: 10px;
+            font-size: 30px;
+            color: white;
+        }
+
+        &__bio {
+            padding: 20px;
+            line-height: 1.5em;
+        }
     }
 }
 

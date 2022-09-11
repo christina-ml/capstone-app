@@ -31,36 +31,39 @@ const UserDetails = () => {
         </Link>
         </div>
         <div className="userDetails__details">
-            <h1>{firstname} {lastname}</h1>
-            <div>
-                First Name: {firstname}
+            <div className="userDetails__details__name">
+                <div>{firstname} {lastname}</div>
             </div>
-            <div>
-                Last Name: {lastname}
-            </div>
-            <div>
-                ID: {uid}
-            </div>
-            <div>
-                Username: {username}
-            </div>
-            <div>
-                Password: {user_password}
-            </div>
-            <div>
-                Admin? {user_admin ? <span>Yes</span> : <span>No</span>}
-            </div>
-            <div>
-                Interests: {user_interests}
-            </div>
-            <div>
-                City: {user_city}
-            </div>
-            <div>
-                State: {user_state}
-            </div>
-            <div>
-                Email: {user_email}
+            <div className="userDetails__details__bio">
+                <div>
+                    First Name: {firstname}
+                    <br />
+                    Last Name: {lastname}
+                </div>
+                <div>
+                    ID: {uid}
+                </div>
+                <div>
+                    Username: {username}
+                </div>
+                <div>
+                    Password: {user_password}
+                </div>
+                <div>
+                    Admin? {user_admin ? <span>Yes</span> : <span>No</span>}
+                </div>
+                <div>
+                    Interests: {user_interests}
+                </div>
+                <div>
+                    City: {user_city}
+                </div>
+                <div>
+                    State: {user_state}
+                </div>
+                <div>
+                    Email: {user_email}
+                </div>
             </div>
         </div>
         <Currencies />

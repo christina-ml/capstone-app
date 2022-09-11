@@ -9,13 +9,14 @@
 
 .currency {
     margin: 10px 0px;
-    background-color: darkgray;
+    background-color: $dark-bluegray;
 
     &__coinName {
         // display: flex;
         // flex-direction: row;
         display: inline-block;
-       
+        margin: 0px 10px;
+        
         // line-height: 1;
         &__coinLogo {
             display: inline-block;
@@ -25,11 +26,12 @@
                 width: 50px;
             }
         }
-
-        &__coinName {
+        
+        &__coinNameHeader {
+            margin-left: 8px;
             display: inline-block;
             vertical-align: middle;
-            color: black;
+            color: $white;
         }
     }
 
@@ -37,7 +39,7 @@
     &__details {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        background-color: rgb(209, 209, 209);
+        background-color: $light-gray;
 
         div {
             padding: 5px 20px;
