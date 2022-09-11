@@ -1,3 +1,8 @@
+// import colors from designUtils
+@import '../../designUtils/colors';
+@import '../../designUtils/media';
+@import '../../designUtils/fonts';
+
 .newspaper {
   // header
   &__header {
@@ -15,7 +20,7 @@
 
     &__article {
       grid-area: "main";
-      border: 1px solid black;
+      border: 1px solid $black;
       margin: 10px;  
 
       h2 {
@@ -43,7 +48,7 @@
         column-gap: 40px;
         column-rule-style: solid;
         column-rule-width: 1px;
-        column-rule-color: lightblue;
+        column-rule-color: $light-gray;
         text-align: justify;
         margin: 10px;
       }
@@ -53,7 +58,7 @@
     // sidebar sections
     &__sidebar {
       margin: 10px;
-      border: 1px solid black;
+      border: 1px solid $black;
       display: grid;
       grid-area: "side";
 
@@ -61,7 +66,7 @@
         margin: 10px;
 
         &__news1 {
-          background-color: #efefef;
+          background-color: $light-gray;
 
           h3 {
             text-transform: uppercase;

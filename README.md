@@ -281,3 +281,7 @@ Our backend database using [Postgres](https://www.postgresql.org/) has three tab
 <!-- Layout Inspiration & Coin Logos -->
 <!-- https://www.fxempire.com/crypto -->
 <!-- Example: https://responsive.fxempire.com/v7/_fxcrypto_/crypto/crypto-logos/ada.png -->
+
+
+<!-- color palette inspiration: -->
+<!-- https://colorswall.com/palette/83601 -->
