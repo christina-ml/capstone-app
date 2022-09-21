@@ -18,16 +18,16 @@ CREATE TABLE users(
   user_state TEXT
 );
 
-DROP TABLE IF EXISTS platforms;
+-- DROP TABLE IF EXISTS platforms;
 
-CREATE TABLE platforms (
-  pid SERIAL PRIMARY KEY,
-  platform_id SMALLINT,
-  name TEXT,
-  symbol TEXT,
-  slug TEXT,
-  token_address TEXT UNIQUE NOT NULL
-);
+-- CREATE TABLE platforms (
+--   pid SERIAL PRIMARY KEY,
+--   platform_id SMALLINT,
+--   name TEXT,
+--   symbol TEXT,
+--   slug TEXT,
+--   token_address TEXT UNIQUE NOT NULL
+-- );
 
 DROP TABLE IF EXISTS currencies;
 
@@ -44,7 +44,8 @@ CREATE TABLE currencies(
   max_supply BIGINT,
   circulating_supply DECIMAL,
   total_supply DECIMAL,
-  token_address TEXT REFERENCES platforms(token_address) ON DELETE CASCADE,
+  token_address TEXT,
+  -- token_address TEXT REFERENCES platforms(token_address) ON DELETE CASCADE,
   cmc_rank SMALLINT,
   self_reported_circulating_supply DECIMAL,
   self_reported_market_cap DECIMAL,

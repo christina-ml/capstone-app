@@ -41,10 +41,10 @@ const getOneCurrency = async (cid) => {
 // CREATE
 // Create a new coin
 const createCurrency = async (currency) => {
-    const {coinmarketcap_id, name, symbol, logo, slug, num_market_pairs, date_added, tags, max_supply, circulating_supply, total_supply, cmc_rank, currency_uid} = currency;
+    const {coinmarketcap_id, name, symbol, logo, slug, num_market_pairs, date_added, tags, max_supply, circulating_supply, total_supply, token_address, cmc_rank, self_reported_circulating_supply, self_reported_market_cap, tvl_ratio, last_updated, price, volume_24h, volume_change_24h, percent_change_1h, percent_change_24h, percent_change_7d, percent_change_30d, percent_change_60d, percent_change_90d, market_cap, market_cap_dominance, fully_diluted_market_cap, tvl, currency_uid} = currency;
     try {
         const newCurrency = await db.one(
-            "INSERT INTO currencies (coinmarketcap_id, name, symbol, logo, slug, num_market_pairs, date_added, tags, max_supply, circulating_supply, total_supply, cmc_rank, currency_uid) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, 13) RETURNING *", 
+            "INSERT INTO currencies (coinmarketcap_id, name, symbol, logo, slug, num_market_pairs, date_added, tags, max_supply, circulating_supply, total_supply, token_address, cmc_rank, self_reported_circulating_supply, self_reported_market_cap, tvl_ratio, last_updated, price, volume_24h, volume_change_24h, percent_change_1h, percent_change_24h, percent_change_7d, percent_change_30d, percent_change_60d, percent_change_90d, market_cap, market_cap_dominance, fully_diluted_market_cap, tvl, currency_uid) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31) RETURNING *", 
             [
                 coinmarketcap_id, 
                 name, 
@@ -57,7 +57,25 @@ const createCurrency = async (currency) => {
                 max_supply,
                 circulating_supply,
                 total_supply,
+                token_address,
                 cmc_rank,
+                self_reported_circulating_supply,
+                self_reported_market_cap,
+                tvl_ratio,
+                last_updated,
+                price,
+                volume_24h,
+                volume_change_24h,
+                percent_change_1h,
+                percent_change_24h,
+                percent_change_7d,
+                percent_change_30d,
+                percent_change_60d,
+                percent_change_90d,
+                market_cap,
+                market_cap_dominance,
+                fully_diluted_market_cap,
+                tvl,
                 currency_uid,
             ]
         );
@@ -71,10 +89,10 @@ const createCurrency = async (currency) => {
 // UPDATE
 // Update a coin by cid
 const updateCurrency = async (cid, currency) => {
-    const {coinmarketcap_id, name, symbol, logo, slug, num_market_pairs, date_added, tags, max_supply, circulating_supply, total_supply, cmc_rank, currency_uid} = currency;
+    const {coinmarketcap_id, name, symbol, logo, slug, num_market_pairs, date_added, tags, max_supply, circulating_supply, total_supply, token_address, cmc_rank, self_reported_circulating_supply, self_reported_market_cap, tvl_ratio, last_updated, price, volume_24h, volume_change_24h, percent_change_1h, percent_change_24h, percent_change_7d, percent_change_30d, percent_change_60d, percent_change_90d, market_cap, market_cap_dominance, fully_diluted_market_cap, tvl, currency_uid} = currency;
     try {
         const updatedCurrency = await db.one(
-            "UPDATE currencies SET coinmarketcap_id=$1, name=$2, symbol=$3, logo=$4, slug=$5, num_market_pairs=$6, date_added=$7, tags=$8, max_supply=$9, circulating_supply=$10, total_supply=$11, cmc_rank=$12, currency_uid=$13 WHERE cid=$14 RETURNING *",
+            "UPDATE currencies SET coinmarketcap_id=$1, name=$2, symbol=$3, logo=$4, slug=$5, num_market_pairs=$6, date_added=$7, tags=$8, max_supply=$9, circulating_supply=$10, total_supply=$11, token_address=$12, cmc_rank=$13, self_reported_circulating_supply=$14, self_reported_market_cap=$15, tvl_ratio=$16, last_updated=$17, price=$18, volume_24h=$19, volume_change_24h=$20, percent_change_1h=$21, percent_change_24h=$22, percent_change_7d=$23, percent_change_30d=$24, percent_change_60d=$25, percent_change_90d=$26, market_cap=$27, market_cap_dominance=$28, fully_diluted_market_cap=$29, tvl=$30, currency_uid=$31 WHERE cid=$32 RETURNING *",
             [
                 coinmarketcap_id, 
                 name, 
@@ -87,7 +105,25 @@ const updateCurrency = async (cid, currency) => {
                 max_supply,
                 circulating_supply,
                 total_supply,
+                token_address,
                 cmc_rank,
+                self_reported_circulating_supply,
+                self_reported_market_cap,
+                tvl_ratio,
+                last_updated,
+                price,
+                volume_24h,
+                volume_change_24h,
+                percent_change_1h,
+                percent_change_24h,
+                percent_change_7d,
+                percent_change_30d,
+                percent_change_60d,
+                percent_change_90d,
+                market_cap,
+                market_cap_dominance,
+                fully_diluted_market_cap,
+                tvl,
                 currency_uid,
                 cid
             ]

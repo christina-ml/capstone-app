@@ -221,6 +221,15 @@ Our backend database using [Postgres](https://www.postgresql.org/) has three tab
 | users    | PUT    | /users/{uid} | Update one `users` by their id of {uid}. |
 | users    | DELETE | /users/{uid} | Delete one `users` by their id of {uid}. |
 
+<!-- ## Platforms Table
+| Resource      | Method | Route        | Description                              |
+|---------------|--------|--------------|------------------------------------------|
+| platforms    | GET    | /platforms  | Get all `platforms` by id of {currId} that belong to a currency.    
+| platforms    | GET    | /platforms/{token_address}  | Get one `platforms` by id of {token_address} of a specific currency. 
+| platforms    | POST   | /platforms  | Create a `platforms`
+| platforms    | PUT    | /platforms/{token_address}  | Update one `platforms` by id of {token_address}
+| platforms    | DELETE | /platforms/{token_address}  | Delete one `platforms` by id of {token_address} -->
+
 ## Currencies Table
 ### All Coins Controller (currencies table)
 
@@ -236,7 +245,7 @@ Our backend database using [Postgres](https://www.postgresql.org/) has three tab
 | currencies    | GET    | /currencies  | Get all `currencies` by id of {userId} that belong to a user.    
 | currencies    | GET    | /currencies/{cid}  | Get one `currencies` by id of {cid} of a specific user. 
 | currencies    | POST   | /currencies  | Create a `currencies`
-| currencies    | PUT   | /currencies/{cid}  | Update one `currencies` by id of {cid}
+| currencies    | PUT    | /currencies/{cid}  | Update one `currencies` by id of {cid}
 | currencies    | DELETE | /currencies/{cid}  | Delete one `currencies` by id of {cid}
 
 <!-- ## Resources Table
