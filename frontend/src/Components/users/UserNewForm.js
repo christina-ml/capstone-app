@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
+import "./Users.scss";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -48,90 +50,118 @@ function UserNewForm() {
 
   return (
     <div className="UserNewForm">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor='firstname'>First Name:</label>
-        <input 
-          id="firstname"
-          value={user.firstname}
-          type="text"
-          onChange={handleTextChange}
-          placeholder="First Name"
-        />
+      <form className="UserNewForm__form" onSubmit={handleSubmit}>
+        <div className="UserNewForm__form__inner">
+          <h2>Sign Up</h2>
+        </div>
+        <div className="UserNewForm__form__inner__fields">
+          <div className="UserNewForm__form__inner__fields__group">
+            <label htmlFor='firstname'>First Name:</label>
+            <input 
+              id="firstname"
+              value={user.firstname}
+              type="text"
+              onChange={handleTextChange}
+              placeholder="First Name"
+            />
+          </div>
 
-        <label htmlFor='lastname'>Last Name:</label>
-        <input 
-          id="lastname"
-          value={user.lastname}
-          type="text"
-          onChange={handleTextChange}
-          placeholder="Last Name"
-        />        
+          <div className="UserNewForm__form__inner__fields__group">
+            <label htmlFor='lastname'>Last Name:</label>
+            <input 
+              id="lastname"
+              value={user.lastname}
+              type="text"
+              onChange={handleTextChange}
+              placeholder="Last Name"
+            />        
+          </div>
 
-        <label htmlFor='username'>Username:</label>
-        <input 
-          id="username"
-          value={user.username}
-          type="text"
-          onChange={handleTextChange}
-          placeholder="Username"
-        />
+          <div className="UserNewForm__form__inner__fields__group">
+            <label htmlFor='username'>Username:</label>
+            <input 
+              id="username"
+              value={user.username}
+              type="text"
+              onChange={handleTextChange}
+              placeholder="Username"
+            />
+          </div>
 
-        <label htmlFor='user_password'>Password:</label>
-        <input 
-          id="user_password"
-          value={user.user_password}
-          type="text"
-          onChange={handleTextChange}
-          placeholder="Password"
-        />
+          <div className="UserNewForm__form__inner__fields__group">
+            <label htmlFor='user_password'>Password:</label>
+            <input 
+              id="user_password"
+              value={user.user_password}
+              type="text"
+              onChange={handleTextChange}
+              placeholder="Password"
+            />
+          </div>
 
-        <label htmlFor='user_email'>Email:</label>
-        <input 
-          id="user_email"
-          value={user.user_email}
-          type="text"
-          onChange={handleTextChange}
-          placeholder="User Email"
-        />
+          <div className="UserNewForm__form__inner__fields__group">
+            <label htmlFor='user_email'>Email:</label>
+            <input 
+              id="user_email"
+              value={user.user_email}
+              type="text"
+              onChange={handleTextChange}
+              placeholder="User Email"
+            />
+          </div>
 
-        <label htmlFor='user_admin'>Admin?:</label>
-        <input 
-          id="user_admin"
-          checked={user.user_admin}
-          type="checkbox"
-          onChange={handleCheckboxChange}
-        />
+          <div className="UserNewForm__form__inner__fields__group">
+            <label htmlFor='user_admin'>Admin?:</label>
+            <input 
+              id="user_admin"
+              checked={user.user_admin}
+              type="checkbox"
+              onChange={handleCheckboxChange}
+            />
+          </div>
 
-        <label htmlFor='user_interests'>Interests:</label>
-        <input 
-          id="user_interests"
-          value={user.user_interests}
-          type="text"
-          onChange={handleTextChange}
-          placeholder="User Interests"
-        />
+          <div className="UserNewForm__form__inner__fields__group">
+            <label htmlFor='user_interests'>Interests:</label>
+            <input 
+              id="user_interests"
+              value={user.user_interests}
+              type="text"
+              onChange={handleTextChange}
+              placeholder="User Interests"
+            />
+          </div>
 
-        <label htmlFor='user_city'>City:</label>
-        <input 
-          id="user_city"
-          value={user.user_city}
-          type="text"
-          onChange={handleTextChange}
-          placeholder="User City"
-        />
+          <div className="UserNewForm__form__inner__fields__group">
+            <label htmlFor='user_city'>City:</label>
+            <input 
+              id="user_city"
+              value={user.user_city}
+              type="text"
+              onChange={handleTextChange}
+              placeholder="User City"
+            />
+          </div>
 
-        <label htmlFor='user_state'>State:</label>
-        <input 
-          id="user_state"
-          value={user.user_state}
-          type="text"
-          onChange={handleTextChange}
-          placeholder="User State"
-        />
-
+          <div className="UserNewForm__form__inner__fields__group">
+            <label htmlFor='user_state'>State:</label>
+            <input 
+              id="user_state"
+              value={user.user_state}
+              type="text"
+              onChange={handleTextChange}
+              placeholder="User State"
+            />
+          </div>
+        </div>
         <br />
         <input type="submit" />
       </form>
+      <div className="UserNewForm__backToLogin">
+        Already a member? 
+        <Link to="/login" >
+          Log In
+        </Link>
+      </div>
     </div>
   )
 }

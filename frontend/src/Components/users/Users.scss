@@ -97,6 +97,37 @@
     }
 }
 
+.UserNewForm {
+    display: block;
+    background-color: $light-gray;
+    padding: 10px 20px;
+    width: 320px;
+    text-align: center;
+    margin: 80px auto 20px;
+    
+    &__form {
+        // background-color: $light-gray;
+        margin-top: -10px;
+        padding: 0px 10px 10px 10px;
+        line-height: 2em;
+        width: 300px;
+        text-align: center;
+        &__inner {
+            &__fields {
+                display: inline-block;
+                &__group {
+                    text-align: right;
+                }
+            }
+        }
+    }
+
+    &__backToLogin {
+        margin-top: 10px;
+        padding: 5px;
+    }
+}
+
 // MOBILE styling
 @media only screen and (max-width: $mobile){
     .users {
