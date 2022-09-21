@@ -20,9 +20,6 @@ const CoinDetails = () => {
             })
     })
 
-    let tagList = oneCoin.tags.split(',').map((tag) => {
-        return <span className="coinDetails__tagsList__singleTag">{tag}</span>
-    })
 
   return (
     <div className="coinDetails">
@@ -44,7 +41,7 @@ const CoinDetails = () => {
             date added: {oneCoin.date_added}
         </div>
         <div className="coinDetails__tagsList">
-            {tagList}
+            tags: {oneCoin.tags}
         </div>
         <div>
             max supply: {oneCoin.max_supply}
