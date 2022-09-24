@@ -54,25 +54,37 @@
 }
 
 .coinDetails {
-    &__tagsList {
-        font-size: 10px;
-        height: 50px;
-        overflow: scroll;
+   padding: 10px;
 
-        &:hover {
-            background-color: antiquewhite;
+    &__coinCard {
+        border: 0.5px solid lightgray;
+        margin: 10px 5px 5px 5px;
+        
+
+        &__logo {
+            padding: 5px 15px;
+            display: flex;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 2em;
+            background-color: $dark-bluegray;
+            color: white;
+
+            img {
+                height: 50px;
+                width: 50px;
+            }
+            
+            &__coinName {
+                margin: 3px;
+            }  
         }
-
-        &__singleTag {
-            display: inline-block;
-            background-color: lightgrey;
-            border: 1px solid black;
-            padding: 2px;
-            margin: 2px;
+        &__details {
             line-height: 1.5em;
-            border-radius: 5px;
+            padding: 20px;
+            background-color: $light-gray;
         }
-    }
+    }    
 }
 
 // medium screens styling
