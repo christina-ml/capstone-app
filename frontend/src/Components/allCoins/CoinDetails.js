@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import axios from "axios";
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import './CoinList.scss';
 
 const API = process.env.REACT_APP_API_URL;
@@ -66,6 +66,11 @@ const CoinDetails = () => {
                     tags: {oneCoin.tags}
                 </div>
             </div>
+        </div>
+        <div className="coinDetails__coinCard__backToAllCoins">
+            <Link to="/">
+                Back to All Coins
+            </Link>
         </div>
 
     </div>
