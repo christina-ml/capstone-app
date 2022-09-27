@@ -156,7 +156,9 @@ function UserNewForm() {
 
           </div>
           <br />
-          <input type="submit" />
+          <div className="UserNewForm__container__submitButton">
+            <input type="submit" />
+          </div>
         </form>
         <div className="UserNewForm__container__backToLogin">
           Already a member? &nbsp;

@@ -74,9 +74,10 @@ const Login = () => {
               <LoginForm login={login} error={error} />
             </div>
             <div className="login__container__startpage__buttonContainer">
+            Not a member? &nbsp;
             <Link to="/create" >
               <div className="login__container__startpage__buttonContainer__create">
-                New user
+                Sign Up
               </div>
             </Link>
             </div>

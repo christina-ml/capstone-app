@@ -174,17 +174,19 @@ function UserEditForm() {
 
           </div>
           <br />
-          <input type="submit" />
+          <div className="UserEditForm__container__submitButton">
+            <input type="submit" />
+          </div>
         </form>
 
         <div className="UserEditForm__container__cancelEditOrDelete">
           <Link to={`/users/${uid}`}>
             <button>Cancel Edit</button>
           </Link>
-        </div>
-        <div className="UserEditForm__container__cancelEditOrDelete">
+
           <button onClick={handleDelete} >Delete User</button>
         </div>
+
       </div>
     </div>
   )

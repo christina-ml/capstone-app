@@ -25,7 +25,7 @@ const LoginForm = ({ login, error }) => {
         <div className="loginForm">
             <form className="loginForm__form" onSubmit={handleSubmit} >
                 <div className="loginForm__form__inner">
-                    <h2>Login Form</h2>
+                    <h2>Login</h2>
                         {(error !== '') ? 
                             (<h4 className="loginForm__form__error">{error}</h4>) : 
                             ""

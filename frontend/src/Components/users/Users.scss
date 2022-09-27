@@ -121,7 +121,7 @@
                     &__group {
                         text-align: right;
                         input {
-                            border: none;  
+                            border: none; 
                         }
                     }
                     &__groupAdmin {
@@ -129,6 +129,30 @@
                         padding-left: 12%;
 
                     }
+                }
+            }
+        }
+
+        &__submitButton {
+            input {
+                margin-top: 30px;
+                display: inline-block;
+                padding: 10px 15px;
+                border-radius: 8px;
+                background-image: linear-gradient(to bottom right, $logo-blue 50%, $logo-blue 50%, $light-gray);
+                background-size: 200%;
+                background-position: 0%;
+                transition: 0.4s;
+                color: white;
+                cursor: pointer;
+                text-align: center;
+                width: 35%;
+                font-size: 16px;
+                margin: 15px auto;
+                border: none;
+    
+                &:hover {
+                    background-position: 100% 0%;
                 }
             }
         }
@@ -185,11 +209,35 @@
             }
         }
 
+        &__submitButton {
+            input {
+                margin-top: 30px;
+                display: inline-block;
+                padding: 10px 15px;
+                border-radius: 8px;
+                background-image: linear-gradient(to bottom right, $logo-blue 50%, $logo-blue 50%, $light-gray);
+                background-size: 200%;
+                background-position: 0%;
+                transition: 0.4s;
+                color: white;
+                cursor: pointer;
+                text-align: center;
+                width: 35%;
+                font-size: 16px;
+                margin: 15px auto;
+                border: none;
+    
+                &:hover {
+                    background-position: 100% 0%;
+                }
+            }
+        }
+
         &__cancelEditOrDelete {
             margin-top: 10px;
             padding: 5px;
+
             button {
-                
                 text-decoration: none;
                 color: white;
                 background-color: $logo-blue;
