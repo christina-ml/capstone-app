@@ -39,6 +39,7 @@ const LoginForm = ({ login, error }) => {
                                 name="firstname"
                                 value={details.firstname}
                                 onChange={handleTextChange}
+                                placeholder="First Name"
                             />
                         </div>
                         <div className="loginForm__form__inner__fields__group">
@@ -49,6 +50,7 @@ const LoginForm = ({ login, error }) => {
                                 name="lastname"
                                 value={details.lastname}
                                 onChange={handleTextChange}
+                                placeholder="Last Name"
                             />
                         </div>
                         <div className="loginForm__form__inner__fields__group">
@@ -59,6 +61,7 @@ const LoginForm = ({ login, error }) => {
                                 name="email"
                                 value={details.email}
                                 onChange={handleTextChange}
+                                placeholder="Email"
                             />
                         </div>
                         <div className="loginForm__form__inner__fields__group">
@@ -69,6 +72,7 @@ const LoginForm = ({ login, error }) => {
                                 name="password"
                                 value={details.password}
                                 onChange={handleTextChange}
+                                placeholder="Password"
                             />
                         </div>
                     </div>
