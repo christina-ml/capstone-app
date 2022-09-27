@@ -53,10 +53,20 @@ const Login = () => {
             <h2>Welcome, <span>{user.firstname} {user.lastname}</span></h2>
 
             <div>
-              You are logged in now. The login form worked!
+              You are logged in now.
             </div>
-
-            <button onClick={logout}>Logout</button>
+            <hr />
+            <div className="login__container__welcome__info">
+              Links:
+              <br />
+                <Link to="/users">
+                All Users
+                </Link>
+            </div>
+            <hr />
+            <div className="login__container__welcome__logoutButton">
+              <button onClick={logout}>Logout</button>
+            </div>
           </div>
         ) : (
           <div className="login__container__startpage">

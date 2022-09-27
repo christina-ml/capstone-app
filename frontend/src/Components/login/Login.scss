@@ -20,6 +20,12 @@
         // // background-color: grey;
 
         &__welcome {
+            text-align: center;
+
+            &__info{
+                padding: 40px;
+            }
+
             // width: $mobile;
             // background-color: #FFF;
             // padding: 15px 30px;
@@ -42,6 +48,8 @@
                 padding: 5px 10px;
                 background-color: $logo-blue;
                 color: white;
+                margin: 20px;
+                
               
 
         //         display: block;
