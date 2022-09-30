@@ -11,6 +11,7 @@ import dogecoin from '../../assetsMemoryGame/dogecoin.png';
 import litecoin from '../../assetsMemoryGame/litecoin.png';
 import tether from '../../assetsMemoryGame/tether.png';
 import solana from '../../assetsMemoryGame/solana.png';
+import { Link } from 'react-router-dom';
 
 const cardImages = [
   {"src": bitcoin, matched: false, "cointype": "bitcoin"},
@@ -126,7 +127,11 @@ function MemoryApp() {
   return (
     <div className="MemoryApp">
       <h1>Crypto Match</h1>
+     
       <button onClick={shuffleCards} >New Game</button>
+      <div>
+        Turns: {turns}
+      </div>
       <div className="MemoryApp__cardGrid">
         {cards.map((card)=> {
           return (
@@ -142,9 +147,6 @@ function MemoryApp() {
             />
           )
         })}
-      </div>
-      <div>
-        Turns: {turns}
       </div>
     </div>
   );

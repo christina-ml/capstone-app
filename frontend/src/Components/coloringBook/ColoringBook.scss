@@ -4,7 +4,8 @@
 @media only screen and (min-width: $mobile){
     .ColoringBook {
         // background-color: $light-gray;
-
+        text-align: center;
+        
         &__mobile {
             display: none;
         }
