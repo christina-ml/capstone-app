@@ -21,8 +21,10 @@ import UserNewForm from "./Components/users/UserNewForm";
 import UserEditForm from "./Components/users/UserEditForm";
 import Login from "./Components/login/Login";
 import Shop from "./Components/shop/Shop";
-import About from "./Components/about/About";
+import Learn from "./Components/learn/Learn";
 import Games from "./Components/games/Games";
+import GamesColoring from "./Components/games/GamesColoring";
+import GamesMemory from "./Components/games/GamesMemory";
 
 // import AllCoins from "./Components/allCoins/AllCoins";
 import CoinDetails from "./Components/allCoins/CoinDetails";
@@ -106,8 +108,11 @@ function App() {
           <Route exact path="/users/:uid" element={<UserDetails />} />
           <Route path="/login" element={<Login />} />
           <Route path="/shop" element={<Shop />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/learn" element={<Learn />} />
           <Route path="/games" element={<Games />} />
+          <Route path="/games/coloring" element={<GamesColoring />} />
+          <Route path="/games/match" element={<GamesMemory />} />
+          
           <Route path="/news" element={<Newspaper />} />
           {/* <Route path="/users/:uid" element={<Home />} />
           <Route path="/users/:uid/currencies" element={<Home />} />

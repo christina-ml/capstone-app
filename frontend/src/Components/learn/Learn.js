@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import "./About.scss";
+import "./Learn.scss";
 
-const About = () => {
+const Learn = () => {
   return (
-    <div className="About">
+    <div className="Learn">
         <header>
-            <h1 className="About__header">About CryptoTalk</h1>
+            <h1 className="Learn__header">Learn CryptoTalk</h1>
         </header>
         <div>
           <article>
@@ -37,4 +37,4 @@ const About = () => {
   )
 }
 
-export default About;
+export default Learn;

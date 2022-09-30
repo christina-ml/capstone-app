@@ -1,6 +1,10 @@
 [
   {
-    "text": "About",
+    "text": "Learn",
+    "href": "/learn"
+  },
+  {
+    "text": "About Me",
     "href": "/about"
   },
   {

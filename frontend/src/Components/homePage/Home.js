@@ -11,7 +11,7 @@ function Home() {
     <div className="home">
       <div className="home__container">
         <div className="home__container__leftSideOfPage">
-          <Link to="/about">
+          <Link to="/learn">
             <div className="home__container__leftSideOfPage__largeSneaker">
               <img
                 src="https://cloudfront-us-east-2.images.arcpublishing.com/reuters/TK5SKXCQMNPBFOQOZZTJB55GHQ.jpg"
