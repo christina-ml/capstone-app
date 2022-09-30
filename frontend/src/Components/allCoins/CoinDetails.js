@@ -67,12 +67,6 @@ const CoinDetails = () => {
                 </div>
             </div>
         </div>
-        <div className="coinDetails__coinCard__backToAllCoins">
-            <Link to="/">
-                Back to All Coins
-            </Link>
-        </div>
-
     </div>
   )
 }
