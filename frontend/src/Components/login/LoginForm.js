@@ -1,3 +1,6 @@
+// Using React Hooks
+// https://www.youtube.com/watch?v=91qEdc6dSUs
+
 import React, { useState } from 'react';
 import "./LoginForm.scss";
 
@@ -53,7 +56,7 @@ const LoginForm = ({ login, error }) => {
                                 placeholder="Last Name"
                             />
                         </div>
-                        <div className="loginForm__form__inner__fields__group">
+                        {/* <div className="loginForm__form__inner__fields__group">
                             <label htmlFor="email">Email: </label>
                             <input 
                                 type="text"
@@ -74,7 +77,7 @@ const LoginForm = ({ login, error }) => {
                                 onChange={handleTextChange}
                                 placeholder="Password"
                             />
-                        </div>
+                        </div> */}
                     </div>
                     <div className="loginForm__submitButton">
                         <input

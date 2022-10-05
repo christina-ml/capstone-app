@@ -1,3 +1,8 @@
+## october - TO DO
+## user authentication/login
+Firebase: https://firebase.google.com/docs/auth/web/firebaseui
+before you begin: https://firebase.google.com/docs/web/setup
+
 ## september - TO DO
 // Currencies.scss -> for User details page
 

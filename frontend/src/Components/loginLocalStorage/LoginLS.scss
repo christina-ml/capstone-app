@@ -1,0 +1,37 @@
+// import colors from designUtils
+@import '../../designUtils/colors';
+@import '../../designUtils/media';
+@import '../../designUtils/fonts';
+
+
+.LoginLS {
+    text-align: center;
+    padding: 10px;
+
+    input {
+        margin: 10px;
+        padding: 5px;
+    }
+
+    button {
+        background-color: $logo-blue;
+        padding: 10px;
+        margin: 5px;
+        cursor: pointer;
+        border-radius: 10px;
+        color: $white;
+    }
+}
+
+.LoginLSHome {
+    text-align: center;
+
+    button {
+        background-color: $logo-blue;
+        padding: 10px;
+        margin: 5px;
+        cursor: pointer;
+        border-radius: 10px;
+        color: $white;
+    }
+}

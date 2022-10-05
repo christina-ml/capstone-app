@@ -1,39 +1,80 @@
-import React, { useState } from 'react';
+// Using React Hooks
+// https://www.youtube.com/watch?v=91qEdc6dSUs
+
+import React, { useEffect, useState } from 'react';
 import LoginForm from './LoginForm';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 import "./Login.scss";
 
-const Login = () => {
-  const adminUser = {
-    email: "admin@admin.com",
-    password: "admin123"
-  }
+const API = process.env.REACT_APP_API_URL;
 
-    const [user, setUser] = useState({ firstname: "", email: "" })
+const Login = () => {
+  // const adminUser = {
+  //   lastname: "admin@admin.com",
+  //   password: "admin123"
+  // }
+
+    // hooks
+    const [users, setUsers] = useState([]);
+
+    // -- USING AXIOS --
+    useEffect(() => {   
+    axios.get(API + "/users")
+        .then((res) => {
+            console.log("res.data:", res.data)
+            setUsers(res.data);
+        }).catch((err) => {
+            console.log(err);
+        })
+    }, []);
+
+
+    const [user, setUser] = useState({ 
+      firstname: "", 
+      lastname: "",
+      username: "",
+      user_password: "",
+      user_email: "",
+      user_admin: "",
+      user_interests: "",
+      user_city: "",
+      user_state: ""
+    })
     const [error, setError] = useState("");
 
     const login = (details) => {
-      console.log(details);
-      // user logging in - if `email` and `password` match the `adminUser`
-      if (details.email === adminUser.email && 
-          details.password === adminUser.password){
+      console.log("details:", details);
+
+
+      users.map((userInDB) => {
+      // user logging in - if `firstname` and `lastname` match the `userInDB`
+      if (details.firstname === userInDB.firstname && 
+          details.lastname === userInDB.lastname){
             // console.log("Logged in");
             setUser({
               firstname: details.firstname,
               lastname: details.lastname,
-              email: details.email
+              username: details.username,
+              user_password: details.user_password,
+              user_email: details.user_email,
+              user_admin: details.user_admin,
+              user_interests: details.user_interests,
+              user_city: details.user_city,
+              user_state: details.user_state
             });
         } else {
           // error - user not logged in
           // console.log("Not logged in - details do not match")
           setError(`Not logged in:
-          ${details.email === adminUser.email ? "" : 
-            `Email does not match`}
-           ${details.password === adminUser.password ? "" :
-             `password does not match`}
+          ${details.firstname === userInDB.firstname ? "" : 
+            `firstname does not match`}
+           ${details.lastname === userInDB.lastname ? "" :
+             `lastname does not match`}
           `)
         }
+      })
     }
 
     const logout = () => {
@@ -41,29 +82,39 @@ const Login = () => {
         // set `user` back to default values
         setUser({
           firstname: "", 
-          email: "" 
+          lastname: "",
+          username: "",
+          user_password: "",
+          user_email: "",
+          user_admin: "",
+          user_interests: "",
+          user_city: "",
+          user_state: ""
       });
     }
 
   return (
     <div className="login">
       <div className="login__container">
-        {(user.email !== '') ? (
+        {(user.lastname !== '') ? (
           <div className="login__container__welcome">
             <h2>Welcome, <span>{user.firstname} {user.lastname}</span></h2>
 
             <div>
               You are logged in now.
             </div>
-            <hr />
+
             <div className="login__container__welcome__info">
-              Links:
+              Your lastname is: {user.lastname}
+              your city is {user.user_city}
+              your password is {user.user_password}
+              your username is {user.username}
               <br />
                 <Link to="/users">
                 All Users
                 </Link>
             </div>
-            <hr />
+
             <div className="login__container__welcome__logoutButton">
               <button onClick={logout}>Logout</button>
             </div>

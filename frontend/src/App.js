@@ -14,12 +14,20 @@ import { BsFillSunFill } from 'react-icons/bs';
 import PageNotFound from "./Components/PageNotFound";
 import NavBar from "./Components/navBarPage/NavBar";
 import Home from "./Components/homePage/Home";
+import AboutMe from "./Components/aboutMe/AboutMe";
 
 import Users from "./Components/users/Users";
 import UserDetails from "./Components/users/UserDetails";
 import UserNewForm from "./Components/users/UserNewForm";
 import UserEditForm from "./Components/users/UserEditForm";
+
+// components for login (not working)
 import Login from "./Components/login/Login";
+import UserLogin from "./Components/loginMUI/UserLogin";
+import LoginRH from "./Components/loginReactHooks/LoginRH";
+import LoginLS from "./Components/loginLocalStorage/LoginLS";
+import LoginUsingBackend from "./Components/loginUsingBackend/LoginUsingBackend";
+
 import Shop from "./Components/shop/Shop";
 import Learn from "./Components/learn/Learn";
 import Games from "./Components/games/Games";
@@ -100,13 +108,17 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutMe />} />
           <Route path="/coins" element={<Coin />} />
           <Route path="/coins/:cid" element={<CoinDetails />} />
           <Route path="/users" element={<Users />} />
           <Route path="/create" element={<UserNewForm />} />
           <Route path="/users/:uid/edit" element={<UserEditForm />} />
           <Route exact path="/users/:uid" element={<UserDetails />} />
-          <Route path="/login" element={<Login />} />
+
+          {/* <Route path="/login" element={<LoginLS />} /> */}
+          {/* <Route path="/register" element={<LoginUsingBackend />} /> */}
+          
           <Route path="/shop" element={<Shop />} />
           <Route path="/learn" element={<Learn />} />
           <Route path="/games" element={<Games />} />
