@@ -55,7 +55,7 @@ const ProfileCard = () => {
                 </div>
             </a>
 
-            <a href="https://www.linkedin.com/in/christina-loiacono/" 
+            <a href="https://www.pursuit.org/fellowship-details#curriculum" 
                 target="_" 
                 className="profileCard__userInfo__threeColumns__quantityAndType"
             >
