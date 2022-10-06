@@ -1,7 +1,248 @@
 ## october - TO DO
+## Firebase
+a Firebase project is a Google Cloud project
+(Christina says: using pursuit)
+
 ## user authentication/login
 Firebase: https://firebase.google.com/docs/auth/web/firebaseui
-before you begin: https://firebase.google.com/docs/web/setup
+Before you begin: https://firebase.google.com/docs/web/setup
+Understand Firebase projects: https://firebase.google.com/docs/projects/learn-more
+Firebase console: https://console.firebase.google.com/
+  - Project name: cryptotalk-cl
+  - Enable Google Analytics for this project
+  Google Analytics is a free and unlimited analytics solution that enables targeting, reporting, and more in Firebase Crashlytics, Cloud Messaging, In-App Messaging, Remote Config, A/B Testing, and Cloud Functions.
+
+1. Register App:
+- Add Firebase to your web app
+  App nickname: cryptotalk-cl
+  - Also set up Firebase Hosting for this app. 
+    Hosting can also be set up later. There is no cost to get started anytime.
+    (https://firebase.google.com/docs/hosting/?authuser=0&hl=en)
+
+2. Add Firebase SDK
+(SDK stands for software development kit)
+(Christina says: The documentation doesn't specify how to do this for a "monorepo" - if this gets installed on entire app, backend only, or frontend only. ASSUMING it's backend. I am installing firebase to backend only.  All the documentation says to do is "install"...)
+```
+npm install firebase
+```
+Christina says: I don't understand this, so I went to Firebase's YouTube: https://www.youtube.com/watch?v=rQvOAnNvcNQ
+
+3. Install Firebase CLI
+```
+npm install -g firebase-tools
+```
+
+4. Deploy to Firebase Hosting
+You can deploy now or later. To deploy now, open a terminal window, then navigate to or create a root directory for your web app.
+- Sign in to Google
+```
+firebase login
+```
+- Initiate your project
+Run this command from your app’s root directory:
+```
+firebase init
+```
+
+? Which Firebase features do you want to set up for this directory? Press Space to select features, then Enter to confirm your choi
+ces. Realtime Database: Configure a security rules file for Realtime Database and (optionally) provision default instance, Firestor
+e: Configure security rules and indexes files for Firestore, Functions: Configure a Cloud Functions directory and its files, Hostin
+g: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys, Hosting: Set up GitHub Action deploys, Stora
+ge: Configure a security rules file for Cloud Storage, Emulators: Set up local emulators for Firebase products, Remote Config: Conf
+igure a template file for Remote Config
+
+=== Project Setup
+
+First, let's associate this project directory with a Firebase project.
+You can create multiple project aliases by running firebase use --add, 
+but for now we'll just set up a default project.
+
+? Please select an option: Use an existing project
+? Select a default Firebase project for this directory: cryptotalk-cl (cryptotalk-cl)
+i  Using project cryptotalk-cl (cryptotalk-cl)
+
+=== Database Setup
+i  database: ensuring required API firebasedatabase.googleapis.com is enabled...
+⚠  database: missing required API firebasedatabase.googleapis.com. Enabling now...
+✔  database: required API firebasedatabase.googleapis.com is enabled
+
+? It seems like you haven’t initialized Realtime Database in your project yet. Do you want to set it up? Yes
+? Please choose the location for your default Realtime Database instance: us-central1
+✔ Creating your default Realtime Database instance: cryptotalk-cl-default-rtdb
+
+Firebase Realtime Database Security Rules allow you to define how your data should be
+structured and when your data can be read from and written to.
+
+? What file should be used for Realtime Database Security Rules? database.rules.json
+✔  Database Rules for cryptotalk-cl-default-rtdb have been written to database.rules.json.
+Future modifications to database.rules.json will update Realtime Database Security Rules when you run
+firebase deploy.
+
+=== Firestore Setup
+
+Error: It looks like you haven't used Cloud Firestore in this project before. Go to https://console.firebase.google.com/project/cryptotalk-cl/firestore to create your Cloud Firestore database.
+
+=== Firestore Setup
+
+Firestore Security Rules allow you to define how and when to allow
+requests. You can keep these rules in your project directory
+and publish them with firebase deploy.
+
+? What file should be used for Firestore Rules? firestore.rules
+
+Firestore indexes allow you to perform complex queries while
+maintaining performance that scales with the size of the result
+set. You can keep index definitions in your project directory
+and publish them with firebase deploy.
+
+? What file should be used for Firestore indexes? firestore.indexes.json
+
+=== Functions Setup
+Let's create a new codebase for your functions.
+A directory corresponding to the codebase will be created in your project
+with sample code pre-configured.
+
+See https://firebase.google.com/docs/functions/organize-functions for
+more information on organizing your functions using codebases.
+
+Functions can be deployed with firebase deploy.
+
+? What language would you like to use to write Cloud Functions? JavaScript
+? Do you want to use ESLint to catch probable bugs and enforce style? Yes
+✔  Wrote functions/package.json
+✔  Wrote functions/.eslintrc.js
+✔  Wrote functions/index.js
+✔  Wrote functions/.gitignore
+? Do you want to install dependencies with npm now? Yes
+
+added 329 packages, and audited 330 packages in 10s
+
+38 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+=== Hosting Setup
+
+Your public directory is the folder (relative to your project directory) that
+will contain Hosting assets to be uploaded with firebase deploy. If you
+have a build process for your assets, use your build's output directory.
+
+? What do you want to use as your public directory? public
+? Configure as a single-page app (rewrite all urls to /index.html)? Yes
+? Set up automatic builds and deploys with GitHub? Yes
+✔  Wrote public/index.html
+
+i  Detected a .git folder at /Users/christina/Desktop/PURSUIT/module6/week7/capstone-app
+i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store.
+
+Visit this URL on this device to log in:
+https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=317508884&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+
+Waiting for authentication...
+Authorizing will redirect to
+http://localhost:9005
+Firebase CLI GitHub Login Successful
+
+Waiting for authentication...
+
+✔  Success! Logged into GitHub as christina-ml
+
+? For which GitHub repository would you like to set up a GitHub workflow? (format: user/repository) christina-ml/capstone-app
+
+✔  Created service account github-action-502100437 with Firebase Hosting admin permissions.
+✔  Uploaded service account JSON to GitHub as secret FIREBASE_SERVICE_ACCOUNT_CRYPTOTALK_CL.
+i  You can manage your secrets at https://github.com/christina-ml/capstone-app/settings/secrets.
+
+? Set up the workflow to run a build script before every deploy? Yes
+? What script should be run before every deploy? npm ci && npm run build
+
+✔  Created workflow file /Users/christina/Desktop/PURSUIT/module6/week7/capstone-app/.github/workflows/firebase-hosting-pull-request.yml
+? Set up automatic deployment to your site's live channel when a PR is merged? Yes
+? What is the name of the GitHub branch associated with your site's live channel? main
+
+✔  Created workflow file /Users/christina/Desktop/PURSUIT/module6/week7/capstone-app/.github/workflows/firebase-hosting-merge.yml
+
+i  Action required: Visit this URL to revoke authorization for the Firebase CLI GitHub OAuth App:
+https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+i  Action required: Push any new workflow file(s) to your repo
+
+=== Storage Setup
+
+Firebase Storage Security Rules allow you to define how and when to allow
+uploads and downloads. You can keep these rules in your project directory
+and publish them with firebase deploy.
+
+? What file should be used for Storage Rules? storage.rules
+✔  Wrote storage.rules
+
+=== Emulators Setup
+? Which Firebase emulators do you want to set up? Press Space to select emulators, then Enter to confirm your choices. Authentication
+ Emulator, Functions Emulator, Firestore Emulator, Database Emulator, Hosting Emulator, Pub/Sub Emulator, Storage Emulator, Eventarc 
+Emulator
+? Which port do you want to use for the auth emulator? 9099
+? Which port do you want to use for the functions emulator? 5001
+? Which port do you want to use for the firestore emulator? 8080
+? Which port do you want to use for the database emulator? 9000
+? Which port do you want to use for the hosting emulator? 5000
+? Which port do you want to use for the pubsub emulator? 8085
+? Which port do you want to use for the storage emulator? 9199
+? Which port do you want to use for the eventarc emulator? 9299
+? Would you like to enable the Emulator UI? Yes
+? Which port do you want to use for the Emulator UI (leave empty to use any available port)? 
+? Would you like to download the emulators now? Yes
+
+=== Remoteconfig Setup
+? What file should be used for your Remote Config template? remoteconfig.template.json
+
+i  Writing configuration info to firebase.json...
+i  Writing project information to .firebaserc...
+
+✔  Firebase initialization complete!
+
+
+
+- When you’re ready, deploy your web app
+Put your static files (e.g., HTML, CSS, JS) in your app’s deploy directory (the default is “public”). Then, run this command from your app’s root directory:
+```
+firebase deploy
+```
+After deploying, view your app at `cryptotalk-cl.web.app` (https://cryptotalk-cl.web.app/)
+
+Need help? Check out the `Hosting docs` (https://firebase.google.com/docs/hosting/quickstart?authuser=0&hl=en)
+
+=== Deploying to 'cryptotalk-cl'...
+
+i  deploying database, storage, firestore, functions, hosting, remoteconfig
+Running command: npm --prefix "$RESOURCE_DIR" run lint
+
+> lint
+> eslint .
+
+✔  functions: Finished running predeploy script.
+i  database: checking rules syntax...
+✔  database: rules syntax for database cryptotalk-cl-default-rtdb is valid
+i  firebase.storage: checking storage.rules for compilation errors...
+✔  firebase.storage: rules file storage.rules compiled successfully
+i  firestore: reading indexes from firestore.indexes.json...
+i  cloud.firestore: checking firestore.rules for compilation errors...
+✔  cloud.firestore: rules file firestore.rules compiled successfully
+i  functions: ensuring required API cloudfunctions.googleapis.com is enabled...
+i  functions: ensuring required API cloudbuild.googleapis.com is enabled...
+i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled...
+✔  functions: required API cloudfunctions.googleapis.com is enabled
+⚠  artifactregistry: missing required API artifactregistry.googleapis.com. Enabling now...
+⚠  functions: missing required API cloudbuild.googleapis.com. Enabling now...
+
+Error: Your project cryptotalk-cl must be on the Blaze (pay-as-you-go) plan to complete this command. Required API artifactregistry.googleapis.com can't be enabled until the upgrade is complete. To upgrade, visit the following URL:
+
+https://console.firebase.google.com/project/cryptotalk-cl/usage/details
+
+Having trouble? Try firebase [command] --help
+
+`***** Christina says: Deploying did not work - uninstalled and deleted firebase. *****`
+
+
 
 ## september - TO DO
 // Currencies.scss -> for User details page
