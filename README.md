@@ -268,13 +268,67 @@ Video says to run command `serve src/` => YouTube video comments says: `npm inst
    └─────────────────────────────────────────────────┘     
 ```
 
+// Import the functions you need from the SDKs you need (adding browser module paths)
+// import { initializeApp } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-app.js";
+// import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-auth.js";
+
+// they don't recommend using the browser modules in the video for production. Instead, they say use webpack for production.
+import { initializeApp } from "firebase/app";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
+`npm install webpack webpack-cli -D`
+
+module bundlers look for a file called an entry point. This is the root of your JavaScript code, and it usually imports everything needed for the application. Dash o for an output folder of dist.
+"node_modules/.bin/webpack --entry ./src/index.js -o dist"
+BUT PRO TIP: if your entry point is located at `src/index.js` and your output file needs to be `dist/main.js`, then you can drop all of these flags.
+"node_modules/.bin/webpack"
+Now we have our main.js file and our dist folder.
+Christina says: I did this command:
+`node_modules/.bin/webpack --entry ./src/index.js -o dist`
+
+(They didn't fix anything from this warning in the video):
+```
+WARNING in configuration
+The 'mode' option has not been set, webpack will fallback to 'production' for this value.
+Set 'mode' option to 'development' or 'production' to enable defaults for each environment.
+You can also set it to 'none' to disable any default behavior. Learn more: https://webpack.js.org/configuration/mode/
+
+1 warning has detailed information that is not shown.
+Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.
+```
+
+
+change index.html to say "main.js" and run the serve command again
+`serve dist/`
+
+make a `webpack.config.js` file, add source maps (https://webpack.js.org/configuration/devtool/)
+
+run build command:
+`node_modules/.bin/webpack`
+`node_modules/.bin/webpack --entry ./src/index.js -o dist`
+
+Now we have our bundle.js in the dist folder
+Rename the file in index.html to `bundle.js`
+run the `serve dist/` command
+
+^^^  Christina says: This did NOT work....for webpack.
 
 3. Install Firebase CLI
 4. Deploy to Firebase Hosting
   - firebase login
   - firebase init
+    - only choosing "hosting" options this time
   - firebase deploy
 
+=== Deploying to 'cryptotalk-cl-5c7b8'...
+
+i  deploying hosting
+i  hosting[cryptotalk-cl-5c7b8]: beginning deploy...
+i  hosting[cryptotalk-cl-5c7b8]: found 1 files in public
+✔  hosting[cryptotalk-cl-5c7b8]: file upload complete
+i  hosting[cryptotalk-cl-5c7b8]: finalizing version...
+
+Error: Failed to list functions for cryptotalk-cl-5c7b8
 
 
 ## september - TO DO

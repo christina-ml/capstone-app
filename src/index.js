@@ -1,7 +1,10 @@
 // Import the functions you need from the SDKs you need (adding browser module paths)
 // import { initializeApp } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-app.js";
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-app.js";
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-auth.js";
+// import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-auth.js";
+
+// they don't recommend using the browser modules in the video for production. Instead, they say use webpack for production.
+import { initializeApp } from "firebase/app";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 // import { getFirestore, collection, getDocs, getDoc } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-firestore.js";
 
