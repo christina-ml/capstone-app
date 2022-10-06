@@ -242,6 +242,39 @@ Having trouble? Try firebase [command] --help
 
 `***** Christina says: Deploying did not work - uninstalled and deleted firebase. *****`
 
+# Installing Firebase 10/6/22
+1. Register app
+2. Add Firebase SDK
+  - added `getAuth`
+  - https://firebase.google.com/docs/web/setup explains the browser module link from the YouTube video (https://www.youtube.com/watch?v=rQvOAnNvcNQ&list=PLl-K7zZEsYLnfwBe4WgEw9ao0J0N1LYDR&index=8&t=194s):
+  ```
+  Do you use ESM and want to use browser modules? Replace all your import lines to use the following pattern:
+  import { } from 'https://www.gstatic.com/firebasejs/9.11.0/firebase-SERVICE.js'
+  (where SERVICE is an SDK name such as firebase-firestore).
+  Using browser modules is a quick way to get started, but we recommend using a module bundler for production.
+  ```
+
+Video says to run command `serve src/` => YouTube video comments says: `npm install -g serve`
+```
+   ┌─────────────────────────────────────────────────┐
+   │                                                 │
+   │   Serving!                                      │
+   │                                                 │
+   │   - Local:            http://localhost:3000     │
+   │   - On Your Network:  http:// <IP address> :3000   │
+   │                                                 │
+   │   Copied local address to clipboard!            │
+   │                                                 │
+   └─────────────────────────────────────────────────┘     
+```
+
+
+3. Install Firebase CLI
+4. Deploy to Firebase Hosting
+  - firebase login
+  - firebase init
+  - firebase deploy
+
 
 
 ## september - TO DO
