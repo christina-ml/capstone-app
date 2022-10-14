@@ -24,11 +24,12 @@ import UserEditForm from "./Components/users/UserEditForm";
 // components for login (not working)
 import Login from "./Components/login/Login";
 import UserLogin from "./Components/loginMUI/UserLogin";
-import LoginRH from "./Components/logingReactHooks/LoginRH";
+import LoginRH from "./Components/loginReactHooks/LoginRH";
 import LoginLS from "./Components/loginLocalStorage/LoginLS";
 import LoginUsingBackend from "./Components/loginUsingBackend/LoginUsingBackend";
 
 import Shop from "./Components/shop/Shop";
+import NftCart from "./Components/shop/NftCart";
 import Learn from "./Components/learn/Learn";
 import Games from "./Components/games/Games";
 import GamesColoring from "./Components/games/GamesColoring";
@@ -116,10 +117,11 @@ function App() {
           <Route path="/users/:uid/edit" element={<UserEditForm />} />
           <Route exact path="/users/:uid" element={<UserDetails />} />
 
-          {/* <Route path="/login" element={<LoginLS />} /> */}
+          <Route path="/login" element={<LoginLS />} />
           {/* <Route path="/register" element={<LoginUsingBackend />} /> */}
           
           <Route path="/shop" element={<Shop />} />
+          <Route path="/cart" element={<NftCart />} />
           <Route path="/learn" element={<Learn />} />
           <Route path="/games" element={<Games />} />
           <Route path="/games/coloring" element={<GamesColoring />} />

@@ -6,7 +6,7 @@
 // ^ For expanding underline on hover for Add to Cart button.
 
 
-.kayakCards {
+.nftCards {
     width: 900px;
     margin: 0 auto;
     color: green;
@@ -28,8 +28,9 @@
             height: 420px;
 
             &__image {
+                text-align: center;
                 img {
-                    height: auto;
+                    height: 250px;
                     width: auto;
                 }
             }
@@ -101,6 +102,8 @@
         border-top: 1px solid #000000;
         text-transform: uppercase;
         padding: 15px 0px 15px 0px;
+        text-align: center;
+
         a {
             text-decoration: none;
             color: black;
