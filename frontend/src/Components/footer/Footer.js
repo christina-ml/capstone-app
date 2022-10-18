@@ -2,6 +2,8 @@ import React from "react";
 
 import "./Footer.scss";
 
+import Newsletter from "../newsletter/Newsletter.js";
+
 function Footer() {
   return (
     <div className="footer">
@@ -52,8 +54,8 @@ function Footer() {
           <li>YouTube</li>
         </ul>
       
+        <Newsletter />
         <div className="footer__categories__copyright">Copyright 2022 CryptoTalk</div>
-      
       </div>
 
 
