@@ -1,38 +1,128 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+// Resources for questions:
+// https://learncrypto.com/tldr/crypto-basics#who-is-satoshi-nakamoto-why-are-they-important
+// https://learncrypto.com/blog
+// https://learncrypto.com/knowledge-base/basics
+// https://www.coinbase.com/learn/crypto-basics
 
+import React from 'react';
 import "./Learn.scss";
 
+// questions and answers
+import learnData from './learnData';
+import Accordion from './Accordion';
+
 const Learn = () => {
+
+  // questions card
+  let learnQuestions = learnData.map((learn) => {
+    return (
+      <div>
+        <ul>
+          <li>{learn.question}</li>
+          <li>{learn.answer}</li>
+        </ul>
+      </div>
+    )
+  })
+
+
+
   return (
     <div className="Learn">
         <header>
             <h1 className="Learn__header">Learn CryptoTalk</h1>
         </header>
+        <h3>
+          Crypto basics
+        </h3>
         <div>
-          <article>
-            <h1>Lorem Ipsum</h1>
-            <blockquote>
-            "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
-            </blockquote>
-            <p>
-              "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl neque, pharetra id justo at, pretium tempus dui. Nulla convallis interdum accumsan. Maecenas in libero interdum, accumsan arcu non, ornare risus. Cras finibus tortor id urna elementum, cursus placerat ligula porta. Ut vel lacus pharetra justo sollicitudin hendrerit. Sed sit amet tellus eget metus pulvinar aliquam ut id lectus. Vivamus tincidunt eget ligula eu pellentesque. Aliquam erat volutpat. Integer eu dolor et nisl auctor sodales sit amet vel magna. Nam et cursus leo.
-            </p>
-            <p>
-              Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi sed nibh tortor. Fusce venenatis tempor neque ac vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum at erat sed enim tincidunt consectetur. Mauris non nulla a odio vestibulum convallis et a metus. Ut ac odio sed quam vehicula vestibulum. Maecenas bibendum laoreet felis sed vehicula. Cras odio augue, auctor ut lorem sagittis, pulvinar vehicula tortor. Ut sit amet tincidunt mi, id volutpat urna. Mauris ullamcorper urna sem, eu facilisis elit dignissim id. Sed vitae accumsan risus. Maecenas viverra eros eu sodales porttitor.
-            </p>
-            <p>
-              Integer lacinia massa id elit gravida, sit amet dignissim libero convallis. Etiam cursus leo vel ipsum vulputate, id lacinia lectus eleifend. Phasellus justo tortor, aliquam vel orci quis, pellentesque euismod lacus. In hac habitasse platea dictumst. Nunc fermentum sit amet lacus sed placerat. Aliquam iaculis, justo sit amet dignissim tincidunt, quam augue pretium est, sit amet pulvinar felis quam eu neque. Integer dapibus libero at auctor finibus. Ut pretium aliquet sapien sit amet ullamcorper. Etiam rutrum mauris quis pellentesque feugiat. Curabitur sit amet quam et metus congue porta. In hac habitasse platea dictumst. Fusce molestie, erat pulvinar semper viverra, turpis nunc molestie justo, eu mollis odio mi quis justo. Vestibulum non congue lacus, vitae euismod justo.
-            </p>
-            <p>
-              Pellentesque congue sem vitae ante ultricies convallis. Ut ullamcorper dolor felis, nec malesuada nisi venenatis ac. Nunc vel feugiat augue, sit amet ultricies risus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In lacinia sem nibh, vel mattis dui feugiat a. Mauris rhoncus nibh quis lorem dignissim, in ornare erat rhoncus. Aenean sed lorem in est interdum pretium. Quisque auctor erat et lacus blandit pretium. Quisque ipsum arcu, convallis nec eros viverra, eleifend rutrum nisi. Etiam vulputate, justo consectetur dapibus finibus, erat ipsum ullamcorper leo, ac sollicitudin ligula quam id neque. Morbi et enim dignissim, ornare nisl nec, commodo massa. Curabitur pulvinar eu nulla a aliquam. Quisque sit amet dictum nulla. Fusce malesuada urna purus, in placerat mauris auctor ut.
-            </p>
-            <p>
-              Nunc in venenatis diam. Donec sit amet dolor vitae nibh vulputate sagittis sed in turpis. Vestibulum consectetur sit amet risus et bibendum. Praesent aliquam erat quis urna facilisis mattis nec eu lorem. Maecenas vel orci euismod, auctor arcu luctus, pulvinar arcu. Quisque nec gravida purus. Mauris id sapien venenatis, sollicitudin sem a, aliquet mi. Phasellus condimentum molestie quam, a mattis magna rutrum eget. Suspendisse potenti. Nunc ac accumsan nibh. Nulla luctus arcu vitae nisl feugiat dignissim. In hac habitasse platea dictumst. Proin sed enim tortor. Aliquam venenatis arcu sed nisi dignissim, sit amet iaculis leo facilisis. Nulla quis maximus risus.
-            </p>
-          </article>
+          New to crypto? — start with these guides
         </div>
+        <div>Beginner's Guide</div>
+        
+        <Accordion />
+        <Accordion />
+        <Accordion />
+
+        {/* <div className="Learn__questionsCard">
+          {learnQuestions}
+        </div> */}
+
+        {/* <div className="questions"> */}
+          {/* <h4>About Cryptocurrencies</h4> */}
+          {/* <ul> */}
+            {/* <li>What is cryptocurrency?</li> */}
+            {/* <li>Why are there so many cryptocurrencies?</li> */}
+            {/* <li>Why do we need crypto? What is wrong with existing money?</li> */}
+            {/* <li>Why are cryptocurrency prices so volatile?</li> */}
+            {/* <li>Who is Satoshi Nakamoto? Why are they important?</li> */}
+            {/* <li>What is a bull or bear market?</li> */}
+          {/* </ul> */}
+          {/* <h4>About Bitcoin</h4> */}
+          {/* <ul> */}
+            {/* <li>What is Bitcoin?</li> */}
+            {/* <li>Who is using Bitcoin?</li> */}
+            {/* <li>Why does a cryptocurrency like Bitcoin have value?</li> */}
+            {/* <li>How does Bitcoin work?</li> */}
+            {/* <li>What is Bitcoin Mining?</li> */}
+            {/* <li>Can Bitcoin be used for regular shopping/spending?</li> */}
+            {/* <li>What is a Bitcoin halving?</li> */}
+            {/* <li>What are the limitations of Bitcoin?</li> */}
+          {/* </ul> */}
+
+          {/* <h4>About Ethereum</h4> */}
+          {/* <ul> */}
+            {/* <li>What is Ethereum? What does it do?</li> */}
+          {/* </ul> */}
+
+          {/* <h4>Learn More</h4> */}
+          {/* <ul>
+            <li>What is Cardano?</li>
+            <li>What is fiat money?</li>
+            <li>What is a stablecoin?</li>
+            <li>What is a Stablecoin? What does it do?</li>
+            <li>What is a Blockchain? What does it do?</li>
+            <li>What is Dogecoin?</li>
+            <li>What is Polkadot (DOT)?</li>
+            <li>What is Polygon (MATIC)?</li>
+            <li>What is Uniswap?</li>
+            <li>What is CeFi?</li>
+            <li>What is DeFi?</li>
+            <li>What is cryptography?</li>
+            <li>What is a DEX?</li>
+            <li>What is an ETF?</li>
+            <li>What is a fork?</li>
+            <li>A fork in the road</li>
+            <li>What is inflation?</li>
+            <li>What is Internet Computer (ICP)?</li>
+            <li>What is market cap?</li>
+            <li>What is mining?</li>
+            <li>What is a non-fungible token (NFT)?</li>
+            <li>How does an NFT have value?</li>
+            <li>What is Axie Infinity?</li>
+            <li>What is "proof of work" or "proof of stake"?</li>
+            <li>What is a protocol?</li>
+            <li>What is a private key?</li>
+            <li>What is a recovery phrase?</li>
+            <li>What is a smart contract?</li>
+            <li>What is technical analysis?</li>
+            <li>What is a token?</li>
+            <li>What is volatility?</li>
+            <li>What is the Lightning Network?</li>
+            <li>Which countries use crypto the most?</li>
+            <li>AMM Explained: Automated Market Makers & How They Work</li>
+            <li>What Are Decentralised Crypto Exchanges? DEX Explained</li>
+            <li>What Are Wrapped Crypto Tokens?</li>
+            <li>What are Wrapped Tokens & how do they work?</li>
+            <li>Measuring crypto adoption</li>
+            <li>What are Tokenomics?</li>
+            <li>Crypto's new frontiers</li>
+            <li>What are Blockchain Bridges & how do they work?</li>
+            <li>What is an Oracle in Blockchain?</li>
+          </ul> */}
+        {/* </div> */}
+        {/* <div className="answers"> */}
+        {/* </div> */}
     </div>
   )
 }

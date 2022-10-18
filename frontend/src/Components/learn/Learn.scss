@@ -1,15 +1,19 @@
+// import colors from designUtils
 @import '../../designUtils/colors';
-@import '../../designUtils/fonts';
 @import '../../designUtils/media';
+@import '../../designUtils/fonts';
 
 .Learn {
-    text-align: center;
     font-family: $logo-font-family;
     margin: 40px;
-
-    article p {
-        column-count: 2;
-        column-gap: 40px;
-        text-align: justify;
+    
+    header {
+        text-align: center;
     }
+
+    &__questionsCard {
+        border: 1px solid orange;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
 }
