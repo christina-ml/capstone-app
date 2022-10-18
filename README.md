@@ -525,6 +525,12 @@ npm install react-icons --save
 ```
 Example: Mobile layout - collapsible menu icon
 
+
+## axios
+```
+npm install axios
+```
+
 ## Basic command to run the frontend
 
 First, `cd` into the frontend directory using the terminal.
