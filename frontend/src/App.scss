@@ -56,7 +56,7 @@
     border: none;
 
     // Darkmode
-    button {
+    .switchThemeButton {
         color: var(--text-primary);
         background-color: $light-gray;
         border: 2px var(--text-primary) solid;

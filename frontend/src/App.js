@@ -98,7 +98,7 @@ function App() {
     //   <span className="switch-slider"></span>
     // </label>
 
-    <button onClick={switchTheme}>
+    <button className="switchThemeButton" onClick={switchTheme}>
       {theme === 'light' ? <BsFillSunFill /> : <MdDarkMode />}
     </button>
   )

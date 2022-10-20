@@ -14,16 +14,16 @@ import Accordion from './Accordion';
 const Learn = () => {
 
   // questions card
-  let learnQuestions = learnData.map((learn) => {
-    return (
-      <div>
-        <ul>
-          <li>{learn.question}</li>
-          <li>{learn.answer}</li>
-        </ul>
-      </div>
-    )
-  })
+  // let learnQuestions = learnData.map((learn) => {
+  //   return (
+  //     <div>
+  //       <ul>
+  //         <li>{learn.question}</li>
+  //         <li>{learn.answer}</li>
+  //       </ul>
+  //     </div>
+  //   )
+  // })
 
 
 
@@ -40,8 +40,6 @@ const Learn = () => {
         </div>
         <div>Beginner's Guide</div>
         
-        <Accordion />
-        <Accordion />
         <Accordion />
 
         {/* <div className="Learn__questionsCard">

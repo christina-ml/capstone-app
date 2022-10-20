@@ -1,28 +1,57 @@
-import React from 'react';
+// https://www.w3schools.com/howto/howto_js_accordion.asp (regular js accordion)
+// https://contactmentor.com/accordion-react-js/ (using state)
+import React, { useState } from 'react';
 
 import './Accordion.scss';
 
-// react icons
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-
 const Accordion = () => {
 
-    const handleClick = () => {
-        console.log("you clicked the accordion")
+    const [active, setActive] = useState(false);
+    
+
+    // ---------- Trying to replace this (below) ----------
+    // ----- Also, takes two clicks to work for some reason -----
+    const slideDown = () => {
+        // Animated slide down accordion (babel)
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
     }
+    // ---------- Trying to replace this (above) ^^^ ----------
+
+    const handleAccordionClick = (e) => {
+        console.log(e.target)
+        setActive(!active); // toggle
+    }
+
+
 
   return (
     <div>
-        <div class="accordion">
-            <div class="accordion__header" onClick={handleClick}>
-                <span>Question Goes Here</span>
-                <div>
-                    <IoIosArrowDown />
-                </div>
-            </div>
-            <div class="accordion__text">
-                Answer to question - Lorem Ipsum sdrawkcab delleps nehw drow rehtona si taht drow a saw taht spoo won rof sdrawkcab tsuj sti eb ot desoppus txet eht si tahw.
-            </div>
+        <button className="accordion" onClick={handleAccordionClick} >Section 1</button>
+        <div className="panel">
+            <p>Lorem ipsum...</p>
+        </div>
+
+        <button className="accordion" onClick={slideDown} >Section 2</button>
+        <div className="panel">
+            <p>Lorem ipsum...</p>
+        </div>
+
+        <button className="accordion" onClick={slideDown}>Section 3</button>
+        <div className="panel">
+            <p>Lorem ipsum...</p>
         </div>
     </div>
   )
