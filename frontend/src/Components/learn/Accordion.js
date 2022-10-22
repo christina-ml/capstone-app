@@ -7,6 +7,8 @@ import './Accordion.scss';
 const Accordion = () => {
 
     const [active, setActive] = useState(false);
+    // when button is active, sibling panel's style changes from <nothing> to the max height
+    const [styleForWhenSiblingActivePanel, setStyleForWhenSiblingActivePanel] = useState('');
     
 
     // ---------- Trying to replace this (below) ----------
@@ -33,18 +35,32 @@ const Accordion = () => {
     const handleAccordionClick = (e) => {
         console.log(e.target)
         setActive(!active); // toggle
+
+        // create variable for scroll height of the panel
+        let scrollHeightOfPanel = e.target.nextElementSibling.style.maxHeight = e.target.nextElementSibling.scrollHeight + "px";
+
+        // set the style for panel to toggle from <nothing> to the max height
+        if (active === true){
+            let panel = e.target.nextElementSibling;
+            
+            if (!panel.style.maxHeight) {
+                setStyleForWhenSiblingActivePanel(panel.style.maxHeight = scrollHeightOfPanel);
+            } else {
+                setStyleForWhenSiblingActivePanel(panel.style.maxHeight = null);
+            }
+        }
     }
 
-
+// style={{color: 'red', maxHeight: null}}
 
   return (
     <div>
-        <button className="accordion" onClick={handleAccordionClick} >Section 1</button>
+        <button className={`accordion ${active}` } onClick={handleAccordionClick}  >Section 1</button>
         <div className="panel">
             <p>Lorem ipsum...</p>
         </div>
 
-        <button className="accordion" onClick={slideDown} >Section 2</button>
+        <button className="accordion" onClick={handleAccordionClick} >Section 2</button>
         <div className="panel">
             <p>Lorem ipsum...</p>
         </div>
