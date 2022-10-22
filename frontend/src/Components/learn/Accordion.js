@@ -8,32 +8,9 @@ const Accordion = () => {
 
     const [active, setActive] = useState(false);
     // when button is active, sibling panel's style changes from <nothing> to the max height
-    const [styleForWhenSiblingActivePanel, setStyleForWhenSiblingActivePanel] = useState('');
     
-
-    // ---------- Trying to replace this (below) ----------
-    // ----- Also, takes two clicks to work for some reason -----
-    const slideDown = () => {
-        // Animated slide down accordion (babel)
-        var acc = document.getElementsByClassName("accordion");
-        var i;
-
-        for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var panel = this.nextElementSibling;
-                if (panel.style.maxHeight) {
-                    panel.style.maxHeight = null;
-                } else {
-                    panel.style.maxHeight = panel.scrollHeight + "px";
-                }
-            });
-        }
-    }
-    // ---------- Trying to replace this (above) ^^^ ----------
-
     const handleAccordionClick = (e) => {
-        console.log(e.target)
+        // console.log(e.target)
         setActive(!active); // toggle
 
         // create variable for scroll height of the panel
@@ -44,14 +21,12 @@ const Accordion = () => {
             let panel = e.target.nextElementSibling;
             
             if (!panel.style.maxHeight) {
-                setStyleForWhenSiblingActivePanel(panel.style.maxHeight = scrollHeightOfPanel);
+                panel.style.maxHeight = scrollHeightOfPanel
             } else {
-                setStyleForWhenSiblingActivePanel(panel.style.maxHeight = null);
+                panel.style.maxHeight = null
             }
         }
     }
-
-// style={{color: 'red', maxHeight: null}}
 
   return (
     <div>
@@ -65,7 +40,7 @@ const Accordion = () => {
             <p>Lorem ipsum...</p>
         </div>
 
-        <button className="accordion" onClick={slideDown}>Section 3</button>
+        <button className="accordion" onClick={handleAccordionClick}>Section 3</button>
         <div className="panel">
             <p>Lorem ipsum...</p>
         </div>
