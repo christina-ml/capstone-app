@@ -4,17 +4,31 @@
 // https://learncrypto.com/knowledge-base/basics
 // https://www.coinbase.com/learn/crypto-basics
 
-import React from 'react';
+import React, { useState } from 'react';
 import "./Learn.scss";
 
 // questions and answers
 import learnData from './learnData';
 import Accordion from './Accordion';
 
+import SearchBar from '../searchBar/SearchBar';
+
 const Learn = () => {
-  
+  const [searchTerm, setSearchTerm] = useState(''); // for searchBar
+
+  // search bar - filter by topics
+  let filteredTopics = learnData;
+  if (searchTerm){
+      filteredTopics = learnData.filter(learnDataQandA => {
+          const topic = `${learnDataQandA.topic}`;
+          const topicToLowerCase = topic.toLowerCase();
+          const searchTermToLowerCase = searchTerm.toLowerCase();
+          return topicToLowerCase.includes(searchTermToLowerCase);
+      })
+  }
+
   // questions card using accordion
-  let learnQuestionsAccordion = learnData.map((learn) => {
+  let learnQuestionsAccordion = filteredTopics.map((learn) => {
     return (
       <Accordion learn={learn} />
     )
@@ -27,7 +41,10 @@ const Learn = () => {
         </header>
         <h3>Crypto basics</h3>
         <div>New to crypto? — start here</div>
-        
+        <SearchBar searchTerm={searchTerm} 
+                  setSearchTerm={setSearchTerm} 
+                  placeholder={`Search by topic`}
+        />
         <div className="Learn__questionsAccordion">
           {learnQuestionsAccordion}
         </div>
