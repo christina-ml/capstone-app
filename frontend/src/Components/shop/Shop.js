@@ -9,6 +9,9 @@ import { MdShoppingCart } from "react-icons/md";
 import { AiFillCheckCircle } from "react-icons/ai";
 import { AiFillCloseCircle } from "react-icons/ai";
 
+// helpers - convert USD to ETH
+import convertUSDToETH from './helpers/convertUSDToETH';
+
 import './Shop.scss';
 
 const Shop = () => {
@@ -27,17 +30,16 @@ const Shop = () => {
                     <div className="nftCards__card__details">
                     <div className="nftCards__card__details__image">
                         <React.Fragment>
-                            {nft.image === true && nft.colors === 'yellowgreen' ? <span><img src={nft.url} alt="nft" /></span> : ''}
-                            {nft.image === true && nft.colors === 'deepskyblue' ? <span><img src={nft.url} alt="nft" /></span> : ''}
+                            {nft.image === true && nft.color === 'yellowgreen' ? <span><img src={nft.url} alt="nft" /></span> : ''}
+                            {nft.image === true && nft.color === 'deepskyblue' ? <span><img src={nft.url} alt="nft" /></span> : ''}
                         </React.Fragment>
                     </div>
-                        <div className="circleButton">
-                            <div className="circleButton__outer"></div>
-                            <div className="circleButton__inner" style={{backgroundColor: `${nft.colors}`}}></div>
-                        </div>
 
                         <div className="nftCards__card__details__itemName">{nft.itemName}</div>
-                        <div className="nftCards__card__details__price">${nft.price}</div>
+                        <div className="nftCards__card__details__price">
+                            <img src={nft.currencyLogo} alt="currency logo"/>
+                            {convertUSDToETH(nft.price)} {nft.currency} <span>(${nft.price} USD)</span>
+                        </div>
                         <div className="nftCards__card__details__availNearby">
                             <React.Fragment>
                                 {nft.availability === 'yes' ? <span><AiFillCheckCircle color="green"/>Shipping Available</span>: <></>}

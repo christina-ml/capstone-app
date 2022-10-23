@@ -29,9 +29,18 @@
 
             &__image {
                 text-align: center;
+                overflow: hidden;
+                height: 250px;
+
                 img {
                     height: 250px;
                     width: auto;
+
+                    &:hover{
+                        transform: scale(1.2);
+                        transition: transform .2s;
+                        cursor: pointer;
+                    }
                 }
             }
 
@@ -41,14 +50,20 @@
 
             &__price {
                 text-align: left;
+                img {
+                    height: 20px;
+                }
+                span {
+                    color: $medium-gray;
+                    font-size: 14px;
+                }
             }
 
             &__availNearby {
                 font-size: 12px;
                 display: inline-flexbox;
-                // display: grid;
-                // grid-auto-flow: column;
                 font-weight: 400;
+
                 span {
                     padding-right: 10px;
                 }
@@ -70,31 +85,6 @@
             border-top: 80px solid #fff;
             border-left: 80px solid transparent;
             }
-        }
-    }
-
-    .circleButton {
-        display: inline-block;
-        margin: 0 auto;
-        padding: 5px;
-        
-        &__outer {
-            height: 20px;
-            width: 20px;
-            background-color: rgb(255, 255, 255);
-            border: 1px solid grey;
-            border-radius: 50%;
-            position: absolute;
-        }
-
-        &__inner {
-            height: 14px;
-            width: 14px;
-            // background-color: rgb(165, 234, 95);
-            border-radius: 50%;
-            position: relative;
-            margin-top: 4px;
-            margin-left: 4px;
         }
     }
 
