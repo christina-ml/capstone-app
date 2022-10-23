@@ -1,16 +1,12 @@
-// https://www.w3schools.com/howto/howto_js_accordion.asp (regular js accordion)
-// https://contactmentor.com/accordion-react-js/ (using state)
 import React, { useState } from 'react';
 
 import './Accordion.scss';
 
-const Accordion = () => {
-
-    const [active, setActive] = useState(false);
+const Accordion = ({learn}) => {
     // when button is active, sibling panel's style changes from <nothing> to the max height
-    
+    const [active, setActive] = useState(false);
+
     const handleAccordionClick = (e) => {
-        // console.log(e.target)
         setActive(!active); // toggle
 
         // create variable for scroll height of the panel
@@ -28,21 +24,12 @@ const Accordion = () => {
         }
     }
 
+
   return (
     <div>
-        <button className={`accordion ${active}` } onClick={handleAccordionClick}  >Section 1</button>
+        <button className={`accordion ${active}`} onClick={handleAccordionClick} >{learn.question}</button>
         <div className="panel">
-            <p>Lorem ipsum...</p>
-        </div>
-
-        <button className="accordion" onClick={handleAccordionClick} >Section 2</button>
-        <div className="panel">
-            <p>Lorem ipsum...</p>
-        </div>
-
-        <button className="accordion" onClick={handleAccordionClick}>Section 3</button>
-        <div className="panel">
-            <p>Lorem ipsum...</p>
+            <p>{learn.answer}</p>
         </div>
     </div>
   )
