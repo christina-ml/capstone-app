@@ -20,7 +20,7 @@ const Learn = () => {
   let filteredTopics = learnData;
   if (searchTerm){
       filteredTopics = learnData.filter(learnDataQandA => {
-          const topic = `${learnDataQandA.topic}`;
+          const topic = `${learnDataQandA.topic} ${learnDataQandA.question}`;
           const topicToLowerCase = topic.toLowerCase();
           const searchTermToLowerCase = searchTerm.toLowerCase();
           return topicToLowerCase.includes(searchTermToLowerCase);
@@ -40,7 +40,7 @@ const Learn = () => {
             <h1>Learn CryptoTalk</h1>
         </header>
         <h3>Crypto basics</h3>
-        <div>New to crypto? — start here</div>
+        <div>New to crypto? — start here</div> 
         <SearchBar searchTerm={searchTerm} 
                   setSearchTerm={setSearchTerm} 
                   placeholder={`Search by topic`}
