@@ -1,13 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { IoSettingsSharp } from 'react-icons/io5';
+
 const User = ({user}) => {
 
   const { uid,
     firstname,
     lastname,
     username,
-    photo
+    photo,
+    user_admin
     // user_password,
     // user_email,
     // user_active,
@@ -20,13 +23,15 @@ const User = ({user}) => {
     <div className="userCard">
       <div className="userCard__info">
         <div className="userCard__info__name">
-          <h1>{firstname} {lastname}</h1>
+          <h1>{firstname} {lastname}
+            {user_admin ? <span><IoSettingsSharp /></span> : <span></span>}
+          </h1>
         </div>
         <div className="userCard__info__infoLine">
           ID: {uid}
         </div>
         <div className="userCard__info__infoLine">
-          Username: {username}
+          {username}
         </div>
         <div className="userCard__info__infoLine__button">
           <Link to={`/users/${uid}`} >
