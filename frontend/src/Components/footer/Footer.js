@@ -58,11 +58,6 @@ function Footer() {
         <div className="footer__categories__copyright">Copyright 2022 CryptoTalk</div>
       </div>
 
-
-      {/* <div className="footer footer__mascot">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Robot-clip-art-book-covers-feJCV3-clipart.png/504px-Robot-clip-art-book-covers-feJCV3-clipart.png?20161009050803" 
-        />
-      </div> */}
     </div>
   );
 }

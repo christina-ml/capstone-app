@@ -44,38 +44,17 @@
         }     
     }
 
-
-    // &__mascot {
-    //     text-align: right;
-    //     // z-index: 2;
-    //     // bottom: 40px;
-    //     // top: 0;
-
-    //     z-index: 5;
-    //     opacity: 0;
-    //     &:hover {
-    //         z-index: 2;
-    //         opacity: 100%;
-    //         bottom: 85px;
-    //         transition: 0.5s;
-    //     }
-      
-
-    //     img {
-    //         height: 150px;
-    //         animation: 3s ease-in 1s infinite;
-    //         // animation: 1.5s ease-in-out 0s 1 normal none running;
-    //     }
-    // }
   }
 
 //   mobile screens styling
 @media only screen and (max-width: $mobile){
     .footer {
-        
+        width: 100vw;
+
         &__categories {
-            display: block;
-            // column-count: 2;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
         }
     }
 }
