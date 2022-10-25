@@ -31,7 +31,7 @@
     color: $white;
     font-family: sans-serif;
     line-height: 1.5em;
-    div {
+    &__info {
       font-size: 15px;
       font-family: serif;
       text-shadow: 1px 1px $light-gray;
@@ -61,6 +61,61 @@
         font-weight: 600;
         width: 100px;
         cursor: pointer;
+      }
+    }
+  }
+}
+
+// MOBILE styling
+@media only screen and (max-width: $mobile){
+  .newsletterContainer {
+    width: 90vw;
+    padding-bottom: 75px;
+    // margin: 20px;
+  }
+  .newsletter {
+    display: inline-block;
+
+    &__image {
+      float: left;
+      // display: inline-block;
+      img {
+        height: 35px;
+      }
+    }
+
+    &__text {
+      float: left;
+      margin-top: -65px;
+      &__infoTitle {
+        text-align: center;
+        margin-left: 30px;
+      }
+      &__info1 {
+        text-align: center;
+        text-shadow: none;
+        font-size: 12px;
+      }
+      &__info2 {
+        text-align: center;
+        text-shadow: none;
+        font-size: 12px;
+      }
+
+      &__emailSubscribe {
+        text-align: center;
+        input {
+          text-align: center;
+          width: 70vw;
+          margin: 0 auto;
+          border-radius: 8px;
+          margin-bottom: 10px;
+        }
+        button {
+          width: 40vw;
+          margin: 0 auto;
+          border-radius: 8px;
+        }
       }
     }
   }

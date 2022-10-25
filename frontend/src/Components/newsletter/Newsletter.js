@@ -15,9 +15,9 @@ const Newsletter = () => {
           />
         </div>
         <div className="newsletter__text">
-          <h3>CryptoTalk Newsletter</h3>
-          <div>Don't miss the next ones.</div>
-          <div>Get notified about our next workshops & conferences!</div>
+          <h3 className="newsletter__text__infoTitle">CryptoTalk Newsletter</h3>
+          <div className="newsletter__text__info1">Don't miss the next ones.</div>
+          <div className="newsletter__text__info2">Get notified about our next workshops & conferences!</div>
           <div className="newsletter__text__emailSubscribe">
             <input placeholder="Your email" />
             <button>Subscribe</button>
