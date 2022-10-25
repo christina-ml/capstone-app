@@ -15,7 +15,8 @@ CREATE TABLE users(
   user_admin BOOLEAN,
   user_interests TEXT,
   user_city TEXT,
-  user_state TEXT
+  user_state TEXT,
+  photo TEXT
 );
 
 -- DROP TABLE IF EXISTS platforms;
