@@ -10,7 +10,7 @@ import { AiFillCheckCircle } from "react-icons/ai";
 import { AiFillCloseCircle } from "react-icons/ai";
 
 // helpers - convert USD to ETH
-import convertUSDToETH from './helpers/convertUSDToETH';
+import convertUSDToETH from '../../helpers/convertUSDToETH.js';
 
 import './Shop.scss';
 
