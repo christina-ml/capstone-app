@@ -526,6 +526,15 @@ npm install react-icons --save
 Example: Mobile layout - collapsible menu icon
 
 
+## Chart.js
+https://www.chartjs.org/docs/latest/charts/line.html
+https://www.npmjs.com/package/react-chartjs-2
+https://upmostly.com/tutorials/how-to-use-chart-js-with-react
+```
+npm install chart.js
+npm i react-chartjs-2
+```
+
 ## axios
 ```
 npm install axios
