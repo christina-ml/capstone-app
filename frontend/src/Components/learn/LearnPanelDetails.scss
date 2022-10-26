@@ -1,0 +1,21 @@
+@import '../../designUtils/colors';
+@import '../../designUtils/fonts';
+@import '../../designUtils/media';
+
+.LearnPanelDetails {
+    
+    &__topic {
+        color: $medium-gray;
+        padding: 10px;
+        font-size: 14px;
+
+        a {
+            text-decoration: none;
+            color: $light-gray;
+            &:hover {
+                color: $medium-gray;
+                text-decoration: underline;
+            }
+        }
+    }
+}
