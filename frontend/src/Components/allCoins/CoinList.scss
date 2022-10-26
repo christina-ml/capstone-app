@@ -23,7 +23,7 @@
         border: 0.5px solid lightgray;
         padding: 20px;
         margin: 5px;
-        height: 100px;
+        // height: 100px;
 
         &:hover {
             box-shadow: 0px 0px 3px 3px lightgray;
@@ -42,6 +42,12 @@
             
             &__coinName {
                 margin: 3px;
+
+                &__symbol {
+                    color: $light-gray;
+                    font-weight: 300;
+                    padding-left: 5px;
+                }
             }
             
         }
@@ -49,6 +55,9 @@
         &__basicInfo {
             font-size: 12px;
             font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            &__price {
+                font-size: 14px;
+            }
         }
     }
 }
