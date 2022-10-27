@@ -27,8 +27,8 @@ const Coin = ({coin}) => {
             <div className="coin__card__basicInfo__price">Market Cap: ${addCommas(coin.market_cap)}</div>
             
             <ChartJsCoin coin={coin} />
-
-            <div>Last Updated: {new Date(coin.last_updated).toLocaleString('en-US')}</div>
+            
+            <div className="coin__card__basicInfo__lastUpdated">Last Updated: {new Date(coin.last_updated).toLocaleString('en-US')}</div>
           </div>
         </div>
       </Link>

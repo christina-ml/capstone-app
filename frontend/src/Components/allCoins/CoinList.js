@@ -29,14 +29,6 @@ const CoinList = () => {
   return (
     <div className="coinList">
       <h2>All Coins</h2>
-
-      {/* <select onChange={handleChange}>
-        <option>--Select--</option>
-        <option value="asc">Name Asc.</option>
-        <option value="desc">Name Desc.</option>
-        <option value="popular">Popular</option>
-      </select> */}
-
       <div className="coinList__collection">
         {sortedCoinsAsc.map((coin) => {
           return (
