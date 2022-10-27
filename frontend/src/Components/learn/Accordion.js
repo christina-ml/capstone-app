@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 
 import './Accordion.scss';
 
+// learn panel details (answers to the questions)
+import LearnPanelDetails from './LearnPanelDetails';
+
 const Accordion = ({learn}) => {
     // when button is active, sibling panel's style changes from <nothing> to the max height
     const [active, setActive] = useState(false);
@@ -29,7 +32,7 @@ const Accordion = ({learn}) => {
     <div>
         <button className={`accordion ${active}`} onClick={handleAccordionClick} >{learn.question}</button>
         <div className="panel">
-            <p>{learn.answer}</p>
+            <LearnPanelDetails learn={learn} />
         </div>
     </div>
   )

@@ -43,7 +43,7 @@ const Learn = () => {
         <div>New to crypto? — start here</div> 
         <SearchBar searchTerm={searchTerm} 
                   setSearchTerm={setSearchTerm} 
-                  placeholder={`Search by topic`}
+                  placeholder={`Search by topic or question`}
         />
         <div className="Learn__questionsAccordion">
           {learnQuestionsAccordion}
