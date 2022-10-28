@@ -4,7 +4,7 @@
 
 .coinList {
     margin: 0 auto;
-    width: 80%;
+    width: 90%;
     padding-bottom: 20px;
 
     a {
@@ -13,8 +13,10 @@
     }
 
     &__collection{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -23,7 +25,6 @@
         border: 0.5px solid lightgray;
         padding: 20px;
         margin: 5px;
-        // height: 100px;
 
         &:hover {
             box-shadow: 0px 0px 3px 3px lightgray;
@@ -99,24 +100,11 @@
     }    
 }
 
-// medium screens styling
-@media only screen and (max-width: $mediumScreen){
-    .coinList {  
-        &__collection{
-            // display: grid;
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-}
-
-
-// mobile screens styling
-@media only screen and (max-width: $mobile){
-    .coinList {  
-        // width: 80%;
-        &__collection{
-            // display: grid;
-            grid-template-columns: 1fr;
-        }
-    }
-}
+// // medium screens styling
+// @media only screen and (max-width: $mediumScreen){
+//     .coinList {  
+//         &__collection{
+//             grid-template-columns: repeat(2, 1fr);
+//         }
+//     }
+// }
