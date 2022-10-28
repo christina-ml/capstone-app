@@ -5,13 +5,19 @@
 // https://tobiasahlin.com/blog/css-trick-animating-link-underlines/
 // ^ For expanding underline on hover for Add to Cart button.
 
+.nftShop {
+    h1 {
+        text-align: center;
+    }
+    padding: 20px 0px;
+}
+
 
 .nftCards {
-    width: 900px;
-    margin: 0 auto;
-    color: green;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 
     &__card {
         box-shadow: 3px 3px 10px 3px #d4d4d4;
@@ -21,11 +27,11 @@
             padding: 15px;
             color: black;
             font-weight: 600;
-            font-size: 18px;
+            font-size: 20px;
             
             display: grid;
             width: 250px;
-            height: 420px;
+            height: 350px;
 
             &__image {
                 text-align: center;
@@ -50,40 +56,25 @@
 
             &__price {
                 text-align: left;
-                img {
-                    height: 20px;
-                }
-                span {
+                font-size: 20px;
+                padding-top: 10px;
+
+                &__current {
                     color: $medium-gray;
                     font-size: 14px;
+                    font-weight: 350;
                 }
-            }
 
-            &__availNearby {
-                font-size: 12px;
-                display: inline-flexbox;
-                font-weight: 400;
-
+                img {
+                    height: 20px;
+                    vertical-align: bottom;
+                }
                 span {
-                    padding-right: 10px;
+                    vertical-align: middle;
+                    color: $medium-gray;
+                    font-size: 14px;
+                    font-weight: 350;
                 }
-            }
-        }
-
-        &__banner {
-            background-color: black;
-            color: white;
-            text-transform: uppercase;
-            padding-right: 50px;
-            position: relative;
-              
-            &:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            border-top: 80px solid #fff;
-            border-left: 80px solid transparent;
             }
         }
     }
@@ -125,8 +116,25 @@
     }
 }
 
+// medium screens styling
+// @media only screen and (max-width: $mediumScreen){
+//     .nftCards {
+//         display: grid;
+//         grid-template-columns: repeat(2, 1fr);
+//         width: 80%;
+//     }
+// }
+
 
 // MOBILE styling
 // @media only screen and (max-width: $mobile){
+//     .nftCards {
+//         display: flex;
+//         flex-direction: column;
+//         width: 90vw;
 
+//         &__card__details{
+//             margin: 0 auto;
+//         }
+//     }
 // }
