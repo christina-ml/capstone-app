@@ -24,7 +24,14 @@ const User = ({user}) => {
       <div className="userCard__info">
         <div className="userCard__info__name">
           <h1>{firstname} {lastname}
-            {user_admin ? <span><IoSettingsSharp /></span> : <span></span>}
+            {user_admin ? 
+            <div className="userCard__info__name__tooltip">
+              <div className="userCard__info__name__tooltip__tooltiptext">
+                <IoSettingsSharp />
+              </div>
+            </div>
+            :
+             <span></span>}
           </h1>
         </div>
         <div className="userCard__info__infoLine">

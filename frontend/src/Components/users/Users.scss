@@ -42,11 +42,53 @@
             text-transform: uppercase;
             margin-bottom: 8px;
 
-            span {
-                font-size: 25px;
+            /* admin icon & tooltip */
+            &__tooltip { /* tooltip */
                 padding: 0px 10px;
-                color: $light-gray;
+                vertical-align: middle;
+                font-family: monospace;
+                position: relative;
+                display: inline-block;
+                cursor: pointer;
+
+                &::after {
+                    visibility: hidden;
+                }
+
+                &:hover { /* shows the tooltip on hover */
+                    &::after {
+                        content: "Admin";
+                        visibility: visible;
+                        text-align: center;
+                        font-size: 12px;
+                        font-family: Arial, Helvetica, sans-serif;
+                        text-transform: none;
+                        
+                        width: 100px;
+                        background-color: $dark-bluegray;
+                        color: $white;
+                        text-align: center;
+                        padding: 5px 0;
+                        border-radius: 6px;
+
+                        /* Position the tooltip */
+                        position: absolute;
+                        z-index: 1;
+
+                        width: 90px;
+                        top: 100%;
+                        left: 50%;
+                        margin-left: -45px; /* Use half of the width (120/2 = 60), to center the tooltip */
+                    }
+                }
+
+                // &::before {
+                //     content: "before";
+                //     background-color: lightgreen;
+                // }
+
             }
+
         }
     
         &__infoLine {
