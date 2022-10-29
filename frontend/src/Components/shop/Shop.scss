@@ -76,24 +76,28 @@
                     font-weight: 350;
                 }
             }
+        
         }
-    }
-
-    &__cart {
-        border-top: 1px solid #000000;
-        text-transform: uppercase;
-        padding: 15px 0px 15px 0px;
-        text-align: center;
 
         a {
             text-decoration: none;
-            color: black;
+        }
+
+        &__addToCart {
+            display: block;
+            text-transform: uppercase;
+            padding: 15px 0px 15px 0px;
+            text-align: center;
+            text-decoration: none;
+            color: $white;
             font-weight: 600;
             padding: 10px 3px 10px 3px;
             position: relative;
+            background-color: $logo-blue;
 
             &:hover {
-                color: #000;
+                color: $white;
+                opacity: 90%;
 
                 &::before {
                     transform: scaleX(1); 
@@ -106,35 +110,13 @@
                 display: block;
                 width: 100%;
                 height: 2px;
-                bottom: 0;
+                bottom: 3px;
                 left: 0;
-                background-color: sienna;
+                background-color: $white;
                 transform: scaleX(0);
                 transition: transform 0.3s ease;
-            }
+            }  
         }
     }
+
 }
-
-// medium screens styling
-// @media only screen and (max-width: $mediumScreen){
-//     .nftCards {
-//         display: grid;
-//         grid-template-columns: repeat(2, 1fr);
-//         width: 80%;
-//     }
-// }
-
-
-// MOBILE styling
-// @media only screen and (max-width: $mobile){
-//     .nftCards {
-//         display: flex;
-//         flex-direction: column;
-//         width: 90vw;
-
-//         &__card__details{
-//             margin: 0 auto;
-//         }
-//     }
-// }

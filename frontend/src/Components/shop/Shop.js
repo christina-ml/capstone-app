@@ -35,9 +35,11 @@ const Shop = () => {
                                 {convertUSDToETH(nft.price)} {nft.currency} <span>${nft.price}</span>
                             </div>
                         </div>
-                        <div className="nftCards__cart">
-                            <Link to="/cart"><MdShoppingCart color="sienna"/> Add To Cart</Link>
-                        </div>
+                        <Link to="/cart">
+                            <div className="nftCards__card__addToCart">
+                                <span><MdShoppingCart /> Add To Cart</span>
+                            </div>
+                        </Link>
                     </div>
                 )
     
