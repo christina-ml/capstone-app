@@ -10,7 +10,7 @@ const User = ({user}) => {
     lastname,
     username,
     photo,
-    user_admin
+    user_admin,
     // user_password,
     // user_email,
     // user_active,
@@ -21,6 +21,9 @@ const User = ({user}) => {
 
   return (
     <div className="userCard">
+      <div className="userCard__profileImage">
+        <img src={photo} />
+      </div>
       <div className="userCard__info">
         <div className="userCard__info__name">
           <h1>{firstname} {lastname}
@@ -35,9 +38,6 @@ const User = ({user}) => {
           </h1>
         </div>
         <div className="userCard__info__infoLine">
-          ID: {uid}
-        </div>
-        <div className="userCard__info__infoLine">
           {username}
         </div>
         <div className="userCard__info__infoLine__button">
@@ -46,9 +46,7 @@ const User = ({user}) => {
           </Link>
         </div>
       </div>
-      <div className="userCard__profileImage">
-        <img src={photo} />
-      </div>
+      
     </div>
   )
 }
