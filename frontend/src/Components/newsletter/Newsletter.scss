@@ -12,6 +12,7 @@
 
 .newsletter {
   background-color: $black;
+  background-image: linear-gradient($logo-blue, $dark-bluegray);
   display: grid;
   grid-template-columns: 2fr 3fr 1fr;
   grid-template-areas: "cryptotalk newsletter";
