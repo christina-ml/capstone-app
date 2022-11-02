@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import axios from "axios";
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import './CoinList.scss';
 
 // helpers - displaying price with commas
@@ -25,7 +25,6 @@ const CoinDetails = () => {
 
   return (
     <div className="coinDetails">
-
         <div className="coinDetails__coinCard">
             <div className="coinDetails__coinCard__logo">
                 <img src={oneCoin.logo} alt="coin logo" />

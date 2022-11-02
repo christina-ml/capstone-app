@@ -58,7 +58,6 @@ function Footer() {
 
         <div className="footer__categories__copyright">Copyright 2022 CryptoTalk</div>
       </div>
-
     </div>
   );
 }

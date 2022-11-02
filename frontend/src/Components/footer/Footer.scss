@@ -4,19 +4,11 @@
 
 // footer
 .footer {
-    // z-index: 10000;
-    // bottom: 0px;
-    // left: 0;
-    // width: 100%;
     position: relative;
     margin: 0px;
-    // background-color: $logo-blue;
-    
+
     &__categories {
         background-image: linear-gradient($logo-blue, $dark-bluegray);
-        // background-image: linear-gradient($dark-bluegray, $logo-blue);
-        // background-color: $logo-blue;
-        // background-color: $dark-bluegray;
         color: $white;
         width: 100%;          
         position: absolute;
@@ -51,17 +43,3 @@
         }     
     }
   }
-
-//   mobile screens styling
-@media only screen and (max-width: $mobile){
-    .footer {
-        // width: 100vw;
-
-        // &__categories {
-        
-            // &__copyright {
-            // }
-
-        // }
-    }
-}

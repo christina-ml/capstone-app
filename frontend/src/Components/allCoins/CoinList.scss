@@ -95,16 +95,7 @@
         &__details {
             line-height: 1.5em;
             padding: 20px;
-            background-color: $light-gray;
+            // background-color: $light-gray;
         }
     }    
 }
-
-// // medium screens styling
-// @media only screen and (max-width: $mediumScreen){
-//     .coinList {  
-//         &__collection{
-//             grid-template-columns: repeat(2, 1fr);
-//         }
-//     }
-// }
