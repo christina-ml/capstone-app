@@ -31,7 +31,14 @@
 
             li {
                 font-size: 80%;
-                line-height: 1.5em;  
+                line-height: 1.5em;
+                a {
+                    color: $white;
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
             }
         }
 

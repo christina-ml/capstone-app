@@ -65,6 +65,24 @@
   }
 }
 
+// MEDIUM SCREEN styling
+@media only screen and (min-width:$mobile) and (max-width: $mediumScreen){
+  .newsletterContainer {
+    &__newsletter {
+      &__text {
+        &__emailSubscribe{
+          input {
+            width: 130px;
+          }
+          button {
+            width: 90px;
+          }
+        }
+      }
+    }
+  }
+}
+
 // MOBILE styling
 @media only screen and (max-width: $mobile){
   .newsletterContainer {

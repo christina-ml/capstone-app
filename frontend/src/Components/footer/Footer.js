@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 import "./Footer.scss";
 
@@ -11,7 +12,7 @@ function Footer() {
       <div className="footer__categories">
         <ul>
           About Us
-          <li>About</li>
+          <li><Link to="/about">About</Link></li>
           <li>Careers</li>
           <li>Terms</li>
           <li>Privacy</li>
@@ -22,15 +23,15 @@ function Footer() {
           <li>Exchange</li>
           <li>Charity</li>
           <li>Research</li>
-          <li>NFT</li>
+          <li><Link to="/shop">NFT</Link></li>
         </ul>
 
-        <ul>
+        {/* <ul>
           Service
           <li>Downloads</li>
           <li>Buy Crypto</li>
           <li>Referral</li>
-        </ul>
+        </ul> */}
 
         <ul>
           Support
@@ -42,7 +43,7 @@ function Footer() {
 
         <ul>
           Learn
-          <li>Learn</li>
+          <li><Link to="/learn">Learn</Link></li>
           <li>Browse Crypto Prices</li>
           <li>Buy Bitcoin</li>
         </ul>
@@ -54,7 +55,7 @@ function Footer() {
           <li>Reddit</li>
           <li>YouTube</li>
         </ul>
-        
+
         <div className="footer__categories__copyright">Copyright 2022 CryptoTalk</div>
       </div>
 
