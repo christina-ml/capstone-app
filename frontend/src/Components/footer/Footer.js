@@ -7,6 +7,7 @@ import Newsletter from "../newsletter/Newsletter.js";
 function Footer() {
   return (
     <div className="footer">
+      <Newsletter />
       <div className="footer__categories">
         <ul>
           About Us
@@ -53,8 +54,7 @@ function Footer() {
           <li>Reddit</li>
           <li>YouTube</li>
         </ul>
-      
-        <Newsletter />
+        
         <div className="footer__categories__copyright">Copyright 2022 CryptoTalk</div>
       </div>
 

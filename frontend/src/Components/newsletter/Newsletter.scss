@@ -4,64 +4,62 @@
 @import '../../designUtils/fonts';
 
 .newsletterContainer {
-//   background-color: rgb(11, 123, 184);
-  margin: 0 auto;
-  width: 100%;
-  height: 200px;
-}
-
-.newsletter {
-  background-color: $black;
-  background-image: linear-gradient($logo-blue, $dark-bluegray);
-  display: grid;
-  grid-template-columns: 2fr 3fr 1fr;
-  grid-template-areas: "cryptotalk newsletter";
-  padding-bottom: 8px;
 
   &__image {
-    grid-area: cryptotalk;
-    text-align: right;
-    margin: 20px;
-    img {
-      height: 150px;
-    }
+    display: none; // disable mobile logo
   }
-  &__text {
-    grid-area: newsletter;
-    text-align: center;
-    color: $white;
-    font-family: sans-serif;
-    line-height: 1.5em;
-    &__info {
-      font-size: 15px;
-      font-family: serif;
-      text-shadow: 1px 1px $light-gray;
-    }
 
-    &__emailSubscribe {
-      margin-top: 15px;
-      input {
-        padding: 12px;
-        border-top-left-radius: 8px;
-        border-bottom-left-radius: 8px;
-        border: none;
-        width: 240px;
-        &::placeholder {
-          font-style: italic;
-        }
+  &__newsletter {
+    background-color: $logo-blue;
+    display: grid;
+    grid-template-columns: 2fr 3fr 1fr;
+    grid-template-areas: "cryptotalk newsletter";
+
+    &__image {
+      grid-area: cryptotalk;
+      text-align: right;
+      img {
+        margin: 20px;
+        height: 150px;
       }
-      button {
-        padding: 12px;
-        background-color: $white;
-        border-top-right-radius: 8px;
-        border-bottom-right-radius: 8px;
-        border: none;
-        margin-left: -4px;
-        border-left: 1px solid $light-gray;
-        color: rgb(11, 123, 184);
-        font-weight: 600;
-        width: 100px;
-        cursor: pointer;
+    }
+    &__text {
+      grid-area: newsletter;
+      text-align: center;
+      color: $white;
+      font-family: sans-serif;
+      line-height: 1.5em;
+      &__info {
+        font-size: 15px;
+        font-family: serif;
+        text-shadow: 1px 1px $light-gray;
+      }
+
+      &__emailSubscribe {
+        margin-top: 15px;
+        input {
+          padding: 12px;
+          border-top-left-radius: 8px;
+          border-bottom-left-radius: 8px;
+          border: none;
+          width: 240px;
+          &::placeholder {
+            font-style: italic;
+          }
+        }
+        button {
+          padding: 12px;
+          background-color: $white;
+          border-top-right-radius: 8px;
+          border-bottom-right-radius: 8px;
+          border: none;
+          margin-left: -4px;
+          border-left: 1px solid $light-gray;
+          color: rgb(11, 123, 184);
+          font-weight: 600;
+          width: 100px;
+          cursor: pointer;
+        }
       }
     }
   }
@@ -70,52 +68,60 @@
 // MOBILE styling
 @media only screen and (max-width: $mobile){
   .newsletterContainer {
-    width: 90vw;
-    padding-bottom: 75px;
-    // margin: 20px;
-  }
-  .newsletter {
-    display: inline-block;
+    display: grid;
+    grid-template-areas:
+    "newsletterLogo"
+    "newsletterSignUp";
 
     &__image {
-      float: left;
-      // display: inline-block;
+      background-color: $logo-blue;
+      grid-area: newsletterLogo;
+      display: inline-block;
+      text-align: center;
+      padding-top: 20px;
       img {
-        height: 35px;
+        height: 90px;
       }
     }
+  
+    &__newsletter {  
+      grid-area: newsletterSignUp;
+      grid-template-columns: 1fr;
 
-    &__text {
-      float: left;
-      margin-top: -65px;
-      &__infoTitle {
-        text-align: center;
-        margin-left: 30px;
-      }
-      &__info1 {
-        text-align: center;
-        text-shadow: none;
-        font-size: 12px;
-      }
-      &__info2 {
-        text-align: center;
-        text-shadow: none;
-        font-size: 12px;
+      &__image {
+        display: none; // disable desktop logo
       }
 
-      &__emailSubscribe {
-        text-align: center;
-        input {
+      &__text {
+        &__infoTitle {
           text-align: center;
-          width: 70vw;
-          margin: 0 auto;
-          border-radius: 8px;
-          margin-bottom: 10px;
         }
-        button {
-          width: 40vw;
-          margin: 0 auto;
-          border-radius: 8px;
+        &__info1 {
+          text-align: center;
+          text-shadow: none;
+          font-size: 12px;
+        }
+        &__info2 {
+          text-align: center;
+          text-shadow: none;
+          font-size: 12px;
+        }
+
+        &__emailSubscribe {
+          text-align: center;
+          padding-bottom: 40px;
+          input {
+            text-align: center;
+            width: 70vw;
+            margin: 0 auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+          }
+          button {
+            width: 40vw;
+            margin: 0 auto;
+            border-radius: 8px;
+          }
         }
       }
     }
