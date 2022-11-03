@@ -11,17 +11,46 @@ const ChartJsCoin = ({ coin }) => {
   let p60d = coin.percent_change_60d;
   let p90d = coin.percent_change_90d;
 
-  let percentData = [p1h, p7d, p24h, p30d, p60d, p90d];
+  let percentData = [p90d, p60d, p30d, p24h, p7d, p1h]; // p90d to p1h
+  const labels = ["90d", "60d", "30d", "24h", "7d", "1h"]; // p90d to p1h
+  
 
-  const labels = ["1h", "7d", "24h", "30d", "60d", "90d"];
+  // change line color based on starting and ending values
+  let lineColor = "";
+
+  if (p90d < 0 && p1h < 0){ // if both are negative numbers
+    if (p90d < p1h){
+      lineColor = "rgb(210, 42, 73)"
+    }
+    lineColor = "rgb(42, 178, 10)"
+  } else if (p90d >= 0 && p1h >= 0){ // if both are positive
+    if (p90d < p1h){
+      lineColor = "rgb(42, 178, 10)"
+    }
+    lineColor = "rgb(210, 42, 73)"
+  } else if (p90d < 0 && p1h >= 0 ){ // if p90d is neg & p1h is pos
+    if (p90d < p1h){
+      lineColor = "rgb(210, 42, 73)"
+    }
+    lineColor = "rgb(42, 178, 10)"
+  } else if (p1h < 0 && p90d >= 0){ // if p1h is neg & p90d is pos
+    if (p90d < p1h){
+      lineColor = "rgb(42, 178, 10)"
+    }
+    lineColor = "rgb(210, 42, 73)"
+  }
+
+  // lineColor = "rgb(210, 42, 73)"  => red
+  // lineColor = "rgb(42, 178, 10)"  => green
+  // lineColor = "rgb(99, 132, 255)"  => blue
 
   const data = {
     labels: labels,
     datasets: [
       {
         label: "% change",
-        backgroundColor: "rgb(99, 132, 255)",
-        borderColor: "rgb(99, 132, 255)",
+        backgroundColor: lineColor,
+        borderColor: lineColor,
         data: percentData,
       },
       // {
