@@ -90,10 +90,10 @@
             &__coinName {
                 margin: 3px;
                 span {
-                    color: $medium-gray;
                     margin-left: 10px;
                     padding: 5px 10px;
                     background-color: #eee;
+                    color: $medium-gray;
                     border-radius: 5px;
                     font-size: 14px;
                 }
@@ -112,6 +112,25 @@
                 &__price {
                     font-size: 25px;
                     font-weight: 600;
+
+                    &__goGreen {
+                        font-size: 14px;
+                        margin-left: 10px;
+                        padding: 5px;
+                        border-radius: 5px;
+                        color: $white;
+                        vertical-align: top;
+                        background-color: $chartJS-green;
+                    }
+                    &__goRed {
+                        font-size: 14px;
+                        margin-left: 10px;
+                        padding: 5px;
+                        border-radius: 5px;
+                        color: $white;
+                        vertical-align: top;
+                        background-color: $chartJS-green;
+                    }
                 }
             }
 
@@ -127,11 +146,49 @@
                 &__label {
                     color: $medium-gray;
                 }
+
+                &__volChange24h {
+                    &__goGreen {
+                        color: $chartJS-green;
+                    }
+                    &__goRed {
+                        color: $chartJS-red;
+                    }
+                }
             }
 
+            // tags
             &__sectionFour {
+                padding-bottom: 10px;
+                &__tags {
+                    display: inline-block;
+                    margin: 10px 5px;
+                    padding: 5px 10px;
+                    background-color: #eee;
+                    color: $medium-gray;
+                    border-radius: 10px;
+                }
+            }
 
+            // chart JS
+            &__sectionFive {
+                width: 320px;
             }
         }
     }    
+}
+
+
+// MOBILE styling
+@media only screen and (max-width: $mobile){
+    .coinDetails {
+        &__coinCard{
+            &__details{
+               // chart JS
+                &__sectionFive {
+                    width: 80vw;
+                }
+            }
+        }
+    }
 }
