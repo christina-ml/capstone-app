@@ -15,6 +15,7 @@ const nftData = [
         nearby: 'yes',
         onlyAtStore: true,
         newItem: false,
+        customerID: 3
     },
     {
         nftId: 1,
@@ -32,6 +33,7 @@ const nftData = [
         nearby: 'yes',
         onlyAtStore: true,
         newItem: false,
+        customerID: null
     },
     {
         nftId: 2,
@@ -48,7 +50,8 @@ const nftData = [
         availability: 'limited',
         nearby: 'no',
         onlyAtStore: false,
-        newItem: true
+        newItem: true,
+        customerID: null
     },
     {
         nftId: 2,
@@ -65,7 +68,8 @@ const nftData = [
         availability: 'limited',
         nearby: 'no',
         onlyAtStore: false,
-        newItem: true
+        newItem: true,
+        customerID: null
     },
     {
         nftId: 3,
@@ -82,7 +86,8 @@ const nftData = [
         availability: 'yes',
         nearby: "maybe",
         onlyAtStore: true,
-        newItem: false
+        newItem: false,
+        customerID: null
     },
     {
         nftId: 3,
@@ -99,7 +104,8 @@ const nftData = [
         availability: 'yes',
         nearby: "maybe",
         onlyAtStore: false,
-        newItem: true
+        newItem: true,
+        customerID: null
     },
     {
         nftId: 3,
@@ -116,7 +122,8 @@ const nftData = [
         availability: 'yes',
         nearby: "maybe",
         onlyAtStore: false,
-        newItem: true
+        newItem: true,
+        customerID: null
     },
     {
         nftId: 1,
@@ -134,6 +141,7 @@ const nftData = [
         nearby: 'yes',
         onlyAtStore: true,
         newItem: false,
+        customerID: null
     },
     {
         nftId: 1,
@@ -151,6 +159,7 @@ const nftData = [
         nearby: 'yes',
         onlyAtStore: true,
         newItem: false,
+        customerID: null
     },
     {
         nftId: 2,
@@ -168,6 +177,7 @@ const nftData = [
         nearby: 'yes',
         onlyAtStore: false,
         newItem: true,
+        customerID: null
     },
     {
         nftId: 1,
@@ -185,6 +195,7 @@ const nftData = [
         nearby: 'yes',
         onlyAtStore: true,
         newItem: false,
+        customerID: null
     },
     {
         nftId: 2,
@@ -201,7 +212,8 @@ const nftData = [
         availability: 'limited',
         nearby: 'no',
         onlyAtStore: false,
-        newItem: true
+        newItem: true,
+        customerID: null
     },
 
 ]
