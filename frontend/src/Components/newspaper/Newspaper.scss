@@ -1,0 +1,79 @@
+// import colors from designUtils
+@import '../../designUtils/colors';
+@import '../../designUtils/media';
+@import '../../designUtils/fonts';
+
+.newspaper {
+  // header
+  &__header {
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  // main body of web page 
+  &__main {
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "main main side";
+
+    &__article {
+      grid-area: "main";
+      border: 1px solid $black;
+      margin: 10px;  
+
+      h2 {
+        text-transform: uppercase;
+        text-align: center;
+      }
+      
+      &__photo{
+        img {
+          height: 120px;
+          width: 120px;
+          padding: 10px;
+          float: left;
+          object-fit: cover;
+        }
+      }
+
+      &__content{
+        p {
+          margin: 10px;
+        }
+      }
+
+      &__contentBelow {
+        column-count: 3;
+        column-gap: 40px;
+        column-rule-style: solid;
+        column-rule-width: 1px;
+        column-rule-color: $light-gray;
+        text-align: justify;
+        margin: 10px;
+      }
+    }
+
+
+    // sidebar sections
+    &__sidebar {
+      margin: 10px;
+      border: 1px solid $black;
+      display: grid;
+      grid-area: "side";
+
+      &__sections {
+        margin: 10px;
+
+        &__news1 {
+          background-color: $light-gray;
+
+          h3 {
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+  }
+}
