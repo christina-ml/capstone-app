@@ -6,9 +6,10 @@ import './CoinList.scss';
 
 // helpers - displaying price with commas
 import addCommas from '../../helpers/AddCommas';
-
 import ChartJsCoin from './chartjs/ChartJsCoin.js';
 
+// react icons
+import { GoTriangleUp, GoTriangleDown } from 'react-icons/go';
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -24,7 +25,6 @@ const CoinDetails = () => {
                 console.log(err);
             })
     })
-
 
   return (
     <div className="coinDetails">
@@ -51,6 +51,11 @@ const CoinDetails = () => {
                         <br />
                         <div className="coinDetails__coinCard__details__oneAndTwo__price">
                             ${addCommas(oneCoin.price)}
+                           
+                            {(Number(oneCoin.percent_change_1h).toFixed(2) > 0) ?
+                            <span className="coinDetails__coinCard__details__oneAndTwo__price__goGreen"><GoTriangleUp />{addCommas(oneCoin.percent_change_1h)}%</span> :
+                            <span className="coinDetails__coinCard__details__oneAndTwo__price__goRed"><GoTriangleDown />{addCommas(oneCoin.percent_change_1h)}%</span>
+                        }
                         </div>
                     </div>
                 </div>
@@ -75,7 +80,13 @@ const CoinDetails = () => {
                             Volume 24h:
                         </div>
                         <div>${addCommas(oneCoin.volume_24h)}</div>
-                        <div>volume change 24h: {addCommas(oneCoin.volume_change_24h)}</div>
+
+                        <div className="coinDetails__coinCard__details__sectionThree__volChange24h">
+                            {(oneCoin.volume_change_24h > 0) ?
+                            <span className="coinDetails__coinCard__details__sectionThree__volChange24h__goGreen"><GoTriangleUp />{addCommas(oneCoin.volume_change_24h)}%</span> :
+                            <span className="coinDetails__coinCard__details__sectionThree__volChange24h__goRed"><GoTriangleDown />{addCommas(oneCoin.volume_change_24h)}%</span>
+                        }
+                        </div>                        
                     </div>
                     <div>
                         <div className="coinDetails__coinCard__details__sectionThree__label">
@@ -97,8 +108,21 @@ const CoinDetails = () => {
                     </div>
                 </div>
 
-                {/* Section 4 */}
+                {/* Section #4 */}
                 <div className="coinDetails__coinCard__details__sectionFour">
+                    <div>
+                        Tags:
+                    </div>
+                    <div className="coinDetails__coinCard__details__sectionFour__tags">
+                        {oneCoin.tags}
+                    </div>
+                </div>
+
+                {/* Section 5 */}
+                <div className="coinDetails__coinCard__details__sectionFive">
+                    <div>
+                        Percent Change (%):
+                    </div>
                     <ChartJsCoin coin={oneCoin} />
                     <div>
                         Last updated: {new Date(oneCoin.last_updated).toLocaleString('en-US')}
