@@ -17,11 +17,17 @@
       "leftside rightside"
       "leftside rightside";
 
-    &__leftSideOfPage {
+    &__leftSide {
       // border: 2px solid green;
       grid-area: leftside;
 
-      &__largeSneaker {
+       border-bottom: 10px solid $dark-bluegray;
+
+        &:hover {
+          border-bottom: 10px solid $medium-gray;
+        }
+
+      &__largeImage {
         width: 100%;
         height: 100%;
 
@@ -29,7 +35,6 @@
           max-width: 100%;
           height: 100%;
           filter: brightness(75%);
-          // position: relative;
         }
       }
       &__headerText {
@@ -54,16 +59,17 @@
       }
     }
 
-    &__rightSideOfPage {
+    &__rightSide {
       // border: 2px solid hotpink;
       grid-area: rightside;
       display: grid;
       grid-template-rows: auto;
       row-gap: 10px;
 
-      &__sneakerContainer {
-        &__sneaker {
+      &__boxes {
+        &__sideImage {
           background-color: $dark-bluegray;
+
           img {
             width: 100%;
             height: 100%; 
@@ -94,10 +100,11 @@
   .home {  
       &__container {
         
-        &__leftSideOfPage {    
-          &__largeSneaker {
+        &__leftSide {    
+          &__largeImage {
             img{
-              object-fit: cover;
+              
+              max-height: 100%;
             }
           }
         
@@ -113,8 +120,8 @@
         }
       }
 
-        &__rightSideOfPage {    
-          &__sneakerContainer {
+        &__rightSide {    
+          &__boxes {
             &__title {
               margin: -40px 0px 0px 10px;
               font-size: 12px;
@@ -133,10 +140,10 @@
       &__container {
         display: block;
 
-        &__leftSideOfPage {  
-          &__largeSneaker {
+        &__leftSide {  
+          &__largeImage {
             img{
-              object-fit: cover;
+              height: auto;
             }
           }  
           &__headerText {
@@ -151,8 +158,8 @@
           }
         }
 
-        &__rightSideOfPage {    
-          &__sneakerContainer {
+        &__rightSide {    
+          &__boxes {
             &__title {
               margin: -40px 0px 0px 20px;
               font-size: 12px;
