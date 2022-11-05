@@ -3,7 +3,6 @@
 
 @media only screen and (min-width: $mobile){
     .ColoringBook {
-        // background-color: $light-gray;
         text-align: center;
         
         &__mobile {
@@ -43,9 +42,7 @@
 }
 
 @media only screen and (max-width: $mobile){
-    .ColoringBook {
-        // background-color: $light-gray;
-        
+    .ColoringBook {        
         &__desktop {
             display: none;
         }
@@ -53,7 +50,8 @@
         &__mobile{
             display: flex;
             justify-content: center;
-            flex-direction: column            
+            flex-direction: column;
+            text-align: center;
         }
 
         &__colorPalette{
