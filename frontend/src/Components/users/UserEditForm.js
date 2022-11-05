@@ -7,6 +7,10 @@ import "./Users.scss";
 const API = process.env.REACT_APP_API_URL;
 
 function UserEditForm() {
+
+  // ask before deleting user
+  const [showConfirmDelete, setShowConfirmDelete] = useState(false);
+
   let navigate = useNavigate();
   let { uid } = useParams();
 
@@ -54,7 +58,12 @@ function UserEditForm() {
     }).catch((err) => {
         console.log(err);
     })
-}
+  }
+
+  // ask before deleting user
+  const askBeforeDeleting = () => {
+    setShowConfirmDelete(true);
+  }
 
   useEffect(() => {
     axios.get(`${API}/users/${uid}`)
@@ -180,11 +189,23 @@ function UserEditForm() {
         </form>
 
         <div className="UserEditForm__container__cancelEditOrDelete">
-          <Link to={`/users/${uid}`}>
-            <button>Cancel Edit</button>
-          </Link>
-
-          <button onClick={handleDelete} >Delete User</button>
+          {/* confirm before deleting user */}
+          {showConfirmDelete ? 
+            <div className="UserEditForm__container__cancelEditOrDelete__confirmDeleteAsk">
+              <p>Are you sure you want to delete this user?</p>
+              <Link to={`/users/${uid}`}>
+                <button>Cancel</button>
+              </Link>
+              <button onClick={handleDelete}>Yes</button>
+            </div>
+            :
+            <div className="UserEditForm__container__cancelEditOrDelete__confirmDelete">
+              <Link to={`/users/${uid}`}>
+                <button>Cancel</button>
+              </Link>
+              <button onClick={askBeforeDeleting}>Delete User</button>
+            </div>
+          }
         </div>
 
       </div>

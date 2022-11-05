@@ -294,7 +294,7 @@
                 text-align: center;
                 width: 35%;
                 font-size: 16px;
-                margin: 15px auto;
+                margin: 15px auto 0px auto;
                 border: none;
     
                 &:hover {
@@ -304,15 +304,28 @@
         }
 
         &__cancelEditOrDelete {
-            margin-top: 10px;
-            padding: 5px;
-
+            margin-top: -20px;
+            
             button {
                 text-decoration: none;
                 color: white;
                 background-color: $logo-blue;
                 padding: 5px 10px;
                 border-radius: 5px;
+                margin: 0px 5px;
+                cursor: pointer;
+            }
+
+            &__confirmDeleteAsk {
+                p {
+                    margin-bottom: 5px;
+                    color: $chartJS-red;
+                }
+            }
+            
+            &__confirmDelete {
+                padding-top: 2em;
+                margin-top: 5px;
             }
         }
     }
