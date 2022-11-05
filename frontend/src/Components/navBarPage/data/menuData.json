@@ -12,8 +12,8 @@
     "href": "/shop"
   },
   {
-    "text": "Login",
-    "href": "/login"
+    "text": "Sign Up",
+    "href": "/create"
   },
   {
     "text": "Users",

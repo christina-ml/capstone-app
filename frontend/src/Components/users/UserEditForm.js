@@ -35,7 +35,8 @@ function UserEditForm() {
     user_admin: false,
     user_interests: '',
     user_city: '',
-    user_state: ''
+    user_state: '',
+    photo: ''
   });
 
   const handleTextChange = (event) => {
@@ -138,16 +139,6 @@ function UserEditForm() {
               />
             </div>
 
-            <div className="UserEditForm__container__form__inner__fields__groupAdmin">
-              <label htmlFor='user_admin'>Admin?:</label>
-              <input 
-                id="user_admin"
-                checked={user.user_admin}
-                type="checkbox"
-                onChange={handleCheckboxChange}
-              />
-            </div>
-
             <div className="UserEditForm__container__form__inner__fields__group">
               <label htmlFor='user_interests'>Interests:</label>
               <input 
@@ -178,6 +169,27 @@ function UserEditForm() {
                 type="text"
                 onChange={handleTextChange}
                 placeholder="User State"
+              />
+            </div>
+
+            <div className="UserEditForm__container__form__inner__fields__group">
+              <label htmlFor='photo'>Photo:</label>
+              <input 
+                id="photo"
+                value={user.photo}
+                type="text"
+                onChange={handleTextChange}
+                placeholder="User Photo URL"
+              />
+            </div>
+
+            <div className="UserEditForm__container__form__inner__fields__groupAdmin">
+              <label htmlFor='user_admin'>Admin:</label>
+              <input 
+                id="user_admin"
+                checked={user.user_admin}
+                type="checkbox"
+                onChange={handleCheckboxChange}
               />
             </div>
 
