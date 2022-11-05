@@ -181,6 +181,14 @@
 
 // MOBILE styling
 @media only screen and (max-width: $mobile){
+    .coin {
+        &__card {
+            &__basicInfo {
+                width: 80vw;
+            }
+        }
+    }
+
     .coinDetails {
         &__coinCard{
             &__details{

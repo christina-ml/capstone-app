@@ -322,7 +322,7 @@
                     color: $chartJS-red;
                 }
             }
-            
+
             &__confirmDelete {
                 padding-top: 2em;
                 margin-top: 5px;
@@ -346,5 +346,23 @@
     .user {
         max-width: $mobile;
         text-align: left;
+    }
+
+    .UserNewForm {
+        &__container {
+            width: 80vw;
+            &__form {
+                width: 80vw;
+            }
+        }
+    }
+
+    .UserEditForm {
+        &__container {
+            width: 80vw;
+            &__form {
+                width: 80vw;
+            }
+        }
     }
 }
