@@ -157,27 +157,27 @@ const learnData = [
     },
     {
         qid: 18,
-        question: 'question',
+        question: 'What is Cardano?',
         answer: 'question not answered',
-        topic: 'bitcoin',
+        topic: 'cardano',
         skillLevel: 'beginner',
         category: 'crypto basics',
         source: 'url'
     },
     {
         qid: 19,
-        question: 'question',
+        question: 'What is a Stablecoin? What does it do?',
         answer: 'question not answered',
-        topic: 'bitcoin',
+        topic: 'stablecoin',
         skillLevel: 'beginner',
         category: 'crypto basics',
         source: 'url'
     },
     {
         qid: 20,
-        question: 'question',
+        question: 'What is a Blockchain? What does it do?',
         answer: 'question not answered',
-        topic: 'bitcoin',
+        topic: 'blockchain',
         skillLevel: 'beginner',
         category: 'crypto basics',
         source: 'url'
@@ -193,9 +193,9 @@ const learnData = [
     },
     {
         qid: 22,
-        question: 'question',
+        question: 'What is Dogecoin?',
         answer: 'question not answered',
-        topic: 'bitcoin',
+        topic: 'dogecoin',
         skillLevel: 'beginner',
         category: 'crypto basics',
         source: 'url'
@@ -211,36 +211,36 @@ const learnData = [
     },
     {
         qid: 24,
-        question: 'question',
+        question: 'What is a non-fungible token (NFT)?',
         answer: 'question not answered',
-        topic: 'bitcoin',
+        topic: 'NFT',
         skillLevel: 'beginner',
         category: 'crypto basics',
         source: 'url'
     },
     {
         qid: 25,
-        question: 'question',
+        question: 'How does an NFT have value?',
         answer: 'question not answered',
-        topic: 'bitcoin',
+        topic: 'NFT',
         skillLevel: 'beginner',
         category: 'crypto basics',
         source: 'url'
     },
         {
         qid: 26,
-        question: 'question',
+        question: 'Are NFTs cryptocurrencies?',
         answer: 'question not answered',
-        topic: 'bitcoin',
+        topic: 'NFT',
         skillLevel: 'beginner',
         category: 'crypto basics',
         source: 'url'
     },
     {
         qid: 27,
-        question: 'question',
+        question: 'What Are Wrapped Crypto Tokens?',
         answer: 'question not answered',
-        topic: 'bitcoin',
+        topic: 'cryptocurrency',
         skillLevel: 'beginner',
         category: 'crypto basics',
         source: 'url'
