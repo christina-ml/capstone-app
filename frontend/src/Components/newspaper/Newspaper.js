@@ -6,13 +6,6 @@ import "./Newspaper.scss";
 const Newspaper = () => {
   return (
     <div className="newspaper">
-      {/* <!-- begin navbar here --> */}
-      {/* <div className="newspaper__nav">
-        <div className="newspaper__nav__text">
-          Home Local national Stats Weather sports arts
-        </div>
-      </div> */}
-
       {/* <!-- header --> */}
       <div className="newspaper__header">
         <h1>CryptoTalk Newsletter</h1>
@@ -63,13 +56,10 @@ const Newspaper = () => {
                 Vel magni nisi nisi quis.
               </p>
             </section>
-            <h2>something else happened</h2>
+            <h2>US Seizes 50K Bitcoins Related to Silk Road Marketplace</h2>
             <section className="newspaper__main__article__contentBelow">
               <p>
-                Asperiores ullam qui alias id ea voluptatem. Laudantium
-                voluptatem odit ducimus alias maiores id. Soluta repellendus non
-                repellendus autem cupiditate esse aut. Error similique officia
-                assumenda consequuntur blanditiis. Cupiditate fugit aut sit.
+                The bitcoin, which was obtained in 2012 and which was valued at $3.36 billion when it was discovered in November, is now worth $1.04 billion.
               </p>
               <p>
                 Ut consequatur expedita quae minima iste fugit nam. Libero
@@ -99,39 +89,53 @@ const Newspaper = () => {
             </section>
           </div>
 
-          {/* <!--  sidebar  --> */}
+          {/* sidebar */}
           <div className="newspaper__main__sidebar">
-            <div className="newspaper__main__sidebar__sections">
-              <section className="newspaper__main__sidebar__sections__news1">
-                <h3>More news here 1</h3>
-                <p>
-                  Asperiores ullam qui alias id ea voluptatem. Laudantium
-                  voluptatem odit ducimus alias maiores id.
-                </p>
-              </section>
-              <section className="news1">
-                <h3>More news here 2</h3>
-                <p>
-                  Asperiores ullam qui alias id ea voluptatem. Laudantium
-                  voluptatem odit ducimus alias maiores id.
-                </p>
-              </section>
-              <section className="news1">
-                <h3>More news here 3</h3>
-                <p>
-                  Asperiores ullam qui alias id ea voluptatem. Laudantium
-                  voluptatem odit ducimus alias maiores id.
-                </p>
-              </section>
-              <section className="news1">
-                <h3>More news here 4</h3>
-                <p>
-                  Asperiores ullam qui alias id ea voluptatem. Laudantium
-                  voluptatem odit ducimus alias maiores id.
-                </p>
-              </section>
+            <div className="newspaper__main__sidebar__title">
+              <span className="red-circle"></span>Most Read
+            </div>
+            <div className="newspaper__main__sidebar__list">
+              {/* <img src="https://www.coindesk.com/resizer/7FtiguOfIIIrL9-dY5wbj01jgzs=/975x731/filters:quality(80):format(webp)/cloudfront-us-east-1.images.arcpublishing.com/coindesk/YQ5ZL6KEPFEEXP2CDFNUQDXAXE.jpg" alt="bitcoin mining"/> */}
+              
+              <div className="articles">
+                <div className="article">
+                  <div className="article__number">1</div>
+                  <div className="article__title">
+                    Bitcoin Mining Major Riot Blockchain Misses Analyst Estimates for Q3 Earnings
+                  </div>
+                </div>
+                
+                <div className="article">
+                  <div className="article__number">2</div>
+                  <div className="article__title">
+                    First Mover Asia: A Good Week for Exchange Tokens, Except FTT; Solana Continues Falling
+                  </div>
+                </div>
+                
+                <div className="article">
+                  <div className="article__number">3</div>
+                  <div className="article__title">
+                    Litecoin Mining Difficulty Is Hitting New Highs, Foundation Says
+                  </div>
+                </div>
+                
+                <div className="article">
+                  <div className="article__number">4</div>
+                  <div className="article__title">
+                  Ethereum Co-Founder Di Iorio Unveils New Project to Bring Blockchain Computers to a Wider Audience
+                  </div>
+                </div>
+                
+                <div className="article">
+                  <div className="article__number">5</div>
+                  <div className="article__title">
+                    Bernstein Says Polygon Blockchain Is the Web3 King
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+
         </div>
       </body>
     </div>
