@@ -9,10 +9,29 @@
     
     header {
         text-align: center;
+        margin-top: 80px;
     }
-    
+    &__search {
+        margin: 0 auto;
+        width: 90%;
+    }
     &__questionsAccordion {
-        margin: 10px;
+        margin: 0 auto;
+        width: 90%;
     }
 
+}
+
+// MOBILE styling
+@media only screen and (max-width: $mobile){
+    .Learn {
+        &__search {
+            text-align: center;
+            margin: 0 auto;
+            width: 90%;
+        }
+        &__questionsAccordion {
+            width: auto;
+        }
+    }
 }
