@@ -130,32 +130,6 @@ const CoinDetails = () => {
                 </div>
 
             </div>
-
-
-                       
-            {/* <div>
-                date added: {new Date(oneCoin.date_added).toLocaleString('en-US')}
-                <br />
-                num market pairs {oneCoin.num_market_pairs}
-                <br />
-                tags {oneCoin.tags}
-                <br />
-                token address {oneCoin.token_address}
-                <br />
-                self reported circulating supply {addCommas(oneCoin.self_reported_circulating_supply)}
-                <br />
-                self reported market cap {addCommas(oneCoin.self_reported_market_cap)}
-                <br />
-                tvl ratio {addCommas(oneCoin.tvl_ratio)}
-                <br />
-                <br />
-                market cap dominance {addCommas(oneCoin.market_cap_dominance)}
-                <br />
-                tvl {addCommas(oneCoin.tvl)}
-            </div> */}
-            
-            
-
         </div>
     </div>
   )
