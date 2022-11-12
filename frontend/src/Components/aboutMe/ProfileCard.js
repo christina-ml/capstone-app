@@ -5,6 +5,8 @@ import "./ProfileCard.scss";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { IoDocumentTextSharp } from "react-icons/io5";
 
+import christinaResume from '../../assets/Christina_Loiacono_Resume_JrDeveloper.pdf';
+
 const ProfileCard = () => {
   return (
     <div className="profileCard">
@@ -55,15 +57,15 @@ const ProfileCard = () => {
                 </div>
             </a>
 
-            <a href="https://www.pursuit.org/fellowship-details#curriculum" 
-                target="_" 
+            <a href={christinaResume} download
                 className="profileCard__userInfo__threeColumns__quantityAndType"
             >
                 <div className="profileCard__userInfo__threeColumns__socialIcon">
                     <IoDocumentTextSharp />
                 </div>
+
                 <div className="profileCard__userInfo__threeColumns__type">
-                    Skills
+                  Skills
                 </div>
             </a>
           </div>
