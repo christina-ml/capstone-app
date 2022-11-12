@@ -4,19 +4,23 @@
     "href": "/learn"
   },
   {
-    "text": "About Me",
-    "href": "/about"
+    "text": "News",
+    "href": "/news"
+  },
+  {
+    "text": "Games",
+    "href": "/games"
   },
   {
     "text": "Shop",
     "href": "/shop"
   },
   {
-    "text": "Sign Up",
-    "href": "/create"
-  },
-  {
     "text": "Users",
     "href": "/users"
+  },
+  {
+    "text": "Sign Up",
+    "href": "/create"
   }
 ]

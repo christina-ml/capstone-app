@@ -10,6 +10,8 @@ import { MdDarkMode, MdOutlineDarkMode } from 'react-icons/md';
 // instead of hard-coding menu items, store as JSON
 import menuItemData from "./data/menuData.json";
 
+import NavBarRibbon from './NavBarRibbon';
+
 const NavBar = ({darkModeButton}) => {
 
   // simple hook setting it to false
@@ -26,6 +28,7 @@ const NavBar = ({darkModeButton}) => {
 
   return (
     <div className="navbar">
+      <NavBarRibbon />
       <a href="/">
         <div className="navbar__logo">
             <div className="navbar__logo__cryptotalkLogo">

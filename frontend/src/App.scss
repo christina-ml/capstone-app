@@ -4,50 +4,6 @@
 .App {
     margin-top: 70px;
 
-    // $color_checkbox_success:#4cd964;
-    // $color_checkbox_default:#8E8E93;
-    // $transition: .3s cubic-bezier(0.95, 0.05, 0.795, 0.035);
-    // $width: 4em;
-    // $height: $width/2;
-
-    // .switch{
-    //    .switch-slider{
-    //       transition: $transition;
-    //       width: $width;
-    //       height: $height;
-    //       display: block;
-    //       border: 2px solid $color_checkbox_default;
-    //       border-radius: $height;
-    //       background-color: rgba(black,.06);
-    //       position: relative;
-    //      &:after{
-    //       transition: $transition;
-    //       content: "";
-    //       width: $width/2;
-    //       height: $height;
-    //       display: block;
-    //       background-color: #fff;
-    //       background-image: url();
-    //       border-radius: 50%;
-    //       box-shadow: 0 1px 2px rgba(black, .4),0 3px 2px rgba(black,.4);
-    //       position: absolute;
-    //       top: 0;
-    //       left: 0;
-    //      }
-    //    }
-       
-    //   input{
-    //     display: none;
-    //     &:checked + .switch-slider{
-    //       border-color: $color_checkbox_success;
-    //       background-color: $color_checkbox_success;
-    //       &:after{
-    //         left: $width/2;
-    //       }
-    //     }
-    //   }      
-    // }
-
     // Darkmode
     color: var(--text-primary);
     background-color: var(--background);
@@ -57,15 +13,21 @@
 
     // Darkmode
     .switchThemeButton {
-        color: var(--text-primary);
-        background-color: $light-gray;
-        border: 2px var(--text-primary) solid;
+        color: $white;
         border: none;
         transition: all .5s;
         padding: 4px 5px 1px 5px;
-        background-color: var(--background);
-        margin-right: 20px;
+        // background-color: var(--background);
+        background-color: $logo-blue;
+        margin-right: 3px;
         cursor: pointer;
+        padding: 9.5px 11.5px;
+        border-radius: 10px;
+        font-size: 16px;
+
+        &:hover {
+            background-color: $logo-blue-light;
+        }
     }
 }
 
@@ -89,7 +51,6 @@
     &__container {
         text-align: center;
         padding: 10px;
-        // margin: 0px 50px 30px 50px;
         margin: 0 auto;
         border: 3px solid $light-gray;
         border-top-left-radius: 75px;
@@ -98,30 +59,6 @@
         border-bottom-right-radius: 15px;
         color: $logo-blue;
         width: 50vw;
-    }
-
-    &__robot {
-        font-size: 60px;
-        color: $logo-blue;
-    }
-
-    &__backButton{
-        a {
-            color: $logo-blue;
-        }
-        a:visited {
-            color: $logo-blue;
-        }
-        a:hover {
-            color: $hover-blue;
-        }
-    }
-
-    &__footUnderline {
-        margin: 20px auto;
-        width: 30%;
-        height: 0px;
-        border: 2px solid $light-gray;
     }
 }
 
@@ -134,10 +71,6 @@
     .pageNotFound {
         &__container {
             width: 80vw;
-        }
-
-        &__footUnderline {
-            width: 50%;
         }
     }
 }

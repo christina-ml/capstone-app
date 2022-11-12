@@ -12,7 +12,6 @@
     transition: top 0.3s;
     background-color: $logo-blue;
     height: 50px;
-
     padding: 10px 10px;
 
     &__logo {
@@ -44,19 +43,22 @@
 
     &__menuItems {
         float: right;
+        margin-top: -10px;
         ul {
             list-style-type: none;
             li {
                 display: inline;
+                justify-content: space-between;
                 margin-left: 25px;
                 a {
                     text-decoration: none;
                     color: $text-white;
                     padding: 10px;
+                    transition: all .5s;
                 }
     
                 a:hover {
-                    background-color: $hover-blue;
+                    background-color: $logo-blue-light;
                     border-radius: 10px;
                 }              
             }
