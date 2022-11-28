@@ -4,7 +4,7 @@
 @import '../../designUtils/fonts';
 
 .profileCard {
-    margin: 0 auto;
+    // margin: 0 auto;
     width: 280px;
     text-align: center;
     border: 1px solid $light-gray;
@@ -16,6 +16,7 @@
             width: 280px;
             height: 160px;
             object-fit: cover;
+            // object-position: 0px -50px;
         }
       }
 

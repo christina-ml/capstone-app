@@ -6,12 +6,16 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { IoDocumentTextSharp } from "react-icons/io5";
 
 import christinaResume from '../../assets/Christina_Loiacono_Resume_JrDeveloper.pdf';
+import CryptoTalkZoomBlue from '../../assets/CryptoTalkZoomBlue.png';
+import CryptoTalkZoomBlack from '../../assets/CryptoTalkZoomBlack.png';
+
 
 const ProfileCard = () => {
   return (
     <div className="profileCard">
       <div className="profileCard__topImage">
-        <img src="https://media.istockphoto.com/vectors/wavy-abstract-backgrounds-for-design-of-web-banners-packaging-posters-vector-id1211961939?b=1&k=20&m=1211961939&s=170667a&w=0&h=zAfk6widLaz3ZWrpUdxHi1ez_8_5aO2W2wA8fvhs9QE=" />
+        <img src={CryptoTalkZoomBlue} alt="background with logo" />
+        {/* <img src="https://media.istockphoto.com/vectors/wavy-abstract-backgrounds-for-design-of-web-banners-packaging-posters-vector-id1211961939?b=1&k=20&m=1211961939&s=170667a&w=0&h=zAfk6widLaz3ZWrpUdxHi1ez_8_5aO2W2wA8fvhs9QE=" /> */}
       </div>
       <div className="profileCard__userImage">
         <img src="https://media-exp1.licdn.com/dms/image/C4E03AQGxXy5-vhZvxQ/profile-displayphoto-shrink_400_400/0/1634932169191?e=1670457600&v=beta&t=zcPca-xG6fEmjnGhlZyKGmZDbxyknYHNT-y1JN2MN6s" />
@@ -65,7 +69,7 @@ const ProfileCard = () => {
                 </div>
 
                 <div className="profileCard__userInfo__threeColumns__type">
-                  Skills
+                  Skills (pdf)
                 </div>
             </a>
           </div>
