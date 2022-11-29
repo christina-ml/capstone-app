@@ -1,0 +1,15 @@
+@import '../../designUtils/colors';
+@import '../../designUtils/fonts';
+@import '../../designUtils/media';
+
+.cryptoButton {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: $logo-blue;
+    color: $white;
+    border-radius: 5px;
+    
+    &:hover {
+        box-shadow: 0px 0px 5px $dark-bluegray;
+    }
+}

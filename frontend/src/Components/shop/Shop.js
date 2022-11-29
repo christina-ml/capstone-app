@@ -5,7 +5,7 @@ import nftData from './nftData';
 import { MdShoppingCart } from "react-icons/md";
 
 // helpers - convert USD to ETH
-import convertUSDToETH from '../../helpers/convertUSDToETH.js';
+import convertUSDToETH from '../../helpers/ConvertUSDToETH.js';
 
 import './Shop.scss';
 

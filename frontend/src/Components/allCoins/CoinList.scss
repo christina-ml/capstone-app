@@ -12,6 +12,11 @@
         color: black;
     }
 
+    &__missingCollection{
+        margin: 0 auto;
+        text-align: center;
+    }
+
     &__collection{
         display: flex;
         flex-wrap: wrap;
