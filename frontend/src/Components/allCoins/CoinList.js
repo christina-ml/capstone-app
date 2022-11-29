@@ -38,8 +38,7 @@ const CoinList = () => {
           <div>If problem persists for more than a few minutes,
             please contact site admin here:
             <br />
-            <CryptoButton buttonText="Contact Info"></CryptoButton>
-
+            <CryptoButton buttonText="Contact Info" whereToNavigate={'/about'}></CryptoButton>
           </div>
 
         </div> 

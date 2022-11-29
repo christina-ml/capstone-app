@@ -2,10 +2,10 @@ import { Link } from 'react-router-dom';
 
 import './CryptoButton.scss';
 
-function CryptoButton({buttonText}){
+function CryptoButton({buttonText, whereToNavigate}){
 
     return (
-        <Link to="/about">
+        <Link to={whereToNavigate}>
             <div className="cryptoButton">
                 {buttonText}
             </div>
