@@ -1,0 +1,19 @@
+{
+  "name": "capstone-app",
+  "version": "1.0.0",
+  "description": "<img src=\"./frontend/src/assets/erd2.png\" alt=\"event-relational-database2\"/>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christina-ml/capstone-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christina-ml/capstone-app/issues"
+  },
+  "homepage": "https://github.com/christina-ml/capstone-app#readme"
+}
