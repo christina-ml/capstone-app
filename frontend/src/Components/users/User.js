@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import { IoSettingsSharp } from 'react-icons/io5';
 
+import './User.scss';
+
 const User = ({user}) => {
 
   const { uid,

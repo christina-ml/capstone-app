@@ -4,6 +4,8 @@ import { Link, useParams } from 'react-router-dom';
 
 import Currencies from '../currencies/Currencies';
 
+import './UserDetails.scss';
+
 // react icons
 import { MdOutlineEmail } from 'react-icons/md';
 import { IoSettingsSharp, IoHomeOutline } from 'react-icons/io5';
@@ -79,6 +81,11 @@ const UserDetails = () => {
                     Interests: {user_interests}
                 </div>
             </div>
+        </div>
+        <div className="userDetails__addNewCoin">
+            <Link to="/coins">
+                <div>Add a Coin</div>
+            </Link>
         </div>
         <Currencies />
     </div>

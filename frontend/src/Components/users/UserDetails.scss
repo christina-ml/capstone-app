@@ -1,0 +1,48 @@
+// import colors from designUtils
+@import '../../designUtils/colors';
+@import '../../designUtils/media';
+@import '../../designUtils/fonts';
+
+.userDetails {
+    padding: 20px;
+    
+    &__editButton {
+        float: right;
+        margin: 15px 20px;
+        button {
+            cursor: pointer;
+            padding: 5px;
+            width: 80px;
+            border: none;
+            border-radius: 5px;
+            color: $white;
+            background: $medium-gray;
+        }
+    }
+
+    &__details {
+        // background: $light-gray;
+
+        &__name {
+            background-color: $dark-bluegray;
+            padding: 10px;
+            font-size: 30px;
+            color: white;
+        }
+
+        &__bio {
+            padding: 5px 20px;
+            line-height: 1.5em;
+
+            &__profilePhoto {
+                display: inline-block;
+                line-height: 1em;
+                img {
+                    height: 100px;
+                    width: 100px;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}

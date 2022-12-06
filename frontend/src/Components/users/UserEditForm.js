@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 
-import "./Users.scss";
+import "./UserEditForm.scss";
 
 const API = process.env.REACT_APP_API_URL;
 
