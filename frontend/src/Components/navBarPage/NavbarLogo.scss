@@ -1,0 +1,51 @@
+// import colors from designUtils
+@import '../../designUtils/colors';
+@import '../../designUtils/media';
+@import '../../designUtils/fonts';
+
+.navbarLogo {
+    float: left;
+    color: $text-white;
+    display: flex;
+    font-family: $logo-font-family;
+
+    &__cryptotalkLogo img {
+        height: 50px;
+    }
+
+    &__appName {
+        position: relative;
+        float: left;
+        padding-top: 5px;
+        font-size: 27px;
+        margin-left: 5px;
+        &__tag {
+            position: absolute;
+            font-style: italic;
+            font-size: 10px;
+            text-align: right;
+            right: 0;
+            bottom: 8px;
+        }
+    }
+}
+
+// MOBILE styling
+@media only screen and (max-width: $mobile){
+    .navbarLogo {
+        margin-left: 10px;
+
+        &__cryptotalkLogo img {
+            padding-top: 1px;
+            height: 47px;
+        }
+
+        &__appName {
+            font-size: 25px;
+            &__tag {
+                font-size: 8px;
+            }
+        }
+    }
+        
+}
