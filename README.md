@@ -313,3 +313,6 @@ Our backend database using [Postgres](https://www.postgresql.org/) has three tab
 
 <!-- color palette inspiration: -->
 <!-- https://colorswall.com/palette/83601 -->
+
+<!-- image editor (used for About Me page backgrounds) -->
+<!-- https://studio.pixelixe.com/#add-image-to-photo -->
