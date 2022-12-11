@@ -16,7 +16,7 @@
         color: $white;
         border: none;
         transition: all .5s;
-        padding: 4px 5px 1px 5px;
+        // padding: 4px 5px 1px 5px;
         // background-color: var(--background);
         background-color: $logo-blue;
         margin-right: 3px;
@@ -24,6 +24,7 @@
         padding: 9.5px 11.5px;
         border-radius: 10px;
         font-size: 16px;
+        // margin-right: 10px;
 
         &:hover {
             background-color: $logo-blue-light;

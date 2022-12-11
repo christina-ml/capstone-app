@@ -5,6 +5,8 @@
 .games {
     text-align: center;
     font-family: $logo-font-family;
+    width: 800px;
+    margin: 0 auto;
 
     &__header {
         color: $logo-blue;
