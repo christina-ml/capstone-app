@@ -6,6 +6,8 @@ About Cryptocurrencies
     Why are cryptocurrency prices so volatile?
     Who is Satoshi Nakamoto? Why are they important?
     What is a bull or bear market?
+    How does cryptocurrency work?
+    How are cryptocurrencies created?
 
 About Bitcoin
     What is Bitcoin?
@@ -43,6 +45,7 @@ Learn More
     What is mining?
     What is a non-fungible token (NFT)?
     How does an NFT have value?
+    Are NFTs cryptocurrencies?
     What is Axie Infinity?
     What is "proof of work" or "proof of stake"?
     What is a protocol?
