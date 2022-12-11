@@ -1,15 +1,19 @@
 [
   {
+    "text": "About Me",
+    "href": "/about"
+  },
+  {
     "text": "Learn",
-    "href": "/learn"
-  },
-  {
-    "text": "News",
-    "href": "/news"
-  },
-  {
-    "text": "Games",
-    "href": "/games"
+    "href": "/learn",
+    "submenu": [{
+      "submenuText": "News",
+      "submenuHref": "/news"
+    },
+    {
+      "submenuText": "Games",
+      "submenuHref": "/games"
+    }]
   },
   {
     "text": "Shop",

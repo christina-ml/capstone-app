@@ -14,138 +14,139 @@
     height: 50px;
     padding: 10px 10px;
 
-    &__logo {
-        float: left;
-        color: $text-white;
-        display: flex;
-        font-family: $logo-font-family;
-
-        &__cryptotalkLogo img {
-            height: 50px;
-        }
-
-        &__appName {
-            position: relative;
-            float: left;
-            padding-top: 5px;
-            font-size: 27px;
-            margin-left: 5px;
-            &__tag {
-                position: absolute;
-                font-style: italic;
-                font-size: 10px;
-                text-align: right;
-                right: 0;
-                bottom: 8px;
-            }
-        }
-    }
-
-    &__menuItems {
+    &__menuItemData {
         float: right;
-        margin-top: -10px;
-        ul {
-            list-style-type: none;
-            li {
-                display: inline;
-                justify-content: space-between;
-                margin-left: 25px;
-                a {
-                    text-decoration: none;
-                    color: $text-white;
-                    padding: 10px;
-                    transition: all .5s;
-                }
-    
-                a:hover {
-                    background-color: $logo-blue-light;
-                    border-radius: 10px;
-                }              
+        display: flex;
+        flex-direction: row;
+        margin-right: 50px;
+
+        &__menuItem {
+            color: yellow;
+            a {
+                color: yellow;
             }
         }
+        
+        &__submenuItem {
+            color: hotpink;
+            display: flex;
+            flex-direction: column;
+            a {
+                color: hotpink;
+            }
+        }
+
+        
     }
+
+    // &__menuItems {
+        // float: right;
+        // margin-top: -10px;
+        // ul {
+        //     list-style-type: none;
+        //     li {
+        //         display: inline;
+                // justify-content: space-between;
+                // // margin-left: 25px;
+                // a {
+                //     text-decoration: none;
+                //     color: $text-white;
+                //     padding: 10px;
+                //     transition: all .5s;
+                // }
+    
+                // a:hover {
+                //     background-color: $logo-blue-light;
+                //     border-radius: 10px;
+                // }     
+                
+                // &__submenuLi {
+                    // .submenuLi {
+                    //     &::before {
+                            
+                    //         border: 1px solid orange;
+                    //         a {
+                    //             color: plum;
+                    //         } 
+                    //     }
+                    // }
+        
+                    // &__submenuUl__submenuLi {
+                    //     color: red;
+                    //     display: inline-block;
+                    // }
+                // }
+            // }
+        // }
+
+      
+    // }
 
     &__collapsedMenuIcon {
         display: none;
     }
 }
 
-// MEDIUM SCREEN styling
-@media only screen and (min-width: $mobile) and (max-width: $mediumScreen){
-    .navbar {
-        &__menuItems {
-            float: none;
+// // MEDIUM SCREEN styling
+// @media only screen and (min-width: $mobile) and (max-width: $mediumScreen){
+//     .navbar {
+//         &__menuItems {
+//             float: none;
             
-            ul {
-                text-align: left;
-                padding: 0px;
-                margin: 10px;
-                background-color: $logo-blue;
+//             ul {
+//                 text-align: left;
+//                 padding: 0px;
+//                 margin: 10px;
+//                 background-color: $logo-blue;
 
-                li {
-                    float: left;
+//                 li {
+//                     float: left;
                     
-                    a {
-                        font-size: 16px;
-                        padding: 3px 2px;
-                    }           
-                }
-            }
-        }     
-    }
-}
+//                     a {
+//                         font-size: 16px;
+//                         padding: 3px 2px;
+//                     }           
+//                 }
+//             }
+//         }     
+//     }
+// }
 
 
 // MOBILE styling
 @media only screen and (max-width: $mobile){
     .navbar {
-        padding: 0;
-        
-        &__logo {
-            margin-left: 10px;
+        // padding: 0;
 
-            &__cryptotalkLogo img {
-                padding-top: 1px;
-                height: 47px;
-            }
+        // &__menuItems {
+        //     display: none;
 
-            &__appName {
-                font-size: 25px;
-                &__tag {
-                    font-size: 8px;
-                }
-            }
-        }
+        //     &-active {
+        //         display: block;
+        //         position: absolute;
+        //         top: 50px;
+        //         background-color: $background-black;
+        //         width: 100%;
+        //         border-bottom: 1px solid black;
+        //         text-align: center;
 
-        &__menuItems {
-            display: none;
-
-            &-active {
-                display: block;
-                position: absolute;
-                top: 50px;
-                background-color: $background-black;
-                width: 100%;
-                border-bottom: 1px solid black;
-                text-align: center;
-
-                ul {
-                    padding: 0;
+        //         ul {
+        //             padding: 0;
          
-                    li {
-                        display: block;
-                        margin: 10px 0;
+        //             li {
+        //                 display: block;
+        //                 margin: 10px 0;
 
-                        a {
-                            background-color: $hover-black;
-                            display: inline-block;
-                            width: 90%;
-                            border-radius: 10px;
-                        }
-                    }
-                }
-            }
-        }
+        //                 a {
+        //                     background-color: $hover-black;
+        //                     display: inline-block;
+        //                     width: 90%;
+        //                     border-radius: 10px;
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
 
         &__collapsedMenuIcon {
             display: block;
