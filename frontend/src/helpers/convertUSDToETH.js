@@ -1,5 +1,3 @@
-// https://wallethub.com/answers/cc/how-to-calculate-exchange-rates-2140664228/#:~:text=The%20formula%20is%3A%20Starting%20Amount,Calculate%20the%20foreign%20currency%20amount.
-
 function convertUSDToETH(priceInUSD) {
     // you have USD and want to convert your USD to ETH
     let startingAmtUSD = 1313.062;
@@ -15,8 +13,10 @@ function convertUSDToETH(priceInUSD) {
     // console.log("convertedUSDToETH:", convertedUSDToETH.toFixed(3))
     return convertedUSDToETH.toFixed(3);
 }
+
 // convertUSDToETH(1313); // => 0.9999527821230072
 // convertUSDToETH(4000); // => 3.0463146447007072
 // convertUSDToETH(100); // => 0.07615786611751768
+// https://wallethub.com/answers/cc/how-to-calculate-exchange-rates-2140664228/#:~:text=The%20formula%20is%3A%20Starting%20Amount,Calculate%20the%20foreign%20currency%20amount.
 
 export default convertUSDToETH;
