@@ -42,8 +42,7 @@ const Shop = () => {
                         </Link>
                     </div>
                 )
-    
-            
+
             })}
         </div>
     </div>
