@@ -14,29 +14,47 @@
     height: 50px;
     padding: 10px 10px;
 
+    &__items{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     &__menuItemData {
-        float: right;
         display: flex;
         flex-direction: row;
         margin-right: 50px;
 
         &__menuItem {
             color: yellow;
+            padding: 20px 15px;
             a {
                 color: yellow;
             }
         }
         
         &__submenuItem {
-            color: hotpink;
+            top: 0px;
+            color: peru;
             display: flex;
             flex-direction: column;
+            padding: 20px 15px;
+            
             a {
-                color: hotpink;
+                position: relative;
+                color: peru;
             }
-        }
 
-        
+            .submenuItemLink{
+                background-color: white;
+                color: yellow;
+                top: 70px;
+                position: absolute;
+                padding: 5px 0;
+                display: flex;
+                flex-direction: column;
+            }
+        }        
     }
 
     // &__menuItems {

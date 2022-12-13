@@ -9,7 +9,7 @@ import NavbarLogo from './NavbarLogo.js';
 
 // react-icons
 import { HiMenu } from 'react-icons/hi';
-import { MdDarkMode, MdOutlineDarkMode } from 'react-icons/md';
+import { MdDarkMode, MdOutlineDarkMode, MdKeyboardArrowDown } from 'react-icons/md';
 
 // instead of hard-coding menu items, store as JSON
 import menuItemData from "./data/menuData.json";
@@ -22,6 +22,10 @@ const NavBar = ({darkModeButton}) => {
   // for toggle button click event
   const [toggleButton, setToggleButton] = useState(null);
   const [toggleText, setToggleText] = useState(null);
+
+  // displaying submenu items
+  const [displaySubMenu, setDisplaySubMenu] = useState(false);
+
 
   const handleToggleClick = () => {
     setToggleText(!toggleText)
@@ -48,15 +52,22 @@ const NavBar = ({darkModeButton}) => {
               return (
                 <div>
                   {menuItem.text && menuItem.submenu ? (
-                    <div className="navbar__menuItemData__submenuItem">
+                    <div className="navbar__menuItemData__submenuItem"
+                      onMouseEnter={() => setDisplaySubMenu(true)}
+                      onMouseLeave={() => setDisplaySubMenu(false)}
+                    >
 
-                      <a href={menuItem.href}>{menuItem.text}</a>
+                      <a href={menuItem.href}>{menuItem.text} <MdKeyboardArrowDown /></a>
 
-                      {menuItem.submenu.map((submenuItem) => {
-                        return (
-                          <a href={submenuItem.submenuHref}>{submenuItem.submenuText}</a>
-                        )
-                      })}
+                      <div className="submenuItemLink">
+                        {displaySubMenu && menuItem.submenu.map((submenuItem) => {
+                          return (
+                            
+                              <a href={submenuItem.submenuHref}>{submenuItem.submenuText}</a>
+                          
+                          )
+                        })}
+                      </div>
                     </div>
                   ) : (
                     <div className="navbar__menuItemData__menuItem">
