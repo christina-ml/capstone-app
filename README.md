@@ -1,3 +1,35 @@
+# Deployment
+Deployed Links:
+* Frontend: https://cryptotalk-cl.netlify.app/
+* Backend: https://cryptotalk-cl.adaptable.app/
+
+
+Backend deployment (directions):
+#### ElephantSQL & Postico
+- Create instance with [elephantSQL](https://www.elephantsql.com/).
+- Add tables with seed data in "browser" tab on left.
+- SQL Query - copy & paste the tables from schema
+- SQL Query - copy & paste the tables from seed
+- open in Postico to view tables
+
+#### Adaptable.io
+- [Adaptable.io](https://adaptable.io/)
+- add GitHub repository with node/postgres
+- go to settings in adaptable, edit "Runtime Environment"
+`DATABASE_URL` value: add the elephantSQL URL `postgres://......`
+`PG_HOST` value: elephantSQL server (without the parentheses) `[name].db.elephantsql.com`
+`PG_PORT` value: `5432`
+`PG_DATABASE` value: elephantSQL User & Default database
+`PG_USER` value: elephantSQL User & Default database
+`PG_PASSWORD` value: elephantSQL password
+<img src="./frontend/src/assets/adaptableEnvVars.png" alt="adaptable-runtime-environment-variables"/>
+
+#### Netlify
+- add environment varialbe `REACT_APP_API_URL=` deployed adaptable link (without backslash at the end)
+- add environment variable `CI` with value of `false` (lowercase)
+- Clear cache & deploy site -> deployment is DONE, check deployed Netlify link that it works!
+
+
 ## Entity Relationship Diagram (ERD)
 <img src="./frontend/src/assets/erd2.png" alt="event-relational-database2"/>
 
