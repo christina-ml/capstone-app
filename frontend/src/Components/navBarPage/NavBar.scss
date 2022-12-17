@@ -26,10 +26,10 @@
         margin-right: 50px;
 
         &__menuItem {
-            color: yellow;
             padding: 20px 15px;
             a {
-                color: yellow;
+                text-decoration: none;
+                color: $white;
             }
         }
         
@@ -42,17 +42,27 @@
             
             a {
                 position: relative;
-                color: peru;
+                text-decoration: none;
+                color: $white;
+                width: 100%;
             }
 
-            .submenuItemLink{
-                background-color: white;
-                color: yellow;
-                top: 70px;
+            .submenuItemLink {
+                top: 65px;
                 position: absolute;
-                padding: 5px 0;
                 display: flex;
                 flex-direction: column;
+
+                a {
+                    background-color: $logo-blue-light;
+                    color: white;
+                    padding: 10px 20px;
+                    text-align: left;
+                    border: 1px solid white;
+                    &:hover {
+                        background-color: $medium-gray;
+                    }
+                }
             }
         }        
     }

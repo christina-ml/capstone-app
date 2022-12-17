@@ -9,7 +9,7 @@ import NavbarLogo from './NavbarLogo.js';
 
 // react-icons
 import { HiMenu } from 'react-icons/hi';
-import { MdDarkMode, MdOutlineDarkMode, MdKeyboardArrowDown } from 'react-icons/md';
+import { MdDarkMode, MdOutlineDarkMode, MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
 
 // instead of hard-coding menu items, store as JSON
 import menuItemData from "./data/menuData.json";
@@ -18,13 +18,14 @@ const NavBar = ({darkModeButton}) => {
 
   // simple hook setting it to false
   const [toggleCollapsedMenu, setToggleCollapsedMenu] = useState(false);
+  const [currentHoverMenu, setCurrentHoverMenu] = useState(null);
 
   // for toggle button click event
   const [toggleButton, setToggleButton] = useState(null);
   const [toggleText, setToggleText] = useState(null);
 
   // displaying submenu items
-  const [displaySubMenu, setDisplaySubMenu] = useState(false);
+  const [displaySubMenu, setDisplaySubMenu] = useState(true);
 
 
   const handleToggleClick = () => {
@@ -48,26 +49,37 @@ const NavBar = ({darkModeButton}) => {
         </div>
 
         <div className="navbar__menuItemData">
-            {menuItemData.map((menuItem) => {
+            {menuItemData.map((menuItem, index) => {
               return (
-                <div>
+                <div key={menuItem + index} id={index}>
                   {menuItem.text && menuItem.submenu ? (
                     <div className="navbar__menuItemData__submenuItem"
-                      onMouseEnter={() => setDisplaySubMenu(true)}
-                      onMouseLeave={() => setDisplaySubMenu(false)}
+                      onMouseEnter={() => {
+                        setDisplaySubMenu(true)
+                        setCurrentHoverMenu(index)
+                      }}
+                      onMouseLeave={() => {
+                        setDisplaySubMenu(false)
+                        setCurrentHoverMenu(null)
+                      }}
                     >
-
-                      <a href={menuItem.href}>{menuItem.text} <MdKeyboardArrowDown /></a>
+                      
+                      <a href={menuItem.href}>{menuItem.text} 
+                        {
+                          displaySubMenu && menuItem.submenu ?
+                          <MdKeyboardArrowUp /> :
+                          <MdKeyboardArrowDown />
+                        }
+                      </a>
 
                       <div className="submenuItemLink">
-                        {displaySubMenu && menuItem.submenu.map((submenuItem) => {
+                        {currentHoverMenu === index && menuItem.submenu.map((submenuItem, subIndex) => {
                           return (
-                            
-                              <a href={submenuItem.submenuHref}>{submenuItem.submenuText}</a>
-                          
+                            <a key={submenuItem + subIndex} href={submenuItem.submenuHref}>{submenuItem.submenuText}</a>
                           )
                         })}
                       </div>
+                      
                     </div>
                   ) : (
                     <div className="navbar__menuItemData__menuItem">

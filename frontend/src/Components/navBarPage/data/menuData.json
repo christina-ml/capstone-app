@@ -21,10 +21,10 @@
   },
   {
     "text": "Users",
-    "href": "/users"
-  },
-  {
-    "text": "Sign Up",
-    "href": "/create"
+    "href": "/users",
+    "submenu": [{
+      "submenuText": "Sign Up",
+      "submenuHref": "/create"
+    }]
   }
 ]
