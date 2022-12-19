@@ -10,6 +10,9 @@ import useLocalStorage from 'use-local-storage';
 import { MdDarkMode } from 'react-icons/md';
 import { BsFillSunFill } from 'react-icons/bs';
 
+// Component - resets the Scroll location to the Top of page when navigating through site
+import ScrollToTop from "./Components/ScrollToTop";
+
 // Components
 import PageNotFound from "./Components/PageNotFound";
 import NavBar from "./Components/navBarPage/NavBar";
@@ -60,6 +63,7 @@ function App() {
 
   return (
     <div className="App" data-theme={theme} >
+      <ScrollToTop />
       <NavBar darkModeButton={darkModeButton} />
       <main>
         <Routes>
