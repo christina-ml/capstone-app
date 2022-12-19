@@ -21,13 +21,15 @@
         background-color: $logo-blue;
         margin-right: 3px;
         cursor: pointer;
-        padding: 9.5px 11.5px;
         border-radius: 10px;
         font-size: 16px;
-        // margin-right: 10px;
-
+        margin-top: 15px;
+        padding-top: 5px;
+        height: 30px;
+        border: 1px solid transparent;
+        
         &:hover {
-            background-color: $logo-blue-light;
+            border: 1px solid $white;
         }
     }
 }

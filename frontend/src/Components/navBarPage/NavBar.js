@@ -9,7 +9,7 @@ import NavbarLogo from './NavbarLogo.js';
 
 // react-icons
 import { HiMenu } from 'react-icons/hi';
-import { MdDarkMode, MdOutlineDarkMode, MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
 
 // instead of hard-coding menu items, store as JSON
 import menuItemData from "./data/menuData.json";
@@ -66,7 +66,7 @@ const NavBar = ({darkModeButton}) => {
                       
                       <a href={menuItem.href}>{menuItem.text} 
                         {
-                          displaySubMenu && menuItem.submenu ?
+                          displaySubMenu && menuItem.submenu && currentHoverMenu === index ?
                           <MdKeyboardArrowUp /> :
                           <MdKeyboardArrowDown />
                         }
@@ -89,49 +89,9 @@ const NavBar = ({darkModeButton}) => {
                 </div>
               )
             })}
-        </div>
-
-
-
-      </div>
-
-      {/* <div className="nav">
-        <ul className="menuItemsUl">
-          {menuItemData.map((menuItem, index)=>{
-            return (
-                <li className="menuItemsLi" key={index} >
-                  
-                  {menuItem.href && menuItem.submenu ? (
-                    <>
-                      <button>
-                        {menuItem.text}
-                      </button>
-
-                      <p> dropdown submenu items </p>
-                      <ul className="submenuUl">
-                      {menuItem.submenu.map((subLink, index) => {
-                        return (
-                            <li className="submenuLi" key={index}>
-                              <a href={subLink.submenuHref} >{subLink.submenuText}</a>
-                            </li>
-                        );
-                      })}
-                      </ul>
-                    </>
-                    ) : (
-                    <a href={menuItem.href}>{menuItem.text}</a>
-                  )}
-                </li>
-              )
-            })
-          }
-
-          <li>
             {darkModeButton}
-          </li>
-        </ul>
-      </div> */}
-
+        </div>
+      </div>
     </div>
   )
 }
