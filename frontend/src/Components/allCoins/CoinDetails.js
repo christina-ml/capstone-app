@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import axios from "axios";
 import { useParams } from 'react-router-dom';
-import './CoinList.scss';
+import './CoinDetails.scss';
 
 // helpers - displaying price with commas
 import addCommas from '../../helpers/AddCommas';

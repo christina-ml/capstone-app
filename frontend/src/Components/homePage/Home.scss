@@ -4,6 +4,8 @@
 
 .home {
   font-family: $logo-font-family;
+  max-width: 1200px;
+  margin: 0 auto;
 
   &__container {
     padding-top: 10px;

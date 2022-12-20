@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './CoinList.scss';
+import './Coin.scss';
 
 // helpers - displaying price with commas
 import addCommas from '../../helpers/AddCommas';

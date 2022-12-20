@@ -1,0 +1,131 @@
+@import '../../designUtils/colors';
+@import '../../designUtils/fonts';
+@import '../../designUtils/media';
+
+.coinDetails {
+    padding: 10px;
+    max-width: 1000px;
+    margin: 0 auto;
+ 
+     &__coinCard {
+         border: 0.5px solid lightgray;
+         margin: 10px 5px 5px 5px;
+ 
+         &__logo {
+             padding: 5px 15px;
+             display: flex;
+             font-weight: 600;
+             font-size: 20px;
+             line-height: 2em;
+             // background-color: $dark-bluegray;
+             // color: white;
+ 
+             img {
+                 height: 50px;
+                 width: 50px;
+             }
+             
+             &__coinName {
+                 margin: 3px;
+                 span {
+                     margin-left: 10px;
+                     padding: 5px 10px;
+                     background-color: #eee;
+                     color: $medium-gray;
+                     border-radius: 5px;
+                     font-size: 14px;
+                 }
+             }  
+         }
+         &__details {
+             line-height: 1.5em;
+             padding: 20px;
+             // background-color: $light-gray;
+ 
+             
+             &__oneAndTwo {
+                 display: flex;
+                 justify-content: space-between;
+                 padding: 0px 0px 10px 0px;
+                 &__price {
+                     font-size: 25px;
+                     font-weight: 600;
+ 
+                     &__goGreen {
+                         font-size: 14px;
+                         margin-left: 10px;
+                         padding: 5px;
+                         border-radius: 5px;
+                         color: $white;
+                         vertical-align: top;
+                         background-color: $chartJS-green;
+                     }
+                     &__goRed {
+                         font-size: 14px;
+                         margin-left: 10px;
+                         padding: 5px;
+                         border-radius: 5px;
+                         color: $white;
+                         vertical-align: top;
+                         background-color: $chartJS-green;
+                     }
+                 }
+             }
+ 
+             &__sectionThree {
+                 display: flex;
+                 flex-direction: row;
+                 justify-content: space-between;
+                 flex-wrap: wrap;
+                 
+                 row-gap: 10px;
+                 column-gap: 10px;
+ 
+                 &__label {
+                     color: $medium-gray;
+                 }
+ 
+                 &__volChange24h {
+                     &__goGreen {
+                         color: $chartJS-green;
+                     }
+                     &__goRed {
+                         color: $chartJS-red;
+                     }
+                 }
+             }
+ 
+             // tags
+             &__sectionFour {
+                 padding-bottom: 10px;
+                 &__tags {
+                     display: inline-block;
+                     margin: 10px 5px;
+                     padding: 5px 10px;
+                     background-color: #eee;
+                     color: $medium-gray;
+                     border-radius: 10px;
+                 }
+             }
+ 
+             // chart JS
+             &__sectionFive {
+                 width: 320px;
+             }
+         }
+     }    
+ }
+
+// MOBILE styling
+@media only screen and (max-width: $mobile){
+    .coinDetails {
+        &__coinCard{
+            &__details{
+               // chart JS
+                &__sectionFive {
+                    width: 80vw;
+                }
+            }
+        }
+    }
+}
