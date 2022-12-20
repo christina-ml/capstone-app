@@ -39,8 +39,10 @@ const Learn = () => {
         <header>
             <h1>Learn CryptoTalk</h1>
         </header>
-        <h3>Crypto basics</h3>
-        <div>New to crypto? — start here</div> 
+        <div className="Learn__startHere">
+          <h3>Crypto basics</h3>
+          <div>New to crypto? — start here</div>
+        </div>
         <div className="Learn__search">
           <SearchBar searchTerm={searchTerm} 
                     setSearchTerm={setSearchTerm} 

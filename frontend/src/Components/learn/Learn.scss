@@ -5,15 +5,24 @@
 
 .Learn {
     // font-family: $logo-font-family;
-    margin: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
     
     header {
         text-align: center;
         margin-top: 80px;
     }
+
+    &__startHere {
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
     &__search {
-        margin: 0 auto;
+        text-align: center;
         width: 90%;
+        margin: 0 auto;
+        padding-bottom: 20px;
     }
     &__questionsAccordion {
         margin: 0 auto;
