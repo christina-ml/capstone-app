@@ -3,6 +3,10 @@ import "./Newspaper.scss";
 
 // from my codepen (https://codepen.io/christinaml/pen/OJWrYNw)
 
+// Newspaper Components
+import NewsSidebar from "./NewsSidebar";
+import ThematicCard from "./ThematicCard";
+
 const Newspaper = () => {
   return (
     <div className="newspaper">
@@ -88,53 +92,11 @@ const Newspaper = () => {
               </p>
             </section>
           </div>
-
-          {/* sidebar */}
-          <div className="newspaper__main__sidebar">
-            <div className="newspaper__main__sidebar__title">
-              <span className="red-circle"></span>Most Read
-            </div>
-            <div className="newspaper__main__sidebar__list">
-              {/* <img src="https://www.coindesk.com/resizer/7FtiguOfIIIrL9-dY5wbj01jgzs=/975x731/filters:quality(80):format(webp)/cloudfront-us-east-1.images.arcpublishing.com/coindesk/YQ5ZL6KEPFEEXP2CDFNUQDXAXE.jpg" alt="bitcoin mining"/> */}
-              
-              <div className="articles">
-                <div className="article">
-                  <div className="article__number">1</div>
-                  <div className="article__title">
-                    Bitcoin Mining Major Riot Blockchain Misses Analyst Estimates for Q3 Earnings
-                  </div>
-                </div>
-                
-                <div className="article">
-                  <div className="article__number">2</div>
-                  <div className="article__title">
-                    First Mover Asia: A Good Week for Exchange Tokens, Except FTT; Solana Continues Falling
-                  </div>
-                </div>
-                
-                <div className="article">
-                  <div className="article__number">3</div>
-                  <div className="article__title">
-                    Litecoin Mining Difficulty Is Hitting New Highs, Foundation Says
-                  </div>
-                </div>
-                
-                <div className="article">
-                  <div className="article__number">4</div>
-                  <div className="article__title">
-                  Ethereum Co-Founder Di Iorio Unveils New Project to Bring Blockchain Computers to a Wider Audience
-                  </div>
-                </div>
-                
-                <div className="article">
-                  <div className="article__number">5</div>
-                  <div className="article__title">
-                    Bernstein Says Polygon Blockchain Is the Web3 King
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="sidebarSections">
+            <NewsSidebar />
+            <ThematicCard />
           </div>
+          
 
         </div>
       </body>
