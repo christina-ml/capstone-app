@@ -1,7 +1,12 @@
+// import colors from designUtils
+@import '../../designUtils/colors';
+@import '../../designUtils/media';
+@import '../../designUtils/fonts';
+
 // sidebar sections
 .sidebar {
     margin: 10px;
-    border: 1px solid black;
+    border: 1px solid $black;
     font-family: din-2014,Helvetica Neue,Helvetica,Arial,sans-serif;
     
     &__title {
@@ -11,7 +16,7 @@
       font-weight: 600;
       font-size: 14px;
       .red-circle {
-        border: 3px red solid;
+        border: 3px $logo-blue solid;
         height: 7px;
         width: 7px;
         border-radius: 50%;
@@ -39,7 +44,7 @@
         }
         
         &__number {
-          color: red;
+          color: $logo-blue;
         }
         
         &__title {

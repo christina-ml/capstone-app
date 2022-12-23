@@ -1,13 +1,14 @@
+// import colors from designUtils
+@import '../../designUtils/colors';
+@import '../../designUtils/media';
+@import '../../designUtils/fonts';
+
 .thematicCard {
     margin: 40px;
     width: 340px;
     font-family: Brandon Text, Arial, sans-serif;
     padding: 10px 10px;
 
-    &:hover {
-        box-shadow: 0px 0px 15px grey;
-    }
-  
     &__image {
       width: inherit;
       cursor: pointer;

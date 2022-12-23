@@ -19,9 +19,9 @@ const ThematicCard = ({url = '/'}) => {
             alt="gift wrapping" 
             onClick={handleCallToAction}
         />
-        <div className="thematicCard__title">Gift Wrapping</div>
+        <div className="thematicCard__title">Gift Wrapping Crypto</div>
         <div className="thematicCard__text">
-            We make it easy with festive options. Shop in store or online to see your choices.
+            We make it easy with festive options. Shop our NFT store or gift crypto online to see your choices.
         </div>
         <span className="thematicCard__callToAction"
             onClick={handleCallToAction}
