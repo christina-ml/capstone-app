@@ -2,11 +2,10 @@ import React from 'react';
 import axios from "axios";
 import { useEffect, useState } from "react";
 
+import { ImSpinner2 } from 'react-icons/im';
+
 import Coin from './Coin';
 import './CoinList.scss';
-
-// cryptoTalk component
-import CryptoButton from '../../cryptotalkComponents/buttons/CryptoButton';
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -34,13 +33,12 @@ const CoinList = () => {
       <h2>All Coins</h2>
       {allCoins.length === 0 ? 
         <div className="coinList__missingCollection">
-          <div>...waiting for backend data to load</div>
-          <div>If problem persists for more than a few minutes,
-            please contact site admin here:
-            <br />
-            <CryptoButton buttonText="Contact Info" whereToNavigate={'/about'}></CryptoButton>
+          <div className="coinList__missingCollection__spinner">
+            <ImSpinner2 />
           </div>
-
+          <div>
+            Loading...
+          </div>
         </div> 
       :
         <div className="coinList__collection">
