@@ -6,6 +6,8 @@ import Currencies from '../currencies/Currencies';
 
 import './UserDetails.scss';
 
+import Button from '../../cryptotalkComponents/buttons/Button';
+
 // react icons
 import { MdOutlineEmail } from 'react-icons/md';
 import { IoSettingsSharp, IoHomeOutline } from 'react-icons/io5';
@@ -57,7 +59,7 @@ const UserDetails = () => {
                 <div>
                     {username}
                 </div>
-                <div>
+                <div className="userDetails__details__bio__hideShowPassword">
                      
                     { showPassword ? 
                         <span> {user_password} </span> :
@@ -83,9 +85,7 @@ const UserDetails = () => {
             </div>
         </div>
         <div className="userDetails__addNewCoin">
-            <Link to="/coins">
-                <div>Add a Coin</div>
-            </Link>
+            <Button buttonText='Add a Coin' />
         </div>
         <Currencies />
     </div>

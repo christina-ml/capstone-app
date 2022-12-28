@@ -5,6 +5,8 @@
 
 .userDetails {
     padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
     
     &__editButton {
         float: right;
@@ -21,7 +23,6 @@
     }
 
     &__details {
-        // background: $light-gray;
 
         &__name {
             background-color: $dark-bluegray;
@@ -41,6 +42,12 @@
                     height: 100px;
                     width: 100px;
                     border-radius: 50%;
+                }
+            }
+
+            &__hideShowPassword {
+                button {
+                    cursor: pointer;
                 }
             }
         }

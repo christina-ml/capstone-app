@@ -39,43 +39,9 @@
             }
         }
 
-        &__submitButton {
-            input {
-                margin-top: 30px;
-                display: inline-block;
-                padding: 10px 15px;
-                border-radius: 8px;
-                background-image: linear-gradient(to bottom right, $logo-blue 50%, $logo-blue 50%, $light-gray);
-                background-size: 200%;
-                background-position: 0%;
-                transition: 0.4s;
-                color: white;
-                cursor: pointer;
-                text-align: center;
-                width: 35%;
-                font-size: 16px;
-                margin: 15px auto 0px auto;
-                border: none;
-    
-                &:hover {
-                    background-position: 100% 0%;
-                }
-            }
-        }
-
         &__cancelEditOrDelete {
             margin-top: -20px;
             
-            button {
-                text-decoration: none;
-                color: white;
-                background-color: $logo-blue;
-                padding: 5px 10px;
-                border-radius: 5px;
-                margin: 0px 5px;
-                cursor: pointer;
-            }
-
             &__confirmDeleteAsk {
                 p {
                     margin-bottom: 5px;

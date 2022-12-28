@@ -1,8 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import "./UserEditForm.scss";
+import Button from '../../cryptotalkComponents/buttons/Button';
+import InputButton from '../../cryptotalkComponents/buttons/InputButton';
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -64,6 +66,12 @@ function UserEditForm() {
   // ask before deleting user
   const askBeforeDeleting = () => {
     setShowConfirmDelete(true);
+  }
+
+  // cancel - redirect to users ID page
+  const handleCancel = (event) => {
+    event.preventDefault();
+    navigate(`/users/${uid}`);
   }
 
   useEffect(() => {
@@ -196,7 +204,7 @@ function UserEditForm() {
           </div>
           <br />
           <div className="UserEditForm__container__submitButton">
-            <input type="submit" />
+            <InputButton type="submit" />
           </div>
         </form>
 
@@ -205,17 +213,13 @@ function UserEditForm() {
           {showConfirmDelete ? 
             <div className="UserEditForm__container__cancelEditOrDelete__confirmDeleteAsk">
               <p>Are you sure you want to delete this user?</p>
-              <Link to={`/users/${uid}`}>
-                <button>Cancel</button>
-              </Link>
-              <button onClick={handleDelete}>Yes</button>
+              <Button onClick={handleCancel} buttonText='Cancel' />
+              <Button onClick={handleDelete} buttonText='Yes' />
             </div>
             :
             <div className="UserEditForm__container__cancelEditOrDelete__confirmDelete">
-              <Link to={`/users/${uid}`}>
-                <button>Cancel</button>
-              </Link>
-              <button onClick={askBeforeDeleting}>Delete User</button>
+              <Button onClick={handleCancel} buttonText='Cancel' />
+              <Button onClick={askBeforeDeleting} buttonText='Delete User' />
             </div>
           }
         </div>
