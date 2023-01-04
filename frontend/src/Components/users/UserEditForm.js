@@ -219,7 +219,7 @@ function UserEditForm() {
             :
             <div className="UserEditForm__container__cancelEditOrDelete__confirmDelete">
               <Button onClick={handleCancel} buttonText='Cancel' />
-              <Button onClick={askBeforeDeleting} buttonText='Delete User' />
+              <Button onClick={askBeforeDeleting} buttonText='Delete' />
             </div>
           }
         </div>
