@@ -8,6 +8,7 @@ const LearnPanelDetails = ({learn}) => {
         <p>{learn.answer}</p>
         <p>{learn.answer2}</p>
         <p>{learn.answer3}</p>
+        <p>{learn.answer4}</p>
         <div className="LearnPanelDetails__topic">
             <a href={learn.source} target="_" >Source</a>
             &nbsp;

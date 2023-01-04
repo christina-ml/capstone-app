@@ -38,7 +38,6 @@ Learn More
     What is a DEX?
     What is an ETF?
     What is a fork?
-    A fork in the road
     What is inflation?
     What is Internet Computer (ICP)?
     What is market cap?
