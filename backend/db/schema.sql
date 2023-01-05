@@ -55,3 +55,19 @@ CREATE TABLE currencies(
   tvl DECIMAL,
   currency_uid INTEGER REFERENCES users(uid) ON DELETE CASCADE
 );
+
+DROP TABLE IF EXISTS nfts;
+
+CREATE TABLE nfts(
+  nid SERIAL PRIMARY KEY,
+  item_name TEXT,
+  creator TEXT,
+  price DECIMAL,
+  currency TEXT,
+  currency_logo TEXT,
+  url TEXT,
+  rarity_rank_no: SMALLINT,
+  rarity_total SMALLINT,
+  availability BOOLEAN,
+  customer_id TEXT
+);
