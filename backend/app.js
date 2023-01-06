@@ -8,12 +8,14 @@ const app = express();
 // Controllers
 const usersController = require("./controllers/usersController.js");
 const allCoinsController = require("./controllers/allCoinsController.js");
+const nftsController = require("./controllers/nftsController.js");
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 app.use("/users", usersController);
 app.use("/coins", allCoinsController);
+app.use('/nfts', nftsController)
 
 // Routes
 app.get("/", (_req, res) => {

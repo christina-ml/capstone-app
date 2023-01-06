@@ -299,6 +299,13 @@ Our backend database using [Postgres](https://www.postgresql.org/) has three tab
 | currencies    | PUT    | /currencies/{cid}  | Update one `currencies` by id of {cid}
 | currencies    | DELETE | /currencies/{cid}  | Delete one `currencies` by id of {cid}
 
+## NFTs Table
+
+| Resource | Method | Route        | Description                              |
+|----------|--------|--------------|------------------------------------------|
+| nfts     | GET    | /nfts        | Get all `nfts`.                          |
+| nfts     | GET    | /nfts/{nid}  | Return one `nfts` by their id of {nid}.  |
+
 <!-- ## Resources Table
 
 | Resource  | Method | Route                      | Description                                                                  |
