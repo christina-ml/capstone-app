@@ -66,7 +66,7 @@ CREATE TABLE nfts(
   currency TEXT,
   currency_logo TEXT,
   url TEXT,
-  rarity_rank_no: SMALLINT,
+  rarity_rank_no SMALLINT,
   rarity_total SMALLINT,
   availability BOOLEAN,
   customer_id TEXT
