@@ -33,7 +33,6 @@ const Users = () => {
     useEffect(() => {
         axios.get(API + "/users")
             .then((res) => {
-                console.log("res.data:", res.data)
                 setUsers(res.data);
             }).catch((err) => {
                 console.log(err);
@@ -45,7 +44,6 @@ const Users = () => {
     // check if full name includes the search term (if there is a searchTerm)
     let filteredUsers = users;
     if (searchTerm){
-        console.log("searchTerm:", searchTerm)
         filteredUsers = users.filter(user => {
             const fullName = `${user.firstname} ${user.lastname}`;
             const fullNameToLowerCase = fullName.toLowerCase();

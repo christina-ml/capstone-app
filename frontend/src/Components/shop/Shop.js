@@ -1,50 +1,52 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import nftData from './nftData';
-
-import { MdShoppingCart } from "react-icons/md";
-
-// helpers - convert USD to ETH
-import convertUSDToETH from '../../helpers/ConvertUSDToETH';
+import React, { useEffect, useState } from 'react';
+// import { Link } from 'react-router-dom';
+import axios from "axios";
 
 import './Shop.scss';
 
+import NftCards from './NftCards';
+import Cart from './Cart';
+
+const API = process.env.REACT_APP_API_URL;
+
 const Shop = () => {
+    // hooks
+    const [nftData, setNftData] = useState([]);
+    // items that will be added to the cart - pass in an object
+    const [cartItems, setCartItems] = useState([]);
 
- // make `nftData` sorted alphabetically
-  let sortedNftData = nftData.sort((a, b) => {
-    return (a.itemName > b.itemName) ? 1 : -1;
-  })
+    // -- axios to fetch nfts data from backend
+    useEffect(() => {
+        axios.get(API + "/nfts")
+            .then((res) => {
+                // console.log("res.data:", res.data)
+                setNftData(res.data);
+            }).catch((err) => {
+                console.log(err);
+            })
+    }, []);
 
 
-  return (
+    // make `nftData` sorted alphabetically
+    let sortedNftData = nftData.sort((a, b) => {
+        return (a.itemName > b.itemName) ? 1 : -1;
+    })
+
+    const handleAddToCart = () => {
+        console.log("clicked the add to cart button")
+    }
+
+    return (
     <div className="nftShop">
         <h1>Explore, collect, and sell NFTs</h1>
-        <div className="nftCards">
-            {sortedNftData.map((nft, index) => {
-                return (
-                    <div className="nftCards__card" key={nft+index}>
-                        <div className="nftCards__card__details">
-                            <div className="nftCards__card__details__image">
-                                <img src={nft.url} alt="nft" />
-                            </div>
-                            <div className="nftCards__card__details__itemName">{nft.itemName}</div>
-                            <div className="nftCards__card__details__price">
-                                <div className="nftCards__card__details__price__current">Current price</div>
-                                <img src={nft.currencyLogo} alt="currency logo"/>
-                                {convertUSDToETH(nft.price)} {nft.currency} <span>${nft.price}</span>
-                            </div>
-                        </div>
-                        <Link to="/cart">
-                            <div className="nftCards__card__addToCart">
-                                <span><MdShoppingCart /> Add To Cart</span>
-                            </div>
-                        </Link>
-                    </div>
-                )
-
-            })}
+        <div>
+            <NftCards sortedNftData={sortedNftData} handleAddToCart={handleAddToCart} />
         </div>
+        <hr />
+        <div>
+            <Cart cartItems={cartItems} handleAddToCart={handleAddToCart} />
+        </div>
+
     </div>
   )
 }
