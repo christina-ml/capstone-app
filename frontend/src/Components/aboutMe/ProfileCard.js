@@ -7,7 +7,7 @@ import { IoDocumentTextSharp } from "react-icons/io5";
 
 import christinaResume from '../../assets/Christina_Loiacono_Resume_JrDeveloper.pdf';
 import CryptoTalkZoomBlue from '../../assets/CryptoTalkZoomBlue.png';
-import CryptoTalkZoomBlack from '../../assets/CryptoTalkZoomBlack.png';
+// import CryptoTalkZoomBlack from '../../assets/CryptoTalkZoomBlack.png';
 
 
 const ProfileCard = () => {
@@ -18,7 +18,7 @@ const ProfileCard = () => {
         {/* <img src="https://media.istockphoto.com/vectors/wavy-abstract-backgrounds-for-design-of-web-banners-packaging-posters-vector-id1211961939?b=1&k=20&m=1211961939&s=170667a&w=0&h=zAfk6widLaz3ZWrpUdxHi1ez_8_5aO2W2wA8fvhs9QE=" /> */}
       </div>
       <div className="profileCard__userImage">
-        <img src="https://avatars.githubusercontent.com/u/65386414?v=4" />
+        <img src="https://avatars.githubusercontent.com/u/65386414?v=4" alt="avatar" />
       </div>
       <div className="profileCard__userInfo">
         <div className="profileCard__userInfo__userPersonalInfo">

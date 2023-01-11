@@ -41,7 +41,7 @@ const LoginLS = () => {
 
   // set the variables to local storage
   const handleSubmit = () => {
-    if (username.current.value=="adminuser"&&password.current.value=="admin123"){
+    if (username.current.value === "adminuser" && password.current.value === "admin123"){
       localStorage.setItem("usernameData", "adminuser");
       localStorage.setItem("passwordData", "admin123");
     }

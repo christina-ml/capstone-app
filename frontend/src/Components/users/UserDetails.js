@@ -50,7 +50,7 @@ const UserDetails = () => {
             </div>
             <div className="userDetails__details__bio">
                 <div className="userDetails__details__bio__profilePhoto">
-                    <img src={photo} alt="profile photo" />
+                    <img src={photo} alt="profile avatar" />
                 </div>
                 <div>
                     {firstname} {lastname}

@@ -24,7 +24,7 @@ const User = ({user}) => {
   return (
     <div className="userCard">
       <div className="userCard__profileImage">
-        <img src={photo} />
+        <img src={photo} alt="user profile avatar" />
       </div>
       <div className="userCard__info">
         <div className="userCard__info__name">

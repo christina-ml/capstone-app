@@ -5,7 +5,7 @@
 
 // DESKTOP styling
 .navbar {
-    z-index: 10000;
+    z-index: 2;
     position: fixed;
     top: 0px;
     width: 100%;
@@ -37,6 +37,7 @@
         }
         
         &__submenuItem {
+            z-index: 3;
             top: 0px;
             color: peru;
             display: flex;
