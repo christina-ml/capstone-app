@@ -100,11 +100,14 @@
                  padding-bottom: 10px;
                  &__tags {
                      display: inline-block;
-                     margin: 10px 5px;
-                     padding: 5px 10px;
-                     background-color: #eee;
-                     color: $medium-gray;
-                     border-radius: 10px;
+                     
+                     .oneTag {
+                         color: $medium-gray;
+                         background-color: #eee;
+                         padding: 5px 10px;
+                         margin: 10px 5px;
+                         border-radius: 10px;
+                     }
                  }
              }
  

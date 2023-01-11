@@ -15,16 +15,18 @@ const API = process.env.REACT_APP_API_URL;
 
 const CoinDetails = () => {
     const [oneCoin, setOneCoin] = useState([]);
+    const [allTags, setAllTags] = useState([])
     let { cid } = useParams();
 
     useEffect(() => {
         axios.get(`${API}/coins/${cid}`)
             .then((res) => {
+                setAllTags(res.data.tags)
                 setOneCoin(res.data);
             }).catch((err) => {
                 console.log(err);
             })
-    })
+    }, [API, cid])
 
   return (
     <div className="coinDetails">
@@ -114,7 +116,13 @@ const CoinDetails = () => {
                         Tags:
                     </div>
                     <div className="coinDetails__coinCard__details__sectionFour__tags">
-                        {oneCoin.tags}
+                        {allTags.map((tag) => {
+                            return (
+                                <span className="oneTag">
+                                    {tag}
+                                </span>
+                            )
+                        })}
                     </div>
                 </div>
 
