@@ -30,7 +30,7 @@ CREATE TABLE currencies(
   slug TEXT,
   num_market_pairs INTEGER,
   date_added DATE,
-  tags TEXT,
+  tags TEXT [],
   max_supply BIGINT,
   circulating_supply DECIMAL,
   total_supply DECIMAL,
