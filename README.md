@@ -258,6 +258,25 @@ This should open up automatically in the browser, but if it doesn't, go to
 
 example: `http://localhost:3000/`
 
+
+## Material UI
+
+[Material UI](https://mui.com/) is an open-source React component library that implements Google's Material Design. It includes a comprehensive collection of prebuilt components that are ready for use in production right out of the box.
+
+I am using Material UI for these components:
+ - Login Modal
+
+### Installing Material UI
+```
+npm install @mui/material @emotion/react @emotion/styled
+```
+
+for Loop icon (`LoginButton` component):
+```
+npm i @mui/icons-material
+```
+
+
 # Backend Routes
 
 Our backend database using [Postgres](https://www.postgresql.org/) has three tables: `users`, `resources`, and `favorites`.  These are the routes for each table:

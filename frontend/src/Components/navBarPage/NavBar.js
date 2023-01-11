@@ -14,7 +14,13 @@ import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
 // instead of hard-coding menu items, store as JSON
 import menuItemData from "./data/menuData.json";
 
-const NavBar = ({darkModeButton}) => {
+// CryptoTalk Button component
+import LoginButton from '../../cryptotalkComponents/buttons/LoginButton';
+
+// Material UI Button
+import Button from '@mui/material/Button';
+
+const NavBar = ({darkModeButton, setOpenLoginModal}) => {
 
   // simple hook setting it to false
   const [toggleCollapsedMenu, setToggleCollapsedMenu] = useState(false);
@@ -89,6 +95,14 @@ const NavBar = ({darkModeButton}) => {
                 </div>
               )
             })}
+            <div>
+              <Button 
+                variant="contained"
+                handleClick={() => setOpenLoginModal(true)}
+              >
+                Log In
+              </Button>
+            </div>
             {darkModeButton}
         </div>
       </div>

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 // SCSS
@@ -19,6 +20,9 @@ import NavBar from "./Components/navBarPage/NavBar";
 import Home from "./Components/homePage/Home";
 import AboutMe from "./Components/aboutMe/AboutMe";
 
+// LOGIN MODAL
+import LoginModal from "./Components/loginModal/LoginModal";
+
 import Users from "./Components/users/Users";
 import UserDetails from "./Components/users/UserDetails";
 import UserNewForm from "./Components/users/UserNewForm";
@@ -28,7 +32,7 @@ import UserEditForm from "./Components/users/UserEditForm";
 // import Login from "./Components/login/Login";
 // import UserLogin from "./Components/loginMUI/UserLogin";
 // import LoginRH from "./Components/loginReactHooks/LoginRH";
-import LoginLS from "./Components/loginLocalStorage/LoginLS";
+// import LoginLS from "./Components/loginLocalStorage/LoginLS";
 // import LoginUsingBackend from "./Components/loginUsingBackend/LoginUsingBackend";
 
 import Shop from "./Components/shop/Shop";
@@ -61,10 +65,14 @@ function App() {
     </button>
   )
 
+  // Login Modal
+  const [openLoginModal, setOpenLoginModal] = useState(false);
+
   return (
     <div className="App" data-theme={theme} >
       <ScrollToTop />
-      <NavBar darkModeButton={darkModeButton} />
+      <NavBar darkModeButton={darkModeButton} setOpenLoginModal={setOpenLoginModal} />
+      <LoginModal openLoginModal={openLoginModal} setOpenLoginModal={setOpenLoginModal} />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -76,7 +84,7 @@ function App() {
           <Route path="/users/:uid/edit" element={<UserEditForm />} />
           <Route exact path="/users/:uid" element={<UserDetails />} />
 
-          <Route path="/login" element={<LoginLS />} />
+          {/* <Route path="/login" element={<LoginLS />} /> */}
           {/* <Route path="/register" element={<LoginUsingBackend />} /> */}
           
           <Route path="/shop" element={<Shop />} />
