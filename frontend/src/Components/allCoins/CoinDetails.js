@@ -105,6 +105,7 @@ const CoinDetails = () => {
                             Total Supply
                         </div>
                         <div>
+
                             {addCommas(oneCoin.total_supply)}
                         </div>
                     </div>
@@ -116,9 +117,9 @@ const CoinDetails = () => {
                         Tags:
                     </div>
                     <div className="coinDetails__coinCard__details__sectionFour__tags">
-                        {allTags.map((tag) => {
+                        {allTags.map((tag, index) => {
                             return (
-                                <span className="oneTag">
+                                <span className="oneTag" key={"tagkey" + index}>
                                     {tag}
                                 </span>
                             )
