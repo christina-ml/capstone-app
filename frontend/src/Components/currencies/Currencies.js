@@ -14,12 +14,11 @@ const Currencies = () => {
     useEffect(() => {
         axios.get(`${API}/users/${uid}/currencies`)
             .then((res) => {
-                console.log("res.data:", res.data)
                 setCurrencies(res.data);
             }).catch((err) => {
                 console.log(err);
             })
-    }, [uid]);
+    }, [API, uid]);
 
 
     return (

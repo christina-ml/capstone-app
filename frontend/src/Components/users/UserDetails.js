@@ -29,7 +29,7 @@ const UserDetails = () => {
             }).catch((err) => {
                 console.log(err);
             })
-    })
+    }, [API, uid])
 
     const { firstname, lastname, username, user_password, user_email, user_admin, user_interests, user_city, user_state, photo } = user;
 

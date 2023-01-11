@@ -24,7 +24,7 @@ const Shop = () => {
             }).catch((err) => {
                 console.log(err);
             })
-    }, []);
+    }, [API]);
 
 
     // make `nftData` sorted alphabetically

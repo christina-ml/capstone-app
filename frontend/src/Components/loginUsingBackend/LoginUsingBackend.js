@@ -45,19 +45,6 @@ const LoginUsingBackend = () => {
         });
     }
 
-
-// -- USING AXIOS --
-// useEffect(() => {   
-//     axios.get(API + "/users")
-//         .then((res) => {
-//             console.log("res.data:", res.data)
-//             setUsers(res.data);
-//         }).catch((err) => {
-//             console.log(err);
-//         })
-//     }, []);
-
-
   return (
     <div>
         <div className="registration">

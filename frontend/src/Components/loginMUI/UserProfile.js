@@ -25,7 +25,7 @@ function UserProfile() {
             }).catch((error) => {
                 console.log(error);
             })
-    }, [])
+    }, [API, id])
 
     const handleChange = (event, newValue) => {
         setValue(newValue);

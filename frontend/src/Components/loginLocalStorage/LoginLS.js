@@ -2,8 +2,7 @@
 // https://www.youtube.com/watch?v=UBV2vtkKR5o
 // https://github.com/AkajithAk/youtubeReact/tree/main/src/Components/LoginWithLocalstorage
 
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useRef } from 'react';
 
 import './LoginLS.scss';
@@ -17,19 +16,6 @@ const LoginLS = () => {
 
   // // hooks
   // const [users, setUsers] = useState([]);
-
-  // // -- USING AXIOS --
-  // useEffect(() => {   
-  //   axios.get(API + "/users")
-  //     .then((res) => {
-  //         console.log("res.data:", res.data)
-  //         setUsers(res.data);
-  //     }).catch((err) => {
-  //         console.log(err);
-  //     })
-  // }, []);
-
-
 
   // set variables for login
   const username = useRef();

@@ -3,7 +3,6 @@
 
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import Users from '../users/Users';
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -15,12 +14,11 @@ const LoginRH = () => {
     useEffect(() => {   
     axios.get(API + "/users")
         .then((res) => {
-            console.log("res.data:", res.data)
             setUsers(res.data);
         }).catch((err) => {
             console.log(err);
         })
-    }, []);
+    }, [API]);
 
     // fetch gives us the obj with all the `users` from backend
     // console.log("users:", users.map(user=>user.firstname))

@@ -21,7 +21,7 @@ const CoinList = () => {
         }).catch((err) => {
             console.log(err);
         })
-  }, []);
+  }, [API]);
 
   // make `allCoins` sorted alphabetically
   const sortedCoinsAsc = allCoins.sort((a,b) => {

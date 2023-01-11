@@ -37,7 +37,7 @@ const Users = () => {
             }).catch((err) => {
                 console.log(err);
             })
-    }, []);
+    }, [API]);
 
     // when search term is updated, this component will re-render
     // what to do on a re-render?

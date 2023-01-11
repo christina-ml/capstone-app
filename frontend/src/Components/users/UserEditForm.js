@@ -80,7 +80,7 @@ function UserEditForm() {
         (response) => setUser(response.data),
         (error) => navigate(`/not-found`)
       );
-  }, [uid, navigate]);
+  }, [API, uid, navigate]);
 
   return (
     <div className="UserEditForm">
