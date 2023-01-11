@@ -59,9 +59,9 @@ const Users = () => {
             <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} placeholder={'Search by name'}/>
         </div>
         <div className="users__cardsContainer">
-            {filteredUsers.map(user => {
+            {filteredUsers.map((user, index) => {
                 return (
-                    <User user={user} />
+                    <User user={user} key={"userkey" + index} />
                 )
             })}
         </div>
