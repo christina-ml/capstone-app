@@ -119,7 +119,7 @@ const CoinDetails = () => {
                     <div className="coinDetails__coinCard__details__sectionFour__tags">
                         {allTags.map((tag, index) => {
                             return (
-                                <span className="oneTag" key={"tagkey" + index}>
+                                <span className="oneTag" key={"tagkey" + index} title={tag}>
                                     {tag}
                                 </span>
                             )

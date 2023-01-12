@@ -1,3 +1,13 @@
+1/11/23
+TO DO:
+
+Add brackets:
+{{{{{{ to the coins table - TAGS
+https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-array/
+
+---------
+
+
 # Deployment
 Deployed Links:
 * Frontend: https://cryptotalk-cl.netlify.app/
@@ -358,6 +368,8 @@ Our backend database using [Postgres](https://www.postgresql.org/) has three tab
 [Random email generator](https://generator.email/)
 
 [Random US Cities](https://www.randomlists.com/random-us-cities)
+
+Tooltip text: [HTML title Attribute](https://www.w3schools.com/tags/att_title.asp)
 
 <!-- svg image used for DesktopColoring (svg with background) -->
 <!-- https://www.iconpacks.net/free-icon/laptop-coin-2469.html -->
