@@ -4,6 +4,10 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import "./UserNewForm.scss";
 
+// buttons
+import InputButton from '../../cryptotalkComponents/buttons/InputButton';
+import Button from '../../cryptotalkComponents/buttons/Button';
+
 const API = process.env.REACT_APP_API_URL;
 
 function UserNewForm() {
@@ -49,6 +53,12 @@ function UserNewForm() {
     navigate(`/users`);
   }
 
+  // redirect to users login page
+  const handleGoToLoginPage = (event) => {
+    event.preventDefault();
+    navigate(`/login`);
+  }
+
   return (
     <div className="UserNewForm">
       <div className="UserNewForm__container">
@@ -58,7 +68,7 @@ function UserNewForm() {
           </div>
           <div className="UserNewForm__container__form__inner__fields">
             <div className="UserNewForm__container__form__inner__fields__group">
-              <label htmlFor='firstname'>First Name: </label>
+              <label htmlFor='firstname'>First Name:</label>
               <input 
                 id="firstname"
                 value={user.firstname}
@@ -69,7 +79,7 @@ function UserNewForm() {
             </div>
 
             <div className="UserNewForm__container__form__inner__fields__group">
-              <label htmlFor='lastname'>Last Name: </label>
+              <label htmlFor='lastname'>Last Name:</label>
               <input 
                 id="lastname"
                 value={user.lastname}
@@ -80,7 +90,7 @@ function UserNewForm() {
             </div>
 
             <div className="UserNewForm__container__form__inner__fields__group">
-              <label htmlFor='username'>Username: </label>
+              <label htmlFor='username'>Username:</label>
               <input 
                 id="username"
                 value={user.username}
@@ -91,7 +101,7 @@ function UserNewForm() {
             </div>
 
             <div className="UserNewForm__container__form__inner__fields__group">
-              <label htmlFor='user_password'>Password: </label>
+              <label htmlFor='user_password'>Password:</label>
               <input 
                 id="user_password"
                 value={user.user_password}
@@ -102,7 +112,7 @@ function UserNewForm() {
             </div>
 
             <div className="UserNewForm__container__form__inner__fields__group">
-              <label htmlFor='user_email'>Email: </label>
+              <label htmlFor='user_email'>Email:</label>
               <input 
                 id="user_email"
                 value={user.user_email}
@@ -113,7 +123,7 @@ function UserNewForm() {
             </div>
 
             <div className="UserNewForm__container__form__inner__fields__group">
-              <label htmlFor='user_interests'>Interests: </label>
+              <label htmlFor='user_interests'>Interests:</label>
               <input 
                 id="user_interests"
                 value={user.user_interests}
@@ -124,7 +134,7 @@ function UserNewForm() {
             </div>
 
             <div className="UserNewForm__container__form__inner__fields__group">
-              <label htmlFor='user_city'>City: </label>
+              <label htmlFor='user_city'>City:</label>
               <input 
                 id="user_city"
                 value={user.user_city}
@@ -135,7 +145,7 @@ function UserNewForm() {
             </div>
 
             <div className="UserNewForm__container__form__inner__fields__group">
-              <label htmlFor='user_state'>State: </label>
+              <label htmlFor='user_state'>State:</label>
               <input 
                 id="user_state"
                 value={user.user_state}
@@ -146,7 +156,7 @@ function UserNewForm() {
             </div>
 
             <div className="UserNewForm__container__form__inner__fields__group">
-              <label htmlFor='photo'>Photo: </label>
+              <label htmlFor='photo'>Photo:</label>
               <input 
                 id="photo"
                 value={user.photo}
@@ -157,7 +167,7 @@ function UserNewForm() {
             </div>
 
             <div className="UserNewForm__container__form__inner__fields__groupAdmin">
-              <label htmlFor='user_admin'>Admin: </label>
+              <label htmlFor='user_admin'>Admin:</label>
               <input 
                 id="user_admin"
                 checked={user.user_admin}
@@ -169,14 +179,12 @@ function UserNewForm() {
           </div>
           <br />
           <div className="UserNewForm__container__submitButton">
-            <input type="submit" />
+            <InputButton type="submit" />
           </div>
         </form>
         <div className="UserNewForm__container__backToLogin">
-          Already a member? &nbsp;
-          <Link to="/login" >
-            Log In
-          </Link>
+          <span>Already a member?</span>
+          <Button onClick={handleGoToLoginPage} buttonText='Log In' />
         </div>
       </div>
     </div>
