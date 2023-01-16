@@ -13,9 +13,10 @@ const API = process.env.REACT_APP_API_URL;
 function UserNewForm() {
   let navigate = useNavigate();
 
-  const addUser = (newUser) => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
     axios
-      .post(`${API}/users`, newUser)
+      .post(`${API}/users`, user)
       .then(
         () => {
           navigate('/users');
@@ -45,12 +46,6 @@ function UserNewForm() {
 
   const handleCheckboxChange = () => {
     setUser({ ...user, user_admin: !user.user_admin });
-  }
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    addUser(user);
-    navigate(`/users`);
   }
 
   // redirect to users login page
