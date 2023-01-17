@@ -1,8 +1,8 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-import Snackbar from '@mui/material/Snackbar';
+// Material UI - for username availability
 import Alert from '@mui/material/Alert';
 
 import "./UserNewForm.scss";

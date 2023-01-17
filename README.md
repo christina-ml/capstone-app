@@ -274,7 +274,8 @@ example: `http://localhost:3000/`
 [Material UI](https://mui.com/) is an open-source React component library that implements Google's Material Design. It includes a comprehensive collection of prebuilt components that are ready for use in production right out of the box.
 
 I am using Material UI for these components:
- - Login Modal
+ - Login Modal, for modal
+ - UserNewForm, for username availability alerts
 
 ### Installing Material UI
 ```
