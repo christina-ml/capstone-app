@@ -29,9 +29,10 @@ function UserNewForm() {
             navigate('/users');
           },
           (error) => {
+            // if POST request fails, user exists in database already.
+            // add users input of already found username into `alreadyFound` array to keep track of all usernames this user has attempted to make a user profile with.
             setAlreadyFound((alreadyFound) => [...alreadyFound, user.username]);
-            // console.log("should be input:", alreadyFound)
-            setErrorMsg(`username already exists.`);
+            setErrorMsg(`Username already exists.`);
           }
         )
         .catch((c) => {
@@ -56,13 +57,11 @@ function UserNewForm() {
     photo: ''
   });
 
-  const handleTextChange = (event) => { // sparklingTree44
-    // console.log('event.target.value:', event.target.value); // sparklingTree44
-    // console.log("alreadyFound-> ", alreadyFound)
+  const handleTextChange = (event) => {
     setErrorMsg('');
+    // if usernames have already been found and are in alreadyFound array; if current text input matches anything in array - set error.
     if (alreadyFound.includes(event.target.value)){
-    // if (event.target.value === alreadyFound){ // sparklingTree44 === ''
-      setErrorMsg('you tried this already.');
+      setErrorMsg('You tried this existing username already.');
     }
 
     setUser({ ...user, [event.target.id]: event.target.value });
@@ -87,9 +86,16 @@ function UserNewForm() {
           </div>
             {
               (errorMsg !== '') ?
-              <Alert severity="error">This is an error alert — {errorMsg}</Alert>
+              <Alert severity="error">Error — {errorMsg}</Alert>
               :
-              <div>No more error</div>
+              <div>
+                { alreadyFound.length > 0 ?
+                  // if user types in a username that isn't in the alreadyFound array, and isn't the first attempt.
+                  <Alert severity="success">Username Available</Alert> : 
+                  // if no existing usernames have been found yet, show nothing.
+                  <></>
+                }
+              </div>
             }
           <div className="UserNewForm__container__form__inner__fields">
             <div className="UserNewForm__container__form__inner__fields__group">
