@@ -2,6 +2,9 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
+
 import "./UserNewForm.scss";
 
 // buttons
@@ -13,17 +16,31 @@ const API = process.env.REACT_APP_API_URL;
 function UserNewForm() {
   let navigate = useNavigate();
 
+  const [errorMsg, setErrorMsg] = useState('');
+  const [alreadyFound, setAlreadyFound] = useState([]);
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios
-      .post(`${API}/users`, user)
-      .then(
-        () => {
-          navigate('/users');
-        },
-        (error) => console.error(error)
-      )
-      .catch((c) => console.warn("catch", c));
+    try {
+      axios
+        .post(`${API}/users`, user)
+        .then(
+          () => {
+            navigate('/users');
+          },
+          (error) => {
+            setAlreadyFound((alreadyFound) => [...alreadyFound, user.username]);
+            // console.log("should be input:", alreadyFound)
+            setErrorMsg(`username already exists.`);
+          }
+        )
+        .catch((c) => {
+          console.warn("catch", c)
+        });
+    } catch (err){
+      
+      console.log(err);
+    }
   };
 
   const [user, setUser] = useState({
@@ -39,8 +56,15 @@ function UserNewForm() {
     photo: ''
   });
 
+  const handleTextChange = (event) => { // sparklingTree44
+    // console.log('event.target.value:', event.target.value); // sparklingTree44
+    // console.log("alreadyFound-> ", alreadyFound)
+    setErrorMsg('');
+    if (alreadyFound.includes(event.target.value)){
+    // if (event.target.value === alreadyFound){ // sparklingTree44 === ''
+      setErrorMsg('you tried this already.');
+    }
 
-  const handleTextChange = (event) => {
     setUser({ ...user, [event.target.id]: event.target.value });
   }
 
@@ -61,6 +85,12 @@ function UserNewForm() {
           <div className="UserNewForm__container__form__inner">
             <h2>Sign Up</h2>
           </div>
+            {
+              (errorMsg !== '') ?
+              <Alert severity="error">This is an error alert — {errorMsg}</Alert>
+              :
+              <div>No more error</div>
+            }
           <div className="UserNewForm__container__form__inner__fields">
             <div className="UserNewForm__container__form__inner__fields__group">
               <label htmlFor='firstname'>First Name:</label>
@@ -85,13 +115,14 @@ function UserNewForm() {
             </div>
 
             <div className="UserNewForm__container__form__inner__fields__group">
-              <label htmlFor='username'>Username:</label>
+              <label htmlFor='username'>Username*:</label>
               <input 
                 id="username"
                 value={user.username}
                 type="text"
                 onChange={handleTextChange}
                 placeholder="Username"
+                required
               />
             </div>
 
@@ -172,15 +203,18 @@ function UserNewForm() {
             </div>
 
           </div>
+          
           <br />
           <div className="UserNewForm__container__submitButton">
             <InputButton type="submit" />
           </div>
         </form>
+
         <div className="UserNewForm__container__backToLogin">
           <span>Already a member?</span>
           <Button onClick={handleGoToLoginPage} buttonText='Log In' />
         </div>
+
       </div>
     </div>
   )

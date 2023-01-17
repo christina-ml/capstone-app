@@ -115,13 +115,14 @@ function UserEditForm() {
             </div>
 
             <div className="UserEditForm__container__form__inner__fields__group">
-              <label htmlFor='username'>Username:</label>
+              <label htmlFor='username'>Username*:</label>
               <input 
                 id="username"
                 value={user.username}
                 type="text"
                 onChange={handleTextChange}
                 placeholder="Username"
+                required
               />
             </div>
 

@@ -386,3 +386,11 @@ Tooltip text: [HTML title Attribute](https://www.w3schools.com/tags/att_title.as
 
 <!-- image editor (used for About Me page backgrounds) -->
 <!-- https://studio.pixelixe.com/#add-image-to-photo -->
+
+<!-- RoboHash - generate robot icons -->
+<!-- https://robohash.org/ -->
+
+<!-- For adding new USERS to database on frontend with "Sign Up" form: -->
+<!-- For Sign Up/New User form, when clicking "submit" button the user list wouldn't automatically update. Needed to refresh the page. -->
+<!-- Doing an axios POST request inside the handleSubmit function fixes that issue. -->
+<!-- https://stackoverflow.com/a/66925638/15496834 -->
