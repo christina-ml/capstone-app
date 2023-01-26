@@ -3,6 +3,8 @@ const users = express.Router();
 
 // bcrypt - A library to help you hash passwords (encrypt our passwords)
 const bcrypt = require('bcrypt');
+// json web token (JWT)
+const jwt = require('jsonwebtoken');
 
 const {
     getAllUsers,
@@ -15,6 +17,7 @@ const {
 
 // Controllers
 const currenciesController = require("./currenciesController.js");
+const jwtTokens = require("../utils/jwt-helpers.js");
 users.use("/:userId/currencies", currenciesController);
 
 // get all users (not using, but can't get a list for the frontend to be able to .map over them)
@@ -45,8 +48,15 @@ users.post("/", async(req, res) => {
         // console.log("hashedPassword:", hashedPassword)
 
         const createdUser = await createUser(body, hashedPassword, emailToLowerCase);
+
         if(createdUser.uid){
-            res.status(200).json(createdUser);
+            // generate JWT Token for this user
+            let data = jwtTokens(createdUser)
+            
+            // send successful response (with jwt token)
+            // console.log("jwtTokendata:", data)
+            res.status(200).json(data);
+            // res.status(200).json(createdUser);
         } else {
             res.status(422).json("Error: User creation error");
         }

@@ -2,6 +2,11 @@
 const express = require("express");
 const cors = require("cors");
 
+// for using JWT tokens - checks if our code is running in production
+if (process.env.NODE_ENV !== 'production'){
+    require('dotenv').config();
+}
+
 // Configuration
 const app = express();
 
