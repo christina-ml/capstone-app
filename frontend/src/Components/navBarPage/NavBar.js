@@ -98,8 +98,7 @@ const NavBar = ({darkModeButton, setOpenLoginModal}) => {
             <div>
               <Button 
                 variant="contained"
-                onClick={setOpenLoginModal}
-                // buttonText="Log In"
+                onClick={() => setOpenLoginModal(true)}
               >
                 Log In
               </Button>
