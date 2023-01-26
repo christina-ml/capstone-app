@@ -1,5 +1,9 @@
 const express = require("express");
 const users = express.Router();
+
+// bcrypt - A library to help you hash passwords (encrypt our passwords)
+const bcrypt = require('bcrypt');
+
 const {
     getAllUsers,
     createUser,
@@ -28,10 +32,19 @@ users.get("/", async (req, res)=> {
 })
 
 
+// Todo: encrypt our password -> (UNIQUE username is required in `schema`!!)
 users.post("/", async(req, res) => {
     const { body } = req;
+    const { user_password, user_email } = req.body;
     try{
-        const createdUser = await createUser(body);
+        // await for bcrypt (password, how far to take it away from original)
+        // always save emails as lowercase
+        const hashedPassword = await bcrypt.hash(user_password, 10);
+        const emailToLowerCase = user_email.toLowerCase();
+
+        // console.log("hashedPassword:", hashedPassword)
+
+        const createdUser = await createUser(body, hashedPassword, emailToLowerCase);
         if(createdUser.uid){
             res.status(200).json(createdUser);
         } else {
