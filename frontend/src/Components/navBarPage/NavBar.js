@@ -15,7 +15,7 @@ import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
 import menuItemData from "./data/menuData.json";
 
 // CryptoTalk Button component
-import LoginButton from '../../cryptotalkComponents/buttons/LoginButton';
+// import Button from '../../cryptotalkComponents/buttons/Button';
 
 // Material UI Button
 import Button from '@mui/material/Button';
@@ -95,14 +95,15 @@ const NavBar = ({darkModeButton, setOpenLoginModal}) => {
                 </div>
               )
             })}
-            {/* <div>
+            <div>
               <Button 
                 variant="contained"
-                handleClick={() => setOpenLoginModal(true)}
+                onClick={setOpenLoginModal}
+                // buttonText="Log In"
               >
                 Log In
               </Button>
-            </div> */}
+            </div>
             {darkModeButton}
         </div>
       </div>

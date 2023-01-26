@@ -14,26 +14,21 @@ import { BsFillSunFill } from 'react-icons/bs';
 // Component - resets the Scroll location to the Top of page when navigating through site
 import ScrollToTop from "./Components/ScrollToTop";
 
+// Component - LOGIN MODAL
+import LoginModal from "./Components/loginModal/LoginModal";
+
 // Components
 import PageNotFound from "./Components/PageNotFound";
 import NavBar from "./Components/navBarPage/NavBar";
 import Home from "./Components/homePage/Home";
 import AboutMe from "./Components/aboutMe/AboutMe";
 
-// LOGIN MODAL
-import LoginModal from "./Components/loginModal/LoginModal";
-
 import Users from "./Components/users/Users";
 import UserDetails from "./Components/users/UserDetails";
 import UserNewForm from "./Components/users/UserNewForm";
 import UserEditForm from "./Components/users/UserEditForm";
-
-// components for login (not working)
-// import Login from "./Components/login/Login";
-// import UserLogin from "./Components/loginMUI/UserLogin";
-// import LoginRH from "./Components/loginReactHooks/LoginRH";
-// import LoginLS from "./Components/loginLocalStorage/LoginLS";
-// import LoginUsingBackend from "./Components/loginUsingBackend/LoginUsingBackend";
+import CoinDetails from "./Components/allCoins/CoinDetails";
+import Coin from "./Components/allCoins/Coin";
 
 import Shop from "./Components/shop/Shop";
 import Cart from "./Components/shop/Cart";
@@ -41,11 +36,6 @@ import Learn from "./Components/learn/Learn";
 import Games from "./Components/games/Games";
 import GamesColoring from "./Components/games/GamesColoring";
 import GamesMemory from "./Components/games/GamesMemory";
-
-// import AllCoins from "./Components/allCoins/AllCoins";
-import CoinDetails from "./Components/allCoins/CoinDetails";
-import Coin from "./Components/allCoins/Coin";
-
 import Newspaper from "./Components/newspaper/Newspaper";
 import Footer from "./Components/footer/Footer";
 
@@ -65,7 +55,7 @@ function App() {
     </button>
   )
 
-  // Login Modal
+  // Login Modal - for having modal open when you click `login` button
   const [openLoginModal, setOpenLoginModal] = useState(false);
 
   return (
@@ -83,10 +73,6 @@ function App() {
           <Route path="/create" element={<UserNewForm />} />
           <Route path="/users/:uid/edit" element={<UserEditForm />} />
           <Route exact path="/users/:uid" element={<UserDetails />} />
-
-          {/* <Route path="/login" element={<LoginLS />} /> */}
-          {/* <Route path="/register" element={<LoginUsingBackend />} /> */}
-          
           <Route path="/shop" element={<Shop />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/learn" element={<Learn />} />

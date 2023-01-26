@@ -11,6 +11,7 @@ import Typography from '@mui/material/Typography';
  */
 
 const LoginModal = ({ openLoginModal, setOpenLoginModal }) => {
+
     // hooks for modal
     const handleClose = () => {
         setOpenLoginModal(false);
@@ -27,7 +28,6 @@ const LoginModal = ({ openLoginModal, setOpenLoginModal }) => {
         border: '2px solid #000',
         boxShadow: 24,
         p: 4,
-        width: '30ch'
     };
 
     // hooks

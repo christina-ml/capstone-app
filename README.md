@@ -271,6 +271,8 @@ example: `http://localhost:3000/`
 
 ## Material UI
 
+As mentioned eariler, I had removed all Material UI from the first version of this app (with my capstone group), after I forked the project to make it my own. I am adding it back in thoughtfully, to help develop my understanding of what is necessary for each component and factoring in how much time and effort it would take to create these components from scratch to achieve similar results.
+
 [Material UI](https://mui.com/) is an open-source React component library that implements Google's Material Design. It includes a comprehensive collection of prebuilt components that are ready for use in production right out of the box.
 
 I am using Material UI for these components:
