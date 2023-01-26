@@ -51,11 +51,11 @@ users.post("/", async(req, res) => {
 
         if(createdUser.uid){
             // generate JWT Token for this user
-            let dataWithJwtToken = jwtTokens(createdUser)
+            let createdUserWithJwtToken = jwtTokens(createdUser)
             
             // send successful response (with jwt token)
-            // console.log("jwtTokendata:", data)
-            res.status(200).json(dataWithJwtToken);
+            // console.log("jwtTokendata:", createdUserWithJwtToken)
+            res.status(200).json(createdUserWithJwtToken);
             // res.status(200).json(createdUser);
         } else {
             res.status(422).json("Error: User creation error");
