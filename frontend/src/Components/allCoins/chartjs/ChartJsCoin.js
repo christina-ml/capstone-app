@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import "../../../designUtils/_colors.scss";
 
-import Chart from "chart.js/auto";
+import Chart from 'chart.js/auto';
 import { Line } from "react-chartjs-2";
 
 const ChartJsCoin = ({ coin }) => {
@@ -62,9 +63,45 @@ const ChartJsCoin = ({ coin }) => {
     ],
   };
 
+  const options = {
+    plugins: {
+      legend: {
+        labels: {
+          color: '#5c7186' // medium-gray
+        }
+      }
+    },
+    scales: {
+      x: {
+          color: '#5c7186', // medium-gray
+          grid: {
+            color: '#5c7186', // medium-gray
+            borderColor: '#5c7186', // medium-gray
+            tickColor: '#5c7186', // medium-gray
+          },
+          ticks: {
+            color: '#5c7186', // medium-gray
+          }
+
+        }
+      ,
+      y: {
+          grid: {
+            color: '#5c7186', // medium-gray
+            borderColor: '#5c7186', // medium-gray
+            tickColor: '#5c7186', // medium-gray
+          },
+          ticks: {
+            color: '#5c7186', // medium-gray
+          }
+        }
+      
+    }
+  };
+
   return (
     <div>
-      <Line data={data} />
+      <Line data={data} options={options} />
     </div>
   );
 };

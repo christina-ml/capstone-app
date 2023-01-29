@@ -29,9 +29,17 @@ body {
     --text-secondary: royalblue;
     --accent: purple;
   }
+  /* set colors for dark mode theme */
   [data-theme='dark'] {
-    --background: black;
+    --background: #121212;
     --text-primary: white;
     --text-secondary: grey;
     --accent: darkred;
   }
+  /* optional -> set colors for light mode theme */
+  /* [data-theme='light'] {
+    --background: ghostwhite;
+    --text-primary: black;
+    --text-secondary: red;
+    --accent: orange;
+  } */

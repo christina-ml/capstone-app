@@ -23,9 +23,9 @@ const Currencies = () => {
 
     return (
         <div className="currencies">
-            {currencies.map((currency) => {
+            {currencies.map((currency, index) => {
                 return (
-                    <Currency currency={currency} />
+                    <Currency currency={currency} key={"currency" + index} />
                 )
             })}
         </div>
