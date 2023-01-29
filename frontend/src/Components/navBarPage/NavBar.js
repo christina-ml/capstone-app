@@ -20,7 +20,7 @@ import menuItemData from "./data/menuData.json";
 // Material UI Button
 import Button from '@mui/material/Button';
 
-const NavBar = ({darkModeButton, setOpenLoginModal}) => {
+const NavBar = ({darkModeButton, setOpenLoginModal, loggedIn, setLoggedIn}) => {
 
   // simple hook setting it to false
   const [toggleCollapsedMenu, setToggleCollapsedMenu] = useState(false);
@@ -37,6 +37,14 @@ const NavBar = ({darkModeButton, setOpenLoginModal}) => {
   const handleToggleClick = () => {
     setToggleText(!toggleText)
     setToggleButton(!toggleButton);
+  }
+
+  const logOut = () => {
+    console.log("log out");
+    // delete access token from local storage
+    localStorage.removeItem('accessToken');
+
+    setLoggedIn(false);
   }
 
   return (
@@ -95,14 +103,27 @@ const NavBar = ({darkModeButton, setOpenLoginModal}) => {
                 </div>
               )
             })}
-            <div>
-              <Button 
-                variant="contained"
-                onClick={() => setOpenLoginModal(true)}
-              >
-                Log In
-              </Button>
-            </div>
+            {loggedIn && 
+              <div>
+                <Button 
+                  variant="contained"
+                  onClick={logOut}
+                >
+                  Log Out
+                </Button>
+              </div>
+            }
+            {!loggedIn && 
+              <div>
+                <Button 
+                  variant="contained"
+                  onClick={() => setOpenLoginModal(true)}
+                >
+                  Log In
+                </Button>
+              </div>
+            }
+            
             {darkModeButton}
         </div>
       </div>
