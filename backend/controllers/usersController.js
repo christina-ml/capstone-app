@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken');
 
 const {
     getAllUsers,
-    createUser,
+    // createUser,
     getOneUser,
     updateUser,
     deleteUser,
@@ -37,8 +37,8 @@ users.get("/", async (req, res)=> {
 
 // Todo: encrypt our password -> (UNIQUE username is required in `schema`!!)
 users.post("/", async(req, res) => {
-    const { body } = req;
-    const { user_password, user_email } = req.body;
+    // const { body } = req;
+    let { firstname, lastname, username, user_password, user_email, user_admin, user_interests, user_city, user_state, photo } = req.body;
     try{
         // await for bcrypt (password, how far to take it away from original)
         // always save emails as lowercase
@@ -47,21 +47,33 @@ users.post("/", async(req, res) => {
 
         // console.log("hashedPassword:", hashedPassword)
 
-        const createdUser = await createUser(body, hashedPassword, emailToLowerCase);
+        // insert data into the users
+        // --> moving query here (commented out in queries folder)
+        const createdUser = await db.one(
+            "INSERT INTO users (firstname, lastname, username, user_password, user_email, user_admin, user_interests, user_city, user_state, photo) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING uid, username, user_email",
+            [
+                username,
+                hashedPassword,
+                emailToLowerCase
+            ]
+        );
 
-        if(createdUser.uid){
+        if(createdUser){
             // generate JWT Token for this user
-            let createdUserWithJwtToken = jwtTokens(createdUser)
+            let data = jwtTokens(createdUser)
             
             // send successful response (with jwt token)
-            // console.log("jwtTokendata:", createdUserWithJwtToken)
-            res.status(200).json(createdUserWithJwtToken);
+            // console.log("jwtTokendata:", data)
+            res.status(200).json(data);
             // res.status(200).json(createdUser);
         } else {
             res.status(422).json("Error: User creation error");
         }
     } catch(err){
-        console.log(err);
+        res.send({
+            status: 'error',
+            message: err.message
+        })
     }
 });
 

@@ -10,29 +10,29 @@ const getAllUsers = async() => {
     }
 }
 
-const createUser = async(user, hashedPassword, emailToLowerCase) => {
-    try{
-        // returning all except for user_password and user_email
-        const newUser = await db.one(
-            "INSERT INTO users (firstname, lastname, username, user_password, user_email, user_admin, user_interests, user_city, user_state, photo) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *",
-            [
-                user.firstname,
-                user.lastname,
-                user.username,
-                hashedPassword,
-                emailToLowerCase,
-                user.user_admin,
-                user.user_interests,
-                user.user_city,
-                user.user_state,
-                user.photo
-            ]
-        );
-        return newUser;
-    } catch(err){
-        return err;
-    };
-};
+// const createUser = async(user, hashedPassword, emailToLowerCase) => {
+//     try{
+//         // returning all except for user_password and user_email
+//         const newUser = await db.one(
+//             "INSERT INTO users (firstname, lastname, username, user_password, user_email, user_admin, user_interests, user_city, user_state, photo) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *",
+//             [
+//                 user.firstname,
+//                 user.lastname,
+//                 user.username,
+//                 hashedPassword,
+//                 emailToLowerCase,
+//                 user.user_admin,
+//                 user.user_interests,
+//                 user.user_city,
+//                 user.user_state,
+//                 user.photo
+//             ]
+//         );
+//         return newUser;
+//     } catch(err){
+//         return err;
+//     };
+// };
 
 const getOneUser = async(uid) => {
     try{
@@ -92,7 +92,7 @@ module.exports = {
     getAllUsers,
     getOneUser,
     // getOneUserByUsername,
-    createUser,
+    // createUser,
     updateUser,
     deleteUser
 };

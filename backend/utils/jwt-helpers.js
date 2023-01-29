@@ -12,4 +12,20 @@ function jwtTokens({ uid, username, user_email }){
     return ({accessToken, refreshToken});
 }
 
+
+// Creating Randomness - why we use a secret key:
+// secret token of 8 characters
+// function generateToken (secretKey){
+//     let token = '';
+
+//     for (let i = 0; i < 8; i++){
+//         token += String.fromCharCode(97 + secretKey.charCodeAt(i));
+//     }
+
+//     // token = 'aaaaaaaa'
+
+//     return token;
+// }
+
+
 module.exports = jwtTokens;
