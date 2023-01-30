@@ -41,6 +41,7 @@ import Footer from "./Components/footer/Footer";
 
 function App() {
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  // set theme in localStorage
   const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
 
   const switchTheme = () => {
@@ -57,12 +58,23 @@ function App() {
 
   // Login Modal - for having modal open when you click `login` button
   const [openLoginModal, setOpenLoginModal] = useState(false);
+  // if there is an `accessToken` in localStorage, set LoggedIn to true; if not, set LoggedIn to false.
+  const [loggedIn, setLoggedIn] = useState(localStorage.getItem('accessToken') ? true : false);
 
   return (
     <div className="App" data-theme={theme} >
       <ScrollToTop />
-      <NavBar darkModeButton={darkModeButton} setOpenLoginModal={setOpenLoginModal} />
-      <LoginModal openLoginModal={openLoginModal} setOpenLoginModal={setOpenLoginModal} />
+      <NavBar 
+        darkModeButton={darkModeButton} 
+        setOpenLoginModal={setOpenLoginModal} 
+        loggedIn={loggedIn}
+        setLoggedIn={setLoggedIn}
+      />
+      <LoginModal 
+        openLoginModal={openLoginModal} 
+        setOpenLoginModal={setOpenLoginModal} 
+        setLoggedIn={setLoggedIn}
+      />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />

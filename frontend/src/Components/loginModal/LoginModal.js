@@ -10,7 +10,7 @@ import Stack from '@mui/material/Stack';
 import LoginAccountForm from './LoginAccountForm';
 import CreateAccountForm from './CreateAccountForm';
 
-// Tab panel and ally props from Material UI
+// Tab panel and a11y props from Material UI
 // https://mui.com/material-ui/react-tabs/
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -53,12 +53,11 @@ const LoginModal = ({ openLoginModal, setOpenLoginModal, setLoggedIn, ...props }
     const [value, setValue] = React.useState(0);
 
     // style the MUI modal
-    const stackStyle = {
+    const style = {
         position: 'absolute',
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        // width: 400,
         bgcolor: 'background.paper',
         border: '2px solid #000',
         boxShadow: 24,
@@ -93,7 +92,7 @@ const LoginModal = ({ openLoginModal, setOpenLoginModal, setLoggedIn, ...props }
         >
             <Stack
                 component="form"
-                sx={stackStyle}
+                sx={style}
                 spacing={2}
                 noValidate
                 autoComplete="off"
