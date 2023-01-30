@@ -16,16 +16,16 @@ const getAllUsers = async() => {
 //         const newUser = await db.one(
 //             "INSERT INTO users (firstname, lastname, username, user_password, user_email, user_admin, user_interests, user_city, user_state, photo) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *",
 //             [
-//                 user.firstname,
-//                 user.lastname,
-//                 user.username,
-//                 hashedPassword,
-//                 emailToLowerCase,
-//                 user.user_admin,
-//                 user.user_interests,
-//                 user.user_city,
-//                 user.user_state,
-//                 user.photo
+                // user.firstname,
+                // user.lastname,
+                // user.username,
+                // hashedPassword,
+                // emailToLowerCase,
+                // user.user_admin,
+                // user.user_interests,
+                // user.user_city,
+                // user.user_state,
+                // user.photo
 //             ]
 //         );
 //         return newUser;

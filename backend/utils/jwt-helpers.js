@@ -1,8 +1,9 @@
 // TODO: function to generate tokens
 const jwt = require('jsonwebtoken');
 
+// takes in user id, username, email
 function jwtTokens({ uid, username, user_email }){
-    // sets up our user
+    // sets up our user as an object
     const user = { uid, username, user_email };
 
     // passes in our user to give it the tokens, to be good for 30 days

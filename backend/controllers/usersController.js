@@ -1,10 +1,12 @@
 const express = require("express");
 const users = express.Router();
+const db = require("../db/dbConfig.js");
 
 // bcrypt - A library to help you hash passwords (encrypt our passwords)
 const bcrypt = require('bcrypt');
 // json web token (JWT)
 const jwt = require('jsonwebtoken');
+const jwtTokens = require('../utils/jwt-helpers');
 
 const {
     getAllUsers,
@@ -35,11 +37,18 @@ users.get("/", async (req, res)=> {
 })
 
 
-// Todo: encrypt our password -> (UNIQUE username is required in `schema`!!)
+// create new user
+// encrypt our password -> (UNIQUE username is required in `schema`!!)
 users.post("/", async(req, res) => {
-    // const { body } = req;
-    let { firstname, lastname, username, user_password, user_email, user_admin, user_interests, user_city, user_state, photo } = req.body;
     try{
+        // const { body } = req;
+        let { firstname, lastname, username, user_password, user_email, user_admin, user_interests, user_city, user_state, photo } = req.body;
+
+        // validate data
+        if (username.length < 4){
+            throw({message: 'Username must be 4 characters or more'})
+        }
+
         // await for bcrypt (password, how far to take it away from original)
         // always save emails as lowercase
         const hashedPassword = await bcrypt.hash(user_password, 10);
@@ -50,19 +59,27 @@ users.post("/", async(req, res) => {
         // insert data into the users
         // --> moving query here (commented out in queries folder)
         const createdUser = await db.one(
-            "INSERT INTO users (firstname, lastname, username, user_password, user_email, user_admin, user_interests, user_city, user_state, photo) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING uid, username, user_email",
+            "INSERT INTO users (firstname, lastname, username, user_password, user_email, user_admin, user_interests, user_city, user_state, photo) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *",
             [
+                firstname,
+                lastname,
                 username,
                 hashedPassword,
-                emailToLowerCase
+                emailToLowerCase,
+                user_admin,
+                user_interests,
+                user_city,
+                user_state,
+                photo
             ]
         );
 
+        // if user was created successfully
         if(createdUser){
             // generate JWT Token for this user
             let data = jwtTokens(createdUser)
             
-            // send successful response (with jwt token)
+            // send successful response (with jwt token) - the data is the token itself
             // console.log("jwtTokendata:", data)
             res.status(200).json(data);
             // res.status(200).json(createdUser);
