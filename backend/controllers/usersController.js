@@ -232,4 +232,21 @@ users.delete("/:uid", async(req, res) => {
     }
 });
 
+
+// AUTHENTICATE route - for `/users/authenticate`
+// new route for protected route that can only be accessed if user is logged in
+// get jwt token
+users.get('/authenticate', async (req, res) => {
+    try {
+        console.log("what are our headers:", req.headers)
+        // let { accessToken } = req.headers;
+
+        console.log("authenticateBEroute-accessToken:", accessToken);
+        res.send({});
+
+    } catch (error){
+        res.send('error');
+    }
+});
+
 module.exports = users;
