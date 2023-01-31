@@ -24,6 +24,9 @@ const CreateAccountForm = ({ setOpenLoginModal, setLoggedIn }) => {
     const [usernameError, setUsernameError] = useState(false);
     const [emailError, setEmailError] = useState(false);
 
+    // error handling for when `data.status === "error"`
+    const [formMessage, setFormMessage] = useState('')
+
     // VALIDATIONS
     // on unfocus validate username
     const validateUsername = () => {
@@ -66,27 +69,43 @@ const CreateAccountForm = ({ setOpenLoginModal, setLoggedIn }) => {
         console.log("should be localhost->", API + "/users")
         fetch(`${API}/users`, reqOptions)
             .then(response => response.json())
-            .then(data => {
-                // reset the hooks - reset our form to have all empty values
-                // setFirstname("");
-                // setLastname("");
-                setUsername("");
-                setPassword("");
-                setEmail("");
-                // setAdmin(false);
-                // setInterests("");
-                // setCity("");
-                // setUserState("");
-                // setPhoto("");
+            .then(data => { 
+                console.log("CreateAccountFormdata:", data)
 
-                // close our modal
-                setOpenLoginModal(false);
+                // if access token is undefined (user not created, but don't want to show as logged in)
+                if (data.status === 'error'){
+                    // set form info to show message
 
-                // show toast that user was successfully created
-                
-                console.log("LoginModaldata:", data);
-                localStorage.setItem("accessToken", data.accessToken);
-                setLoggedIn(true);
+                    // for error message: `duplicate key value violates unique constraint "users_username_key"`
+                    // else if // for error message: `duplicate key value violates unique constraint "users_user_email_key"`
+                    if (data.message.includes('users_username_key')){
+                        setFormMessage('Please choose another username. This one is already taken.');
+                    } else if (data.message.includes('users_user_email_key')){
+                        setFormMessage('Please choose another email. This one is already taken.');
+                    }
+
+                } else {
+                    // reset the hooks - reset our form to have all empty values
+                    // setFirstname("");
+                    // setLastname("");
+                    setUsername("");
+                    setPassword("");
+                    setEmail("");
+                    // setAdmin(false);
+                    // setInterests("");
+                    // setCity("");
+                    // setUserState("");
+                    // setPhoto("");
+    
+                    // close our modal
+                    setOpenLoginModal(false);
+    
+                    // show toast that user was successfully created
+                    
+                    console.log("LoginModaldata:", data);
+                    localStorage.setItem("accessToken", data.accessToken);
+                    setLoggedIn(true);
+                }
             }).catch((error) => {
                 // handle error
                 console.error(error);
@@ -110,6 +129,11 @@ const CreateAccountForm = ({ setOpenLoginModal, setLoggedIn }) => {
             >
                 Please Create An Account
             </Typography>
+            {formMessage && 
+                <div className="form__errorText" style={{"color" : "red"}}>
+                    {formMessage}
+                </div>
+            }
             {/* <TextField
                 id="outlined-basic"
                 label="First Name"

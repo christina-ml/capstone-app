@@ -62,7 +62,7 @@ const LoginModal = ({ openLoginModal, setOpenLoginModal, setLoggedIn, ...props }
         border: '2px solid #000',
         boxShadow: 24,
         p: 4,
-        width: '25ch'
+        width: '30ch'
     };
 
     // open or close modal
