@@ -1,13 +1,48 @@
-import React from "react";
-import "./Newspaper.scss";
+import React, { useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 
+import "./Newspaper.scss";
+  
 // from my codepen (https://codepen.io/christinaml/pen/OJWrYNw)
 
 // Newspaper Components
 import NewsSidebar from "./NewsSidebar";
 import ThematicCard from "./ThematicCard";
 
+const API = process.env.REACT_APP_API_URL;
+
 const Newspaper = () => {
+
+  // how we can change our routes
+  // TODO: build our route on the backend
+  let navigate = useNavigate();
+
+  // for login-protected route
+  useEffect(() => {
+    // call to our backend
+    const requestOptions = {
+      // grab our jwt token from localStorage
+      headers: {'Authorization': `Bearer ${localStorage.getItem('accessToken')}`}
+    }
+
+    console.log("fetch in newspaper.js:",  `${API}/users/authenticate`)
+    fetch(`${API}/users/authenticate`, requestOptions)
+      .then(response => response.json())
+      .then(data => {
+        if (data.error){
+          // back to the homepage
+          navigate('/');
+        } else {
+          alert(`youre logged in`);
+        }
+      }).catch(error => {
+        console.log(error);
+        navigate('/');
+      })
+      
+  }, []);
+
+
   return (
     <div className="newspaper">
       {/* <!-- header --> */}
