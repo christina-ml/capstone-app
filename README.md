@@ -1,5 +1,80 @@
+## Login 
+### Encrypt our passwords (Backend)
+Using [bcrypt](https://www.npmjs.com/package/bcrypt): A library to help you hash passwords.
+```
+npm install bcrypt
+```
+Go to users route, set variable
+`const bcrypt = require('bcrypt');`
+
+Go to POST route
+
+### JSON Web Tokens
+An implementation of [JSON Web Tokens](https://tools.ietf.org/html/rfc7519).
+This was developed against `draft-ietf-oauth-json-web-token-08`. It makes use of [node-jws](https://github.com/brianloveswords/node-jws)
+
+What is a JWT? [https://supertokens.com/blog/what-is-jwt](https://supertokens.com/blog/what-is-jwt)
+Three parts: Header, Payload, Signature
+
+Install [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
+```
+npm install jsonwebtoken
+```
+
+make utils folder
+file: `jwt-helpers.js`
+create tokens, for example (not full code - see file):
+```
+const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '30d'});
+const refreshToken = jwt.sign(user, process.env.REFRESH_TOKEN_SECRET, {expiresIn: '30d'});
+```
+add to `.env` file - values can be anything
+```
+ACCESS_TOKEN_SECRET=randomTextHere
+REFRESH_TOKEN_SECRET=somethingElseHere
+```
+(if not done already) install dotenv
+```
+npm install dotenv
+```
+
+set up tokens with `jwt-helpers.js` file - helper function
+and send data 
+
+
+## Error message
+```
+Listening on port 3333
+Error: data and salt arguments required
+    at Object.hash (/Users/...<path here>.../capstone-app/backend/node_modules/bcrypt/bcrypt.js:137:17)
+    at /Users/...<path here>.../capstone-app/backend/node_modules/bcrypt/promises.js:29:12
+    at new Promise (<anonymous>)
+```
+What is "salt" [heynode.com](https://heynode.com/blog/2020-04/salt-and-hash-passwords-bcrypt/#:~:text=A%20salt%20is%20a%20random%20string%20that%20makes%20the%20hash,storing%20it%20in%20a%20database.)
+Before hashing a password, we apply a salt. A salt is a random string that makes the hash unpredictable.
+
+Bcrypt is a popular and trusted method for salt and hashing passwords. You have learned how to use bcrypt's NodeJS library to salt and hash a password before storing it in a database. You have also learned how to use the bcrypt compare function to compare a password to a hash, which is necessary for authentication.
+
+^^ Christina says:
+- Moved query into `usersController` and error is now gone?
+- still getting same error on frontend when making a POST request.
+
+As of 1/28/23:
+`UserNewForm.js` creates a new user with hashed password, but is not connected to the `LoginModal.js` in any way
+`CreateAccountForm.js` doesn't create any user at all for some reason
+
+^^ Issue resolved. The query on the backend had an error. It needed the variables to use the exact spelling as in the schema to work properly since I needed `user_password` instead of `password` for example.
+
+Frontend: Error handling for when creating a new user:
+ - username must be unique not null (unique on backend schema as well)
+ - email must be unique (unique on backend schema as well)
+
+To Do: Protected routes, to give access to only the user that is logged in.
+
+
+---
 1/11/23
-TO DO:
+TO DO (backend):
 
 Add brackets:
 {{{{{{ to the coins table - TAGS
@@ -100,6 +175,10 @@ tvl TEXT,
 npm i use-local-storage
 ```
 Local storage allows the theme to be stored, so a user can keep seeing the "light" or "dark" mode that was chosen, after page reload.
+
+### Dark Mode colors:
+The recommended dark theme surface color by Material Design is: Dark Grey — #121212.
+[Dark Mode UI Design: A Complete Guide](https://compilezero.medium.com/dark-mode-ui-design-the-definitive-guide-part-1-color-53dcfaea5129#:~:text=Using%20Dark%20Grey&text=The%20recommended%20dark%20theme%20surface,Dark%20Grey%20%E2%80%94%20%23121212.)
 
 
 # One-to-many relationship (backend)
