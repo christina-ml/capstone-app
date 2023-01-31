@@ -11,7 +11,7 @@ CREATE TABLE users(
   lastname TEXT,
   username TEXT UNIQUE NOT NULL,
   user_password TEXT,
-  user_email TEXT,
+  user_email TEXT UNIQUE,
   user_admin BOOLEAN,
   user_interests TEXT,
   user_city TEXT,
