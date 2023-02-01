@@ -8,6 +8,12 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const jwtTokens = require('../utils/jwt-helpers');
 
+/*
+ * jwt token returns something like this (an object with longer strings):
+ * {accessToken: 'eyJhbewrGciOiJIUzI1NiIsInRY', 
+ * refreshToken: 'eyJhbGciOiJIwefUzI1yJ1aWQiOjFpc'}
+*/
+
 const {
     getAllUsers,
     // createUser,
@@ -53,6 +59,7 @@ users.post('/login', async (req, res) => {
 
         // taking user.password the one from our database thats encrypted
         // and password that we just got (not encrypted) - going to wait until it checks that they're both the same
+        // in the compare: `bcrypt.compare(password the user sent, password we have in database)`
         const validPassword = await bcrypt.compare(password, user.user_password);
 
          if(!validPassword){
@@ -167,8 +174,6 @@ users.post('/', async (req, res) => {
         // send successful response 
         res.json(data);
       }
-  
-  
   
     } catch (error) {
       res.send({

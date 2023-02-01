@@ -3,7 +3,10 @@ const db = require("../db/dbConfig.js");
 // get all users (not using, but can't get a list for the frontend to be able to .map over them)
 const getAllUsers = async() => {
     try {
-        const allUsers = await db.any("SELECT * FROM users");
+        // getting all from users except for: user_password and user_email to not have passwords and emails accessible to everyone
+        const allUsers = await db.any("SELECT uid, firstname, lastname, username, user_admin, user_interests, user_city, user_state, photo FROM users");
+
+        // const allUsers = await db.any("SELECT * FROM users");
         return allUsers;
     } catch (error) {
         return error;
