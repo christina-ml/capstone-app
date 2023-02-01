@@ -14,13 +14,15 @@ const app = express();
 const usersController = require("./controllers/usersController.js");
 const allCoinsController = require("./controllers/allCoinsController.js");
 const nftsController = require("./controllers/nftsController.js");
+const accountsController = require("./controllers/accountsController.js");
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 app.use("/users", usersController);
 app.use("/coins", allCoinsController);
-app.use('/nfts', nftsController)
+app.use('/nfts', nftsController);
+app.use('/accounts', accountsController);
 
 // Routes
 app.get("/", (_req, res) => {

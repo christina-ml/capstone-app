@@ -72,6 +72,46 @@ Frontend: Error handling for when creating a new user:
 To Do: Protected routes, to give access to only the user that is logged in.
 
 
+### Protected routes
+A user needs to be logged in to access a particular route
+Example: An app has two routes: 
+- /videos which is a page that lists videos
+- /profile is a page that shows a user's profile when logged in
+Example: /videos is a "hidden" route to a page with links to videos
+When a user is logged in, show a link for /videos
+When a user is logged out, can't see the link to /videos
+Example: /profile is a protected route
+Can only get to /profile if the user is logged in
+
+Questions to ask:
+What do you want to show someone when they're logged in?
+What do you not want people to access when they're not logged in?
+Example: /profile has user information about a user that you wouldn't want other users to see if they're not logged in
+- we want to only fetch that user's information if the user is logged in
+
+
+# Protected Routes
+## AccountsController Route (backend)
+Protected Route:
+`http://localhost:3333/accounts` this is a route where a user needs to be logged in to access this route
+
+Middleware - `Authorization.js` is middleware that goes into the AccountsController.js route.
+```
+accounts.get('/', authenticateToken, (req, res) => {
+  ...// code here
+}
+```
+It verifies the token before letting the user proceed to having access to the route.
+
+// *** You need to be logged in to acccess this route ***
+// Example: http://localhost:3333/accounts
+// get all accounts of all of our users
+// json object has an `accountNumber` and `accountBalance` for each user as an array
+// this information is not in our database, want to make sure we can only get it if we are logged in
+// middleware - will be in the middle of our route and callback function, call it "authenticateToken"
+    // if the token is authenticated, continue with our route
+
+
 ---
 1/11/23
 TO DO (backend):
