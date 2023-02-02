@@ -112,6 +112,12 @@ It verifies the token before letting the user proceed to having access to the ro
     // if the token is authenticated, continue with our route
 
 
+### After protected routes exist
+Make sure they work properly when user is logged in/not logged in
+- Updating both backend and frontend to create additional protected routes
+- TODO: make page re-render after a user logs in
+
+
 ---
 1/11/23
 TO DO (backend):
