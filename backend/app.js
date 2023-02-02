@@ -22,7 +22,7 @@ app.use(express.json());
 app.use("/users", usersController);
 app.use("/coins", allCoinsController);
 app.use('/nfts', nftsController);
-app.use('/accounts', accountsController);
+app.use('/accounts', accountsController); // protected route
 
 // Routes
 app.get("/", (_req, res) => {

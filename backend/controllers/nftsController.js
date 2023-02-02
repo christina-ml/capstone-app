@@ -5,8 +5,12 @@ const {
     getOneNft
 } = require("../queries/nfts.js");
 
+// middleware
+const authenticateToken = require('../middleware/authorization');
+
+// protect this route /nfts:
 // get all nfts
-nfts.get("/", async (req, res)=> {
+nfts.get("/", authenticateToken, async (req, res, next)=> {
     try {
         const allNfts = await getAllNfts();
         if (allNfts[0]){
