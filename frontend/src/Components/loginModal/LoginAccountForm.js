@@ -27,6 +27,7 @@ const LoginAccountForm = ({setOpenLoginModal, setLoggedIn}) => {
         }
     }
 
+    // when user clicks th button to log in
     const logInUser = () => {
         // handle login
 
@@ -49,6 +50,7 @@ const LoginAccountForm = ({setOpenLoginModal, setLoggedIn}) => {
         .then(data => {
 
             console.log("data from LoginAccountForm:", data);
+            // set our hooks back to make form empty
             setUsername('');
             setPassword('');
             setOpenLoginModal(false);
@@ -62,6 +64,7 @@ const LoginAccountForm = ({setOpenLoginModal, setLoggedIn}) => {
             setLoggedIn(true);
             
         }).catch(error => {
+            // might want an error message saying it didnt work - server's down, etc.
             console.log(error);
         })
     }

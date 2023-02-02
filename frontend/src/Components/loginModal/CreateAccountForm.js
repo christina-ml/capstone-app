@@ -45,6 +45,7 @@ const CreateAccountForm = ({ setOpenLoginModal, setLoggedIn }) => {
         }
     }
     
+    // when the submit button on form gets clicked, it creates a user
     const createUser = () => {
         const reqOptions = {
             method: "POST",
@@ -73,6 +74,7 @@ const CreateAccountForm = ({ setOpenLoginModal, setLoggedIn }) => {
                 console.log("CreateAccountFormdata:", data)
 
                 // if access token is undefined (user not created, but don't want to show as logged in)
+                // if we have an error, show the differente error messages
                 if (data.status === 'error'){
                     // set form info to show message
 
@@ -103,7 +105,9 @@ const CreateAccountForm = ({ setOpenLoginModal, setLoggedIn }) => {
                     // show toast that user was successfully created
                     
                     console.log("LoginModaldata:", data);
+                    // set our access token in localStorage to tell us the user is logged in
                     localStorage.setItem("accessToken", data.accessToken);
+                    // show that our user is logged in (specifcally the "log in"/"log out" button)
                     setLoggedIn(true);
                 }
             }).catch((error) => {
