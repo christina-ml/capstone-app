@@ -15,12 +15,25 @@ const Shop = () => {
     // items that will be added to the cart - pass in an object
     const [cartItems, setCartItems] = useState([]);
 
+    // PROTECTED ROUTE - only users that are logged in can access this page.
+    // get the access token
+    const requestOptions = {
+        headers: {'Authorization': `Bearer ${localStorage.getItem('accessToken')}`}
+    }
+
     // -- axios to fetch nfts data from backend
     useEffect(() => {
-        axios.get(API + "/nfts")
+        axios.get(API + "/nfts", requestOptions)
             .then((res) => {
-                // console.log("res.data:", res.data)
-                setNftData(res.data);
+
+                // protected route - error would be if user is not logged in
+                if (res.data.error){
+                    console.log(res.data.error)
+                } else {
+                    // console.log("res.data:", res.data)
+                    setNftData(res.data);
+                }
+
             }).catch((err) => {
                 console.log(err);
             })
