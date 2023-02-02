@@ -23,6 +23,7 @@ import NavBar from "./Components/navBarPage/NavBar";
 import Home from "./Components/homePage/Home";
 import AboutMe from "./Components/aboutMe/AboutMe";
 
+import AccountList from "./Components/accountList/AccountList";
 import Users from "./Components/users/Users";
 import UserDetails from "./Components/users/UserDetails";
 import UserNewForm from "./Components/users/UserNewForm";
@@ -78,6 +79,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/accounts" element={<AccountList />} /> 
           <Route path="/about" element={<AboutMe />} />
           <Route path="/coins" element={<Coin />} />
           <Route path="/coins/:cid" element={<CoinDetails />} />
