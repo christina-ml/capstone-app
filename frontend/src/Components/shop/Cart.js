@@ -30,78 +30,80 @@ function Cart({cartItems, handleAddToCart}) {
 
 
       <table className="Cart__table">
-        <tr>
-          <th>Product</th>
-          <th>Quantity</th>
-          <th>Price</th>
-          <th>Subtotal</th>
-        </tr>
-        
-        {/* <!--   begin table rows   --> */}
-        {/* product 1 start */}
-        <tr>
-          <td>
-            <div className="Cart__productInfo">
-              <div className="Cart__productImage">
-                <img src="https://i.seadn.io/gae/poF40KemmQv6kZ-WO5Cn1GfXCkpmPS6ixKT_7OyRo7Pf3lCb_0UbPbKS-WslhCXWuo791j9C9-7wADhcAFwk4W5oHhEJjksFRcIwYA?auto=format&w=1000" alt="Caveman NFT" />
+        <tbody>
+          <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Subtotal</th>
+          </tr>
+          
+          {/* <!--   begin table rows   --> */}
+          {/* product 1 start */}
+          <tr>
+            <td>
+              <div className="Cart__productInfo">
+                <div className="Cart__productImage">
+                  <img src="https://i.seadn.io/gae/poF40KemmQv6kZ-WO5Cn1GfXCkpmPS6ixKT_7OyRo7Pf3lCb_0UbPbKS-WslhCXWuo791j9C9-7wADhcAFwk4W5oHhEJjksFRcIwYA?auto=format&w=1000" alt="Caveman NFT" />
+                </div>
+                <div>
+                  <div className="Cart__productTitle">
+                    CavemanNFT #3861
+                    </div>
+                  <div className="Cart__productRemove">Remove</div>
+                </div>
               </div>
-              <div>
-                <div className="Cart__productTitle">
-                  CavemanNFT #3861
-                  </div>
-                <div className="Cart__productRemove">Remove</div>
+            </td>
+            <td> 
+              <div className="Cart__productQty">
+                <input 
+                  type="text" 
+                  maxLength="3"
+                  min="1"
+                  // value={searchTerm} 
+                  // onChange={updateSearchTerm}
+                />
               </div>
-            </div>
-          </td>
-          <td> 
-            <div className="Cart__productQty">
-              <input 
-                type="text" 
-                maxlength="3"
-                min="1"
-                // value={searchTerm} 
-                // onChange={updateSearchTerm}
-              />
-            </div>
-            {/* {(searchTerm < 2 && searchTerm > 0) ? <span></span> : <span>Error: Quantity must be 1</span>} */}
-          </td>  
-          <td>0.190 ETH</td>
-          <td>0.403 ETH</td>
-        </tr>
-        {/* product 1 end */}
-        {/* product 2 start */}
-        <tr>
-          <td>
-            <div className="Cart__productInfo">
-              <div className="Cart__productImage">
-                <img src="https://i.seadn.io/gae/7hIKYv6J16h8lp1q5ASKgunBa7dxfGvRfzpMulbg9gqDERA16vdZ2WtBlTGm38-wXgHDcjCWY7zjfCaKedsarjZQ_T-zT715r0C9tm8?auto=format&w=1000" alt="Liftoff NFT" />
+              {/* {(searchTerm < 2 && searchTerm > 0) ? <span></span> : <span>Error: Quantity must be 1</span>} */}
+            </td>  
+            <td>0.190 ETH</td>
+            <td>0.403 ETH</td>
+          </tr>
+          {/* product 1 end */}
+          {/* product 2 start */}
+          <tr>
+            <td>
+              <div className="Cart__productInfo">
+                <div className="Cart__productImage">
+                  <img src="https://i.seadn.io/gae/7hIKYv6J16h8lp1q5ASKgunBa7dxfGvRfzpMulbg9gqDERA16vdZ2WtBlTGm38-wXgHDcjCWY7zjfCaKedsarjZQ_T-zT715r0C9tm8?auto=format&w=1000" alt="Liftoff NFT" />
+                </div>
+                <div>
+                  <div className="Cart__productTitle">
+                    Liftoff
+                    </div>
+                  <div className="Cart__productRemove">Remove</div>
+                </div>
               </div>
-              <div>
-                <div className="Cart__productTitle">
-                  Liftoff
-                  </div>
-                <div className="Cart__productRemove">Remove</div>
+            </td>
+            <td> 
+              <div className="Cart__productQty">
+                <input 
+                  type="text" 
+                  maxLength="3"
+                  min="1"
+                  // value={searchTerm} 
+                  // onChange={updateSearchTerm}
+                />
               </div>
-            </div>
-          </td>
-          <td> 
-            <div className="Cart__productQty">
-              <input 
-                type="text" 
-                maxlength="3"
-                min="1"
-                // value={searchTerm} 
-                // onChange={updateSearchTerm}
-              />
-            </div>
-            {/* {(searchTerm < 2 && searchTerm > 0) ? <span></span> : <span>Error: Quantity must be 1</span>} */}
-          </td>  
-          <td>0.213 ETH</td>
-          <td>0.403 ETH</td>
-        </tr>
-        {/* product 2 end */}
-  
-        {/* <!--  end table rows    --> */}
+              {/* {(searchTerm < 2 && searchTerm > 0) ? <span></span> : <span>Error: Quantity must be 1</span>} */}
+            </td>  
+            <td>0.213 ETH</td>
+            <td>0.403 ETH</td>
+          </tr>
+          {/* product 2 end */}
+    
+          {/* <!--  end table rows    --> */}
+        </tbody>
       </table>
     </div>
 
