@@ -39,6 +39,7 @@ const NavBar = ({darkModeButton, setOpenLoginModal, loggedIn, setLoggedIn}) => {
     setToggleButton(!toggleButton);
   }
 
+  // deletes the access token from localStorage, and changes login button text to "log out"
   const logOut = () => {
     console.log("log out");
     // delete access token from local storage
