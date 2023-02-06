@@ -5,6 +5,7 @@ import "./ProfileCard.scss";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { IoDocumentTextSharp } from "react-icons/io5";
 
+
 import christinaResume from '../../assets/Christina_Loiacono_Resume_JrDeveloper.pdf';
 import CryptoTalkZoomBlue from '../../assets/CryptoTalkZoomBlue.png';
 // import CryptoTalkZoomBlack from '../../assets/CryptoTalkZoomBlack.png';
