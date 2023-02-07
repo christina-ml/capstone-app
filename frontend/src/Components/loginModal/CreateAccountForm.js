@@ -8,6 +8,9 @@ import Button from "../../cryptotalkComponents/buttons/Button";
 const API = process.env.REACT_APP_API_URL;
 
 const CreateAccountForm = ({ setOpenLoginModal, setLoggedIn }) => {
+    // keep photo field hidden
+    const [visible, setVisible] = useState(false);
+
     // hooks for modal 
     // const [firstname, setFirstname] = useState('');
     // const [lastname, setLastname] = useState('');
@@ -18,7 +21,7 @@ const CreateAccountForm = ({ setOpenLoginModal, setLoggedIn }) => {
     // const [interests, setInterests] = useState('');
     // const [city, setCity] = useState('');
     // const [userState, setUserState] = useState('');
-    // const [photo, setPhoto] = useState('');
+    const [photo, setPhoto] = useState(`https://robohash.org/${username}`);
 
     // hooks for errors
     const [usernameError, setUsernameError] = useState(false);
@@ -62,7 +65,7 @@ const CreateAccountForm = ({ setOpenLoginModal, setLoggedIn }) => {
                 // interests,
                 // city,
                 // userState,
-                // photo
+                photo
             })
         };
         console.log("reqOptions:", reqOptions.body)
@@ -97,7 +100,7 @@ const CreateAccountForm = ({ setOpenLoginModal, setLoggedIn }) => {
                     // setInterests("");
                     // setCity("");
                     // setUserState("");
-                    // setPhoto("");
+                    setPhoto("");
     
                     // close our modal
                     setOpenLoginModal(false);
