@@ -28,7 +28,7 @@ const User = ({user}) => {
       </div>
       <div className="userCard__info">
         <div className="userCard__info__name">
-          <h1>{firstname} {lastname}
+          <h1>{(firstname || lastname) ? `${firstname} ${lastname}` : `${username}`}
             {user_admin ? 
             <div className="userCard__info__name__tooltip">
               <div className="userCard__info__name__tooltip__tooltiptext">

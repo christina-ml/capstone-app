@@ -46,7 +46,7 @@ const UserDetails = () => {
         </div>
         <div className="userDetails__details">
             <div className="userDetails__details__name">
-                <div>{firstname} {lastname}</div>
+                <div>{(firstname || lastname) ? `${firstname} ${lastname}` : `${username}`}</div>
             </div>
             <div className="userDetails__details__bio">
                 <div className="userDetails__details__bio__profilePhoto">
