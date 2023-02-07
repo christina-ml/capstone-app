@@ -77,10 +77,10 @@ const UserDetails = () => {
                     <MdOutlineEmail /> {user_email}
                 </div>
                 <div>
-                    <IoHomeOutline /> {user_city}, {user_state}
+                    <IoHomeOutline /> {user_city || ''}{(user_city && user_state) ? ', ' : '' }{user_state || ', USA'}
                 </div>
                 <div>
-                    Interests: {user_interests}
+                    Interests: {user_interests || 'Nothing yet'}
                 </div>
             </div>
         </div>
