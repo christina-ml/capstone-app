@@ -15,6 +15,7 @@ const usersController = require("./controllers/usersController.js");
 const allCoinsController = require("./controllers/allCoinsController.js");
 const nftsController = require("./controllers/nftsController.js");
 const accountsController = require("./controllers/accountsController.js");
+const signupController = require("./controllers/signupController.js");
 
 // Middleware
 app.use(cors());
@@ -23,6 +24,7 @@ app.use("/users", usersController);
 app.use("/coins", allCoinsController);
 app.use('/nfts', nftsController);
 app.use('/accounts', accountsController); // protected route
+app.use('/signup', signupController); // newsletter sign up with mailchimp
 
 // Routes
 app.get("/", (_req, res) => {
