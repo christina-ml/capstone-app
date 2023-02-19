@@ -1,0 +1,52 @@
+// import colors from designUtils
+@import '../../designUtils/colors';
+
+.Signup {
+    // display: inline-block;
+    border: 1px solid $white;
+    padding: 15px;
+    padding-bottom: 10px;
+    border-radius: 8px;
+    margin-top: 5px;
+    
+    .inputFields {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+        "firstName lastName"
+        "email email";
+
+        input {
+            text-align: center;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 4px;
+        }
+
+        .firstName {
+            grid-area: firstName;
+        }
+        .lastName {
+            grid-area: lastName;
+        }
+        .email {
+            grid-area: email;
+        }
+    }
+
+    button {
+        cursor: pointer;
+        display: block;
+        margin: 5px auto;
+        text-align: center;
+        border-radius: 8px;
+        border: none;
+        padding: 10px;
+        
+        &:hover {
+            background-color: $logo-blue-light;
+            color: $white;
+        }
+    }
+}

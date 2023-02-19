@@ -36,48 +36,8 @@
       }
 
       &__emailSubscribe {
-        margin-top: 15px;
-        input {
-          padding: 12px;
-          border-top-left-radius: 8px;
-          border-bottom-left-radius: 8px;
-          border: none;
-          width: 240px;
-          &::placeholder {
-            font-style: italic;
-          }
-        }
-        button {
-          padding: 12px;
-          background-color: $white;
-          border-top-right-radius: 8px;
-          border-bottom-right-radius: 8px;
-          border: none;
-          margin-left: -4px;
-          border-left: 1px solid $light-gray;
-          color: rgb(11, 123, 184);
-          font-weight: 600;
-          width: 100px;
-          cursor: pointer;
-        }
-      }
-    }
-  }
-}
-
-// MEDIUM SCREEN styling
-@media only screen and (min-width:$mobile) and (max-width: $mediumScreen){
-  .newsletterContainer {
-    &__newsletter {
-      &__text {
-        &__emailSubscribe{
-          input {
-            width: 130px;
-          }
-          button {
-            width: 90px;
-          }
-        }
+        text-align: center;
+        padding-bottom: 40px;
       }
     }
   }
