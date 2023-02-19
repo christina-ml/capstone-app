@@ -16,6 +16,9 @@ signup.use(bodyParser.urlencoded({extended: true}));
 // Static folder
 signup.use(express.static(path.join(__dirname, './../public')));
 
+// Mailchimp API key
+const MailchimpAPIKey = process.env.MAILCHIMP_API_KEY;
+
 // Signup - Route
 // when we submit the html form, it goes to this route
 signup.post('/', (req, res) => {
@@ -60,7 +63,7 @@ signup.post('/', (req, res) => {
          url: 'https://us11.api.mailchimp.com/3.0/lists/f34ab44ac8',
          method: 'POST',
          headers: {
-             Authorization: 'auth e34ae90c09d39392896fa6749f9de740-us11'
+             Authorization: `auth ${MailchimpAPIKey}`
          },
          body: postData
      };
