@@ -8,9 +8,6 @@ import Button from "../../cryptotalkComponents/buttons/Button";
 const API = process.env.REACT_APP_API_URL;
 
 const CreateAccountForm = ({ setOpenLoginModal, setLoggedIn }) => {
-    // keep photo field hidden
-    const [visible, setVisible] = useState(false);
-
     // hooks for modal 
     // const [firstname, setFirstname] = useState('');
     // const [lastname, setLastname] = useState('');
@@ -87,6 +84,8 @@ const CreateAccountForm = ({ setOpenLoginModal, setLoggedIn }) => {
                         setFormMessage('Please choose another username. This one is already taken.');
                     } else if (data.message.includes('users_user_email_key')){
                         setFormMessage('Please choose another email. This one is already taken.');
+                    } else if (data.message.includes('Password must be')){
+                        setFormMessage(data.message);
                     }
 
                 } else {
@@ -107,10 +106,18 @@ const CreateAccountForm = ({ setOpenLoginModal, setLoggedIn }) => {
     
                     // show toast that user was successfully created
                     
-                    console.log("LoginModaldata:", data);
-                    // set our access token in localStorage to tell us the user is logged in
-                    localStorage.setItem("accessToken", data.accessToken);
-                    // show that our user is logged in (specifcally the "log in"/"log out" button)
+                    // console.log("LoginModaldata:", data);
+                    /*
+                        - set our access token in localStorage to tell us the user is logged in
+                        - localStorage.setItem("accessToken", data.accessToken);
+                        - show that our user is logged in (specifcally the "log in"/"log out" button)
+
+                        Replacing `localStorage.setItem("accessToken".....` with a cookie
+                        - setting a cookie syntax:
+                    */
+                    // save access token as a cookie
+                    document.cookie = "accessToken=" + data.accessToken;
+
                     setLoggedIn(true);
                 }
             }).catch((error) => {

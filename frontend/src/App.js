@@ -4,6 +4,9 @@ import { Routes, Route } from "react-router-dom";
 // SCSS
 import './App.scss';
 
+// Cookies
+import { getCookie } from "./utils/cookieUtils";
+
 // Local Storage
 import useLocalStorage from 'use-local-storage';
 
@@ -59,8 +62,12 @@ function App() {
 
   // Login Modal - for having modal open when you click `login` button
   const [openLoginModal, setOpenLoginModal] = useState(false);
-  // if there is an `accessToken` in localStorage, set LoggedIn to true; if not, set LoggedIn to false.
-  const [loggedIn, setLoggedIn] = useState(localStorage.getItem('accessToken') ? true : false);
+  /* 
+    if there is an `accessToken` in localStorage, set LoggedIn to true; if not, set LoggedIn to false.
+    - changing localStorage to using `getCookie` function from `utils` folder:
+  */
+  const [loggedIn, setLoggedIn] = useState(getCookie('accessToken') ? true : false);
+
 
   return (
     <div className="App" data-theme={theme} >
