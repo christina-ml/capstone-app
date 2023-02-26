@@ -6,11 +6,13 @@ const {
 } = require("../queries/nfts.js");
 
 // middleware
-const authenticateToken = require('../middleware/authorization');
+// const authenticateToken = require('../middleware/authorization');
 
 // protect this route /nfts:
 // get all nfts
-nfts.get("/", authenticateToken, async (req, res, next)=> {
+// adding the `authenticateToken` middleware means you need to be signed in with a valid token
+// nfts.get("/", authenticateToken, async (req, res, next)=> {
+nfts.get("/", async (req, res, next)=> {
     try {
         const allNfts = await getAllNfts();
         if (allNfts[0]){

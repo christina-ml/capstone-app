@@ -45,17 +45,19 @@ users.get("/", async (req, res)=> {
 users.post('/login', async (req, res) => {
     try {
         let {username, password} = req.body;
-        console.log("backend->username, password:", username, password);
+        // console.log() to check user login input that was submitted
+        console.log("backend user input->username, password:", username, password);
 
         // can't check the password since the password is encrypted in the database
         const user = await db.one('SELECT * FROM users WHERE username=$1', [username]);
-        console.log("backend->user:", user);
-
+        // console.log() to see user details for user that is currently logged in
+        console.log("backend->logged in user:", user);
 
         // if theres no user
         if (!user){
             res.status(401).send({error: "username is not correct"});
-            return;        }
+            return;
+        }
 
         // taking user.password the one from our database thats encrypted
         // and password that we just got (not encrypted) - going to wait until it checks that they're both the same
@@ -140,6 +142,7 @@ users.post('/login', async (req, res) => {
 //         })
 //     }
 // });
+
 // create new user
 users.post('/', async (req, res) => {
 
@@ -152,11 +155,12 @@ users.post('/', async (req, res) => {
       // example: https://robohash.org/blueberrypie
       const defaultPhoto = photo+username;
   
-      // validate data
+      // validate data - validate username length
       if(username.length < 4){
         throw({message: 'Username must be 4 characters or more'})
       }
   
+      // validate password length
       if(password.length < 6){
         throw({message: 'Password must be 6 characters or more'})
       }

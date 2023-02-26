@@ -10,7 +10,7 @@ CREATE TABLE users(
   firstname TEXT,
   lastname TEXT,
   username TEXT UNIQUE NOT NULL,
-  user_password TEXT,
+  user_password TEXT NOT NULL,
   user_email TEXT UNIQUE,
   user_admin BOOLEAN,
   user_interests TEXT,
