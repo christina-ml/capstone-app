@@ -1,3 +1,84 @@
+## Todo 2-23-23
+Watch Jordan's video (end of Nov 21st class)
+Jordan's code was added with Jordan's commit #03fe191 on html-exercises-backend repo.
+
+- What is the `/authenticate` route doing in the `usersController.js` file?
+- Does it do anything?
+- When testing it on backend only, returns error.
+- When testing it with frontend, still an error. Trying to show me a user named undefined that doesn't exist
+```
+users.get('/authenticate', async (req, res) => {
+```
+On the backend it gives me this:
+```
+// http://localhost:3333/users/authenticate
+
+"Error: User ID not found"
+```
+
+#### todo #2: 2-23-23
+On backend, getting error:
+```
+// http://localhost:3333/accounts
+
+{
+  "error": "Null Token"
+}
+```
+This is because the json web token doesn't get stored in local storage on the backend.
+The user is "logged in" but there's no way to tell, since the token isn't being saved on the backend once it's made, so it can't be checked for on the backend.
+- Is there a way to save on the backend that the "token does exist"? So that we would know whether or not a user has been logged in, on the backend only?
+- Right now, the backend only sees that there is no token, so it responds with an error saying that the token is a "null token".
+
+
+### 2-25-23 continuing login, authentication
+Password validation - must be 6 characters or more
+- Make changes on both backend and frontend
+- backend: check password length & set error message
+- frontend: set error message for user to see
+
+(Continuing Jordan's video from Nov 28th class)
+A cookie is better than using local storage.
+
+Frontend: `CreateAccountForm.js`
+
+Switching to using a `cookie` instead of localStorage.setItem()
+```
+/*
+    - set our access token in localStorage to tell us the user is logged in
+    - localStorage.setItem("accessToken", data.accessToken);
+    - show that our user is logged in (specifcally the "log in"/"log out" button)
+
+    Replacing `localStorage.setItem("accessToken".....` with a cookie
+    - setting a cookie syntax:
+*/
+// save access token as a cookie
+document.cookie = "accessToken=" + data.accessToken;
+```
+
+`loginAccountForm.js` make changes with cookie
+Replacing this:
+`localStorage.setItem('accessToken', data.accessToken);`
+...with a cookie:
+```
+// save access token as a cookie
+document.cookie = "accessToken=" + data.accessToken;
+```
+
+Check our NavBar
+`App.js` - `loggedIn/setLoggedIn` hook
+App is still using localStorage, and we want to change it to a cookie.
+Make a new file:
+src > utils > `cookieUtils.js`
+
+After changing the hook for `loggedIn/setLoggedIn`, checking in browser:
+- a user is logged in
+- the `cookie` has replaced `localStorage`
+- the `accessToken` is now in `cookies`, and is not in `localStorage` anymore.
+
+Todo: fix the logout functionality so that the `accessToken` in `cookies` can be removed.
+
+
 ## Login 
 ### Encrypt our passwords (Backend)
 Using [bcrypt](https://www.npmjs.com/package/bcrypt): A library to help you hash passwords.
