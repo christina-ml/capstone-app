@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 // SCSS
@@ -9,6 +9,10 @@ import { getCookie } from "./utils/cookieUtils";
 
 // Local Storage
 import useLocalStorage from 'use-local-storage';
+
+// Material UI
+import Alert from '@mui/material/Alert';
+import CheckIcon from '@mui/icons-material/Check';
 
 // react-icons
 import { MdDarkMode } from 'react-icons/md';
@@ -67,7 +71,18 @@ function App() {
     - changing localStorage to using `getCookie` function from `utils` folder:
   */
   const [loggedIn, setLoggedIn] = useState(getCookie('accessToken') ? true : false);
+  
+  // login message for MUI toast
+  const [loginMessage, setLoginMessage] = useState('');
 
+  // anytime the `loginMessage` changes, want a setTimeout for 3 seconds
+  useEffect(() => {
+
+    setTimeout(function() {
+      setLoginMessage('');
+    }, 3000);
+
+  }, [loginMessage]);
 
   return (
     <div className="App" data-theme={theme} >
@@ -82,7 +97,13 @@ function App() {
         openLoginModal={openLoginModal} 
         setOpenLoginModal={setOpenLoginModal} 
         setLoggedIn={setLoggedIn}
+        setLoginMessage={setLoginMessage}
       />
+      {loginMessage && 
+        <Alert icon={<CheckIcon fontSize="inherit" />} severity="success">
+          {loginMessage}
+        </Alert>
+      }
       <main>
         <Routes>
           <Route path="/" element={<Home />} />

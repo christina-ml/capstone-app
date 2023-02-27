@@ -112,6 +112,15 @@ and
 
 ---
 
+### Material UI - toasts
+Add Toasts to show user with Material UI
+[https://mui.com/material-ui/react-alert/#toast](https://mui.com/material-ui/react-alert/#toast)
+`App.js`:
+Create toast with a useEffect() and give it a setTimeout() for 3 seconds
+- Set message when users log in
+
+`LoginModal.js` pass in `setLoginMessage` as a prop
+- Then pass as prop into children/forms: `LoginAccountForm.js` and `CreateAccountForm.js`
 
 
 ## Login 

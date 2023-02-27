@@ -7,7 +7,7 @@ import Button from "../../cryptotalkComponents/buttons/Button";
 
 const API = process.env.REACT_APP_API_URL;
 
-const CreateAccountForm = ({ setOpenLoginModal, setLoggedIn }) => {
+const CreateAccountForm = ({ setOpenLoginModal, setLoggedIn, setLoginMessage }) => {
     // hooks for modal 
     // const [firstname, setFirstname] = useState('');
     // const [lastname, setLastname] = useState('');
@@ -89,6 +89,7 @@ const CreateAccountForm = ({ setOpenLoginModal, setLoggedIn }) => {
                     }
 
                 } else {
+                    // successful login
                     // reset the hooks - reset our form to have all empty values
                     // setFirstname("");
                     // setLastname("");
@@ -103,6 +104,7 @@ const CreateAccountForm = ({ setOpenLoginModal, setLoggedIn }) => {
     
                     // close our modal
                     setOpenLoginModal(false);
+                    setLoginMessage('Your account has been created.');
     
                     // show toast that user was successfully created
                     

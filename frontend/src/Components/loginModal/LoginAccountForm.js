@@ -10,7 +10,7 @@ import Button from '../../cryptotalkComponents/buttons/Button';
 
 const API = process.env.REACT_APP_API_URL;
 
-const LoginAccountForm = ({setOpenLoginModal, setLoggedIn}) => {
+const LoginAccountForm = ({setOpenLoginModal, setLoggedIn, setLoginMessage}) => {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -59,11 +59,13 @@ const LoginAccountForm = ({setOpenLoginModal, setLoggedIn}) => {
                 }
 
             } else {
-                console.log("data from LoginAccountForm:", data);
+                // successful login
+                // console.log("data from LoginAccountForm:", data);
                 // set our hooks back to make form empty
                 setUsername('');
                 setPassword('');
                 setOpenLoginModal(false);
+                setLoginMessage('You have logged in!');
     
                 // show toast that user was successfully logged in 
                 

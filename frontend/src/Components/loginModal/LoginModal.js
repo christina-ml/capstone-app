@@ -48,7 +48,7 @@ function a11yProps(index) {
  * Login Modal is not going to have a route - it will be available on every page
  */
 
-const LoginModal = ({ openLoginModal, setOpenLoginModal, setLoggedIn, ...props }) => {
+const LoginModal = ({ openLoginModal, setOpenLoginModal, setLoggedIn, setLoginMessage, ...props }) => {
     // for `LoginModal()` tabs
     const [value, setValue] = React.useState(0);
 
@@ -105,12 +105,14 @@ const LoginModal = ({ openLoginModal, setOpenLoginModal, setLoggedIn, ...props }
                     <LoginAccountForm
                         setOpenLoginModal={setOpenLoginModal} 
                         setLoggedIn={setLoggedIn}
+                        setLoginMessage={setLoginMessage}
                     />
                 </TabPanel>
                 <TabPanel value={value} index={1}>
                     <CreateAccountForm
                         setOpenLoginModal={setOpenLoginModal} 
                         setLoggedIn={setLoggedIn}
+                        setLoginMessage={setLoginMessage}
                     />
                 </TabPanel>
             </Stack>
