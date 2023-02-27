@@ -1,4 +1,5 @@
 // https://www.w3schools.com/js/js_cookies.asp
+// https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/cookies/remove
 // taking in a cookie name, telling us if cookie exists in the browser
 function getCookie(cname) {
     let name = cname + "=";
@@ -15,5 +16,13 @@ function getCookie(cname) {
     }
     return "";
 }
+
+// function removeCookie(tabs) {
+//   let removing = browser.cookies.remove({
+//     url: tabs[0].url,
+//     name: "favorite-color"
+//   });
+//   removing.then(onRemoved, onError);
+// }
 
 export {getCookie};

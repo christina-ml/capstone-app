@@ -48,24 +48,37 @@ const LoginAccountForm = ({setOpenLoginModal, setLoggedIn}) => {
         fetch(`${API}/users/login`, reqOptions)
         .then(response => response.json())
         .then(data => {
+            // console.log("LoginAccountForm.jsDATA:", data);
 
-            console.log("data from LoginAccountForm:", data);
-            // set our hooks back to make form empty
-            setUsername('');
-            setPassword('');
-            setOpenLoginModal(false);
+            if (data.status === "error"){
+                // show error message
+                if (data.message === 'No data returned from the query.'){
+                    setFormMessage('No user with this email and password exists.');
+                } else {
+                    setFormMessage(data.message);
+                }
 
-            // show toast that user was successfully logged in 
-            
-            /* save token to local storage
-                Replacing this with a cookie: 
-                localStorage.setItem('accessToken', data.accessToken);
-            */
-            // save access token as a cookie
-            document.cookie = "accessToken=" + data.accessToken;
+            } else {
+                console.log("data from LoginAccountForm:", data);
+                // set our hooks back to make form empty
+                setUsername('');
+                setPassword('');
+                setOpenLoginModal(false);
+    
+                // show toast that user was successfully logged in 
+                
+                /* save token to local storage
+                    Replacing this with a cookie: 
+                    localStorage.setItem('accessToken', data.accessToken);
+                */
+                // save access token as a cookie
+                document.cookie = "accessToken=" + data.accessToken;
+    
+                // set loggedin to true 
+                setLoggedIn(true);
+            }
 
-            // set loggedin to true 
-            setLoggedIn(true);
+
             
         }).catch(error => {
             // might want an error message saying it didnt work - server's down, etc.
@@ -85,6 +98,11 @@ const LoginAccountForm = ({setOpenLoginModal, setLoggedIn}) => {
             <Typography className="loginModal__title" id="modal-modal-title" variant="h6" component="h2">
                 Please Log In
             </Typography>
+            {formMessage && 
+                <div className="form__errorText" style={{"color" : "red"}}>
+                    {formMessage}
+                </div>
+            }
              <TextField 
                 id="outlined-basic" 
                 label="Username" 

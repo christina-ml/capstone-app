@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
+import { getCookie } from '../../utils/cookieUtils';
+
 import './AccountList.scss';
 
 const API = process.env.REACT_APP_API_URL;
@@ -8,13 +10,16 @@ const AccountList = () => {
 
     const [accounts, setAccounts] = useState([]);
 
-    // get the access token
-    const requestOptions = {
-        headers: {'Authorization': `Bearer ${localStorage.getItem('accessToken')}`}
-    }
     
     // reach out
     useEffect(() => {
+        const accessToken = getCookie('accessToken');
+        
+        // get the access token
+        const requestOptions = {
+            headers: {'Authorization': `Bearer ${accessToken}`}
+        }
+
         fetch(`${API}/accounts`, requestOptions)
         .then(response => response.json())
         .then(data => {

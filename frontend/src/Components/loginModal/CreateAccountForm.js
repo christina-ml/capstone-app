@@ -25,7 +25,7 @@ const CreateAccountForm = ({ setOpenLoginModal, setLoggedIn }) => {
     const [emailError, setEmailError] = useState(false);
 
     // error handling for when `data.status === "error"`
-    const [formMessage, setFormMessage] = useState('')
+    const [formMessage, setFormMessage] = useState('');
 
     // VALIDATIONS
     // on unfocus validate username
