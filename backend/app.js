@@ -1,6 +1,8 @@
 // Dependencies
 const express = require("express");
 const cors = require("cors");
+// for cookies
+var cookieParser = require('cookie-parser');
 
 // for using JWT tokens - checks if our code is running in production
 if (process.env.NODE_ENV !== 'production'){
@@ -20,6 +22,8 @@ const signupController = require("./controllers/signupController.js");
 // Middleware
 app.use(cors());
 app.use(express.json());
+// for cookies
+app.use(cookieParser());
 app.use("/users", usersController);
 app.use("/coins", allCoinsController);
 app.use('/nfts', nftsController);

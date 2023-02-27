@@ -77,6 +77,41 @@ After changing the hook for `loggedIn/setLoggedIn`, checking in browser:
 - the `accessToken` is now in `cookies`, and is not in `localStorage` anymore.
 
 Todo: fix the logout functionality so that the `accessToken` in `cookies` can be removed.
+`Navbar.js` - in logOut, delete cookie `accessToken`
+
+2-25-23 TODO: remove cookies
+We are in `Navbar.js` on frontend
+(left off watching video at 01:47:01), jordan is looking to find a way to delete cookies on MDN website.
+
+
+# newsletter signup
+for backend:
+```
+npm install request
+npm install body-parser
+```
+- Reminder: Don't push the mailchimp API key to GitHub, or it will become inactive and will need to create a new one.
+
+frontend:
+- Make new component for signup that takes in firstname, lastname, email.
+- New component has form, and hooks in React state for each input field
+- axios post request to backend using the values from user input, which sends the user inputs to the backend that will post to mailchimp to be stored.
+- Style the SCSS for the functional Signup component
+
+
+---
+2-26-23
+adding `cookie-parser` on backend
+```
+npm install cookie-parser
+```
+Add to app.js:
+`var cookieParser = require('cookie-parser');`
+and
+`app.use(cookieParser());`
+
+---
+
 
 
 ## Login 
