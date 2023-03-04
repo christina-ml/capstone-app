@@ -1,6 +1,4 @@
 @import '../../designUtils/colors';
-@import '../../designUtils/fonts';
-@import '../../designUtils/media';
 
 .coinList {
     margin: 0 auto;
@@ -25,7 +23,6 @@
             padding: 5px;
             animation: spinner 0.9s linear infinite;
         }
-          
     }
 
     &__collection{

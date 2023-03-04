@@ -7,7 +7,7 @@
 .sidebar {
     margin: 10px;
     border: 1px solid $black;
-    font-family: din-2014,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-family: $news-sidebar-font;
     
     &__title {
       text-transform: uppercase;

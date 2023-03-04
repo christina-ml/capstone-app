@@ -1,7 +1,5 @@
 // import colors from designUtils
 @import '../../designUtils/colors';
-@import '../../designUtils/media';
-@import '../../designUtils/fonts';
 
 .profileCard {
     // margin: 0 auto;
@@ -98,15 +96,12 @@
             }
         }
 
-        &__threeColumns >* {
-                 
+        &__threeColumns >* {   
             &:not(:last-child) {
                 border-right: 1px solid $light-gray;
             }
-            
         }
-
-      }
+    }
 }
 
   
