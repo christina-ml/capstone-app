@@ -4,7 +4,7 @@ import './Newsletter.scss';
 
 import logo from '../../assets/cryptotalk-logo.png';
 
-import Signup from "../signup/Signup";
+import Signup from "./Signup";
 
 const Newsletter = () => {
   return (
