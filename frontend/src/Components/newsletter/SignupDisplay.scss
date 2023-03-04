@@ -1,0 +1,74 @@
+// import colors from designUtils
+@import '../../designUtils/colors';
+@import '../../designUtils/media';
+
+.Signup {
+    display: inline-block;
+    border: 1px solid $white;
+    padding: 15px;
+    border-radius: 8px;
+
+    input {
+        text-align: center;
+        margin: 0 auto;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        padding: 8px;
+        border: none;
+        width: 240px;
+        font-size: 18px;
+        &::placeholder {
+          font-style: italic;
+        }
+      }
+    button {
+        text-align: center;
+        margin: 0 auto;
+        border-radius: 8px;
+        padding: 10px;
+        background-color: $white;
+        border: none;
+        // color: rgb(11, 123, 184);
+        color: $logo-blue;
+        font-size: 16px;
+        font-weight: 600;
+        width: 255px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $dark-bluegray;
+            color: $white;
+            box-shadow: 0px 0px 10px $dark-bluegray;
+        }
+    }
+}
+
+// MEDIUM SCREEN styling
+@media only screen and (min-width:$mobile) and (max-width: $mediumScreen){
+    .Signup {
+        input {
+            width: 130px;
+        }
+        button {
+            width: 90px;
+        }
+    }
+}
+
+// MOBILE styling
+@media only screen and (max-width: $mobile){
+    .Signup {
+        input {
+            text-align: center;
+            width: 70vw;
+            margin: 0 auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        button {
+            width: 40vw;
+            margin: 0 auto;
+            border-radius: 8px;
+        }
+    }
+}
