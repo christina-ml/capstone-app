@@ -1,6 +1,4 @@
 @import '../../designUtils/colors';
-@import '../../designUtils/fonts';
-@import '../../designUtils/media';
 
 .nftCards {
     display: flex;
@@ -14,7 +12,7 @@
  
         &__details {
             padding: 15px;
-            color: black;
+            color: $black;
             font-weight: 600;
             font-size: 20px;
             
