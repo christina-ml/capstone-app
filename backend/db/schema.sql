@@ -3,34 +3,33 @@ CREATE DATABASE crypto_dev;
 
 \c crypto_dev;
 
+DROP TABLE IF EXISTS nfts;
+DROP TABLE IF EXISTS currencies;
 DROP TABLE IF EXISTS users;
 
-CREATE TABLE users(
+CREATE TABLE users (
   uid SERIAL PRIMARY KEY,
-  firstname TEXT,
-  lastname TEXT,
-  username TEXT UNIQUE NOT NULL,
+  firstname VARCHAR(255),
+  lastname VARCHAR(255),
+  username VARCHAR(255) UNIQUE NOT NULL,
   user_password TEXT NOT NULL,
   user_email TEXT UNIQUE,
   user_admin BOOLEAN,
   user_interests TEXT,
-  user_city TEXT,
-  user_state TEXT,
+  user_city VARCHAR(255),
+  user_state VARCHAR(255),
   photo TEXT
 );
 
-DROP TABLE IF EXISTS currencies;
-
-CREATE TABLE currencies(
+CREATE TABLE currencies (
   cid SERIAL PRIMARY KEY,
   coinmarketcap_id SMALLINT UNIQUE NOT NULL,
   name TEXT NOT NULL,
-  symbol TEXT,
+  symbol VARCHAR(255),
   logo TEXT,
-  slug TEXT,
+  slug VARCHAR(255),
   num_market_pairs INTEGER,
   date_added DATE,
-  tags TEXT [],
   max_supply BIGINT,
   circulating_supply DECIMAL,
   total_supply DECIMAL,
@@ -56,9 +55,16 @@ CREATE TABLE currencies(
   currency_uid INTEGER REFERENCES users(uid) ON DELETE CASCADE
 );
 
-DROP TABLE IF EXISTS nfts;
+CREATE TABLE tags (
+  tid SERIAL PRIMARY KEY,
+  currency_id INTEGER REFERENCES currencies(cid) ON DELETE CASCADE,
+  tag TEXT
+);
 
-CREATE TABLE nfts(
+-- SELECT * FROM tags WHERE currency_id = $1;
+CREATE INDEX tags_currency_id ON tags(currency_id);
+
+CREATE TABLE nfts (
   nid SERIAL PRIMARY KEY,
   item_name TEXT,
   creator TEXT,
