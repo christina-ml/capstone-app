@@ -5,6 +5,10 @@ const {
     getOneCurrency
 } = require("../queries/currencies.js");
 
+// Controllers
+const reviewsController = require("./reviewsController.js");
+allCoins.use('/:currencyId/reviews', reviewsController);
+
 // get all coins - All coins existing in the database from currencies table
 // Example: http://localhost:3333/coins
 allCoins.get("/", async (req, res)=> {
