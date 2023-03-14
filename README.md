@@ -624,6 +624,9 @@ Our backend database using [Postgres](https://www.postgresql.org/) has three tab
 
 Tooltip text: [HTML title Attribute](https://www.w3schools.com/tags/att_title.asp)
 
+<!-- Information on getting a current date in JavaScript from JavaScript's "date" methods https://www.freecodecamp.org/news/javascript-get-current-date-todays-date-in-js/#:~:text=In%20JavaScript%2C%20we%20can%20easily,%2C%20time%2C%20and%20time%20zone. -->
+
+
 <!-- svg image used for DesktopColoring (svg with background) -->
 <!-- https://www.iconpacks.net/free-icon/laptop-coin-2469.html -->
 <!-- https://www.iconpacks.net/free-icon/mobile-phone-coin-2470.html -->
