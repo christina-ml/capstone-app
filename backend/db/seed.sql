@@ -1,6 +1,6 @@
 \c crypto_dev;
 
-INSERT INTO users(firstname, lastname, username, user_password, user_email, user_admin, user_interests, user_city, user_state, photo) VALUES
+INSERT INTO users (firstname, lastname, username, user_password, user_email, user_admin, user_interests, user_city, user_state, photo) VALUES
 ('Christina', 'Loiacono', 'rowboatoutraged30','PWm3dmVg','christina@coinboard.com', true, 'bitcoin, solana', 'New York City', 'New York', 'https://media.istockphoto.com/vectors/young-attractive-woman-vector-id1287259097?k=20&m=1287259097&s=612x612&w=0&h=FTVDk7R5mAT24e1RAYr4M-HewPMzyaa4OVpQllmyLJM='),
 ('Oliver', 'Chuzan', 'yawningkangaroo197','w74Mb7tQ','oliver@cryptoville.com', false, 'bitcoin, tether', 'Toledo', 'Ohio', 'https://media.istockphoto.com/vectors/male-avatar-icon-vector-id1331350730?k=20&m=1331350730&s=612x612&w=0&h=A5RianNAop75Zn3rD3SinzyTfGfp784DdVuOiimzLzM='),
 ('Deborah', 'Campos', 'peacenative441','gn5RhAyk','deb@coinreport.com', false, 'litecoin, binance USD', 'Austin', 'Texas', 'https://media.istockphoto.com/vectors/portrait-of-a-redhaired-woman-with-a-phone-psychological-addiction-of-vector-id1346030686?k=20&m=1346030686&s=612x612&w=0&h=E1855ZWPOJE0qB8xNz1byBQjBNilBkM-CTuAE-CZ_og='),
@@ -19,7 +19,7 @@ INSERT INTO users(firstname, lastname, username, user_password, user_email, user
 ('Jacqui', 'Abner', 'spiffyreward','RTHkzZfJ','jabner@cryptohouseninja.com', false, 'bitcoin, dogecoin', 'Stockton', 'California', 'https://media.istockphoto.com/vectors/portrait-of-a-handsome-male-office-worker-vector-id1264875014?k=20&m=1264875014&s=612x612&w=0&h=ZHFb3XkcGzC2clAdQAW9aGMUJtYN3wO1fP0FQiwlTOI='),
 ('Nina', 'Faye', 'strangercabin','8PJXEhAw','nina@cryptohouseninja.com', false, 'dogecoin, tether', 'Corpus Christi', 'Texas', 'https://media.istockphoto.com/vectors/professor-with-glasses-elderly-scientist-white-hair-beard-suit-vector-id1226173448?k=20&m=1226173448&s=612x612&w=0&h=tYRvIcqzsauWckJ4e8PhkHuXoRwtConTGskA6azoWRw=');
 
-INSERT INTO currencies(coinmarketcap_id, name, symbol, logo, slug, num_market_pairs, date_added, tags, max_supply, circulating_supply, total_supply, token_address, 
+INSERT INTO currencies (coinmarketcap_id, name, symbol, logo, slug, num_market_pairs, date_added, tags, max_supply, circulating_supply, total_supply, token_address, 
 cmc_rank, 
 self_reported_circulating_supply, self_reported_market_cap, tvl_ratio, last_updated, price, volume_24h, volume_change_24h, percent_change_1h, percent_change_24h, percent_change_7d, percent_change_30d, percent_change_60d, percent_change_90d, market_cap, market_cap_dominance, fully_diluted_market_cap, tvl,
 currency_uid) VALUES
@@ -43,7 +43,12 @@ currency_uid) VALUES
 (3717, 'Wrapped Bitcoin', 'WBTC', 'https://responsive.fxempire.com/v7/_fxcrypto_/crypto/crypto-logos/wbtc.png', 'wrapped-bitcoin', 473, '2019-01-30T00:00:00.000Z', ARRAY [ 'medium-of-exchange', 'defi', 'wrapped-tokens', 'fantom-ecosystem', 'arbitrum-ecosytem', 'moonriver-ecosystem' ], null, 238932, 238932, '0x2260fac5e5542a773aa44fbcfedf7c193bc2c599', 18, null, null, null, '2022-07-14T00:51:00.000Z', 20227.889985127986, 226463193.3953482, 14.0831, 0.42725836, 4.42672768, -1.47334857, -9.36003746, -32.59528945, -49.38848562, 4833099172.206183, 0.5366, 4833099172.21, null, 2),
 (7083, 'Uniswap', 'UNI', 'https://responsive.fxempire.com/v7/_fxcrypto_/crypto/crypto-logos/uniswap.png', 'uniswap', 386, '2020-09-17T00:00:00.000Z', ARRAY [ 'decentralized-exchange', 'defi', 'dao', 'yield-farming', 'amm', 'coinbase-ventures-portfolio', 'three-arrows-capital-portfolio', 'governance', 'blockchain-capital-portfolio', 'defiance-capital-portfolio' ], 1000000000, 734135450.7457277, 1000000000, '0x1f9840a85d5af5bf1d1762f925bdaddc4201f984', 19, null, null, 0.95134043, '2022-07-14T00:52:00.000Z', 0227.889985127986, 226463193.3953482, 14.0831, 0.42725836, 4.42672768, -1.47334857, -9.36003746, -32.59528945, -49.38848562, 4833099172.206183, 0.5366, 4833099172.21, null, 4);
 
-INSERT INTO nfts(item_name, creator, price, currency, currency_logo, url, rarity_rank_no, rarity_total, availability, customer_id) VALUES
+INSERT INTO reviews (reviewer, title, content, rating, review_date, review_cid) VALUES
+('anonomyousHippo', 'Excellent Investment!', 'The coin is expected to make significant gains in the long term, making it a good investment.', 5, '2023-03-14', 13),
+('anonomyousWalrus', 'Long term gains', 'I believe Bitcoin will gain value over the long term because the supply is fixed, unlike the supplies of fiat currencies such as the U.S. dollar or the Japanese yen.', 2, '2023-03-13', 1),
+('anonomyousGiraffe', 'The next global currency', 'If Bitcoin is being extensively used as digital cash, I believe it has the potential to become the first truly global currency.', 2, '2023-03-15', 1);
+
+INSERT INTO nfts (item_name, creator, price, currency, currency_logo, url, rarity_rank_no, rarity_total, availability, customer_id) VALUES
 ('Lofi Lofts #2575', 'LofiLofts', 279.99, 'ETH', 'https://responsive.fxempire.com/v7/_fxcrypto_/crypto/crypto-logos/eth.png', 'https://img.seadn.io/files/359ac32dac8de0225f0159b3d7284dc5.png?fit=max&w=1000', 7262, 9710, false, 3),
 ('Mad Rabbits Riot Club', 'Mad Rabbits', 279.99, 'ETH', 'https://responsive.fxempire.com/v7/_fxcrypto_/crypto/crypto-logos/eth.png', 'https://i.pinimg.com/736x/10/d2/31/10d2313d6f321909c93b61c332371d0a.jpg', 7262, 9710, false, null),
 ('Everydays — The First 5000 Days', 'Unknown', 249.99, 'ETH', 'https://responsive.fxempire.com/v7/_fxcrypto_/crypto/crypto-logos/eth.png', 'https://99designs-blog.imgix.net/blog/wp-content/uploads/2021/05/merlin_184196631_939fb22d-b909-4205-99d9-b464fb961d32-superJumbo.jpeg?auto=format&q=60&fit=max&w=930', 7262, 9710, true, null),
