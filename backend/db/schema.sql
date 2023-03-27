@@ -68,19 +68,6 @@ DROP INDEX IF EXISTS tags_currency_id;
 -- SELECT * FROM tags WHERE currency_id = $1;
 CREATE INDEX tags_currency_id ON tags(currency_id);
 
-DROP TABLE IF EXISTS reviews;
-
-CREATE TABLE reviews (
-  rid SERIAL PRIMARY KEY,
-  reviewer VARCHAR(255),
-  title VARCHAR(255) NOT NULL,
-  content TEXT,
-  rating NUMERIC,
-  CHECK (rating >= 0 AND rating <= 5),
-  review_date DATE,
-  review_cid INTEGER REFERENCES currencies(cid) ON DELETE CASCADE
-);
-
 DROP TABLE IF EXISTS nfts;
 
 CREATE TABLE nfts(

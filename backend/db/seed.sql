@@ -182,11 +182,6 @@ INSERT INTO tags (currency_id, tag) VALUES
 (19, 'blockchain-capital-portfolio'),
 (19, 'defiance-capital-portfolio');
 
-INSERT INTO reviews (reviewer, title, content, rating, review_date, review_cid) VALUES
-('anonomyousHippo', 'Excellent Investment!', 'The coin is expected to make significant gains in the long term, making it a good investment.', 5, '2023-03-14', 13),
-('anonomyousWalrus', 'Long term gains', 'I believe Bitcoin will gain value over the long term because the supply is fixed, unlike the supplies of fiat currencies such as the U.S. dollar or the Japanese yen.', 2, '2023-03-13', 1),
-('anonomyousGiraffe', 'The next global currency', 'If Bitcoin is being extensively used as digital cash, I believe it has the potential to become the first truly global currency.', 2, '2023-03-15', 1);
-
 INSERT INTO nfts (item_name, creator, price, currency, currency_logo, url, rarity_rank_no, rarity_total, availability, customer_id) VALUES
 ('Lofi Lofts #2575', 'LofiLofts', 279.99, 'ETH', 'https://responsive.fxempire.com/v7/_fxcrypto_/crypto/crypto-logos/eth.png', 'https://img.seadn.io/files/359ac32dac8de0225f0159b3d7284dc5.png?fit=max&w=1000', 7262, 9710, false, 3),
 ('Mad Rabbits Riot Club', 'Mad Rabbits', 279.99, 'ETH', 'https://responsive.fxempire.com/v7/_fxcrypto_/crypto/crypto-logos/eth.png', 'https://i.pinimg.com/736x/10/d2/31/10d2313d6f321909c93b61c332371d0a.jpg', 7262, 9710, false, null),
