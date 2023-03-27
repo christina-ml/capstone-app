@@ -34,7 +34,6 @@ const getAllCurrenciesWithTags = async () => {
       // add tags to `currency`
       currency.tags = tags;
     }
-  
     // return results
     return currencies;
 };
@@ -114,7 +113,6 @@ const getAllCurrenciesByUserIdWithTags = async (currency_uid) => {
             // add tags to `currency`
             currency.tags = tags;
         }
-
         return allCurrenciesWithTags;
     } catch (error){
         return error;
