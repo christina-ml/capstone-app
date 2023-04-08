@@ -1,3 +1,26 @@
+## 3-19-23 Postgres is a relational database
+Because Postgres is a relational database, the database cannot use an ARRAY[] data type in PostgreSQL.
+
+The `currencies` table has this:
+```
+tags TEXT []
+```
+which is wrong. You should not do this in a relational database such as PostgreSQL.
+
+Instead, do this:
+Eliminate the array data type in the schema, and update everything.
+1. Create New table: `tags`
+2. Update `schema.sql`
+3. Update currencies table seed data, add tags table seed data in `seed.sql`
+4. Create/Update queries
+5. Create/Update controllers
+6. Test that it works, test all endpoints for getting correct results.
+7. Test all queries, that are using `?include=tags`
+
+To Do:
+This breaks anywhere "tags" are used on the frontend. Will need to re-connect anywhere "tags" are used on the frontend.
+
+
 ## Todo 2-23-23
 Watch Jordan's video (end of Nov 21st class)
 Jordan's code was added with Jordan's commit #03fe191 on html-exercises-backend repo.
@@ -623,6 +646,9 @@ Our backend database using [Postgres](https://www.postgresql.org/) has three tab
 [Random US Cities](https://www.randomlists.com/random-us-cities)
 
 Tooltip text: [HTML title Attribute](https://www.w3schools.com/tags/att_title.asp)
+
+<!-- Information on getting a current date in JavaScript from JavaScript's "date" methods https://www.freecodecamp.org/news/javascript-get-current-date-todays-date-in-js/#:~:text=In%20JavaScript%2C%20we%20can%20easily,%2C%20time%2C%20and%20time%20zone. -->
+
 
 <!-- svg image used for DesktopColoring (svg with background) -->
 <!-- https://www.iconpacks.net/free-icon/laptop-coin-2469.html -->

@@ -55,14 +55,20 @@ CREATE TABLE currencies (
   currency_uid INTEGER REFERENCES users(uid) ON DELETE CASCADE
 );
 
+DROP TABLE IF EXISTS tags;
+
 CREATE TABLE tags (
   tid SERIAL PRIMARY KEY,
   currency_id INTEGER REFERENCES currencies(cid) ON DELETE CASCADE,
   tag TEXT
 );
 
+DROP INDEX IF EXISTS tags_currency_id;
+
 -- SELECT * FROM tags WHERE currency_id = $1;
 CREATE INDEX tags_currency_id ON tags(currency_id);
+
+DROP TABLE IF EXISTS nfts;
 
 CREATE TABLE nfts (
   nid SERIAL PRIMARY KEY,
