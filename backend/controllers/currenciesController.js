@@ -1,8 +1,9 @@
 const express = require("express");
 const currencies = express.Router({ mergeParams: true });
 const {
-    getAllCurrenciesById,
-    getOneCurrency,
+    getAllCurrenciesByUserId,
+    getAllCurrenciesByUserIdWithTags,
+    getOneCurrencyById,
     createCurrency,
     updateCurrency,
     deleteCurrency
@@ -10,19 +11,25 @@ const {
 
 // INDEX
 // GET - A user can see all currencies that belong to their profile
-// Example: http://localhost:3333/users/1/currencies, http://localhost:3333/users/2/currencies
+// Example: http://localhost:3333/users/1/currencies
+// Example: http://localhost:3333/users/3/currencies?include=tags
 currencies.get("/", async (req, res)=> {
-    const { userId } = req.params;
+    const { userId, cid } = req.params;
+    const { include } = req.query;
+    // console.log("include:", include)
 
     try {
-        const allCurrencies = await getAllCurrenciesById(userId);
-        if (allCurrencies[0]){
-            res.status(200).json(allCurrencies);
+        if (include === 'tags'){
+            // embed the tags
+            const allCurrencies = await getAllCurrenciesByUserIdWithTags(userId, cid);
+            return res.status(200).json(allCurrencies);
         } else {
-            res.status(500).json({ error: "Error: there are no currencies for this userID" });
+            // get all currencies without tags included
+            const allCurrencies = await getAllCurrenciesByUserId(userId);
+            return res.status(200).json(allCurrencies);
         }
     } catch (err) {
-        console.log(err);
+        res.status(500).json(`Error: ${err.message}`);
     }
 })
 
@@ -32,7 +39,7 @@ currencies.get("/", async (req, res)=> {
 currencies.get("/:cid", async(req, res) => {
     const { cid } = req.params;
     try{
-        const oneCurrency = await getOneCurrency(cid);
+        const oneCurrency = await getOneCurrencyById(cid);
         if(oneCurrency.cid){
             res.status(200).json(oneCurrency);
         } else {
