@@ -9,10 +9,12 @@
   }
 
   &__newsletter {
-    background-color: $logo-blue;
+    background-color: none;
     display: grid;
-    grid-template-columns: 2fr 3fr 1fr;
+    grid-template-columns: 1fr 3fr 1fr;
     grid-template-areas: "cryptotalk newsletter";
+    justify-items: center;
+    align-items: center;
 
     &__image {
       grid-area: cryptotalk;
@@ -45,12 +47,14 @@
 // MOBILE styling
 @media only screen and (max-width: $mobile){
   .newsletterContainer {
+    
     display: grid;
     grid-template-areas:
     "newsletterLogo"
     "newsletterSignUp";
 
     &__image {
+      width: 100vw;
       background-color: $logo-blue;
       grid-area: newsletterLogo;
       display: inline-block;
@@ -62,8 +66,7 @@
     }
   
     &__newsletter {  
-      grid-area: newsletterSignUp;
-      grid-template-columns: 1fr;
+      width: 100vw;
 
       &__image {
         display: none; // disable desktop logo

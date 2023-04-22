@@ -1,5 +1,6 @@
 // import colors from designUtils
 @import '../../designUtils/colors';
+@import '../../designUtils/media';
 
 .Signup {
     // display: inline-block;
@@ -47,6 +48,55 @@
         &:hover {
             background-color: $logo-blue-light;
             color: $white;
+        }
+    }
+}
+
+// MOBILE styling
+@media only screen and (max-width: $mobile){
+    .Signup {
+        margin: 0 auto;
+        width: 80vw;
+        display: inline-block;
+        border: 1px solid $white;
+        border-radius: 8px;
+
+        .inputFields {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+    
+            input {
+                // text-align: center;
+                // border-radius: 8px;
+                // padding: 10px;
+                // margin: 4px;
+            }
+    
+            .firstName {
+                // grid-area: firstName;
+            }
+            .lastName {
+                // grid-area: lastName;
+            }
+            .email {
+                // grid-area: email;
+            }
+        }
+    
+        button {
+            // cursor: pointer;
+            // display: block;
+            // margin: 5px auto;
+            // text-align: center;
+            // border-radius: 8px;
+            // border: none;
+            // padding: 10px;
+            
+            &:hover {
+                // background-color: $logo-blue-light;
+                // color: $white;
+            }
         }
     }
 }
