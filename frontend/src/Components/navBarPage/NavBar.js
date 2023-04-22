@@ -110,28 +110,31 @@ const NavBar = ({darkModeButton, setOpenLoginModal, loggedIn, setLoggedIn}) => {
                 </div>
               )
             })}
-            {loggedIn && 
-              <div>
-                <Button 
-                  variant="contained"
-                  onClick={logOut}
-                >
-                  Log Out
-                </Button>
+            <div className="navbar__menuItemData__loginAndTheme">
+              {loggedIn && 
+                <div className="navbar__menuItemData__loginAndTheme__loginLogout">
+                  <Button 
+                    variant="text"
+                    onClick={logOut}
+                  >
+                    Log Out
+                  </Button>
+                </div>
+              }
+              {!loggedIn && 
+                <div className="navbar__menuItemData__loginAndTheme__loginLogout">
+                  <Button 
+                    variant="text"
+                    onClick={() => setOpenLoginModal(true)}
+                  >
+                    Log In
+                  </Button>
+                </div>
+              }
+              <div className="navbar__menuItemData__loginAndTheme__themeButton">
+                {darkModeButton}
               </div>
-            }
-            {!loggedIn && 
-              <div>
-                <Button 
-                  variant="contained"
-                  onClick={() => setOpenLoginModal(true)}
-                >
-                  Log In
-                </Button>
-              </div>
-            }
-            
-            {darkModeButton}
+            </div>
         </div>
       </div>
     </div>
