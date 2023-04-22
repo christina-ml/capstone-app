@@ -47,7 +47,7 @@
         font-size: 33px;
         position: absolute;
         transform: scale(1, 1.2);
-        width: 45%;
+        max-width: 45%;
       }
       &__subHeaderText {
         color: $white;
@@ -57,7 +57,7 @@
         font-size: 20px;
         position: absolute;
         transform: scale(1, 1);
-        width: 35%;
+        max-width: 35%;
       }
     }
 
@@ -93,7 +93,7 @@
           text-align: bottom;
           position: absolute;
           transform: scale(1, 1.2);
-          width: 30%;
+          max-width: 30%;
         }
       }
     }
@@ -117,11 +117,11 @@
           &__headerText {
             margin: -90px 0px 0px 20px;
             font-size: 25px;
-            width: 80%;
+            max-width: 80%;
           &__subHeaderText {
             margin: -50px 0px 0px 20px;
             font-size: 14px;
-            width: 40%;
+            max-width: 40%;
           }
         }
       }
@@ -131,7 +131,7 @@
             &__title {
               margin: -40px 0px 0px 10px;
               font-size: 12px;
-              width: 30%;
+              max-width: 30%;
             }
           }
         }
@@ -160,7 +160,7 @@
           &__subHeaderText {
             margin: -50px 0px 0px 20px;
             font-size: 14px;
-            width: 80%;
+            max-width: 80%;
           }
         }
 
@@ -168,8 +168,8 @@
           &__boxes {
             &__title {
               margin: -40px 0px 0px 20px;
-              font-size: 12px;
-              width: 80%;
+              font-size: 14px;
+              max-width: 80%;
             }
           }
         }
