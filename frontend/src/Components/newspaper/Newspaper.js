@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
+import Cookies from "js-cookie";
 
 import "./Newspaper.scss";
   
@@ -17,23 +18,26 @@ const Newspaper = () => {
   // TODO: build our route on the backend
   let navigate = useNavigate();
 
+  // call to our backend
+  const requestOptions = {
+    // grab our jwt token from localStorage
+    headers: {'Authorization': `Bearer ${localStorage.getItem('accessToken')}`}
+  }
+
   // for login-protected route
   useEffect(() => {
-    // call to our backend
-    const requestOptions = {
-      // grab our jwt token from localStorage
-      headers: {'Authorization': `Bearer ${localStorage.getItem('accessToken')}`}
-    }
-
-    console.log("fetch in newspaper.js:",  `${API}/users/authenticate`)
+    // console.log("fetch in newspaper.js:",  `${API}/users/authenticate`)
     fetch(`${API}/users/authenticate`, requestOptions)
       .then(response => response.json())
       .then(data => {
-        if (data.error){
+        // check if accessToken exists in cookies
+        if (Cookies.get('accessToken')){
+          alert(`youre logged in`);
+        }
+         else {
+          alert(`You must be logged in to view this page.`);
           // back to the homepage
           navigate('/');
-        } else {
-          alert(`youre logged in`);
         }
       }).catch(error => {
         console.log(error);
