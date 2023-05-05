@@ -1,0 +1,198 @@
+.happyTiger {
+    position: relative;
+
+    &__tongue {
+        visibility: hidden;
+    }
+
+    &:hover {
+        .happyTiger {
+            &__tongue {
+                visibility: visible;
+                transition: width 0.5s, height 0.5s, background-color 0.5s;
+                position: absolute;
+                width: 20px;
+                height: 30px;
+                background: pink;
+                border-radius: 10px 10px 40px 40px;
+                top: 120px;
+                left: 75px;
+                &__tongueLine {
+                    position: absolute;
+                    width: 2px;
+                    height: 20px;
+                    background: #FFFFFF;
+                    border-radius: 20px 20px 50px 50px;
+                    top: 0px;
+                    left: 9px;
+                }
+            }
+        }
+    }
+
+    &__left-ear {
+      position: absolute;
+       width: 40px;
+      height: 40px;
+      background: #1A4341;
+      border: 10px solid rgb(223, 133, 14);;
+      border-radius: 50%;
+    }
+    &__right-ear {
+      position: absolute;
+       width: 40px;
+      height: 40px;
+      background: #1A4341;
+      border: 10px solid rgb(223, 133, 14);;
+      border-radius: 50%;
+      left: 110px;
+    }
+    &__head {
+      position: absolute;
+       width: 150px;
+      height: 150px;
+      background: rgb(223, 133, 14);
+      border-radius: 80px 80px 65px 65px;
+      left: 10px;
+      top: 10px;
+    }
+    &__hair-mask {
+      clip-path: ellipse(45px 25px at 75px 25px);
+      position: absolute;
+       width: 150px;
+      height: 150px;
+      background: rgb(223, 133, 14);;
+      border-radius: 80px 80px 65px 65px;
+      left: 10px;
+      top: 10px; 
+      &__hair {
+        transform: rotate(45deg);
+          position: absolute;
+        width: 31px;
+        height: 31px;
+        background: #1A4341;
+        left: 60px;
+        top: -12px;
+      }
+    }
+    &__left-eye {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: #1A4341;
+        border-radius: 50%;
+        top: 70px;
+        left: 35px;
+    }
+    &__right-eye {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: #1A4341;
+        border-radius: 50%;
+        top: 70px;
+        left: 115px;
+    }
+    &__mouth {
+        position: absolute;
+        width: 100px;
+        height: 40px;
+        background: #FFFFFF;
+        border-radius: 20px 20px 50px 50px;
+        top: 105px;
+        left: 35px;
+    }
+    &__smile-left {
+        position: absolute;
+        width: 40px;
+        height: 20px;
+        background: #1A4341;
+        border-radius: 0px 0px 50px 50px;
+        top: 115px;
+        left: 50px;
+    }  
+    &__smile-left-inner {
+        position: absolute;
+        width: 20px;
+        height: 10px;
+        background: #FFFFFF;
+        border-radius: 0px 0px 50px 50px;
+        top: 115px;
+        left: 60px;
+    }
+    &__smile-right {
+        position: absolute;
+        width: 40px;
+        height: 20px;
+        background: #1A4341;
+        border-radius: 0px 0px 50px 50px;
+        top: 115px;
+        left: 80px;
+    }  
+    &__smile-right-inner {
+        position: absolute;
+        width: 20px;
+        height: 10px;
+        background: #FFFFFF;
+        border-radius: 0px 0px 50px 50px;
+        top: 115px;
+        left: 90px;
+    }
+    &__nose {
+        position: absolute;
+        width: 10px;
+        height: 30px;
+        background: #1A4341;
+        top: 90px;
+        left: 80px;
+        &__noseTop {
+            position: absolute;
+            width: 30px;
+            height: 10px;
+            background: #1A4341;
+            border-radius: 20px 20px 50px 50px;
+            top: 0px;
+            left: -10px;
+        }
+    }
+    &__whiskerTopLeft {
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        border-top-left-radius: 20px;
+        background: #1A4341;
+        top: 110px;
+        left: 0px;
+        transform: rotate(-10deg);
+    }
+    &__whiskerBottomLeft {
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        border-top-left-radius: 20px;
+        background: #1A4341;
+        top: 120px;
+        left: 0px;
+        transform: rotate(-30deg);
+    }
+    &__whiskerTopRight {
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        border-top-right-radius: 20px;
+        background: #1A4341;
+        top: 112px;
+        left: 125px;
+        transform: rotate(10deg);
+    }
+    &__whiskerBottomRight {
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        border-top-right-radius: 10px;
+        background: #1A4341;
+        top: 122px;
+        left: 125px;
+        transform: rotate(30deg);
+    } 
+}

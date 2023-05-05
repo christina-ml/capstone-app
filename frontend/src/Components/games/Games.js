@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './Games.scss';
+import HappyTiger from './HappyTiger/HappyTiger';
+
 
 // screenshot images of games
 import colorPreview from './imagePreviews/colorPreview.png';
@@ -30,6 +32,9 @@ const Games = () => {
                 </li>
             </Link>
         </ul>
+        <div className="games__happyTigerContainer">
+            <HappyTiger />
+        </div>
     </div>
   )
 }
