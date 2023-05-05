@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 import './Games.scss';
 import HappyTiger from './HappyTiger/HappyTiger';
@@ -10,6 +10,23 @@ import colorPreview from './imagePreviews/colorPreview.png';
 import matchPreview from './imagePreviews/matchPreview.png';
 
 const Games = () => {
+    const [randomGameNum, setRandomGameNum] = useState(null);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        // set a random game number when the page loads
+        setRandomGameNum(Math.ceil(Math.random() * 2))
+    }, []);
+
+    const handleRandomGameClick = (e) => {
+        e.preventDefault();
+        if (randomGameNum === 1){
+            navigate('/games/coloring');
+        }
+        if (randomGameNum === 2){
+            navigate('/games/match');
+        }
+    }
 
   return (
     <div className="games">
@@ -32,7 +49,10 @@ const Games = () => {
                 </li>
             </Link>
         </ul>
-        <div className="games__happyTigerContainer">
+        <div 
+            className="games__happyTigerButton"
+            onClick={handleRandomGameClick}
+        >
             <HappyTiger />
         </div>
     </div>
