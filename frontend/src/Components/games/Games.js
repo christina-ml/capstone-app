@@ -49,11 +49,15 @@ const Games = () => {
                 </li>
             </Link>
         </ul>
-        <div 
-            className="games__happyTigerButton"
-            onClick={handleRandomGameClick}
-        >
-            <HappyTiger />
+        <div className="games__cryptoCat">
+            <div 
+                className="games__cryptoCat__happyTigerButton"
+                onClick={handleRandomGameClick}
+            >
+                <HappyTiger />
+            </div>
+            <div className="games__cryptoCat__greet">Meet CryptoCat</div>
+            <div className="games__cryptoCat__info">Click on CryptoCat to choose a game for you!</div>
         </div>
     </div>
   )
