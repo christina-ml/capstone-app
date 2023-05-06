@@ -12,6 +12,8 @@ const HappyTiger = () => {
         </div>
         <div className="happyTiger__left-eye"></div>
         <div className="happyTiger__right-eye"></div>
+        <div className="happyTiger__left-eye-happy"></div>
+        <div className="happyTiger__right-eye-happy"></div>
         <div className="happyTiger__mouth"></div>
         <div className="happyTiger__tongue">
             <div className="happyTiger__tongue__tongueLine"></div>
