@@ -2,9 +2,52 @@
 @import '../../designUtils/colors';
 @import '../../designUtils/media';
 
+#overlaytrue {
+  position: fixed;
+  left: calc((100% - 1200px) / 2); // center news articles underneath overlay
+  height: 100%;
+  width: 100%;
+  background: grey;
+}
+#overlayfalse {
+  position: none;
+}
+
 .newspaper {
   max-width: 1200px;
   margin: 0 auto;
+
+  // when no overlay
+  &__overlayfalse {
+    display: none;
+  }
+
+  // when has overlay
+  &__overlaytrue {
+    position: fixed; /* Sit on top of the page content */
+    width: 100vw; /* Full width (cover the whole page) */
+    height: calc(100% - 70px); /* Full height (cover the whole page) without navbar*/
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(0deg, black, black 50%, transparent);
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 1; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: default; /* Default cursor */
+
+    &__needLoggedIn {
+      max-width: 1200px;
+      border: 1px solid black;
+      background: white;
+      width: 80%;
+      height:fit-content;
+      margin: 50px auto auto auto;
+      text-align: center;
+      padding: 30px 0px;
+      border: 8px double black;
+    }
+  }
 
   &__header {
     text-align: center;
@@ -23,6 +66,11 @@
       h2 {
         text-transform: uppercase;
         text-align: center;
+        cursor: pointer;
+        
+        &:hover {
+          text-decoration: underline;
+        }
       }
       
       &__photo{

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import Cookies from "js-cookie";
 
@@ -13,6 +13,8 @@ import ThematicCard from "./ThematicCard";
 const API = process.env.REACT_APP_API_URL;
 
 const Newspaper = () => {
+  // overlay for if logged in or not
+  const [overlay, setOverlay] = useState('Show');
 
   // how we can change our routes
   // TODO: build our route on the backend
@@ -32,12 +34,12 @@ const Newspaper = () => {
       .then(data => {
         // check if accessToken exists in cookies
         if (Cookies.get('accessToken')){
-          alert(`youre logged in`);
+          setOverlay(false); // remove overlay if logged in
         }
          else {
-          alert(`You must be logged in to view this page.`);
+          setOverlay(true); // show overlay if not logged in
           // back to the homepage
-          navigate('/');
+          // navigate('/');
         }
       }).catch(error => {
         console.log(error);
@@ -48,7 +50,18 @@ const Newspaper = () => {
 
 
   return (
-    <div className="newspaper">
+    <div className="newspaper" id={`overlay${overlay}`}>
+      <div className={`newspaper__overlay${overlay}`}>
+        <div className={`newspaper__overlay${overlay}__needLoggedIn`}>
+          <div>
+            You must be logged in to view this page.
+          </div>
+          <h3>Log In or Create a free account.</h3>
+          <div>
+            Gain access to free articles, news, and special offers.
+          </div>
+        </div>
+      </div>
       {/* <!-- header --> */}
       <div className="newspaper__header">
         <h1>CryptoTalk Newsletter</h1>
@@ -135,8 +148,6 @@ const Newspaper = () => {
             <NewsSidebar />
             <ThematicCard />
           </div>
-          
-
         </div>
       </body>
     </div>

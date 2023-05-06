@@ -15,35 +15,35 @@ const NewsSidebar = () => {
             <div className="article">
                 <div className="article__number">1</div>
                 <div className="article__title">
-                Bitcoin Mining Major Riot Blockchain Misses Analyst Estimates for Q3 Earnings
+                    Bitcoin Mining Major Riot Blockchain Misses Analyst Estimates for Q3 Earnings
                 </div>
             </div>
             
             <div className="article">
                 <div className="article__number">2</div>
                 <div className="article__title">
-                First Mover Asia: A Good Week for Exchange Tokens, Except FTT; Solana Continues Falling
+                    First Mover Asia: A Good Week for Exchange Tokens, Except FTT; Solana Continues Falling
                 </div>
             </div>
             
             <div className="article">
                 <div className="article__number">3</div>
                 <div className="article__title">
-                Litecoin Mining Difficulty Is Hitting New Highs, Foundation Says
+                    Litecoin Mining Difficulty Is Hitting New Highs, Foundation Says
                 </div>
             </div>
             
             <div className="article">
                 <div className="article__number">4</div>
                 <div className="article__title">
-                Ethereum Co-Founder Di Iorio Unveils New Project to Bring Blockchain Computers to a Wider Audience
+                    Ethereum Co-Founder Di Iorio Unveils New Project to Bring Blockchain Computers to a Wider Audience
                 </div>
             </div>
             
             <div className="article">
                 <div className="article__number">5</div>
                 <div className="article__title">
-                Bernstein Says Polygon Blockchain Is the Web3 King
+                    Bernstein Says Polygon Blockchain Is the Web3 King
                 </div>
             </div>
             </div>
