@@ -17,7 +17,11 @@
   },
   {
     "text": "Shop",
-    "href": "/shop"
+    "href": "/shop",
+    "submenu": [{
+      "submenuText": "Cart",
+      "submenuHref": "/cart"
+    }]
   },
   {
     "text": "Users",
