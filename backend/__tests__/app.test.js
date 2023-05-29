@@ -1,5 +1,4 @@
 const app = require('../app');
-
 const supertest = require('supertest');
 
 describe('returns a 404 page if route does not exist', () => {
@@ -10,7 +9,7 @@ describe('returns a 404 page if route does not exist', () => {
         expect(response.text).toEqual("{\"error\":\"404 Page not found.\"}");
       });
   })
-})
+});
 
 describe('returns a Welcome message at root route', () => {
   it("GET /", async () => {
