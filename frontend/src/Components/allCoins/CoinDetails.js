@@ -19,14 +19,14 @@ const CoinDetails = () => {
     let { cid } = useParams();
 
     useEffect(() => {
-        axios.get(`${API}/coins/${cid}`)
+        axios.get(`${API}/coins/${cid}?include=tags`)
             .then((res) => {
-                setAllTags(res.data.tags)
                 setOneCoin(res.data);
+                setAllTags(res.data.tags)
             }).catch((err) => {
                 console.log(err);
             })
-    }, [API, cid])
+    }, [cid])
 
   return (
     <div className="coinDetails">
@@ -117,10 +117,10 @@ const CoinDetails = () => {
                         Tags:
                     </div>
                     <div className="coinDetails__coinCard__details__sectionFour__tags">
-                        {allTags.map((tag, index) => {
+                        {allTags.map((tags, index) => {
                             return (
-                                <span className="oneTag" key={"tagkey" + index} title={tag}>
-                                    {tag}
+                                <span className="oneTag" key={"tagkey" + index} title={tags.tag}>
+                                    {tags.tag}
                                 </span>
                             )
                         })}

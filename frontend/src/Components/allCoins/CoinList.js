@@ -14,14 +14,14 @@ const CoinList = () => {
   
   // get all coins that exist in the database
   useEffect(() => {
-    axios.get(API + "/coins")
+    axios.get(`${API}/coins`)
         .then((res) => {
             console.log("res.data:", res.data)
             setAllCoins(res.data);
         }).catch((err) => {
             console.log(err);
         })
-  }, [API]);
+  }, []);
 
   // make `allCoins` sorted alphabetically
   const sortedCoinsAsc = allCoins.sort((a,b) => {
@@ -30,7 +30,7 @@ const CoinList = () => {
 
   return (
     <div className="coinList">
-      <h2>All Coins</h2>
+      <h2>All Cryptocurrencies</h2>
       {allCoins.length === 0 ? 
         <div className="coinList__missingCollection">
           <div className="coinList__missingCollection__spinner">
