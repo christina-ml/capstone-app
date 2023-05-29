@@ -6,4 +6,18 @@
         text-align: center;
     }
     padding: 20px 0px;
+
+    &__shopHeader {
+        text-align: center;
+        padding-bottom: 10px;
+
+        &__cartButton {
+            border: none;
+            font-size: 18px;
+            border-radius: 15px;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+    }
 }
