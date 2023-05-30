@@ -8,24 +8,50 @@ import './Currencies.scss';
 const API = process.env.REACT_APP_API_URL;
 
 const Currencies = () => {
-    const [currencies, setCurrencies] = useState([]);
-    let { uid } = useParams();
+    const [allCurrencies, setAllCurrencies] = useState([]);
+    const { uid } = useParams();
 
     useEffect(() => {
+        // http://localhost:3333/users/2/currencies
         axios.get(`${API}/users/${uid}/currencies`)
             .then((res) => {
-                setCurrencies(res.data);
+                setAllCurrencies(res.data);
             }).catch((err) => {
                 console.log(err);
             })
     }, [API, uid]);
 
+    // console.log("allCurrencies:", allCurrencies);
+
+    // ======== TAGS =======
+    const [oneUserWithTags, setOneUserWithTags] = useState([]);
+    const [allTags, setAllTags] = useState([]);
+    let { cid } = useParams();
+
+    // get one user's currencies' currency details
+    useEffect(() => {
+        axios.get(`${API}/users/${uid}/currencies?include=tags`)
+            .then((res) => {
+                setOneUserWithTags(res.data);
+                setAllTags(res.data.tags)
+            }).catch((err) => {
+                console.log(err);
+            })
+    }, [API, cid])
+
+    // console.log("oneUserWithTags:", oneUserWithTags)
+    // console.log("allTags:", allTags)
+    // ======== TAGS =======
 
     return (
         <div className="currencies">
-            {currencies.map((currency, index) => {
+            {oneUserWithTags.map((currency, index) => {
                 return (
-                    <Currency currency={currency} key={"currency" + index} />
+                    <Currency currency={currency} 
+                        key={"currency" + index} 
+                        // oneUserWithTags={oneUserWithTags}
+                        allTags={allTags}
+                    />
                 )
             })}
         </div>

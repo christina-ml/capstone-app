@@ -7,8 +7,22 @@ import ChartJsCoin from '../allCoins/chartjs/ChartJsCoin';
 
 // react icons
 import { GoTriangleUp, GoTriangleDown } from 'react-icons/go';
+import { useParams } from 'react-router-dom';
 
 const Currency = ({ currency }) => {
+    // console.log("currency:", currency)
+    const { tags } = useParams;
+    // console.log("tags:", currency.tags)
+
+    // use Params to have access to nested array of objects with `one user by Id`'s tags
+    const tagsForCurrencyOfOneUserByUserId = (currencyTags) => {
+        return currencyTags.map((oneTag) => {
+            return (
+                <div>{oneTag.tag}</div>
+            )
+        })
+    } 
+
   return (
     <div className="currencyDetails">
         <div className="currencyDetails__coinCard">
@@ -97,7 +111,7 @@ const Currency = ({ currency }) => {
                         Tags:
                     </div>
                     <div className="currencyDetails__coinCard__details__sectionFour__tags">
-                        {currency.tags}
+                        {tagsForCurrencyOfOneUserByUserId(currency.tags)}
                     </div>
                 </div>
 
