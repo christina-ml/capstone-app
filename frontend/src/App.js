@@ -37,6 +37,7 @@ import UserNewForm from "./Components/users/UserNewForm";
 import UserEditForm from "./Components/users/UserEditForm";
 import CoinDetails from "./Components/allCoins/CoinDetails";
 import Coin from "./Components/allCoins/Coin";
+import Currencies from "./Components/currencies/Currencies";
 
 import Shop from "./Components/shop/Shop";
 import Cart from "./Components/shop/Cart";
@@ -115,6 +116,7 @@ function App() {
           <Route path="/create" element={<UserNewForm />} />
           <Route path="/users/:uid/edit" element={<UserEditForm />} />
           <Route exact path="/users/:uid" element={<UserDetails />} />
+          <Route exact path="/users/:uid/currencies" element={<Currencies />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/learn" element={<Learn />} />
