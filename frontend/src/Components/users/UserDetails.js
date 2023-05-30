@@ -39,55 +39,60 @@ const UserDetails = () => {
 
     return (
     <div className="userDetails">
-        <div className="userDetails__editButton">
-        <Link to={`/users/${user.uid}/edit`}>
-            <button>Edit</button>
-        </Link>
-        </div>
-        <div className="userDetails__details">
-            <div className="userDetails__details__name">
-                <div>{(firstname || lastname) ? `${firstname} ${lastname}` : `${username}`}</div>
-            </div>
-            <div className="userDetails__details__bio">
-                <div className="userDetails__details__bio__profilePhoto">
-                    <img src={photo} alt="profile avatar" />
+        <div className="userDetails__profile">
+            <div className="userDetails__profile__header">
+                <div className="userDetails__profile__header__name">
+                    {(firstname || lastname) ? `${firstname} ${lastname}` : `${username}`}
                 </div>
-                <div>
-                    {firstname} {lastname}
-                    {user_admin ? <span> &nbsp; <IoSettingsSharp /> Admin</span> : <span></span>}
-                </div>
-                <div>
-                    {username}
-                </div>
-                <div className="userDetails__details__bio__hideShowPassword">
-                     
-                    { showPassword ? 
-                        <span> {user_password} </span> :
-                        <span> ********** </span>
-                    }
-                    { showPassword ? 
-                        <button onClick={handleShowPassword}>hide password</button> :
-                        <button onClick={handleShowPassword}>show password</button>
-                    }
-                </div>
-                <div>
-                    CryptoTalk ID #: {user.uid}
-                </div>
-                <div>
-                    <MdOutlineEmail /> {user_email}
-                </div>
-                <div>
-                    <IoHomeOutline /> {user_city || ''}{(user_city && user_state) ? ', ' : '' }{user_state || ', USA'}
-                </div>
-                <div>
-                    Interests: {user_interests || 'Nothing yet'}
+                <div className="userDetails__profile__header__editAndAdd">
+                    <Link to={`/users/${user.uid}/edit`}>
+                        <button>Edit</button>
+                    </Link>
+                    <button>Add a coin</button>
                 </div>
             </div>
+            <div className="userDetails__profile__bio">
+                <div className="userDetails__profile__bio__leftSide">
+                    <div className="userDetails__profile__bio__leftSide__profilePhoto">
+                        <img src={photo} alt="profile avatar" />
+                    </div>
+                    <div>
+                        {firstname} {lastname}
+                        {user_admin ? <span> &nbsp; <IoSettingsSharp /> Admin</span> : <span></span>}
+                    </div>
+                    <div>
+                        {username}
+                    </div>
+                </div>
+                <div className="userDetails__profile__bio__rightSide">
+                    <div>
+                        CryptoTalk ID #: {user.uid}
+                    </div>
+                    <div className="userDetails__profile__bio__rightSide__hideShowPassword">
+                        { showPassword ? 
+                            <span> {user_password} </span> :
+                            <span> ********** </span>
+                        }
+                        { showPassword ? 
+                            <button onClick={handleShowPassword}>hide password</button> :
+                            <button onClick={handleShowPassword}>show password</button>
+                        }
+                    </div>
+                    <div>
+                        <MdOutlineEmail /> {user_email}
+                    </div>
+                    <div>
+                        <IoHomeOutline /> {user_city || ''}{(user_city && user_state) ? ', ' : '' }{user_state || ', USA'}
+                    </div>
+                    <div>
+                        Interests: {user_interests || 'Nothing yet'}
+                    </div>
+                </div>
+            </div>
         </div>
-        <div className="userDetails__addNewCoin">
-            <Button buttonText='Add a Coin' />
+        <div className="userDetails__userCurrencies">
+            <Currencies />
         </div>
-        <Currencies />
     </div>
     )
 }

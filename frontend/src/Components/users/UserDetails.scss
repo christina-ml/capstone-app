@@ -2,52 +2,104 @@
 @import '../../designUtils/colors';
 
 .userDetails {
+    // display: grid;
+    // grid-template-columns: 1fr 1fr;
     padding: 20px;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
+
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    column-count: 2;
+    break-inside: avoid;
     
-    &__editButton {
-        float: right;
-        margin: 15px 20px;
-        button {
-            cursor: pointer;
-            padding: 5px;
-            width: 80px;
-            border: none;
-            border-radius: 5px;
-            color: $white;
-            background: $medium-gray;
-        }
-    }
+    &__profile {
+        // max-width: 50%;
 
-    &__details {
-
-        &__name {
+        &__header {
+            margin: 20px 0px;
+            display: flex;
+            justify-content: space-between;
             background-color: $dark-bluegray;
-            padding: 10px;
-            font-size: 30px;
-            color: white;
-        }
+            
+            &__name {
+                padding: 10px;
+                font-size: 30px;
+                color: white;
+            }
 
+            &__editAndAdd {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+
+                button {
+                    cursor: pointer;
+                    padding: 5px;
+                    width: 80px;
+                    height: fit-content;
+                    border: none;
+                    border-radius: 5px;
+                    color: $white;
+                    background: $medium-gray;
+                    margin: 0px 10px;
+                }
+            }
+        }
+        
         &__bio {
             padding: 5px 20px;
             line-height: 1.5em;
+            display: flex;
+            justify-content: space-between;
 
-            &__profilePhoto {
-                display: inline-block;
-                line-height: 1em;
-                img {
-                    height: 100px;
-                    width: 100px;
-                    border-radius: 50%;
+            &__leftSide {
+                align-self: flex-end;
+
+                &__profilePhoto {
+                    display: flex;
+                    line-height: 1em;
+                    img {
+                        margin: 0 auto;
+                        text-align: center;
+                        height: 100px;
+                        width: 100px;
+                        border-radius: 50%;
+                    }
                 }
             }
 
-            &__hideShowPassword {
-                button {
-                    cursor: pointer;
+            &__rightSide {
+                align-self: flex-end;
+
+                &__hideShowPassword {
+                    max-width: 184px;
+                    word-wrap: break-word;
+                    button {
+                        cursor: pointer;
+                    }
                 }
-            }
+
+            }            
         }
+    }
+
+    &__userCurrencies {
+        // display: inline-block;
+   
+    
+
+        // display: inline-block; /*Display inline and maintain block characteristics.*/
+    // vertical-align: top; /*Makes sure all the divs are correctly aligned.*/
+    // white-space: normal; /*Prevents child elements from inheriting nowrap.*/
+    
+    // width: 100px;
+    // height: 100px;
+    // background-color: red;
+  
+
+    display: inline-block;
     }
 }
