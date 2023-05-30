@@ -24,7 +24,9 @@ const User = ({user}) => {
   return (
     <div className="userCard">
       <div className="userCard__profileImage">
-        <img src={photo} alt="user profile avatar" />
+        <Link to={`/users/${uid}`} >
+          <img src={photo} alt="user profile avatar" />
+        </Link>
       </div>
       <div className="userCard__info">
         <div className="userCard__info__name">
