@@ -7,22 +7,22 @@ import LearnPanelDetails from './LearnPanelDetails';
 
 const Accordion = ({learn}) => {
     // when button is active, sibling panel's style changes from <nothing> to the max height
-    const [active, setActive] = useState(false);
+    const [isActive, setIsActive] = useState(false);
 
     const handleAccordionClick = (e) => {
-        setActive(!active); // toggle
+        setIsActive(!isActive); // toggle
 
         // create variable for scroll height of the panel
         let scrollHeightOfPanel = e.target.nextElementSibling.style.maxHeight = e.target.nextElementSibling.scrollHeight + "px";
 
         // set the style for panel to toggle from <nothing> to the max height
-        if (active === true){
+        if (isActive === true){
             let panel = e.target.nextElementSibling;
             
             if (!panel.style.maxHeight) {
-                panel.style.maxHeight = scrollHeightOfPanel
+                panel.style.maxHeight = scrollHeightOfPanel;
             } else {
-                panel.style.maxHeight = null
+                panel.style.maxHeight = null;
             }
         }
     }
@@ -30,7 +30,12 @@ const Accordion = ({learn}) => {
 
   return (
     <div>
-        <button className={`accordion ${active}`} onClick={handleAccordionClick} >{learn.question}</button>
+        <button 
+            className={"accordion" + (isActive ? "--active" : "")} 
+            onClick={handleAccordionClick}
+        >
+            {learn.question}
+        </button>
         <div className="panel">
             <LearnPanelDetails learn={learn} />
         </div>
