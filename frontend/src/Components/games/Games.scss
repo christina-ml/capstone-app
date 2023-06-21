@@ -94,6 +94,7 @@
 // MOBILE styling
 @media only screen and (max-width: $mobile){
     .games {
+        width: $mobile;
         ul {
             display: flex;
             flex-direction: column;

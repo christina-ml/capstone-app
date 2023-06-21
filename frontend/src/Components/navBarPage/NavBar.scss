@@ -119,67 +119,110 @@
     }
 }
 
-// // MEDIUM SCREEN styling
-// @media only screen and (min-width: $mobile) and (max-width: $mediumScreen){
-//     .navbar {
-//         &__menuItems {
-//             float: none;
-            
-//             ul {
-//                 text-align: left;
-//                 padding: 0px;
-//                 margin: 10px;
-//                 background-color: $logo-blue;
-
-//                 li {
-//                     float: left;
-                    
-//                     a {
-//                         font-size: 16px;
-//                         padding: 3px 2px;
-//                     }           
-//                 }
-//             }
-//         }     
-//     }
-// }
-
-
-// MOBILE styling
-@media only screen and (max-width: $mobile){
+// MEDIUM SCREEN styling
+@media only screen and (min-width: $mobile) and (max-width: $mediumScreen){
     .navbar {
-        // padding: 0;
+        &__menuItemData {
+            display: none;
 
-        // &__menuItems {
-        //     display: none;
+            &__loginAndTheme {
+                display: flex;
+                flex-direction: column;
+                justify-items: center;
+                align-items: center;
+                &>* {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-items: center;
+                }
+            }
 
-        //     &-active {
-        //         display: block;
-        //         position: absolute;
-        //         top: 50px;
-        //         background-color: $background-black;
-        //         width: 100%;
-        //         border-bottom: 1px solid black;
-        //         text-align: center;
+            // when collapsed menu is open
+            &--active {
+                margin: 0 auto;
+                z-index: 10;
+                display: block;
+                position: absolute;
+                top: 70px;
+                background-color: $background-black;
+                text-align: center;
+                color: $white;
 
-        //         ul {
-        //             padding: 0;
-         
-        //             li {
-        //                 display: block;
-        //                 margin: 10px 0;
+                ul {
+                    padding: 0;
+                    
+                    li {
+                        display: block;
 
-        //                 a {
-        //                     background-color: $hover-black;
-        //                     display: inline-block;
-        //                     width: 90%;
-        //                     border-radius: 10px;
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
+                        a {
+                            display: inline-block;
+                            color: $white;
+                            &:visited {
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            &__loginAndTheme {
+                display: flex;
+                width: 95vw;
+                &__loginLogout {
+                    // this button is from Material UI
+                    display: flex;
+                    align-items: center;
+                    justify-items: center;
+                    button {
+                        border-radius: 0px;
+                        height: 20px;
+                        color: $white;
+                        text-transform: capitalize;
+                        font-size: 16px;
+                        padding: 0px;
+                        margin: 0px;
+                        border: none;
+                        width: 80px;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+        
+                &__themeButton {
+                    button {
+                        display: flex;
+                        align-items: center;
+                        justify-items: center;
+                    }
+                }
+            }
+       
+            // collapsed menu - OPEN VIEW, show all menu items with non-hoverable submenu items
+            &__menuItem {
+                width: 90vw;
+                display: flex;
+                flex-direction: column;
+                border: 1px solid white;
+                align-items: center;
+                justify-items: center;
 
+                &__nonHoverSubmenuItem {
+                    // border: 2px solid red;
+                    display: flex;
+                    flex-direction: column;
+
+                    a {
+                        color: $logo-blue;
+                        // border: 2px solid green;
+                    }
+                }
+            }
+        }
+
+        // hamburger menu or X icon
         &__collapsedMenuIcon {
             display: block;
             margin-right: 15px;
@@ -187,6 +230,199 @@
             float: right;
             font-size: 40px;
             color: $text-white;
+            cursor: pointer;
+            
+            // when collapsed menu is open, show icon
+            &--active {
+                display: block;
+                margin-right: 15px;
+                margin-top: 5px;
+                float: right;
+                font-size: 40px;
+                color: $logo-blue-light;
+                cursor: pointer;
+            }            
         }
     }
 }
+
+// MOBILE styling
+@media only screen and (max-width: $mobile){
+    .navbar {
+        margin-top: -50px;
+        width: $mobile;
+
+        &__menuItemData {
+            display: none;
+
+            &__loginAndTheme {
+                display: flex;
+                flex-direction: column;
+                justify-items: center;
+                align-items: center;
+                &>* {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-items: center;
+                }
+            }
+
+            // when collapsed menu is open
+            &--active {
+                margin: 0 auto;
+                z-index: 10;
+                display: block;
+                position: absolute;
+                top: 70px;
+                background-color: $background-black;
+                text-align: center;
+                color: $white;
+                
+                width: $mobile;
+                ul {
+                    padding: 0;
+                    
+                    li {
+                        display: block;
+                        a {
+                            display: inline-block;
+                            color: $white;
+                            &:visited {
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            &__loginAndTheme {
+                display: flex;
+                width: $mobile;
+                &__loginLogout {
+                    // this button is from Material UI
+                    display: flex;
+                    align-items: center;
+                    justify-items: center;
+                    button {
+                        border-radius: 0px;
+                        height: 20px;
+                        color: $white;
+                        text-transform: capitalize;
+                        font-size: 16px;
+                        padding: 0px;
+                        margin: 0px;
+                        border: none;
+                        width: 80px;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+        
+                &__themeButton {
+                    button {
+                        display: flex;
+                        align-items: center;
+                        justify-items: center;
+                    }
+                }
+            }
+       
+            // collapsed menu - OPEN VIEW, show all menu items with non-hoverable submenu items
+            &__menuItem {
+                display: flex;
+                flex-direction: column;
+                border: 1px solid white;
+                align-items: center;
+                justify-items: center;
+                width: $mobile;
+                padding-left: 0px;
+
+                &__nonHoverSubmenuItem {
+                    display: flex;
+                    flex-direction: column;
+
+                    a {
+                        color: $logo-blue;
+                    }
+                }
+            }
+        }
+
+        // hamburger menu or X icon
+        &__collapsedMenuIcon {
+            display: block;
+            margin-right: 15px;
+            margin-top: 5px;
+            float: right;
+            font-size: 40px;
+            color: $text-white;
+            cursor: pointer;
+            
+            // when collapsed menu is open, show icon
+            &--active {
+                display: block;
+                margin-right: 15px;
+                margin-top: 5px;
+                float: right;
+                font-size: 40px;
+                color: $logo-blue-light;
+                cursor: pointer;
+            }            
+        }
+    }
+}
+//     .navbar {
+//         // margin-top: -50px;
+//         height: 50px;
+//         padding: 10px 10px;
+
+        
+//     // display: flex;
+//     // flex-direction: column;
+//     // align-items: center;
+        
+
+//         &__menuItems {
+//             display: none;
+
+//             &-active {
+//                 display: block;
+//                 position: absolute;
+//                 top: 50px;
+//                 background-color: $background-black;
+//                 width: 100%;
+//                 border-bottom: 1px solid black;
+//                 text-align: center;
+
+//                 ul {
+//                     padding: 0;
+         
+//                     li {
+//                         display: block;
+//                         margin: 10px 0;
+
+//                         a {
+//                             background-color: $hover-black;
+//                             display: inline-block;
+//                             width: 90%;
+//                             border-radius: 10px;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+
+//         &__collapsedMenuIcon {
+//             display: block;
+//             margin-right: 15px;
+//             margin-top: 5px;
+//             float: right;
+//             font-size: 40px;
+//             color: $text-white;
+//         }
+//     }
+// }
+  
