@@ -5,7 +5,11 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-
+    
+    a {
+        text-decoration: none;
+    }
+    
     &__card {
         box-shadow: 3px 3px 10px 3px #d4d4d4;
         margin: 5px;
@@ -15,7 +19,6 @@
             color: $black;
             font-weight: 600;
             font-size: 20px;
-            
             display: grid;
             width: 250px;
             height: 350px;
@@ -39,12 +42,14 @@
 
             &__itemName {
                 text-align: left;
+                color: $medium-gray;
             }
 
             &__price {
                 text-align: left;
                 font-size: 20px;
                 padding-top: 10px;
+                color: $medium-gray;
 
                 &__current {
                     color: $medium-gray;
@@ -63,7 +68,6 @@
                     font-weight: 350;
                 }
             }
-        
         }
 
         a {
@@ -106,5 +110,4 @@
             }  
         }
     }
-
 }

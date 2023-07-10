@@ -1,11 +1,11 @@
-// https://tobiasahlin.com/blog/css-trick-animating-link-underlines/
-// ^ For expanding underline on hover for Add to Cart button.
-
 .nftShop {
+    padding: 20px 0px;
+    margin: 0 auto;
+    max-width: 1200px;
+
     h1 {
         text-align: center;
     }
-    padding: 20px 0px;
 
     &__shopHeader {
         text-align: center;
@@ -21,3 +21,6 @@
         }
     }
 }
+
+// https://tobiasahlin.com/blog/css-trick-animating-link-underlines/
+// ^ For expanding underline on hover for Add to Cart button.

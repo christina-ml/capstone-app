@@ -40,10 +40,8 @@ const Shop = () => {
             })
     }, []);
 
-
-    // make `nftData` sorted alphabetically
-    let sortedNftData = nftData.sort((a, b) => {
-        return (a.itemName > b.itemName) ? 1 : -1;
+    const sortedNftDataByNameAsc = nftData.sort((a, b) => {
+        return (a.item_name > b.item_name) ? 1 : -1;
     })
 
     return (
@@ -59,7 +57,7 @@ const Shop = () => {
             
         </div>
         <div>
-            <NftCards sortedNftData={sortedNftData} />
+            <NftCards sortedNftData={sortedNftDataByNameAsc} />
         </div>
     </div>
   )
