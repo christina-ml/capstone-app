@@ -12,7 +12,7 @@ const {
 // get all nfts
 // adding the `authenticateToken` middleware means you need to be signed in with a valid token
 // nfts.get("/", authenticateToken, async (req, res, next)=> {
-nfts.get("/", async (req, res, next)=> {
+nfts.get("/", async (req, res) => {
     try {
         const allNfts = await getAllNfts();
         if (allNfts[0]){
