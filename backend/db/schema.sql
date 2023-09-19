@@ -4,6 +4,7 @@ CREATE DATABASE crypto_dev;
 \c crypto_dev;
 
 DROP TABLE IF EXISTS nfts;
+DROP TABLE IF EXISTS favorites;
 DROP TABLE IF EXISTS currencies;
 DROP TABLE IF EXISTS users;
 
@@ -53,6 +54,12 @@ CREATE TABLE currencies (
   fully_diluted_market_cap DECIMAL,
   tvl DECIMAL,
   currency_uid INTEGER REFERENCES users(uid) ON DELETE CASCADE
+);
+
+CREATE TABLE favorites (
+  fid SERIAL PRIMARY KEY,
+  favorites_uid INTEGER REFERENCES users(uid) ON DELETE CASCADE,
+  favorites_cid INTEGER REFERENCES currencies(cid) ON DELETE CASCADE
 );
 
 DROP TABLE IF EXISTS tags;

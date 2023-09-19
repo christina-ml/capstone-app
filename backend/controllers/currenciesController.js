@@ -14,14 +14,14 @@ const {
 // Example: http://localhost:3333/users/1/currencies
 // Example: http://localhost:3333/users/3/currencies?include=tags
 currencies.get("/", async (req, res)=> {
-    const { userId, cid } = req.params;
+    const { userId } = req.params;
     const { include } = req.query;
     // console.log("include:", include)
 
     try {
         if (include === 'tags'){
             // embed the tags
-            const allCurrencies = await getAllCurrenciesByUserIdWithTags(userId, cid);
+            const allCurrencies = await getAllCurrenciesByUserIdWithTags(userId);
             return res.status(200).json(allCurrencies);
         } else {
             // get all currencies without tags included

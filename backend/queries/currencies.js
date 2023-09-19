@@ -85,11 +85,11 @@ const getOneCurrencyByIdWithTags = async (cid) => {
 // currenciesController.js below:
 // Get all coins by user ID
 // Example: http://localhost:3333/users/1/currencies
-const getAllCurrenciesByUserId = async (currency_uid) => {
+const getAllCurrenciesByUserId = async (userId) => {
     try {
         const allCurrencies = await db.any(
-            "SELECT * FROM currencies WHERE currency_uid=$1", 
-            currency_uid
+            "SELECT * FROM currencies JOIN favorites ON currencies.cid = favorites.favorites_cid WHERE favorites.favorites_uid=$1", 
+            userId
         );
         return allCurrencies;
     } catch (error){
