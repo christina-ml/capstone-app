@@ -15,6 +15,7 @@ const app = express();
 // Controllers
 const usersController = require("./controllers/usersController.js");
 const allCoinsController = require("./controllers/allCoinsController.js");
+const favoritesController = require("./controllers/favoritesController.js");
 const nftsController = require("./controllers/nftsController.js");
 const accountsController = require("./controllers/accountsController.js");
 const signupController = require("./controllers/signupController.js");
@@ -26,6 +27,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use("/users", usersController);
 app.use("/coins", allCoinsController);
+app.use('/favorites', favoritesController);
 app.use('/nfts', nftsController);
 app.use('/accounts', accountsController); // protected route
 app.use('/signup', signupController); // newsletter sign up with mailchimp
