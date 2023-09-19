@@ -1,5 +1,22 @@
 const db = require("../db/dbConfig.js");
 
+// create one favorite
+const createFavorite = async (favorites) => {
+    const {favorites_uid, favorites_cid} = favorites;
+    try {
+        const newFavorite = await db.one(
+            "INSERT INTO favorites (favorites_uid, favorites_cid) VALUES ($1, $2) RETURNING *", 
+            [
+                favorites_uid,
+                favorites_cid
+            ]
+        );
+        return newFavorite;
+    } catch (error){
+        return error;
+    }
+}
+
 // delete one favorite
 const deleteFavorite = async(fid) => {
     try{
@@ -14,5 +31,6 @@ const deleteFavorite = async(fid) => {
 };
 
 module.exports = {
+    createFavorite,
     deleteFavorite,
 }
