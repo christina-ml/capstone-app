@@ -1,17 +1,21 @@
+import axios from 'axios';
 import React from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import './Currencies.scss';
+
+// react-icons
+import { IoTrashOutline } from 'react-icons/io5';
+import { GoTriangleUp, GoTriangleDown } from 'react-icons/go';
 
 // helpers - displaying price with commas
 import addCommas from '../../helpers/AddCommas';
 import ChartJsCoin from '../allCoins/chartjs/ChartJsCoin';
 
-// react icons
-import { GoTriangleUp, GoTriangleDown } from 'react-icons/go';
-import { useParams } from 'react-router-dom';
+const API = process.env.REACT_APP_API_URL;
 
 const Currency = ({ currency }) => {
     // console.log("currency:", currency)
-    const { tags } = useParams;
+    let navigate = useNavigate();
     // console.log("tags:", currency.tags)
 
     // use Params to have access to nested array of objects with `one user by Id`'s tags
@@ -23,13 +27,32 @@ const Currency = ({ currency }) => {
         })
     } 
 
+    const deleteFavorite = () => {        
+        axios.delete(`${API}/favorites/${currency.fid}`)
+        .then((res) => {
+            navigate(0);
+        }).catch((err) => {
+            console.log(err);
+        })
+      }
+
   return (
     <div className="currencyDetails">
         <div className="currencyDetails__coinCard">
-            <div className="currencyDetails__coinCard__logo">
-                <img src={currency.logo} alt="coin logo" />
-                <div className="currencyDetails__coinCard__logo__coinName">
-                {currency.name} <span>{currency.symbol}</span>
+            <div className="currencyDetails__coinCard__logoAndFavoriteButton">
+                <div className="currencyDetails__coinCard__logoAndFavoriteButton__logo">
+                    <img src={currency.logo} alt="coin logo" />
+                    <div className="currencyDetails__coinCard__logoAndFavoriteButton__logo__coinName">
+                    {currency.name} <span>{currency.symbol}</span>
+                    </div>
+                </div>
+                <div className="currencyDetails__coinCard__logoAndFavoriteButton__favorite">
+                    <button 
+                        className="currencyDetails__coinCard__logoAndFavoriteButton__favorite__favoriteButton"
+                        onClick={deleteFavorite}
+                    >
+                        <IoTrashOutline></IoTrashOutline>
+                    </button>
                 </div>
             </div>
 
