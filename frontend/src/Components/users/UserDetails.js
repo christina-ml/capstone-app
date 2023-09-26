@@ -1,17 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-
-import Currencies from '../currencies/Currencies';
-
 import './UserDetails.scss';
 
-import Button from '../../cryptotalkComponents/buttons/Button';
+import Currencies from '../currencies/Currencies';
 
 // react icons
 import { MdOutlineEmail } from 'react-icons/md';
 import { IoSettingsSharp, IoHomeOutline } from 'react-icons/io5';
-
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -42,7 +38,7 @@ const UserDetails = () => {
         <div className="userDetails__profile">
             <div className="userDetails__profile__header">
                 <div className="userDetails__profile__header__name">
-                    {(firstname || lastname) ? `${firstname} ${lastname}` : `${username}`}
+                    {(firstname || lastname) ? `${firstname} ${lastname || ''}` : `${username}`}
                 </div>
                 <div className="userDetails__profile__header__editAndAdd">
                     <Link to={`/users/${user.uid}/edit`}>
