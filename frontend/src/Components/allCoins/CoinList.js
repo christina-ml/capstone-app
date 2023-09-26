@@ -30,7 +30,7 @@ const CoinList = () => {
 
   return (
     <div className="coinList">
-      <h2>All Cryptocurrencies</h2>
+      <h2>Cryptocurrencies ({allCoins.length})</h2>
       {allCoins.length === 0 ? 
         <div className="coinList__missingCollection">
           <div className="coinList__missingCollection__spinner">
