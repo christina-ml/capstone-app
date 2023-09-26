@@ -9,7 +9,7 @@ const API = process.env.REACT_APP_API_URL;
 
 const CreateAccountForm = ({ setOpenLoginModal, setLoggedIn, setLoginMessage }) => {
     // hooks for modal 
-    // const [firstname, setFirstname] = useState('');
+    const [firstname, setFirstname] = useState('');
     // const [lastname, setLastname] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -53,7 +53,7 @@ const CreateAccountForm = ({ setOpenLoginModal, setLoggedIn, setLoginMessage }) 
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                // firstname,
+                firstname,
                 // lastname,
                 username,
                 password,
@@ -91,7 +91,7 @@ const CreateAccountForm = ({ setOpenLoginModal, setLoggedIn, setLoginMessage }) 
                 } else {
                     // successful login
                     // reset the hooks - reset our form to have all empty values
-                    // setFirstname("");
+                    setFirstname("");
                     // setLastname("");
                     setUsername("");
                     setPassword("");
@@ -169,7 +169,10 @@ const CreateAccountForm = ({ setOpenLoginModal, setLoggedIn, setLoginMessage }) 
                 label="Username"
                 variant="outlined"
                 required
-                onChange={(e) => setUsername(e.target.value)}
+                onChange={(e) =>{
+                    setUsername(e.target.value)  
+                    setFirstname(e.target.value) 
+                }}
                 value={username}
                 onBlur={validateUsername}
                 error={usernameError}
