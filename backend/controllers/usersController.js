@@ -148,7 +148,7 @@ users.post('/', async (req, res) => {
 
     try {
       // get data from request
-      let {username, email, password, photo} = req.body;
+      let {firstname, username, email, password, photo} = req.body;
 
       // set a default photo if no photo exists when user is created
       // example: photo = https://robohash.org/ and username = blueberrypie
@@ -174,7 +174,7 @@ users.post('/', async (req, res) => {
       const emailToLowerCase = email.toLowerCase();
   
       // insert data in users table
-      const  user = await db.one('INSERT INTO users (username, user_email, user_password, photo) VALUES ($1, $2, $3, $4) RETURNING uid, username, user_email, photo', [username, emailToLowerCase, hashedPassword, defaultPhoto]);
+      const  user = await db.one('INSERT INTO users (firstname, username, user_email, user_password, photo) VALUES ($1, $2, $3, $4, $5) RETURNING uid, username, user_email, photo', [firstname, username, emailToLowerCase, hashedPassword, defaultPhoto]);
   
       if(user){
         // Generate JWT Token
