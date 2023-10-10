@@ -4,7 +4,11 @@
 @media only screen and (min-width: $mobile){
     .ColoringBook {
         text-align: center;
-        
+
+        path {
+            cursor: pointer;
+        }
+
         &__mobile {
             display: none;
         }

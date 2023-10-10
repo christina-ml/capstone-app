@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
-import DesktopColoring from "./DesktopColoring";
 import MobileColoring from "./MobileColoring";
 import NewColorPalette from "./NewColorPalette";
 
 import './ColoringBook.scss';
+import NftColoring from "./NftColoring";
 
 const ColoringBook = () => {
-  const [fillColors, setFillColors] = useState(Array(16).fill('white'));
+  const [fillColors, setFillColors] = useState(Array(30).fill('white'));
   const [currentColor, setCurrentColor] = useState('white');
 
   const onFillColor = (i) => {
@@ -20,7 +20,7 @@ const ColoringBook = () => {
     <div className="ColoringBook">
       <div className="ColoringBook__desktop">
       <h1>Crypto Coloring</h1>
-        <DesktopColoring fillColors={fillColors} onFill={onFillColor} />
+        <NftColoring fillColors={fillColors} onFill={onFillColor}/>
       </div>
       <div className="ColoringBook__mobile">
         <h1>Crypto Coloring</h1>
