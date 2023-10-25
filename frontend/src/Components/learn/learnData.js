@@ -197,7 +197,7 @@ const learnData = [
         question: 'What is a Blockchain? What does it do?',
         answer: 'A blockchain is a distributed database or ledger that is shared among the nodes of a computer network. As a database, a blockchain stores information electronically in digital format. Blockchains are best known for their crucial role in cryptocurrency systems, such as Bitcoin, for maintaining a secure and decentralized record of transactions. The innovation with a blockchain is that it guarantees the fidelity and security of a record of data and generates trust without the need for a trusted third party.',
         answer2: 'Blockchain is a type of shared database that differs from a typical database in the way that it stores information; blockchains store data in blocks that are then linked together via cryptography. As new data comes in, it is entered into a fresh block. Once the block is filled with data, it is chained onto the previous block, which makes the data chained together in chronological order.',
-        answer3: 'Different types of information can be stored on a blockchain, but the most common use so far has been as a ledger for transactions. In Bitcoin’s case, blockchain is used in a decentralized way so that no single person or group has control—rather, all users collectively retain control.',
+        answer3: `Different types of information can be stored on a blockchain, but the most common use so far has been as a ledger for transactions. In Bitcoin's case, blockchain is used in a decentralized way so that no single person or group has control—rather, all users collectively retain control.`,
         answer4: 'Decentralized blockchains are immutable, which means that the data entered is irreversible. For Bitcoin, this means that transactions are permanently recorded and viewable to anyone.',
         topic: 'blockchain',
         skillLevel: 'intermediate',
@@ -207,10 +207,10 @@ const learnData = [
     {
         qid: 21,
         question: 'What are the advantages of Bitcoin?',
-        answer: 'Accessibility and Liquidity. One of the biggest advantages of cryptocurrency is it often sees no borders, and Bitcoin is no exception. A major benefit of Bitcoin is that it’s a very accessible and versatile currency. Since it only takes a few minutes to transfer bitcoins to another user, it can be used to purchase goods and services from the ever-growing list of places accepting it. This makes spending money in another country and exchanging for other currencies easier, with a bonus of having little to no fees applied. Bitcoins can also be easily sold at any moment.',
-        answer2: 'User Anonymity and Transparency. Although not completely anonymous, Bitcoin users are identified by numerical codes and can have multiple public keys. This ensures there’s no public tracking, and transactions can’t be traced back to the user. Despite the transactions being permanently viewable, which gives you transparency, they’re still kept safe from fraud due to the blockchain technology. On top of that, only you, as the wallet owner, would be able to know how many bitcoins you have.',
-        answer3: 'Independence From Central Authority. Bitcoin is a decentralized currency, meaning it’s not regulated by a single government or central bank. This means that authorities will likely not freeze and demand your coins. There’s also no viable way that a taxation would be implemented for Bitcoin. Theoretically, this gives users autonomy and control over their money, because the price isn’t linked to government policies. And generally, cryptocurrency users view this as one of the main advantages of Bitcoin.',
-        answer4: 'High Return Potential. Bitcoin prices can be highly volatile, changing drastically on a monthly and even daily basis. This goes to show that although there’s high volatility in prices, cryptocurrency users might view this as one of the benefits of Bitcoin because it can result in a high return potential. And with a growing number of users believing Bitcoin is a promising global currency, many investors and businesses have decided to adopt it. This helps with increasing the higher return potential, especially for those who bought it at a lower price.',
+        answer: "Accessibility and Liquidity. One of the biggest advantages of cryptocurrency is it often sees no borders, and Bitcoin is no exception. A major benefit of Bitcoin is that it's a very accessible and versatile currency. Since it only takes a few minutes to transfer bitcoins to another user, it can be used to purchase goods and services from the ever-growing list of places accepting it. This makes spending money in another country and exchanging for other currencies easier, with a bonus of having little to no fees applied. Bitcoins can also be easily sold at any moment.",
+        answer2: "User Anonymity and Transparency. Although not completely anonymous, Bitcoin users are identified by numerical codes and can have multiple public keys. This ensures there's no public tracking, and transactions can't be traced back to the user. Despite the transactions being permanently viewable, which gives you transparency, they're still kept safe from fraud due to the blockchain technology. On top of that, only you, as the wallet owner, would be able to know how many bitcoins you have.",
+        answer3: "Independence From Central Authority. Bitcoin is a decentralized currency, meaning it's not regulated by a single government or central bank. This means that authorities will likely not freeze and demand your coins. There's also no viable way that a taxation would be implemented for Bitcoin. Theoretically, this gives users autonomy and control over their money, because the price isn't linked to government policies. And generally, cryptocurrency users view this as one of the main advantages of Bitcoin.",
+        answer4: "High Return Potential. Bitcoin prices can be highly volatile, changing drastically on a monthly and even daily basis. This goes to show that although there's high volatility in prices, cryptocurrency users might view this as one of the benefits of Bitcoin because it can result in a high return potential. And with a growing number of users believing Bitcoin is a promising global currency, many investors and businesses have decided to adopt it. This helps with increasing the higher return potential, especially for those who bought it at a lower price.",
         topic: 'bitcoin',
         skillLevel: 'beginner',
         category: 'crypto basics',
@@ -219,10 +219,10 @@ const learnData = [
     {
         qid: 22,
         question: 'What is Dogecoin?',
-        answer: 'Dogecoin is a cryptocurrency, like Bitcoin or Ethereum—although it’s a very different animal than either of these popular coins. Dogecoin was originally created at least in part as a lighthearted joke for crypto enthusiasts, and took its name from a once-popular meme.',
-        answer2: 'Software engineers Billy Marcus and Jackson Palmer created Dogecoin in late 2013. Palmer branded the cryptocurrency’s logo using a meme popular at the time that featured the deliberately misspelled word “doge” to describe a Shiba Inu dog.',
-        answer3: `“Doge was really started to poke fun at Bitcoin,” said Pat White, CEO of Bitwave. In its early days, a community of enthusiasts arranged publicity stunts to raise Dogecoin’s profile, gathering funds to send the Jamaican Bobsleigh team to the 2014 Olympics, for instance, or sponsoring a NASCAR driver.`,
-        answer4: `In early 2021, Dogecoin gained cult status on Reddit’s WallStreetBets message board—the prime instigator behind the GameStop affair in January—where enthusiasts had promised to propel its value “to the moon” (that was before all discussion of crypto was banned on the subreddit).`,
+        answer: "Dogecoin is a cryptocurrency, like Bitcoin or Ethereum—although it's a very different animal than either of these popular coins. Dogecoin was originally created at least in part as a lighthearted joke for crypto enthusiasts, and took its name from a once-popular meme.",
+        answer2: "Software engineers Billy Marcus and Jackson Palmer created Dogecoin in late 2013. Palmer branded the cryptocurrency's logo using a meme popular at the time that featured the deliberately misspelled word “doge” to describe a Shiba Inu dog.",
+        answer3: `“Doge was really started to poke fun at Bitcoin,” said Pat White, CEO of Bitwave. In its early days, a community of enthusiasts arranged publicity stunts to raise Dogecoin's profile, gathering funds to send the Jamaican Bobsleigh team to the 2014 Olympics, for instance, or sponsoring a NASCAR driver.`,
+        answer4: `In early 2021, Dogecoin gained cult status on Reddit's WallStreetBets message board—the prime instigator behind the GameStop affair in January—where enthusiasts had promised to propel its value “to the moon” (that was before all discussion of crypto was banned on the subreddit).`,
         topic: 'dogecoin',
         skillLevel: 'beginner',
         category: 'crypto basics',
@@ -231,7 +231,7 @@ const learnData = [
     {
         qid: 23,
         question: 'What is market cap?',
-        answer: 'For a cryptocurrency like Bitcoin, market capitalization (or market cap) is the total value of all the coins that have been mined. It’s calculated by multiplying the number of coins in circulation by the current market price of a single coin.',
+        answer: `For a cryptocurrency like Bitcoin, market capitalization (or market cap) is the total value of all the coins that have been mined. It's calculated by multiplying the number of coins in circulation by the current market price of a single coin.`,
         topic: 'cryptocurrency',
         skillLevel: 'beginner',
         category: 'crypto basics',
@@ -255,9 +255,9 @@ const learnData = [
         qid: 25,
         question: 'How does an NFT have value?',
         answer: `Whether it's art or a digital collectible, one thing will definitely drive up the price of an NFT: Scarcity. What does NFT scarcity have to do with monkey JPEGs?`,
-        answer2: `NFTs can be very expensive (or valuable, depending on who you ask) because they somehow managed to do the impossible: introduce scarcity into the global digital market. An NFT isn’t just an overly-expensive way to buy an image — it’s a way to own it.
+        answer2: `NFTs can be very expensive (or valuable, depending on who you ask) because they somehow managed to do the impossible: introduce scarcity into the global digital market. An NFT isn't just an overly-expensive way to buy an image — it's a way to own it.
 
-        When you’re buying an NFT, you’re not just buying the image itself. You’re buying a permanent token etched on a blockchain pointing to that specific image, or digital asset. Anything goes, really. Aside from NFT art, NFT music, in-game assets, virtual land, and all sorts of other digital goods are commonly bought and sold on NFT marketplaces.`,
+        When you're buying an NFT, you're not just buying the image itself. You're buying a permanent token etched on a blockchain pointing to that specific image, or digital asset. Anything goes, really. Aside from NFT art, NFT music, in-game assets, virtual land, and all sorts of other digital goods are commonly bought and sold on NFT marketplaces.`,
         answer3: `Sometimes, NFTs fetch high prices due to causes far larger in scope than art or belonging to a collection. NFTs have also been widely used as a means to raise funds, thanks to the built-in security found in blockchain-based transactions.`,
         answer4: `Eventually, NFTs may also provide non-monetary value to internet users worldwide. While limiting the supply of digital goods has helped NFT artists and project leads imbue their virtual wares with scarcity, the blockchain may also play a role in ensuring these items remain available indefinitely.
 
@@ -284,7 +284,42 @@ const learnData = [
         skillLevel: 'intermediate',
         category: 'crypto basics',
         source: 'https://learn.robinhood.com/articles/what-are-wrapped-tokens/'
-    }
+    },
+    {
+        qid: 28,
+        question: 'What is the rise of cybercrime and cybersecurity?',
+        answer: 'The decentralization of cryptocurrency is an excellent opportunity for cybercriminals. The decentralization of cryptocurrency is an excellent opportunity for cybercriminals. Cybercriminals can hack into cryptocurrency trading platforms and steal funds. Cryptocurrency is already the most preferred form of exchange in cases of ransomware attacks.',
+        answer2: 'Ransomware incidents usually have a common thread. Cybercriminals can hide their true identities when asking for ransom in digital currencies. When making an exchange, they can easily convert cryptocurrencies into traditional forms without ever being discovered. ',
+        answer3: 'They can attack any business and ask for ransom in digital currencies as this form of cybercrime is untraceable, and no evidence leads back to the perpetrators. With cryptocurrencies spreading across the business world, cybercrime has become a real threat. ',
+        answer4: 'Having the right cybersecurity in place can protect you from attacks like these in the future.',
+        topic: 'cryptocurrency and cybersecurity',
+        skillLevel: 'intermediate',
+        category: 'cybersecurity',
+        source: 'https://fultonmay.com/what-is-cryptocurrency-and-how-does-it-affect-cyber-security/#:~:text=Cybercriminals%20can%20hack%20into%20cryptocurrency,for%20ransom%20in%20digital%20currencies'
+    },
+    {
+        qid: 29,
+        question: 'How does cryptocurrency affect the security of my business?',
+        answer: "Cybercrime comes in many forms, from ransomware to email scams. Cybercriminals love laundering money and scheming businesses using cryptocurrency scams. Since cryptocurrencies are fully decentralized, there's no central authority to monitor the transactions and overall crypto activities. Furthermore, cryptocurrencies involve low levels of regulations. This makes cryptocurrencies a criminal's haven. Every business that uses cryptocurrencies is a target unless they increase its cybersecurity measures. Cybercriminals can buy or sell virtual currencies without ever being discovered.",
+        answer2: "Here are some of the most common cybersecurity risks: Phishing - a phishing campaign targets trading platforms with the primary goal aimed at stealing user's credentials that scammers can use to ask for profit or ransom. Hacked trading platforms - Cybercriminals compromise trading platforms by stealing funds from the users. Compromised registration forms - Cybercriminals steal users' information. They then sell it in the black market for profit. Third-party applications - This is an excellent way for cybercriminals to steal your user data and use it to target further attacks. Malware - Cryptocurrency-related malware enters the mining machines and steals the mining resources of the infected computer. It can also be used to steal cryptocurrencies from online wallets.",
+        answer3: "The best way to protect your business from these cyber-attacks is by implementing proper crypto cybersecurity protocols and practices as well as being extra cautious with the applications and sites you use.",
+        answer4: `Most of the time, hackers give up if a business uses a high level of cybersecurity protection. Just as cybercrime is on the rise, so is the initiative to ensure that cryptocurrency exchanges become regulated and monitored in the safest way possible.`,
+        topic: 'cryptocurrency and cybersecurity',
+        skillLevel: 'intermediate',
+        category: 'cybersecurity',
+        source: 'https://fultonmay.com/what-is-cryptocurrency-and-how-does-it-affect-cyber-security/#:~:text=Cybercriminals%20can%20hack%20into%20cryptocurrency,for%20ransom%20in%20digital%20currencies'
+    },
+    {
+        qid: 30,
+        question: 'How can I keep my account secure, to mitigate the risks of buying cryptocurrencies?',
+        answer: `When buying cryptocurrencies, any digital currency is accessed via a private "key," which is a complex password code that grants users access to a digital account. One of the main risks is that most people store their private key on their PC like any other file. There are a lot of dangers associated with keeping a key on a computer. It's highly risky because it's so easy for hackers to access a person's computer. And once a key is stolen, there's no getting it back.`,
+        answer2: `Cryptocurrency investments should be allocated to the “high risk" portion of your portfolio. You're the only responsible party for ownership and security of the crypto asset and any mistakes are immutable. If you lose your key, you can lose the investment permanently.`,
+        answer3: `An individual's private key is the only way to access this kind of investment, therefore it's vital to keep it safe. One of the best things to do to protect yourself is not to keep your key online where it can be hacked. People should use something called a hardware wallet — an item that looks like a USB and contains their private code. Using such a device means your key is encoded onto a hardware wallet and when you want to do a transaction, you plug the wallet into your computer, but the code never leaves the hardware device, so it's much less likely to be accessed or stolen from your computer. You can also make duplicates of the wallet and put one in a safe deposit box, so you never lose your key.`,
+        topic: 'cryptocurrency and cybersecurity',
+        skillLevel: 'beginner',
+        category: 'cybersecurity',
+        source: 'https://www.cnb.com/personal-banking/insights/cryptocurrency-cybersecurity-risks.html'
+    },
 ]
 
 export default learnData;
