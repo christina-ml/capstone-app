@@ -1,150 +1,120 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from 'react-router-dom';
-import Cookies from "js-cookie";
-
+import React from "react";
 import "./Newspaper.scss";
-  
-// from my codepen (https://codepen.io/christinaml/pen/OJWrYNw)
+
+// react icons
+import { RxOpenInNewWindow } from "react-icons/rx";
 
 // Newspaper Components
 import NewsSidebar from "./NewsSidebar";
 import ThematicCard from "./ThematicCard";
-
-const API = process.env.REACT_APP_API_URL;
+import SidebarViewCybersecurity from "./SidebarViewCybersecurity";
 
 const Newspaper = () => {
-  // overlay for if logged in or not
-  const [overlay, setOverlay] = useState('Show');
-
-  // how we can change our routes
-  // TODO: build our route on the backend
-  let navigate = useNavigate();
-
-  // call to our backend
-  const requestOptions = {
-    // grab our jwt token from localStorage
-    headers: {'Authorization': `Bearer ${localStorage.getItem('accessToken')}`}
-  }
-
-  // for login-protected route
-  useEffect(() => {
-    // console.log("fetch in newspaper.js:",  `${API}/users/authenticate`)
-    fetch(`${API}/users/authenticate`, requestOptions)
-      .then(response => response.json())
-      .then(data => {
-        // check if accessToken exists in cookies
-        if (Cookies.get('accessToken')){
-          setOverlay(false); // remove overlay if logged in
-        }
-         else {
-          setOverlay(true); // show overlay if not logged in
-          // back to the homepage
-          // navigate('/');
-        }
-      }).catch(error => {
-        console.log(error);
-        navigate('/');
-      })
-      
-  }, []);
-
-
   return (
-    <div className="newspaper" id={`overlay${overlay}`}>
-      <div className={`newspaper__overlay${overlay}`}>
-        <div className={`newspaper__overlay${overlay}__needLoggedIn`}>
-          <div>
-            You must be logged in to view this page.
-          </div>
-          <h3>Log In or Create a free account.</h3>
-          <div>
-            Gain access to free articles, news, and special offers.
-          </div>
-        </div>
-      </div>
+    <div className="newspaper">
       {/* <!-- header --> */}
       <div className="newspaper__header">
-        <h1>CryptoTalk Newsletter</h1>
+        <h1>CryptoTalk News</h1>
       </div>
 
       {/* <!-- main body of web page --> */}
       <body>
         <div className="newspaper__main">
           <div className="newspaper__main__article">
-            <h2>The Return of Crypto</h2>
+            <h2>UK confirms plans to regulate crypto industry with formal legislation</h2>
             <section className="newspaper__main__article__photo">
               <img
-                src="https://penntoday.upenn.edu/sites/default/files/2022-01/cryptocurrency-main_1.jpg"
-                alt="crypto news"
+                src="https://image.cnbcfm.com/api/v1/image/107213605-1679518297059-gettyimages-630953736-UK_BITCOIN.jpeg?v=1698667092&w=630&h=354&ffmt=webp&vtcrop=y"
+                alt="UK confirms plans to regulate crypto industry"
                 align="left"
               />
             </section>
             <section className="newspaper__main__article__content">
               <p>
-                Asperiores ullam qui alias id ea voluptatem. Laudantium
-                voluptatem odit ducimus alias maiores id. Soluta repellendus non
-                repellendus autem cupiditate esse aut. Error similique officia
-                assumenda consequuntur blanditiis. Cupiditate fugit aut sit.
+              The U.K. government on Monday confirmed plans to regulate the cryptocurrency industry, announcing 
+              in a consultation paper that it will look to bring in formal legislation for crypto activities by 2024.
               </p>
               <p>
-                Ut consequatur expedita quae minima iste fugit nam. Libero
-                magnam nemo dolorem. Libero molestias tenetur ipsa mollitia in.
-                Nostrum ullam aut in rerum sapiente est. Quas officia et aut
-                repudiandae eveniet illum assumenda. Ex minima nihil eveniet
-                deleniti ipsum repellendus exercitationem dolores.
+              The government published its response to a consultation paper issued earlier this year, which outlined 
+              recommendations on regulating the crypto industry.
               </p>
               <p>
-                Omnis fugit harum quis provident autem qui. Magnam et quia
-                quibusdam quibusdam ullam doloremque. Consequatur asperiores
-                aperiam rerum iste. Dolor necessitatibus tempore rerum iure
-                autem sint. Ipsam placeat esse provident sed quo soluta.
+              In the Monday paper, the government said it intends to bring a number of cryptoasset activities under 
+              the same regulations that govern banks and other financial services firms.
               </p>
               <p>
-                Aut fugit perferendis consequatur. Ut odio perspiciatis quaerat
-                aut. Optio praesentium est consequatur earum in exercitationem.
-                Et qui sit minus quo dicta ipsam consectetur dolorum.
+              “I am very pleased to present these final proposals for cryptoasset regulation in the UK on behalf 
+              of the Government,” Andrew Griffith, the U.K. financial services minister, said in a statement. “I look 
+              forward to our continued work with the sector in making our vision a reality for the UK as a global 
+              hub for cryptoasset technology.”
               </p>
               <p>
-                Est qui ut optio cum deleniti. Ut debitis voluptatem ut
-                voluptatem et et error. Voluptatem explicabo vero non
-                exercitationem fuga vel et. Adipisci atque est incidunt sit. Sit
-                dolorem occaecati quo delectus voluptates repellendus veniam.
-                Vel magni nisi nisi quis.
+              The government’s proposals include stricter rules for exchanges, custodians that store crypto on 
+              behalf of clients, and crypto lending companies. The U.K. also proposes stricter regimes for market 
+              abuse and cryptoasset issuance and disclosures. The government aims to introduce laws for the 
+              crypto industry before Parliament by 2024, according to the paper.
               </p>
+              <div className="newspaper__main__article__source">
+								<a
+									href="https://www.cnbc.com/2023/10/30/uk-confirms-plans-to-regulate-crypto-industry-with-formal-legislation.html"
+									target="_blank"
+									rel="noreferrer"
+								>
+									Read Full Article <RxOpenInNewWindow />
+								</a>
+							</div>
             </section>
-            <h2>US Seizes 50K Bitcoins Related to Silk Road Marketplace</h2>
+            <h2>TradFi goes crypto: Finance giant brings decades of experience to new crypto exchange</h2>
+            <section className="newspaper__main__article__photo">
+              <img
+                src="https://s3.cointelegraph.com/storage/uploads/view/aa5b4d4208b58b65a568a14ad03dfef8.png"
+                alt="Source: MultiBank.io"
+                align="left"
+              />
+            </section>
             <section className="newspaper__main__article__contentBelow">
               <p>
-                The bitcoin, which was obtained in 2012 and which was valued at $3.36 billion when it was discovered in November, is now worth $1.04 billion.
+                MultiBank Group's regulated crypto exchange, MultiBank.io, offers top-tier security and swift trade 
+                execution for major cryptocurrencies with free fiat deposits.
               </p>
               <p>
-                Ut consequatur expedita quae minima iste fugit nam. Libero
-                magnam nemo dolorem. Libero molestias tenetur ipsa mollitia in.
-                Nostrum ullam aut in rerum sapiente est. Quas officia et aut
-                repudiandae eveniet illum assumenda. Ex minima nihil eveniet
-                deleniti ipsum repellendus exercitationem dolores.
+                The crypto world is volatile, with users steadily seeking a sense of trust and security. Now, a traditional 
+                finance giant, MultiBank Group, wants to change the global perception of crypto for the better with its 
+                know-how and expertise spanning over two decades.
               </p>
               <p>
-                Omnis fugit harum quis provident autem qui. Magnam et quia
-                quibusdam quibusdam ullam doloremque. Consequatur asperiores
-                aperiam rerum iste. Dolor necessitatibus tempore rerum iure
-                autem sint. Ipsam placeat esse provident sed quo soluta.
+                It's hard to claim that the crypto world is known for its stability or reliability. However, trust in the market 
+                experienced a new low when FTX, a top United States-based exchange, went down in flames with smoke 
+                surrounding the remaining centralized exchanges. Trust and security have become the most sought-after
+                 commodities in the space.
               </p>
               <p>
-                Aut fugit perferendis consequatur. Ut odio perspiciatis quaerat
-                aut. Optio praesentium est consequatur earum in exercitationem.
-                Et qui sit minus quo dicta ipsam consectetur dolorum.
+                A whole year has passed since what’s called the “crypto’s Lehman Brothers moment.” This period of 
+                increased concern about the state of the cryptocurrency market has coincided with heightened regulatory 
+                scrutiny. Consequently, many regions have suspended multiple fiat withdrawal options, causing deposit, 
+                withdrawal and trading fees to skyrocket.
               </p>
               <p>
-                Est qui ut optio cum deleniti. Ut debitis voluptatem ut
-                voluptatem et et error. Voluptatem explicabo vero non
-                exercitationem fuga vel et. Adipisci atque est incidunt sit. Sit
-                dolorem occaecati quo delectus voluptates repellendus veniam.
-                Vel magni nisi nisi quis.
+                Users want to see a robust and trusted market with better fees and fiat on-ramp options, and the crypto space 
+                needs a change to achieve that. MultiBank.io, a crypto exchange regulated by the Australian Securities and 
+                Investment Commission (ASIC) and audited by Australian Transaction Reports and Analysis Centre (AUSTRAC), 
+                aims to reintroduce trust and reliability to the crypto market. It does so by implementing the same best practices 
+                that have maintained its parent company, The MultiBank Group, with an untarnished record in the traditional 
+                finance sector since 2005.
               </p>
+              <div className="newspaper__main__article__source">
+								<a
+									href="https://cointelegraph.com/news/tradfi-goes-crypto-finance-giant-brings-decades-of-experience-to-new-crypto-exchange"
+									target="_blank"
+									rel="noreferrer"
+								>
+									Read Full Article <RxOpenInNewWindow />
+								</a>
+							</div>
             </section>
           </div>
           <div className="sidebarSections">
+            <SidebarViewCybersecurity />
             <NewsSidebar />
             <ThematicCard />
           </div>
