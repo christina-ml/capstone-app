@@ -43,14 +43,6 @@ currency_uid) VALUES
 (3717, 'Wrapped Bitcoin', 'WBTC', 'https://responsive.fxempire.com/v7/_fxcrypto_/crypto/crypto-logos/wbtc.png', 'wrapped-bitcoin', 473, '2019-01-30T00:00:00.000Z', null, 238932, 238932, '0x2260fac5e5542a773aa44fbcfedf7c193bc2c599', 18, null, null, null, '2022-07-14T00:51:00.000Z', 20227.889985127986, 226463193.3953482, 14.0831, 0.42725836, 4.42672768, -1.47334857, -9.36003746, -32.59528945, -49.38848562, 4833099172.206183, 0.5366, 4833099172.21, null, 2),
 (7083, 'Uniswap', 'UNI', 'https://responsive.fxempire.com/v7/_fxcrypto_/crypto/crypto-logos/uniswap.png', 'uniswap', 386, '2020-09-17T00:00:00.000Z', 1000000000, 734135450.7457277, 1000000000, '0x1f9840a85d5af5bf1d1762f925bdaddc4201f984', 19, null, null, 0.95134043, '2022-07-14T00:52:00.000Z', 0227.889985127986, 226463193.3953482, 14.0831, 0.42725836, 4.42672768, -1.47334857, -9.36003746, -32.59528945, -49.38848562, 4833099172.206183, 0.5366, 4833099172.21, null, 4);
 
-INSERT INTO favorites (favorites_uid, favorites_cid) VALUES
-(1,1),
-(1,2),
-(2,1),
-(2,2),
-(3,1),
-(3,4);
-
 INSERT INTO tags (currency_id, tag) VALUES
 (1, 'mineable'),
 (1, 'pow'),
@@ -189,6 +181,14 @@ INSERT INTO tags (currency_id, tag) VALUES
 (19, 'governance'),
 (19, 'blockchain-capital-portfolio'),
 (19, 'defiance-capital-portfolio');
+
+INSERT INTO favorites (favorites_uid, favorites_cid) VALUES
+(1,1),
+(1,2),
+(2,1),
+(2,2),
+(3,1),
+(3,4);
 
 INSERT INTO nfts (item_name, creator, price, currency, currency_logo, url, rarity_rank_no, rarity_total, availability, customer_id) VALUES
 ('WeAsuki #1751', 'weasuki', 9.30, 'ETH', 'https://responsive.fxempire.com/v7/_fxcrypto_/crypto/crypto-logos/eth.png', 'https://dl.openseauserdata.com/cache/originImage/files/02babcb68bca9749f6d0c905f2f7888a.png', 7262, 9710, false, 3),

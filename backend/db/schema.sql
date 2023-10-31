@@ -5,6 +5,7 @@ CREATE DATABASE crypto_dev;
 
 DROP TABLE IF EXISTS nfts;
 DROP TABLE IF EXISTS favorites;
+DROP TABLE IF EXISTS tags;
 DROP TABLE IF EXISTS currencies;
 DROP TABLE IF EXISTS users;
 
@@ -56,14 +57,6 @@ CREATE TABLE currencies (
   currency_uid INTEGER REFERENCES users(uid) ON DELETE CASCADE
 );
 
-CREATE TABLE favorites (
-  fid SERIAL PRIMARY KEY,
-  favorites_uid INTEGER REFERENCES users(uid) ON DELETE CASCADE,
-  favorites_cid INTEGER REFERENCES currencies(cid) ON DELETE CASCADE
-);
-
-DROP TABLE IF EXISTS tags;
-
 CREATE TABLE tags (
   tid SERIAL PRIMARY KEY,
   currency_id INTEGER REFERENCES currencies(cid) ON DELETE CASCADE,
@@ -74,6 +67,12 @@ DROP INDEX IF EXISTS tags_currency_id;
 
 -- SELECT * FROM tags WHERE currency_id = $1;
 CREATE INDEX tags_currency_id ON tags(currency_id);
+
+CREATE TABLE favorites (
+  favorites_uid INTEGER REFERENCES users(uid) ON DELETE CASCADE,
+  favorites_cid INTEGER REFERENCES currencies(cid) ON DELETE CASCADE,
+  CONSTRAINT pk_favorites_id PRIMARY KEY (favorites_uid, favorites_cid)
+);
 
 DROP TABLE IF EXISTS nfts;
 
