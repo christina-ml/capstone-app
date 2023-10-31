@@ -47,6 +47,8 @@ import GamesColoring from "./Components/games/GamesColoring";
 import GamesMemory from "./Components/games/GamesMemory";
 import Newspaper from "./Components/newspaper/Newspaper";
 import Footer from "./Components/footer/Footer";
+import ShopItemDetails from "./Components/shop/ShopItemDetails";
+import CybersecurityNews from "./Components/newspaper/CybersecurityNews";
 
 function App() {
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -118,12 +120,14 @@ function App() {
           <Route exact path="/users/:uid" element={<UserDetails />} />
           <Route exact path="/users/:uid/currencies" element={<Currencies />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/shop/:nid" element={<ShopItemDetails />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/learn" element={<Learn />} />
           <Route path="/games" element={<Games />} />
           <Route path="/games/coloring" element={<GamesColoring />} />
           <Route path="/games/match" element={<GamesMemory />} />
           <Route path="/news" element={<Newspaper />} />
+          <Route path="/news/cybersecurity" element={<CybersecurityNews />} />
           <Route path="/*" element={<PageNotFound />} />
         </Routes>
       </main>
