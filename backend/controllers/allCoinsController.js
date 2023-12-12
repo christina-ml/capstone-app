@@ -1,3 +1,4 @@
+const  jwt_decode = require('jwt-decode');
 const express = require('express');
 const allCoins = express.Router();
 const {
@@ -15,6 +16,39 @@ const {
 // Example WITH tags: http://localhost:3333/coins?include=tags
 allCoins.get("/", async (req, res)=> {
     try {
+        const { authorization } = req.headers;
+        /*
+            check for authorization/user login, so that the favorites button can be implemented
+        */
+        if (authorization){
+            // get rid of bearer
+            // const authorizationWithoutBearer = authorization.slice(7);
+            const [bearer, token] = authorization.split(' ');
+            // jwt-decode
+            const jwtDecodeUser = jwt_decode(token);
+            // get user id
+            const userId = jwtDecodeUser.uid;
+
+            // get all currencies with tags included
+            const { include } = req.query;
+            // console.log("include:", include)
+
+            // if include query is "tags"
+            if (include === 'tags'){
+                // embed the tags
+                const allCoins = await getAllCurrenciesWithTags(userId);
+                return res.status(200).json(allCoins);
+            } else {
+                // get all currencies without tags included
+                const allCoins = await getAllCurrencies(userId);
+                return res.status(200).json(allCoins);
+            }
+   } else {
+    /*
+        when there is no user authorization
+        continue as regular GET all coins with tags
+        (without ability to add favorites)
+    */
         // get all currencies with tags included
         const { include } = req.query;
         // console.log("include:", include)
@@ -29,6 +63,8 @@ allCoins.get("/", async (req, res)=> {
             const allCoins = await getAllCurrencies();
             return res.status(200).json(allCoins);
         }
+   }
+
     } catch (err) {
         res.status(500).json(`Error: ${err.message}`);
     }

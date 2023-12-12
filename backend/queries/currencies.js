@@ -10,9 +10,10 @@ const { getAllTagsByCurrencyId } = require('./tags');
 // allCoinsController.js below:
 // Get list of all coins in the currencies table
 // Example: http://localhost:3333/coins
-const getAllCurrencies = async () => {
+const getAllCurrencies = async (userId) => {
     try {
-        const everyCurrency = await db.any("SELECT * FROM currencies");
+        const everyCurrency = await db.any("SELECT * FROM currencies LEFT JOIN (SELECT * FROM favorites WHERE favorites_uid=$1) AS user_favorites ON user_favorites.favorites_cid = currencies.cid", [userId]);
+        // console.log("everyCurrency:", everyCurrency)
         return everyCurrency;
     } catch (error) {
         return error;
