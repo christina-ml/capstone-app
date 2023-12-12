@@ -2,23 +2,20 @@
 @import '../../designUtils/colors';
 
 .userDetails {
-    // display: grid;
-    // grid-template-columns: 1fr 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 15px;
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
-
+    margin-bottom: 60px;
     white-space: nowrap;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    column-count: 2;
-    break-inside: avoid;
     
     &__profile {
-        // max-width: 50%;
+        border: 2px solid $dark-bluegray;
+        height: 270px;
 
         &__header {
-            margin: 20px 0px;
             display: flex;
             justify-content: space-between;
             background-color: $dark-bluegray;
@@ -26,7 +23,7 @@
             &__name {
                 padding: 10px;
                 font-size: 30px;
-                color: white;
+                color: $white;
             }
 
             &__editAndAdd {
@@ -53,26 +50,32 @@
             padding: 5px 20px;
             line-height: 1.5em;
             display: flex;
+            column-gap: 10px;
             justify-content: space-between;
 
             &__leftSide {
                 align-self: flex-end;
+                width: 50%;
+                text-align: center;
 
                 &__profilePhoto {
                     display: flex;
                     line-height: 1em;
+                    padding: 10px 0px;
                     img {
                         margin: 0 auto;
                         text-align: center;
                         height: 100px;
                         width: 100px;
                         border-radius: 50%;
+                        box-shadow: 0px 0px 10px $dark-bluegray;
                     }
                 }
             }
 
             &__rightSide {
                 align-self: flex-end;
+                width: 50%;
 
                 &__hideShowPassword {
                     max-width: 184px;

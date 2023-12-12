@@ -50,7 +50,6 @@ const User = ({user}) => {
           </Link>
         </div>
       </div>
-      
     </div>
   )
 }
