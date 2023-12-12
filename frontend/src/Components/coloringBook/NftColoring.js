@@ -3,10 +3,9 @@ import React from "react";
 const NftColoring = ({ fillColors, onFill }) => {
   return (
     <div>
-    <svg width="520pt" height="457pt" viewBox="0 0 720 657" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
-        <title>NftColoring</title>
-        <g transform="translate(0.000000,657.000000) scale(0.100000,-0.100000)"
-fill="#000000" stroke="none">
+    <svg width="468pt" height="411.3pt" viewBox="0 0 720 657" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+    <title>NftColoring</title>
+    <g transform="translate(0.00000,600.000000) scale(0.090000,-0.090000)" fill="#000000" stroke="none">
             <path
               id="svg_01"
               d="M0 3285 l0 -3285 690 0 690 0 0 58 c0 208 28 666 65 1077 42 455 46
