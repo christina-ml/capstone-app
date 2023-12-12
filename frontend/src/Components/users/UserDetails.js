@@ -57,7 +57,7 @@ const UserDetails = () => {
                         {user_admin ? <span> &nbsp; <IoSettingsSharp /> Admin</span> : <span></span>}
                     </div>
                     <div>
-                        {username}
+                        Username: {username}
                     </div>
                 </div>
                 <div className="userDetails__profile__bio__rightSide">
@@ -66,22 +66,22 @@ const UserDetails = () => {
                     </div>
                     <div className="userDetails__profile__bio__rightSide__hideShowPassword">
                         { showPassword ? 
-                            <span> {user_password} </span> :
+                            <span> {user_password.slice(0,6)} </span> :
                             <span> ********** </span>
                         }
                         { showPassword ? 
-                            <button onClick={handleShowPassword}>hide password</button> :
-                            <button onClick={handleShowPassword}>show password</button>
+                            <button onClick={handleShowPassword}>hide password hint</button> :
+                            <button onClick={handleShowPassword}>show password hint</button>
                         }
                     </div>
                     <div>
                         <MdOutlineEmail /> {user_email}
                     </div>
                     <div>
-                        <IoHomeOutline /> {user_city || ''}{(user_city && user_state) ? ', ' : '' }{user_state || ', USA'}
+                        <IoHomeOutline /> {user_city || 'Washington'}{(user_city && user_state) ? ', ' : '' }{user_state || ', USA'}
                     </div>
                     <div>
-                        Interests: {user_interests || 'Nothing yet'}
+                        Interests: {user_interests || 'CryptoTalk'}
                     </div>
                 </div>
             </div>
