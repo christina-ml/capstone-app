@@ -57,7 +57,7 @@ function Footer() {
             <li>YouTube</li>
           </ul>
 
-          <div className="footer__content__categories__copyright">Copyright 2022 CryptoTalk</div>
+          <div className="footer__content__categories__copyright">Copyright 2021-2024 CryptoTalk</div>
         </div>
       </div>
     </div>
