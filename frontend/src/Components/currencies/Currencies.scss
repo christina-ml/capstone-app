@@ -1,9 +1,29 @@
 // import colors from designUtils
 @import "../../designUtils/colors";
 
-// .currencies {
-//     border: 2px solid green;
-// }
+.currencies {
+    border: 2px solid $dark-bluegray;
+	// min-height: 270px;
+
+	&__header {
+		background-color: $dark-bluegray;
+		padding: 10px;
+		font-size: 30px;
+		color: white;
+	}
+	
+	&__noFavorites {
+		min-height: 215px;
+		font-size: 30px;
+		display: grid;
+		justify-items: center;
+		align-items: center;
+
+		&__description {
+
+		}
+	}
+}
 
 .currency {
 	margin: 10px 0px;
