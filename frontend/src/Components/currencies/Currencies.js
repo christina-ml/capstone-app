@@ -45,15 +45,25 @@ const Currencies = () => {
 
     return (
         <div className="currencies">
-            {oneUserWithTags.map((currency, index) => {
-                return (
-                    <Currency currency={currency} 
-                        key={"currency" + index} 
-                        // oneUserWithTags={oneUserWithTags}
-                        allTags={allTags}
-                    />
-                )
-            })}
+            <div className="currencies__header">Favorite Cryptocurrencies</div>
+            {allCurrencies.length ? (
+                oneUserWithTags.map((currency, index) => {
+                    return (
+                        <Currency currency={currency} 
+                            key={"currency" + index} 
+                            // oneUserWithTags={oneUserWithTags}
+                            allTags={allTags}
+                        />
+                    )
+                })
+            ) : (
+                <div className="currencies__noFavorites">
+                    <div className="currencies__noFavorites__description">
+                        <span>No favorites yet...</span>
+                    </div>
+                </div>
+            )
+        }
         </div>
     );
 }
