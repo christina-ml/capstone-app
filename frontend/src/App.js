@@ -109,7 +109,7 @@ function App() {
       }
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home loggedIn={loggedIn} />} />
           <Route path="/accounts" element={<AccountList />} /> 
           <Route path="/about" element={<AboutMe />} />
           <Route path="/coins" element={<Coin />} />
