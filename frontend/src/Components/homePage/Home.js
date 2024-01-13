@@ -4,9 +4,12 @@ import "./Home.scss";
 import CoinList from "../allCoins/CoinList";
 import { Link } from "react-router-dom";
 
+
 // import SymbolOverview from "./Widgets/SymbolOverview";
 
-function Home() {
+// to do: Add loading state for photos
+
+function Home({ loggedIn }) {
   return (
     <div className="home">
       <div className="home__container">
@@ -58,7 +61,7 @@ function Home() {
         </div>
       </div>
 
-      <CoinList />
+      <CoinList loggedIn={loggedIn} />
     </div>
   );
 }
