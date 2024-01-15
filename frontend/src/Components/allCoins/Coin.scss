@@ -18,7 +18,17 @@
 
         &__logo {
             display: flex;
+            justify-content: space-between;
+
             img {
+                height: 30px;
+                width: 30px;
+            }
+            &__favoriteCoinHeartButton {
+                cursor: pointer;
+            }
+            &__favoriteCoinDontShowHeartButton {
+                // if not logged in, don't show add/remove favorites heart button
                 height: 30px;
                 width: 30px;
             }
