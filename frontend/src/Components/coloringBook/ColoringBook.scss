@@ -26,21 +26,31 @@
             flex-wrap: wrap;
             justify-content: center;
             margin-bottom: 1rem;
+            
 
             &__customColor {
-                width: 75px;
-                height: 75px;
-                border: none;
-                padding: 0;
-                background: none;
-                margin-top: 5px;
-                margin-right: 7px;
+                display: flex;
+                flex-direction: column;
+                &__newColor {
+                    cursor: pointer;
+                    width: 60px;
+                    height: 60px;
+                    border: none;
+                    padding: 0;
+                    background: none;
+                    margin-top: 5px;
+                    margin-right: 7px;
+                }
+                &__addToPalette {
+                    margin-right: 7px;
+                    cursor: pointer;
+                }
             }
         }
 
         &__colorSwatch {
-            height: 65px;
-            width: 65px;
+            height: 50px;
+            width: 50px;
             margin: 9px;
             cursor: pointer;
             border: 1px solid $black;
