@@ -45,10 +45,10 @@ import Learn from "./Components/learn/Learn";
 import Games from "./Components/games/Games";
 import GamesColoring from "./Components/games/GamesColoring";
 import GamesMemory from "./Components/games/GamesMemory";
-import Newspaper from "./Components/newspaper/Newspaper";
+import News from "./Components/news/News";
 import Footer from "./Components/footer/Footer";
 // import ShopItemDetails from "./Components/shop/ShopItemDetails";
-import CybersecurityNews from "./Components/newspaper/CybersecurityNews";
+import CybersecurityNews from "./Components/news/CybersecurityNews";
 
 function App() {
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -126,7 +126,7 @@ function App() {
           <Route path="/games" element={<Games />} />
           <Route path="/games/coloring" element={<GamesColoring />} />
           <Route path="/games/match" element={<GamesMemory />} />
-          <Route path="/news" element={<Newspaper />} />
+          <Route path="/news" element={<News />} />
           <Route path="/news/cybersecurity" element={<CybersecurityNews />} />
           <Route path="/*" element={<PageNotFound />} />
         </Routes>

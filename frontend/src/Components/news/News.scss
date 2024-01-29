@@ -13,7 +13,7 @@
   position: none;
 }
 
-.newspaper {
+.news {
   max-width: 1200px;
   margin: 0 auto;
 
@@ -110,7 +110,7 @@
 
 // medium screens styling
 @media only screen and (max-width: $mediumScreen){
-  .newspaper {  
+  .news {  
     &__main {
       flex-direction: column;
       &__sidebar {
@@ -127,7 +127,7 @@
 
 // mobile screens styling
 @media only screen and (max-width: $mobile){
-  .newspaper {  
+  .news {  
     &__main {
       &__sidebar {
         width: 94%;

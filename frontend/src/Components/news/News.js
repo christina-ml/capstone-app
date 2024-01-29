@@ -1,35 +1,35 @@
 import React from "react";
-import "./Newspaper.scss";
+import "./News.scss";
 
 // react icons
 import { RxOpenInNewWindow } from "react-icons/rx";
 
-// Newspaper Components
+// News Components
 import NewsSidebar from "./NewsSidebar";
 import ThematicCard from "./ThematicCard";
 import SidebarViewCybersecurity from "./SidebarViewCybersecurity";
 
-const Newspaper = () => {
+const News = () => {
   return (
-    <div className="newspaper">
+    <div className="news">
       {/* <!-- header --> */}
-      <div className="newspaper__header">
+      <div className="news__header">
         <h1>CryptoTalk News</h1>
       </div>
 
       {/* <!-- main body of web page --> */}
       <body>
-        <div className="newspaper__main">
-          <div className="newspaper__main__article">
+        <div className="news__main">
+          <div className="news__main__article">
             <h2>UK confirms plans to regulate crypto industry with formal legislation</h2>
-            <section className="newspaper__main__article__photo">
+            <section className="news__main__article__photo">
               <img
                 src="https://image.cnbcfm.com/api/v1/image/107213605-1679518297059-gettyimages-630953736-UK_BITCOIN.jpeg?v=1698667092&w=630&h=354&ffmt=webp&vtcrop=y"
                 alt="UK confirms plans to regulate crypto industry"
                 align="left"
               />
             </section>
-            <section className="newspaper__main__article__content">
+            <section className="news__main__article__content">
               <p>
               The U.K. government on Monday confirmed plans to regulate the cryptocurrency industry, announcing 
               in a consultation paper that it will look to bring in formal legislation for crypto activities by 2024.
@@ -54,7 +54,7 @@ const Newspaper = () => {
               abuse and cryptoasset issuance and disclosures. The government aims to introduce laws for the 
               crypto industry before Parliament by 2024, according to the paper.
               </p>
-              <div className="newspaper__main__article__source">
+              <div className="news__main__article__source">
 								<a
 									href="https://www.cnbc.com/2023/10/30/uk-confirms-plans-to-regulate-crypto-industry-with-formal-legislation.html"
 									target="_blank"
@@ -65,14 +65,14 @@ const Newspaper = () => {
 							</div>
             </section>
             <h2>TradFi goes crypto: Finance giant brings decades of experience to new crypto exchange</h2>
-            <section className="newspaper__main__article__photo">
+            <section className="news__main__article__photo">
               <img
                 src="https://s3.cointelegraph.com/storage/uploads/view/aa5b4d4208b58b65a568a14ad03dfef8.png"
                 alt="Source: MultiBank.io"
                 align="left"
               />
             </section>
-            <section className="newspaper__main__article__contentBelow">
+            <section className="news__main__article__contentBelow">
               <p>
                 MultiBank Group's regulated crypto exchange, MultiBank.io, offers top-tier security and swift trade 
                 execution for major cryptocurrencies with free fiat deposits.
@@ -102,7 +102,7 @@ const Newspaper = () => {
                 that have maintained its parent company, The MultiBank Group, with an untarnished record in the traditional 
                 finance sector since 2005.
               </p>
-              <div className="newspaper__main__article__source">
+              <div className="news__main__article__source">
 								<a
 									href="https://cointelegraph.com/news/tradfi-goes-crypto-finance-giant-brings-decades-of-experience-to-new-crypto-exchange"
 									target="_blank"
@@ -124,4 +124,4 @@ const Newspaper = () => {
   );
 };
 
-export default Newspaper;
+export default News;
