@@ -250,7 +250,6 @@
 @media only screen and (max-width: $mobile){
     .navbar {
         margin-top: -50px;
-        width: 100vw;
         max-width: $mobile;
 
         &__menuItemData {
@@ -280,8 +279,6 @@
                 background-color: $background-black;
                 text-align: center;
                 color: $white;
-                
-                width: $mobile;
                 margin: 0px -15px;
                 ul {
                     padding: 0;
@@ -302,6 +299,7 @@
             &__loginAndTheme {
                 display: flex;
                 width: $mobile;
+                margin: 10px 0px;
                 &__loginLogout {
                     // this button is from Material UI
                     display: flex;
@@ -336,7 +334,9 @@
             &__menuItem {
                 display: flex;
                 flex-direction: column;
-                border: 1px solid white;
+                border-width: 1px;
+                border-color: purple;
+                border-style: solid none solid none;
                 align-items: center;
                 justify-items: center;
                 width: $mobile;
@@ -345,7 +345,7 @@
                 &__nonHoverSubmenuItem {
                     display: flex;
                     flex-direction: column;
-                    width: 95vw;
+                    // width: 95vw;
                     align-items: center;
 
                     a {
