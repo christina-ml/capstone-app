@@ -258,14 +258,48 @@
             &__loginAndTheme {
                 display: flex;
                 flex-direction: column;
-                justify-items: center;
-                align-items: center;
+                width: $mobile;
+                margin: 10px 0px;
+
                 &>* {
                     width: 100%;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     justify-items: center;
+                }
+
+                &__loginLogout {
+                    // this button is from Material UI
+                    display: flex;
+                    align-items: center;
+                    justify-items: center;
+                    button {
+                        text-transform: capitalize;
+                        font-size: 16px;
+                        margin: 0px;
+                        border: none;
+
+                        // main button for navigation
+                        width: 95vw;
+                        background-color: $medium-gray;
+                        color: $text-white;
+                        border-radius: 5px;
+                        padding: 20px 0px;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+        
+                &__themeButton {
+                    button {
+                        display: flex;
+                        align-items: center;
+                        justify-items: center;      
+                        padding: 20px 145px;
+                    }
                 }
             }
 
@@ -282,7 +316,6 @@
                 margin: 0px -15px;
                 ul {
                     padding: 0;
-                    
                     li {
                         display: block;
                         a {
@@ -295,61 +328,38 @@
                     }
                 }
             }
-            
-            &__loginAndTheme {
-                display: flex;
-                width: $mobile;
-                margin: 10px 0px;
-                &__loginLogout {
-                    // this button is from Material UI
-                    display: flex;
-                    align-items: center;
-                    justify-items: center;
-                    button {
-                        border-radius: 0px;
-                        height: 20px;
-                        color: $white;
-                        text-transform: capitalize;
-                        font-size: 16px;
-                        padding: 0px;
-                        margin: 0px;
-                        border: none;
-                        width: 80px;
-                        &:hover {
-                            text-decoration: underline;
-                        }
-                    }
-                }
-        
-                &__themeButton {
-                    button {
-                        display: flex;
-                        align-items: center;
-                        justify-items: center;
-                    }
-                }
-            }
        
             // collapsed menu - OPEN VIEW, show all menu items with non-hoverable submenu items
             &__menuItem {
                 display: flex;
                 flex-direction: column;
-                border-width: 1px;
-                border-color: purple;
-                border-style: solid none solid none;
+                // border-width: 1px;
+                // border-color: $white;
+                // border-style: solid none solid none;
                 align-items: center;
                 justify-items: center;
                 width: $mobile;
                 padding-left: 0px;
 
+                a {
+                    // main buttons for navigation
+                    width: 95vw;
+                    background-color: $medium-gray;
+                    color: $text-white;
+                    border-radius: 5px;
+                    padding: 10px 0px;
+                }
+
                 &__nonHoverSubmenuItem {
                     display: flex;
                     flex-direction: column;
-                    // width: 95vw;
                     align-items: center;
 
                     a {
-                        color: $logo-blue;
+                        // secondary buttons for navigation
+                        width: 95vw;
+                        border: 2px solid $medium-gray;
+                        background-color: transparent;
                     }
                 }
             }
@@ -365,7 +375,7 @@
             color: $text-white;
             cursor: pointer;
             
-            // when collapsed menu is open, show icon
+            // when collapsed menu is open, show X icon
             &--active {
                 display: block;
                 margin-right: 15px;
