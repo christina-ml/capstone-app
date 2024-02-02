@@ -122,20 +122,59 @@
 // MEDIUM SCREEN styling
 @media only screen and (min-width: $mobile) and (max-width: $mediumScreen){
     .navbar {
+        padding-left: 0px;
+        padding-right: 0px;
+        width: 100vw;
+
         &__menuItemData {
             display: none;
 
             &__loginAndTheme {
                 display: flex;
                 flex-direction: column;
-                justify-items: center;
-                align-items: center;
+                width: 100vw;
+                margin: 10px 0px;
+
                 &>* {
                     width: 100%;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     justify-items: center;
+                }
+                
+                &__loginLogout {
+                    // this button is from Material UI
+                    display: flex;
+                    align-items: center;
+                    justify-items: center;
+                    button {
+                        color: $white;
+                        text-transform: capitalize;
+                        font-size: 16px;
+                        margin: 0px;
+                        border: none;
+
+                         // main button for navigation
+                         width: 95vw;
+                         background-color: $medium-gray;
+                         color: $text-white;
+                         border-radius: 5px;
+                         padding: 20px 0px;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+        
+                &__themeButton {
+                    button {
+                        display: flex;
+                        align-items: center;
+                        justify-items: center;
+                        padding: 20px 310px;
+                    }
                 }
             }
 
@@ -148,14 +187,12 @@
                 top: 70px;
                 background-color: $background-black;
                 text-align: center;
-                color: $white;
+                width: 100vw;
 
                 ul {
                     padding: 0;
-                    
                     li {
                         display: block;
-
                         a {
                             display: inline-block;
                             color: $white;
@@ -167,56 +204,37 @@
                 }
             }
             
-            &__loginAndTheme {
-                display: flex;
-                width: 95vw;
-                &__loginLogout {
-                    // this button is from Material UI
-                    display: flex;
-                    align-items: center;
-                    justify-items: center;
-                    button {
-                        border-radius: 0px;
-                        height: 20px;
-                        color: $white;
-                        text-transform: capitalize;
-                        font-size: 16px;
-                        padding: 0px;
-                        margin: 0px;
-                        border: none;
-                        width: 80px;
-                        &:hover {
-                            text-decoration: underline;
-                        }
-                    }
-                }
-        
-                &__themeButton {
-                    button {
-                        display: flex;
-                        align-items: center;
-                        justify-items: center;
-                    }
-                }
-            }
-       
             // collapsed menu - OPEN VIEW, show all menu items with non-hoverable submenu items
             &__menuItem {
-                width: 90vw;
                 display: flex;
                 flex-direction: column;
-                border: 1px solid white;
+                width: 100vw;
+                // border: 1px solid white;
                 align-items: center;
                 justify-items: center;
 
+                a {
+                    // main buttons for navigation
+                    // width: 95vw;
+                    width: 90vw;
+                    margin-left: -10px;
+                    background-color: $medium-gray;
+                    color: $text-white;
+                    border-radius: 5px;
+                    padding: 10px 0px;
+                }
+
                 &__nonHoverSubmenuItem {
-                    // border: 2px solid red;
                     display: flex;
                     flex-direction: column;
+                    align-items: center;
 
                     a {
-                        color: $logo-blue;
-                        // border: 2px solid green;
+                        // secondary buttons for navigation
+                        width: 90vw;
+                        margin-left: -10px;
+                        border: 2px solid $medium-gray;
+                        background-color: transparent;
                     }
                 }
             }
