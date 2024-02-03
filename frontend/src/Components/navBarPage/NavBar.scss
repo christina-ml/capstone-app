@@ -122,9 +122,8 @@
 // MEDIUM SCREEN styling
 @media only screen and (min-width: $mobile) and (max-width: $mediumScreen){
     .navbar {
-        padding-left: 0px;
-        padding-right: 0px;
         width: 100vw;
+        padding-left: 0px;
 
         &__menuItemData {
             display: none;
@@ -171,9 +170,10 @@
                 &__themeButton {
                     button {
                         display: flex;
-                        align-items: center;
                         justify-items: center;
-                        padding: 20px 310px;
+                        align-items: center;
+                        min-width: $mobile;
+                        padding: 20px 230px;
                     }
                 }
             }
@@ -188,7 +188,6 @@
                 background-color: $background-black;
                 text-align: center;
                 width: 100vw;
-
                 ul {
                     padding: 0;
                     li {
@@ -208,16 +207,13 @@
             &__menuItem {
                 display: flex;
                 flex-direction: column;
-                width: 100vw;
-                // border: 1px solid white;
+                width: 95vw;
                 align-items: center;
                 justify-items: center;
 
                 a {
                     // main buttons for navigation
-                    // width: 95vw;
-                    width: 90vw;
-                    margin-left: -10px;
+                    width: 95vw;
                     background-color: $medium-gray;
                     color: $text-white;
                     border-radius: 5px;
@@ -231,9 +227,8 @@
 
                     a {
                         // secondary buttons for navigation
-                        width: 90vw;
-                        margin-left: -10px;
                         border: 2px solid $medium-gray;
+                        border-radius: 5px;
                         background-color: transparent;
                     }
                 }
@@ -250,7 +245,7 @@
             color: $text-white;
             cursor: pointer;
             
-            // when collapsed menu is open, show icon
+            // when collapsed menu is open, show X icon
             &--active {
                 display: block;
                 margin-right: 15px;
@@ -259,7 +254,7 @@
                 font-size: 40px;
                 color: $logo-blue-light;
                 cursor: pointer;
-            }            
+            }
         }
     }
 }
