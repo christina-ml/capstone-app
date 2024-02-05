@@ -41,8 +41,6 @@ const LoginAccountForm = ({setOpenLoginModal, setLoggedIn, setLoginMessage}) => 
                 password
             })
         }
-     
-        console.log("reqOptions on LoginAccountForm:", reqOptions)
 
         // fetch to our login route
         fetch(`${API}/users/login`, reqOptions)

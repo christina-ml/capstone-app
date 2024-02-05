@@ -28,7 +28,7 @@ const NavBar = ({
 	darkModeButton,
 	setOpenLoginModal,
 	loggedIn,
-	setLoggedIn,
+	setLoggedIn
 }) => {
 	// simple hook setting it to false
 	const [collapsedMenuIsOpen, setCollapsedMenuIsOpen] = useState(false);
@@ -111,40 +111,6 @@ const NavBar = ({
 											{currentHoverMenu === index &&
 												menuItem.submenu.map(
 													(submenuItem, subIndex) => {
-														// if login button
-														// if (
-														// 	submenuItem.submenuHref ===
-														// 	null
-														// ) {
-														// 	if (loggedIn) {
-														// 		<div className="navbar__menuItemData__loginAndTheme__loginLogout">
-														// 			<Button
-														// 				variant="text"
-														// 				onClick={
-														// 					logOut
-														// 				}
-														// 			>
-														// 				Log Out
-														// 			</Button>
-														// 		</div>;
-														// 	} else {
-														// 		<div className="navbar__menuItemData__loginAndTheme__loginLogout">
-														// 			<Button
-														// 				variant="text"
-														// 				onClick={() =>
-														// 					setOpenLoginModal(
-														// 						true
-														// 					)
-														// 				}
-														// 			>
-														// 				Log In
-														// 			</Button>
-														// 		</div>;
-														// 	}
-
-														// 	// <a key={submenuItem + subIndex} href={submenuItem.submenuHref}>{submenuItem.submenuText}</a>
-														// }
-
 														// normal submenu item
 														return (
 															<a

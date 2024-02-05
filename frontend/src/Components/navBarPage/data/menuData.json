@@ -25,10 +25,6 @@
   },
   {
     "text": "Users",
-    "href": "/users",
-    "submenu": [{
-      "submenuText": "Sign Up",
-      "submenuHref": "/create"
-    }]
+    "href": "/users"
   }
 ]
