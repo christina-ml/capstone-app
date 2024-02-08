@@ -31,28 +31,11 @@ const CoinList = ({ loggedIn }) => {
   useEffect(() => {
     axios.get(`${API}/coins`)
         .then((res) => {
-            // console.log("res.data:", res.data)
             setAllCoins(res.data);
         }).catch((err) => {
             console.log(err);
         })
   }, []);
-
-  // useEffect(() => {
-  //   axios.get(`${API}/coins`, {
-  //     headers: {
-  //       authorization: `Bearer ${Cookies.get("accessToken")}`
-  //     }
-  //   })
-  //       .then((res) => {
-  //           console.log("res.data:", res.data)
-  //           setAllCoins(res.data);
-  //       }).catch((err) => {
-  //           console.log(err);
-  //       })
-  // }, []);
-
-  // console.log("allCoins", allCoins)
 
   // make `allCoins` sorted alphabetically
   const sortedCoinsAsc = allCoins.sort((a,b) => {

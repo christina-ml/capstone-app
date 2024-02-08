@@ -71,7 +71,6 @@ const NavBar = ({
 				<div
 					className={"navbar__collapsedMenuIcon" + (collapsedMenuIsOpen ? "--active" : "")}
 					onClick={() => {
-						console.log("clicked collapsed menu icon");
 						setCollapsedMenuIsOpen(!collapsedMenuIsOpen);
 					}}
 				>

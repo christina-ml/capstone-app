@@ -46,8 +46,6 @@ const LoginAccountForm = ({setOpenLoginModal, setLoggedIn, setLoginMessage}) => 
         fetch(`${API}/users/login`, reqOptions)
         .then(response => response.json())
         .then(data => {
-            // console.log("LoginAccountForm.jsDATA:", data);
-
             if (data.status === "error"){
                 // show error message
                 if (data.message === 'No data returned from the query.'){
@@ -58,7 +56,6 @@ const LoginAccountForm = ({setOpenLoginModal, setLoggedIn, setLoginMessage}) => 
 
             } else {
                 // successful login
-                // console.log("data from LoginAccountForm:", data);
                 // set our hooks back to make form empty
                 setUsername('');
                 setPassword('');

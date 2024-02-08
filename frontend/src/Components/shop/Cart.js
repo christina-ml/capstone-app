@@ -6,7 +6,7 @@ import './Cart.scss';
 
 function Cart({cartItems, handleAddToCart}) {
   
-  console.log("cartItems:", cartItems)
+  // console.log("cartItems:", cartItems)
 
   // const [searchTerm, setSearchTerm] = useState(1);
 

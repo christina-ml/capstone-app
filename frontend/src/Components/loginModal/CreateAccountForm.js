@@ -65,14 +65,10 @@ const CreateAccountForm = ({ setOpenLoginModal, setLoggedIn, setLoginMessage }) 
                 photo
             })
         };
-        console.log("reqOptions:", reqOptions.body)
 
-        console.log("should be localhost->", API + "/users")
         fetch(`${API}/users`, reqOptions)
             .then(response => response.json())
             .then(data => { 
-                console.log("CreateAccountFormdata:", data)
-
                 // if access token is undefined (user not created, but don't want to show as logged in)
                 // if we have an error, show the differente error messages
                 if (data.status === 'error'){

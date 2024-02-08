@@ -14,9 +14,7 @@ import ChartJsCoin from '../allCoins/chartjs/ChartJsCoin';
 const API = process.env.REACT_APP_API_URL;
 
 const Currency = ({ currency }) => {
-    // console.log("currency:", currency)
     let navigate = useNavigate();
-    // console.log("tags:", currency.tags)
 
     // use Params to have access to nested array of objects with `one user by Id`'s tags
     const tagsForCurrencyOfOneUserByUserId = (currencyTags) => {

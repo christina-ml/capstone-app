@@ -21,8 +21,6 @@ const Currencies = () => {
             })
     }, [API, uid]);
 
-    // console.log("allCurrencies:", allCurrencies);
-
     // ======== TAGS =======
     const [oneUserWithTags, setOneUserWithTags] = useState([]);
     const [allTags, setAllTags] = useState([]);

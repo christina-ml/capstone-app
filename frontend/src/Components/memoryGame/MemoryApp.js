@@ -126,7 +126,7 @@ function MemoryApp() {
 		}
 	}, [choiceOne, choiceTwo, cards, turns, checkAllMatches]);
 
-	console.log("the cards state:", cards);
+	// console.log("the cards state:", cards);
 
 	// start new game automagically
 	// shuffle starts the game

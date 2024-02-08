@@ -19,13 +19,13 @@ import ChartJsCoin from "./chartjs/ChartJsCoin";
 const API = process.env.REACT_APP_API_URL;
 
 const Coin = ({ coin, loggedIn }) => {
-	console.log("loggedIn on CoinsList page:", loggedIn)
+	// console.log("loggedIn on CoinsList page:", loggedIn)
 	const [isAFavorite, setIsAFavorite] = useState(false);
 
 	// const jwtDecodeUser = jwt_decode(Cookies.get('accessToken'));
 	// console.log(jwtDecodeUser)
 	// console.log(jwtDecodeUser.uid)
-  // console.log("coin:", coin)
+  	// console.log("coin:", coin)
 
 	// need to POST to: favorites_uid, favorites_cid
 	const addFavorite = (e) => {

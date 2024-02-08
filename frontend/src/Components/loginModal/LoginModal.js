@@ -77,7 +77,6 @@ const LoginModal = ({ openLoginModal, setOpenLoginModal, setLoggedIn, setLoginMe
 
     // handle change tabs
     const handleChange = (e) => {
-        console.log("handleChange-value:", e.target.id, e.target.id.length-1)
         setValue(Number(e.target.id[e.target.id.length-1]))
     }
 
