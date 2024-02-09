@@ -47,7 +47,7 @@ import GamesColoring from "./Components/games/GamesColoring";
 import GamesMemory from "./Components/games/GamesMemory";
 import News from "./Components/news/News";
 import Footer from "./Components/footer/Footer";
-// import ShopItemDetails from "./Components/shop/ShopItemDetails";
+import ShopItemDetails from "./Components/shop/ShopItemDetails";
 import CybersecurityNews from "./Components/news/CybersecurityNews";
 
 function App() {
@@ -120,7 +120,7 @@ function App() {
           <Route exact path="/users/:uid" element={<UserDetails />} />
           <Route exact path="/users/:uid/currencies" element={<Currencies />} />
           <Route path="/shop" element={<Shop />} />
-          {/* <Route path="/shop/:nid" element={<ShopItemDetails />} /> */}
+          <Route path="/shop/:nid" element={<ShopItemDetails />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/learn" element={<Learn />} />
           <Route path="/games" element={<Games />} />
