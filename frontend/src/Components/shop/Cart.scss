@@ -1,72 +1,89 @@
-@import '../../designUtils/colors';
+@import "../../designUtils/colors";
 
 .Cart {
-    &__title { 
-        text-align: center;
-        padding: 20px 0px;
-    }
+	&__title {
+		text-align: center;
+		padding: 20px 0px;
+	}
 
-  &__table {
-    margin: 0 auto;
-    width: 800px;
-    // border-spacing: 0;
-    border-collapse: collapse;
+	&__table {
+		margin: 0 auto;
+		width: 800px;
+		// border-spacing: 0;
+		border-collapse: collapse;
+        margin-bottom: 50px;
 
-    tr th {
-      background-color: $light-gray;
-      padding: 5px;
-    }
+		tr th {
+			background-color: $light-gray;
+			padding: 5px;
+		}
 
-    tr th,
-    tr td {
-      text-align: left;
-      &:last-child {
-        text-align: right;
-      }
-    }
-  }
+		tr th,
+		tr td {
+			text-align: left;
+			&:last-child {
+				text-align: right;
+			}
+		}
+	}
 
-  tr td {
-    height: 140px;
-    vertical-align: top;
-    padding: 15px 0;
-  }
+	tr td {
+		height: 140px;
+		vertical-align: top;
+		padding: 15px 0;
+	}
 
-  &__productInfo {
-    display: flex;
-    gap: 30px;
-  }
+	&__productInfo {
+		display: flex;
+		gap: 30px;
+	}
 
-  &__productImage {
-    img {
-        height: 120px;
-        width: 120px;
-    }
-  }
+	&__productImage {
+		img {
+			height: 120px;
+			width: 120px;
+		}
+	}
 
-  &__productTitle,
-  &__productImage {
-    cursor: pointer;
-  }
+	&__productTitle,
+	&__productImage {
+		cursor: pointer;
+	}
 
-  &__productRemove {
-    position: relative;
-    bottom: -82px;
-    cursor: pointer;
-  }
+	&__productRemove {
+		position: relative;
+		bottom: -82px;
+		cursor: pointer;
+	}
 
-  &__productQty {
-    input {
-      width: 40px;
-      padding: 10px;
-      font-size: 1.2em;
-      outline: none;
-      text-align: center;
-      border: 1px solid black;
+	&__productQty {
+		input {
+			width: 40px;
+			padding: 10px;
+			font-size: 1.2em;
+			outline: none;
+			text-align: center;
+			border: 1px solid black;
 
-      &:focus {
-        border: 2px solid hotpink;
-      }
-    }
-  }
+			&:focus {
+				border: 2px solid hotpink;
+			}
+		}
+	}
+
+	&__goToCheckout {
+		button {
+            background: $logo-blue;
+            padding: 15px;
+            border: none;
+            border-radius: 15px;
+           color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            &:hover {
+                cursor: pointer;
+                color: gold;
+            }
+        }
+	}
 }
