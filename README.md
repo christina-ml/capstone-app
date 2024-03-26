@@ -13,9 +13,20 @@ The backend has been moved from Heroku to Adaptable.io
 -   Frontend: https://cryptotalk-cl.netlify.app/
 -   Backend: https://cryptotalk-cl.adaptable.app/
 
+# About CryptoTalk
+This is a personal project that I have been continuously working on since June 2022.
+
+Reflecting on my journey, I'm thrilled to share the evolution of CryptoTalk.
+This used to be a very different app. Following demo day, I made a bold decision to reset and reimagine my group's initial project idea. I made a detatched fork of the original capstone, and contemplated on the future of this app. I decided to remove nearly the entire code base, and started over. I wanted to make sure the project was entirely my own, and that I had a thorough understanding of each line of code.
+
+Thus, a new CryptoTalk was born—a dynamic, educational app designed to enlighten users about cryptocurrencies, help them discover their preferred coins, and enjoy crypto-inspired games.
+
+From the start, I've been on a relentless path of improvement, continuously enhancing features and adding new dimensions to the app. At the upcoming project showcase, I'll be diving into the core features of CryptoTalk through an engaging user story, offering a glimpse into its transformative power.
+
 # Table of Contents
 - [Welcome](#welcome)
   - [Deployed Links](#deployed-links)
+- [About CryptoTalk](#about-cryptotalk)
 - [Table of Contents](#table-of-contents)
 - [Overview](#overview)
 - [Getting Started](#getting-started)
