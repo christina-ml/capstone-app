@@ -15,6 +15,7 @@ const app = express();
 // Controllers
 const usersController = require("./controllers/usersController.js");
 const allCoinsController = require("./controllers/allCoinsController.js");
+const currentCryptoController = require("./controllers/currentCryptoController.js");
 const favoritesController = require("./controllers/favoritesController.js");
 const nftsController = require("./controllers/nftsController.js");
 const accountsController = require("./controllers/accountsController.js");
@@ -27,6 +28,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use("/users", usersController);
 app.use("/coins", allCoinsController);
+app.use("/currentCrypto", currentCryptoController);
 app.use('/favorites', favoritesController);
 app.use('/nfts', nftsController);
 app.use('/accounts', accountsController); // protected route
