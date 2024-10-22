@@ -8,15 +8,16 @@ import LoadingSpinner from '../../cryptotalkComponents/buttons/LoadingSpinner';
 import './CoinList.scss';
 
 // User Login information
-import Cookies from "js-cookie";
-import jwt_decode from "jwt-decode";
+// import Cookies from "js-cookie";
+// import { jwtDecode } from "jwt-decode";
 
 const API = process.env.REACT_APP_API_URL;
 
 const CoinList = ({ loggedIn }) => {
   const [allCoins, setAllCoins] = useState([]);
 
-  // const jwtDecodeUser = jwt_decode(Cookies.get('accessToken'));
+  // const token = `${Cookies.get("accessToken")}`;
+	// const jwtDecodeUser = jwtDecode(token);
   // console.log(jwtDecodeUser)
 	// console.log(jwtDecodeUser.uid)
   

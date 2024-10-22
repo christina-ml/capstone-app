@@ -1,10 +1,10 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // User Login information
 import Cookies from "js-cookie";
-import jwt_decode from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 
 // SCSS & react icons
 import "./Coin.scss";
@@ -29,7 +29,8 @@ const Coin = ({ coin, loggedIn }) => {
 
 	// need to POST to: favorites_uid, favorites_cid
 	const addFavorite = (e) => {
-		const jwtDecodeUser = jwt_decode(Cookies.get("accessToken"));
+		const token = `${Cookies.get("accessToken")}`;
+		const jwtDecodeUser = jwtDecode(token);
 		e.preventDefault();
 
 		// check if accessToken exists in cookies
