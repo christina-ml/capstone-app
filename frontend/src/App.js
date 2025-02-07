@@ -155,8 +155,8 @@ function App() {
 						path="/news/cybersecurity"
 						element={<CybersecurityNews />}
 					/>
-					<Route path="/currentcrypto" element={<CurrentCrypto />} />
-					<Route path="/careers" element={<Careers />} />
+					{/* <Route path="/currentcrypto" element={<CurrentCrypto />} /> */}
+					{/* <Route path="/careers" element={<Careers />} /> */}
 					<Route path="/*" element={<PageNotFound />} />
 				</Routes>
 			</main>
