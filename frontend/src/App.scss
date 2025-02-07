@@ -1,76 +1,93 @@
-@import './designUtils/colors';
-@import './designUtils/media';
+@import "./designUtils/colors";
+@import "./designUtils/media";
 
 .App {
-    margin-top: 70px;
-    margin: 0 auto;
+	margin-top: 70px;
+	margin: 0 auto;
 
-    // Darkmode
-    color: var(--text-primary);
-    background-color: var(--background);
-    min-height: 100vh; // => background fills entire page
-    transition: all .5s;
-    border: none;
+	// Darkmode
+	color: var(--text-primary);
+	background-color: var(--background);
+	min-height: 100vh; // => background fills entire page
+	transition: all 0.5s;
+	border: none;
 
-    // Darkmode
-    .switchThemeButton {
-        color: $white;
-        border: none;
-        transition: all .5s;
-        background-color: transparent;
-        cursor: pointer;
-        border-radius: 10px;
-        font-size: 16px;
-        height: 30px;
-        border: 1px solid transparent;
-        
-        &:hover {
-            border: 1px solid $white;
-        }
-    }
+	// Darkmode
+	.switchThemeButton {
+		color: $white;
+		border: none;
+		transition: all 0.5s;
+		background-color: transparent;
+		cursor: pointer;
+		border-radius: 10px;
+		font-size: 16px;
+		height: 30px;
+		border: 1px solid transparent;
+
+		position: relative;
+		display: inline-block;
+
+		.tooltiptext {
+			visibility: hidden;
+			color: #fff;
+			text-align: center;
+			border-radius: 6px;
+			padding: 5px 5px;
+			margin: -10px 0px 0px 10px;
+			position: absolute;
+		}
+
+		&:hover {
+			border: 1px solid $white;
+
+			.tooltiptext {
+				visibility: visible;
+			}
+		}
+	}
 }
 
 .pageNotFound {
-    padding-top: 10px;
-    &__circle {
-        margin: 0 auto;
-        border-radius: 50%;
-        height: 15px;
-        width: 15px;
-        border: 3px solid $light-gray;
-    }
+	padding-top: 10px;
+	&__circle {
+		margin: 0 auto;
+		border-radius: 50%;
+		height: 15px;
+		width: 15px;
+		border: 3px solid $light-gray;
+	}
 
-    &__antenna {
-        margin: 0 auto;
-        height: 50px;
-        width: 0.1px;
-        border: 2px solid $light-gray;
-    }
+	&__antenna {
+		margin: 0 auto;
+		height: 50px;
+		width: 0.1px;
+		border: 2px solid $light-gray;
+	}
 
-    &__container {
-        text-align: center;
-        padding: 10px;
-        margin: 0 auto;
-        border: 3px solid $light-gray;
-        border-top-left-radius: 75px;
-        border-top-right-radius: 75px;
-        border-bottom-left-radius: 15px;
-        border-bottom-right-radius: 15px;
-        color: $logo-blue;
-        width: 50vw;
-    }
+	&__container {
+		text-align: center;
+		padding: 10px;
+		margin: 0 auto;
+		border: 3px solid $light-gray;
+		border-top-left-radius: 75px;
+		border-top-right-radius: 75px;
+		border-bottom-left-radius: 15px;
+		border-bottom-right-radius: 15px;
+		color: $logo-blue;
+		width: 50vw;
+	}
 }
 
 // MOBILE styling
-@media only screen and (max-width: $mobile){
-    .App {
-        margin-top: 50px;
-        width: $mobile;
-    }
+@media only screen and (max-width: $mobile) {
+	.App {
+		margin-top: 50px;
+		width: $mobile;
+	}
 
-    .pageNotFound {
-        &__container {
-            width: 80vw;
-        }
-    }
+	.pageNotFound {
+		&__container {
+			width: 80vw;
+		}
+	}
 }
