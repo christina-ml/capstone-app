@@ -50,7 +50,7 @@ import Footer from "./Components/footer/Footer";
 import ShopItemDetails from "./Components/shop/ShopItemDetails";
 import CybersecurityNews from "./Components/news/CybersecurityNews";
 // import CurrentCrypto from "./Components/currentCrypto/CurrentCrypto";
-import Careers from "./Components/careers/Careers";
+// import Careers from "./Components/careers/Careers";
 
 function App() {
 	const defaultDark = window.matchMedia(
