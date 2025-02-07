@@ -49,7 +49,7 @@ import News from "./Components/news/News";
 import Footer from "./Components/footer/Footer";
 import ShopItemDetails from "./Components/shop/ShopItemDetails";
 import CybersecurityNews from "./Components/news/CybersecurityNews";
-import CurrentCrypto from "./Components/currentCrypto/CurrentCrypto";
+// import CurrentCrypto from "./Components/currentCrypto/CurrentCrypto";
 import Careers from "./Components/careers/Careers";
 
 function App() {
