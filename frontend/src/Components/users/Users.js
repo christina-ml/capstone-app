@@ -6,6 +6,7 @@ import "./Users.scss";
 // Components
 import User from "./User";
 import SearchBar from "../searchBar/SearchBar";
+import LoadingSpinner from "../../cryptotalkComponents/buttons/LoadingSpinner";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -36,11 +37,11 @@ const Users = () => {
 			.get(API + "/users")
 			.then((res) => {
 				setUsers(res.data);
-                setIsLoading(false);
+				setIsLoading(false);
 			})
 			.catch((err) => {
 				console.log(err);
-                setIsLoading(true);
+				setIsLoading(true);
 			});
 	}, []);
 
@@ -60,10 +61,10 @@ const Users = () => {
 	return (
 		<div className="users">
 			{isLoading ? (
-                    <div className="users__heading">
-                        <h1>Loading...</h1>
-                    </div>
-                ) : (
+				<div className="users__heading">
+					<LoadingSpinner spinnerLabel="Loading..." />
+				</div>
+			) : (
 				<>
 					<div className="users__heading">
 						<h1>Users</h1>
@@ -82,7 +83,7 @@ const Users = () => {
 						<div className="users__noResults">No Results </div>
 					)}
 				</>
-		)}
+			)}
 		</div>
 	);
 };
