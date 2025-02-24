@@ -14,7 +14,7 @@ function Footer() {
           <ul>
             About Us
             <li><Link to="/about">About</Link></li>
-            <li>Careers</li>
+            <li><Link to="/careers">Careers</Link></li>
             <li>Terms</li>
             <li>Privacy</li>
           </ul>

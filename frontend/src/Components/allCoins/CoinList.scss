@@ -1,40 +1,50 @@
-@import '../../designUtils/colors';
+@import "../../designUtils/colors";
+@import "../../designUtils/fonts";
 
 .coinList {
-    margin: 0 auto;
-    width: 90%;
-    padding-bottom: 20px;
+	margin: 0 auto;
+	width: 90%;
+	padding-bottom: 20px;
 
-    a {
-        text-decoration: none;
-        color: $medium-gray;
-    }
+	&__guide {
+		font-family: $arial-sans-serif;
+		line-height: 1.5em;
+		margin-top: -15px;
+		margin-bottom: 20px;
+	}
 
-    &__missingCollection{
-        text-align: center;
-        
-        &__spinner {
-            color: $dark-bluegray;
-            font-size: 2em;
-            width: 38px;
-            height: 38px;
-            margin: 0 auto;
-            border-radius: 50%;
-            padding: 5px;
-            animation: spinner 0.9s linear infinite;
-        }
-    }
+	a {
+		text-decoration: none;
+		color: $medium-gray;
+	}
 
-    &__collection{
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-    }
+	&__missingCollection {
+		text-align: center;
+
+		&__spinner {
+			color: $dark-bluegray;
+			font-size: 2em;
+			width: 38px;
+			height: 38px;
+			margin: 0 auto;
+			border-radius: 50%;
+			padding: 5px;
+			animation: spinner 0.9s linear infinite;
+		}
+	}
+
+	&__collection {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+	}
 }
 
 /* The animation code */
 @keyframes spinner {
-    // from { transform: rotate(0deg) }
-    to { transform: rotate(360deg) }
-  }
+	// from { transform: rotate(0deg) }
+	to {
+		transform: rotate(360deg);
+	}
+}
