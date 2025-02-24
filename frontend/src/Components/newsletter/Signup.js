@@ -21,7 +21,6 @@ const Signup = () => {
       setFirstName("");
       setLastName("");
       setEmail("");
-      console.log("firstName, lastName, email:", firstName, lastName, email)
       // error handling
       if (!firstName || !lastName || !email){
         // error - alert user to fill out the form
