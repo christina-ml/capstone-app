@@ -1,0 +1,55 @@
+@import "../../designUtils/colors";
+
+.Careers {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+	margin-bottom: 50px;
+
+	&__mission {
+		&__title {
+			margin: 0;
+		}
+		padding: 0px 30px 0px 30px;
+		border-radius: 5px;
+
+		&__values {
+			ul {
+			}
+		}
+	}
+
+	&__description {
+		&__title {
+			margin: 0;
+		}
+		margin: 30px;
+		padding: 0px 15px 20px 15px;
+		text-align: center;
+		border-left: 20px solid $logo-blue;
+		border-right: 20px solid $logo-blue;
+		border-top: 1px solid $logo-blue;
+		border-bottom: 1px solid $logo-blue;
+		border-radius: 10px;
+	}
+
+	&__jobs {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 15px;
+
+		&__job {
+			padding: 10px;
+			text-align: center;
+			border: 1px solid $medium-gray;
+			border-radius: 10px;
+		}
+	}
+
+	&__noJobs {
+		padding: 50px;
+		text-align: center;
+		border: 1px solid $medium-gray;
+		border-radius: 10px;
+	}
+}
