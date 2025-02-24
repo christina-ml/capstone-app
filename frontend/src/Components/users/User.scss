@@ -1,99 +1,100 @@
 // import colors from designUtils
-@import '../../designUtils/colors';
-@import '../../designUtils/fonts';
+@import "../../designUtils/colors";
+@import "../../designUtils/fonts";
 
 // Individual user card
 .userCard {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 360px;
-    height: 350px;
-    text-align: center;
-    box-shadow: 0px 0px 3px 3px lightgray;
-    margin: 5px;
-    padding-top: 10px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	width: 360px;
+	height: 350px;
+	text-align: center;
+	box-shadow: 0px 0px 3px 3px lightgray;
+	margin: 5px;
+	padding-top: 10px;
 
-    &__info {
-        &__name {
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            margin-bottom: 8px;
+	&__info {
+		&__name {
+			font-size: 14px;
+			font-weight: 600;
+			text-transform: uppercase;
+			margin-bottom: 8px;
 
-            /* admin icon & tooltip */
-            &__tooltip { /* tooltip */
-                padding: 0px 10px;
-                vertical-align: middle;
-                font-family: $monospace;
-                position: relative;
-                display: inline-block;
-                cursor: pointer;
+			/* admin icon & tooltip */
+			&__tooltip {
+				/* tooltip */
+				padding: 0px 10px;
+				vertical-align: middle;
+				font-family: $monospace;
+				position: relative;
+				display: inline-block;
+				cursor: pointer;
 
-                &::after {
-                    visibility: hidden;
-                }
+				&::after {
+					visibility: hidden;
+				}
 
-                &:hover { /* shows the tooltip on hover */
-                    &::after {
-                        content: "Admin";
-                        visibility: visible;
-                        text-align: center;
-                        font-size: 12px;
-                        font-family: $arial-sans-serif;
-                        text-transform: none;
-                        
-                        width: 100px;
-                        background-color: $dark-bluegray;
-                        color: $white;
-                        text-align: center;
-                        padding: 5px 0;
-                        border-radius: 6px;
+				&:hover {
+					/* shows the tooltip on hover */
+					&::after {
+						content: "Admin";
+						visibility: visible;
+						text-align: center;
+						font-size: 12px;
+						font-family: $arial-sans-serif;
+						text-transform: none;
 
-                        /* Position the tooltip */
-                        position: absolute;
-                        z-index: 1;
+						width: 100px;
+						background-color: $dark-bluegray;
+						color: $white;
+						text-align: center;
+						padding: 5px 0;
+						border-radius: 6px;
 
-                        width: 90px;
-                        top: 100%;
-                        left: 50%;
-                        margin-left: -45px; /* Use half of the width (120/2 = 60), to center the tooltip */
-                    }
-                }
-            }
-        }
-    
-        &__infoLine {
-            padding-left: 15px;
-            font-size: 14px;
-            color: $medium-gray;
-            line-height: 20px;
-            
-            &__button {
-                margin: 10px 0px;
-                // padding-left: 15px;
-                a {
-                    background-color: $light-gray;
-                    font-size: 18px;
-                    color: $dark-bluegray;
-                    padding: 5px;
-                    text-decoration: none;
-                    border-radius: 5px;
-                    &:hover {
-                        box-shadow: 0px 0px 5px $dark-bluegray;
-                    }
-                }
-            }
-        }
-    }
+						/* Position the tooltip */
+						position: absolute;
+						z-index: 1;
 
-    &__profileImage {
-        padding: 0px 30px;
-        img {
-            // border: 10px solid hotpink;
-            border-radius: 10%;
-            height: 150px;
-            box-shadow: 0px 2px 5px $dark-bluegray;
-        }
-    }
+						width: 90px;
+						top: 100%;
+						left: 50%;
+						margin-left: -45px; /* Use half of the width (120/2 = 60), to center the tooltip */
+					}
+				}
+			}
+		}
+
+		&__infoLine {
+			padding-left: 15px;
+			font-size: 14px;
+			color: $medium-gray;
+			line-height: 20px;
+
+			&__button {
+				margin: 10px 0px;
+				a {
+					background-color: $light-gray;
+					font-size: 18px;
+					color: $dark-bluegray;
+					padding: 5px 20px;
+					text-decoration: none;
+					border-radius: 5px;
+					&:hover {
+						box-shadow: 0px 0px 5px $dark-bluegray;
+					}
+				}
+			}
+		}
+	}
+
+	&__profileImage {
+		padding: 0px 30px;
+		img {
+			// border: 10px solid hotpink;
+			border-radius: 10%;
+			height: 150px;
+			box-shadow: 0px 2px 5px $dark-bluegray;
+		}
+	}
 }
