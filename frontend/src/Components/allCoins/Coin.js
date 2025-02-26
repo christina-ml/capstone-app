@@ -25,7 +25,7 @@ const Coin = ({ coin, loggedIn }) => {
 	// const jwtDecodeUser = jwt_decode(Cookies.get('accessToken'));
 	// console.log(jwtDecodeUser)
 	// console.log(jwtDecodeUser.uid)
-  	// console.log("coin:", coin)
+	// console.log("coin:", coin)
 
 	// need to POST to: favorites_uid, favorites_cid
 	const addFavorite = (e) => {
@@ -42,9 +42,7 @@ const Coin = ({ coin, loggedIn }) => {
 					favorites_uid: `${jwtDecodeUser.uid}`,
 					favorites_cid: `${coin.cid}`,
 				})
-				.then((res) => {
-
-				})
+				.then((res) => {})
 				.catch((err) => {
 					console.log(err);
 				});
@@ -63,21 +61,25 @@ const Coin = ({ coin, loggedIn }) => {
 								{coin.symbol}
 							</span>
 						</div>
-						{(loggedIn === true)  ? 
+						{loggedIn === true ? (
 							<button
 								className="coin__card__logo__favoriteCoinHeartButton"
 								onClick={addFavorite}
 							>
-								{isAFavorite ? <FaHeart></FaHeart> : <FaRegHeart></FaRegHeart>}
+								{isAFavorite ? (
+									<FaHeart></FaHeart>
+								) : (
+									<FaRegHeart></FaRegHeart>
+								)}
 							</button>
-							:
+						) : (
 							<div className="coin__card__logo__favoriteCoinDontShowHeartButton"></div>
-						}
+						)}
 					</div>
 					<hr />
 					<div className="coin__card__basicInfo">
 						<div className="coin__card__basicInfo__price">
-							Price: ${addCommas(coin.price)}
+							Price: ${addCommas(coin.price)} USD
 						</div>
 						<div className="coin__card__basicInfo__price">
 							Market Cap: ${addCommas(coin.market_cap)}
