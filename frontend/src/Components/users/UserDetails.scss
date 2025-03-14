@@ -1,108 +1,104 @@
 // import colors from designUtils
-@import '../../designUtils/colors';
+@import "../../designUtils/colors";
 
 .userDetails {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 15px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    margin-bottom: 60px;
-    white-space: nowrap;
-    
-    &__profile {
-        border: 2px solid $dark-bluegray;
-        height: 270px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 15px;
+	padding: 20px;
+	max-width: 1200px;
+	margin: 0 auto;
+	margin-bottom: 60px;
+	white-space: nowrap;
 
-        &__header {
-            display: flex;
-            justify-content: space-between;
-            background-color: $dark-bluegray;
-            
-            &__name {
-                padding: 10px;
-                font-size: 30px;
-                color: $white;
-            }
+	&__profile {
+		border: 2px solid $dark-bluegray;
+		height: 270px;
 
-            &__editAndAdd {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                align-items: center;
+		&__header {
+			display: flex;
+			justify-content: space-between;
+			background-color: $dark-bluegray;
 
-                button {
-                    cursor: pointer;
-                    padding: 5px;
-                    width: 80px;
-                    height: fit-content;
-                    border: none;
-                    border-radius: 5px;
-                    color: $white;
-                    background: $medium-gray;
-                    margin: 0px 10px;
-                }
-            }
-        }
-        
-        &__bio {
-            padding: 5px 20px;
-            line-height: 1.5em;
-            display: flex;
-            column-gap: 10px;
-            justify-content: space-between;
+			&__name {
+				padding: 10px;
+				font-size: 30px;
+				color: $white;
+			}
 
-            &__leftSide {
-                align-self: flex-end;
-                width: 50%;
-                text-align: center;
+			&__editAndAdd {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				align-items: center;
 
-                &__profilePhoto {
-                    display: flex;
-                    line-height: 1em;
-                    padding: 10px 0px;
-                    img {
-                        margin: 0 auto;
-                        text-align: center;
-                        height: 100px;
-                        width: 100px;
-                        border-radius: 50%;
-                        box-shadow: 0px 0px 10px $dark-bluegray;
-                    }
-                }
-            }
+				button {
+					cursor: pointer;
+					padding: 5px;
+					width: 80px;
+					height: fit-content;
+					border: none;
+					border-radius: 5px;
+					color: $white;
+					background: $medium-gray;
+					margin: 0px 10px;
+				}
+			}
+		}
 
-            &__rightSide {
-                align-self: flex-end;
-                width: 50%;
+		&__bio {
+			padding: 5px 20px;
+			line-height: 1.5em;
+			display: flex;
+			column-gap: 10px;
+			justify-content: space-between;
 
-                &__hideShowPassword {
-                    max-width: 184px;
-                    word-wrap: break-word;
-                    button {
-                        cursor: pointer;
-                    }
-                }
+			&__leftSide {
+				align-self: flex-end;
+				width: 50%;
+				text-align: center;
 
-            }            
-        }
-    }
+				&__profilePhoto {
+					display: flex;
+					line-height: 1em;
+					padding: 10px 0px;
+					img {
+						margin: 0 auto;
+						text-align: center;
+						height: 100px;
+						width: 100px;
+						border-radius: 50%;
+						box-shadow: 0px 0px 10px $dark-bluegray;
+					}
+				}
+			}
 
-    &__userCurrencies {
-        // display: inline-block;
-   
-    
+			&__rightSide {
+				align-self: flex-end;
+				width: 50%;
 
-        // display: inline-block; /*Display inline and maintain block characteristics.*/
-    // vertical-align: top; /*Makes sure all the divs are correctly aligned.*/
-    // white-space: normal; /*Prevents child elements from inheriting nowrap.*/
-    
-    // width: 100px;
-    // height: 100px;
-    // background-color: red;
-  
+				&__hideShowMoreInfo {
+					max-width: 184px;
+					word-wrap: break-word;
+					button {
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
 
-    display: inline-block;
-    }
+	&__userCurrencies {
+		// display: inline-block;
+
+		// display: inline-block; /*Display inline and maintain block characteristics.*/
+		// vertical-align: top; /*Makes sure all the divs are correctly aligned.*/
+		// white-space: normal; /*Prevents child elements from inheriting nowrap.*/
+
+		// width: 100px;
+		// height: 100px;
+		// background-color: red;
+
+		display: inline-block;
+	}
 }
