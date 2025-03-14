@@ -1,30 +1,34 @@
 [
-  {
-    "text": "About Me",
-    "href": "/about"
-  },
-  {
-    "text": "Learn",
-    "href": "/learn",
-    "submenu": [{
-      "submenuText": "News",
-      "submenuHref": "/news"
-    },
-    {
-      "submenuText": "Games",
-      "submenuHref": "/games"
-    }]
-  },
-  {
-    "text": "Shop",
-    "href": "/shop",
-    "submenu": [{
-      "submenuText": "Cart",
-      "submenuHref": "/cart"
-    }]
-  },
-  {
-    "text": "Users",
-    "href": "/users"
-  }
+	{
+		"text": "About",
+		"href": "/about"
+	},
+	{
+		"text": "Learn",
+		"href": "/learn",
+		"submenu": [
+			{
+				"submenuText": "News",
+				"submenuHref": "/news"
+			},
+			{
+				"submenuText": "Games",
+				"submenuHref": "/games"
+			}
+		]
+	},
+	{
+		"text": "Shop",
+		"href": "/shop",
+		"submenu": [
+			{
+				"submenuText": "Cart",
+				"submenuHref": "/cart"
+			}
+		]
+	},
+	{
+		"text": "Users",
+		"href": "/users"
+	}
 ]

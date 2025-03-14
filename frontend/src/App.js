@@ -28,7 +28,7 @@ import LoginModal from "./Components/loginModal/LoginModal";
 import PageNotFound from "./Components/PageNotFound";
 import NavBar from "./Components/navBarPage/NavBar";
 import Home from "./Components/homePage/Home";
-import AboutMe from "./Components/aboutMe/AboutMe";
+import About from "./Components/about/About";
 
 import AccountList from "./Components/accountList/AccountList";
 import Users from "./Components/users/Users";
@@ -49,7 +49,7 @@ import News from "./Components/news/News";
 import Footer from "./Components/footer/Footer";
 import ShopItemDetails from "./Components/shop/ShopItemDetails";
 import CybersecurityNews from "./Components/news/CybersecurityNews";
-// import CurrentCrypto from "./Components/currentCrypto/CurrentCrypto";
+import CurrentCrypto from "./Components/currentCrypto/CurrentCrypto";
 import Careers from "./Components/careers/Careers";
 
 function App() {
@@ -131,7 +131,7 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Home loggedIn={loggedIn} />} />
 					<Route path="/accounts" element={<AccountList />} />
-					<Route path="/about" element={<AboutMe />} />
+					<Route path="/about" element={<About />} />
 					<Route path="/coins" element={<Coin />} />
 					<Route path="/coins/:cid" element={<CoinDetails />} />
 					<Route path="/users" element={<Users />} />
@@ -155,7 +155,7 @@ function App() {
 						path="/news/cybersecurity"
 						element={<CybersecurityNews />}
 					/>
-					{/* <Route path="/currentcrypto" element={<CurrentCrypto />} /> */}
+					<Route path="/currentcrypto" element={<CurrentCrypto />} />
 					<Route path="/careers" element={<Careers />} />
 					<Route path="/*" element={<PageNotFound />} />
 				</Routes>
